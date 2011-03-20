@@ -29,12 +29,10 @@
       <td height="248" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="260" height="241" valign="top"><img src="../images/logo.jpg" width="260" height="244" /></td>
-            <td width="1020" rowspan="2" valign="top"><img src="../images/banner.jpg" width="1002" height="247" /></td>
+          <td width="260" height="247" valign="top"><img src="../images/logo.jpg" width="260" height="250" /></td>
+            <td width="1021" valign="top"><img src="../images/banner.jpg" width="1002" height="249" /></td>
           </tr>
-        <tr>
-          <td height="2"></td>
-          </tr>
+        
         <tr>
           <td height="3"></td>
             <td></td>
