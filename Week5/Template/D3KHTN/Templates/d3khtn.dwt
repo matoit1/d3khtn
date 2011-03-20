@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+<div align="center">
+  <table width="1281" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr>
+      <td height="31" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="163" height="31" valign="top">Đăng Nhập</td>
+          <td width="184" valign="top">Đăng Ký</td>
+          <td width="587" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          <td width="1">&nbsp;</td>
+          <td width="346" valign="top">Tìm Kiếm</td>
+        </tr>
+      </table>      </td>
+    </tr>
+    <tr>
+      <td height="248" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="260" height="241" valign="top"><img src="../images/logo.jpg" width="260" height="244" /></td>
+            <td width="1020" rowspan="2" valign="top"><img src="../images/banner.jpg" width="1002" height="247" /></td>
+          </tr>
+        <tr>
+          <td height="2"></td>
+          </tr>
+        <tr>
+          <td height="3"></td>
+            <td></td>
+          </tr>
+        
+        
+      </table></td>
+    </tr>
+    <tr>
+      <td height="40" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="232" height="40" valign="top">Trang Chủ</td>
+          <td width="245" valign="top">Giới Thiệu</td>
+          <td width="263" valign="top">Khuyến Mãi</td>
+          <td width="248" valign="top">Hỗ Trợ</td>
+          <td width="293" valign="top">Liên Hệ</td>
+        </tr>
+      </table>      </td>
+    </tr>
+    <tr>
+      <td width="250" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="250" height="30" valign="top">Điện Thoại</td>
+          </tr>
+        <tr>
+          <td height="30" valign="top">Máy Tính</td>
+        </tr>
+        <tr>
+          <td height="30" valign="top">Thời Trang</td>
+        </tr>
+        <tr>
+          <td height="30" valign="top">Ôtô - Xe máy</td>
+        </tr>
+        <tr>
+          <td height="30" valign="top">Điện Tử Gia Dụng</td>
+        </tr>
+        <tr>
+          <td height="30" valign="top">Nội Thất</td>
+        </tr>
+        <tr>
+          <td height="30" valign="top">Làm Đẹp</td>
+        </tr>
+        <tr>
+          <td height="30" valign="top">Điện Máy</td>
+        </tr>
+        <tr>
+          <td height="158" valign="top">Quảng cáo 1</td>
+        </tr>
+        <tr>
+          <td height="183" valign="top">Quảng Cáo 2</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+      </table></td>
+      <td width="796" height="212" valign="top"><!-- TemplateBeginEditable name="GioiThieu" -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr>
+            <td width="796" height="212">&nbsp;</td>
+          </tr>
+        </table>
+      <!-- TemplateEndEditable --></td>
+      <td width="235" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="235" height="144" valign="top">Sản Phẩm 1</td>
+          </tr>
+        <tr>
+          <td height="162" valign="top">Sản Phẩm 2</td>
+        </tr>
+        <tr>
+          <td height="138" valign="top">Sản Phẩm 3</td>
+        </tr>
+        
+        <tr>
+          <td height="137" valign="top">Sản Phẩm 4</td>
+        </tr>
+        
+      </table></td>
+    </tr>
+    <tr>
+      <td height="343" valign="top"><!-- TemplateBeginEditable name="TinTuc" -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr>
+            <td width="796" height="343">&nbsp;</td>
+          </tr>
+        </table>
+      <!-- TemplateEndEditable --></td>
+    </tr>
+    
+    <tr>
+      <td height="47" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr>
+          <td width="1281" height="47" valign="top">Footer (Bản quyền ....)</td>
+        </tr>
+      </table>      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
