@@ -7,6 +7,13 @@
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
+<style type="text/css">
+	a:link { color:#00C}
+	a:visted {color:#3F3}
+	a:active {color:#FF0}
+</style>
+<link href="../Style.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
@@ -17,11 +24,14 @@
       <td height="31" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="163" height="31" valign="top">Đăng Nhập</td>
-          <td width="184" valign="top">Đăng Ký</td>
-          <td width="587" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          <td width="163" height="31" valign="top" class="DangNhap">
+          	<a href="">Đăng Nhập</a></td>
+          <td width="184" valign="top" class="DangKi">
+            <a href=""> Đăng Ký </a></td>
+          <td width="587" valign="top" class="Header"><!--DWLayoutEmptyCell-->&nbsp;</td>
           <td width="1">&nbsp;</td>
-          <td width="346" valign="top">Tìm Kiếm</td>
+          <td width="346" valign="top" class="Find">
+          <a href="">Tìm Kiếm</a></td>
         </tr>
       </table>      </td>
     </tr>
@@ -45,11 +55,16 @@
       <td height="40" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="232" height="40" valign="top">Trang Chủ</td>
-          <td width="245" valign="top">Giới Thiệu</td>
-          <td width="263" valign="top">Khuyến Mãi</td>
-          <td width="248" valign="top">Hỗ Trợ</td>
-          <td width="293" valign="top">Liên Hệ</td>
+          <td width="232" height="40" valign="top" class="MenuNgang">
+          	<a href="">Trang Chủ</a></td>
+          <td width="245" valign="top" class="MenuNgang">
+          	<a href="">Giới Thiệu</a></td>
+          <td width="263" valign="top" class="MenuNgang">
+          	<a href="">Khuyến Mãi </a></td>
+          <td width="248" valign="top" class="MenuNgang">
+          	<a href="">Hỗ Trợ</a></td>
+          <td width="293" valign="top" class="MenuNgang">
+          <a href="">Liên Hệ</a></td>
         </tr>
       </table>      </td>
     </tr>
@@ -57,34 +72,42 @@
       <td width="250" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="250" height="30" valign="top">Điện Thoại</td>
+          <td width="250" height="30" valign="top" class="MenuDoc">
+        	  <a href="">Điện Thoại</a></td>
           </tr>
         <tr>
-          <td height="30" valign="top">Máy Tính</td>
+          <td height="30" valign="top" class="MenuDoc">
+       	    <a href="">Máy Tính</a></td>
         </tr>
         <tr>
-          <td height="30" valign="top">Thời Trang</td>
+          <td height="30" valign="top" class="MenuDoc">
+       	    <a href="">Thời Trang</a></td>
         </tr>
         <tr>
-          <td height="30" valign="top">Ôtô - Xe máy</td>
+          <td height="30" valign="top" class="MenuDoc">
+       		<a href="">Ôtô - Xe máy</a></td>
         </tr>
         <tr>
-          <td height="30" valign="top">Điện Tử Gia Dụng</td>
+          <td height="30" valign="top" class="MenuDoc">
+       		<a href="">Điện Tử Gia Dụng</a></td>
         </tr>
         <tr>
-          <td height="30" valign="top">Nội Thất</td>
+          <td height="30" valign="top" class="MenuDoc">
+       		<a href="">Nội Thất</a></td>
         </tr>
         <tr>
-          <td height="30" valign="top">Làm Đẹp</td>
+          <td height="30" valign="top" class="MenuDoc">
+       		<a href="">Làm Đẹp</a></td>
         </tr>
         <tr>
-          <td height="30" valign="top">Điện Máy</td>
+          <td height="30" valign="top" class="MenuDoc">
+       		<a href="">Điện Máy</a></td>
         </tr>
         <tr>
-          <td height="158" valign="top">Quảng cáo 1</td>
+          <td height="158" valign="top" class="SanPham">Quảng cáo 1</td>
         </tr>
         <tr>
-          <td height="183" valign="top">Quảng Cáo 2</td>
+          <td height="183" valign="top" class="SanPham">Quảng Cáo 2</td>
         </tr>
         
         
@@ -99,24 +122,24 @@
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
           <!--DWLayoutTable-->
           <tr>
-            <td width="796" height="212">&nbsp;</td>
+            <td width="796" height="212"><!--DWLayoutEmptyCell-->&nbsp;</td>
           </tr>
         </table>
       <!-- TemplateEndEditable --></td>
       <td width="235" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="235" height="144" valign="top">Sản phẩm 1</td>
+          <td width="235" height="144" valign="top" class="SanPham">Sản phẩm 1</td>
           </tr>
         <tr>
-          <td height="162" valign="top">Sản Phẩm 2</td>
+          <td height="162" valign="top" class="SanPham">Sản Phẩm 2</td>
         </tr>
         <tr>
-          <td height="138" valign="top">Sản Phẩm 3</td>
+          <td height="138" valign="top" class="SanPham">Sản Phẩm 3</td>
         </tr>
         
         <tr>
-          <td height="137" valign="top">Sản Phẩm 4</td>
+          <td height="137" valign="top" class="SanPham">Sản Phẩm 4</td>
         </tr>
         
       </table></td>
@@ -136,7 +159,7 @@
       <td height="47" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="1281" height="47" valign="top">Footer (Bản quyền ....)</td>
+          <td width="1281" height="47" valign="top" class="Footer">Footer (Bản quyền ....)</td>
         </tr>
       </table>      </td>
     </tr>
