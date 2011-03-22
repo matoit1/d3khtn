@@ -18,30 +18,38 @@
 
 <body>
 <div align="center">
-  <table width="1281" border="0" cellpadding="0" cellspacing="0">
+  <table width="1280" border="0" cellpadding="0" cellspacing="0">
     <!--DWLayoutTable-->
     <tr>
       <td height="31" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
           <td width="163" height="31" valign="top" class="DangNhap">
-          	<a href="">Đăng Nhập</a></td>
-          <td width="184" valign="top" class="DangKi">
+            <a href="">Đăng Nhập</a></td>
+            <td width="184" valign="top" class="DangKi">
             <a href=""> Đăng Ký </a></td>
-          <td width="587" valign="top" class="Header"><!--DWLayoutEmptyCell-->&nbsp;</td>
-          <td width="1">&nbsp;</td>
-          <td width="346" valign="top" class="Find">
-          <a href="">Tìm Kiếm</a></td>
-        </tr>
-      </table>      </td>
+            <td width="587" valign="top" class="Header"><div align="center">Chào mừng đến website đấu giá của nhóm D3</div></td>
+            <td width="346" valign="top" class="Find">
+            <a href="">Tìm Kiếm</a></td>
+          </tr>
+      </table></td>
+      <td width="6"></td>
     </tr>
     <tr>
-      <td height="248" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <td height="253" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="260" height="247" valign="top"><img src="../images/logo.jpg" width="260" height="250" /></td>
-            <td width="1021" valign="top"><img src="../images/banner.jpg" width="1002" height="249" /></td>
+          <td width="260" rowspan="2" valign="top"><img src="../images/logo.jpg" width="260" height="250" /></td>
+            <td width="1012" height="3"></td>
+            <td width="1"></td>
           </tr>
+        <tr>
+          <td rowspan="2" valign="top"><img src="../images/banner.jpg" width="1012" height="249" /></td>
+            <td height="247"></td>
+          </tr>
+        
+        
+        
         
         <tr>
           <td height="3"></td>
@@ -50,65 +58,66 @@
         
         
       </table></td>
+      <td></td>
     </tr>
     <tr>
       <td height="40" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
           <td width="232" height="40" valign="top" class="MenuNgang">
-          	<a href="">Trang Chủ</a></td>
-          <td width="245" valign="top" class="MenuNgang">
-          	<a href="">Giới Thiệu</a></td>
-          <td width="263" valign="top" class="MenuNgang">
-          	<a href="">Khuyến Mãi </a></td>
-          <td width="248" valign="top" class="MenuNgang">
-          	<a href="">Hỗ Trợ</a></td>
-          <td width="293" valign="top" class="MenuNgang">
-          <a href="">Liên Hệ</a></td>
-        </tr>
-      </table>      </td>
+            <a href="">Trang Chủ</a></td>
+            <td width="245" valign="top" class="MenuNgang">
+            <a href="">Giới Thiệu</a></td>
+            <td width="263" valign="top" class="MenuNgang">
+            <a href="">Khuyến Mãi </a></td>
+            <td width="248" valign="top" class="MenuNgang">
+            <a href="">Hỗ Trợ</a></td>
+            <td width="284" valign="top" class="MenuNgang">
+              <a href="">Liên Hệ</a></td>
+          </tr>
+      </table></td>
+      <td></td>
     </tr>
     <tr>
-      <td width="250" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <td width="230" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="250" height="30" valign="top" class="MenuDoc">
-        	  <a href="">Điện Thoại</a></td>
+          <td width="230" height="30" valign="top" class="MenuDoc">
+            <a href="">Điện Thoại</a></td>
           </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       	    <a href="">Máy Tính</a></td>
-        </tr>
+            <a href="">Máy Tính</a></td>
+          </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       	    <a href="">Thời Trang</a></td>
-        </tr>
+            <a href="">Thời Trang</a></td>
+          </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       		<a href="">Ôtô - Xe máy</a></td>
-        </tr>
+            <a href="">Ôtô - Xe máy</a></td>
+          </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       		<a href="">Điện Tử Gia Dụng</a></td>
-        </tr>
+            <a href="">Điện Tử Gia Dụng</a></td>
+          </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       		<a href="">Nội Thất</a></td>
-        </tr>
+            <a href="">Nội Thất</a></td>
+          </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       		<a href="">Làm Đẹp</a></td>
-        </tr>
+            <a href="">Làm Đẹp</a></td>
+          </tr>
         <tr>
           <td height="30" valign="top" class="MenuDoc">
-       		<a href="">Điện Máy</a></td>
-        </tr>
+            <a href="">Điện Máy</a></td>
+          </tr>
         <tr>
-          <td height="158" valign="top" class="SanPham">Quảng cáo 1</td>
-        </tr>
-        <tr>
-          <td height="183" valign="top" class="SanPham">Quảng Cáo 2</td>
-        </tr>
+          <td height="406" valign="top" class="SanPham"><img src="../images/QuangCao.jpg" width="226" height="402" /></td>
+          </tr>
+        
+        
         
         
         
@@ -118,50 +127,65 @@
         
         
       </table></td>
-      <td width="796" height="212" valign="top"><!-- TemplateBeginEditable name="GioiThieu" -->
+      <td width="815" height="260" valign="top"><!-- TemplateBeginEditable name="EditRegion3" -->
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
           <!--DWLayoutTable-->
           <tr>
-            <td width="796" height="212"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="815" height="260">&nbsp;</td>
           </tr>
         </table>
       <!-- TemplateEndEditable --></td>
-      <td width="235" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <td colspan="2" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="235" height="144" valign="top" class="SanPham">Sản phẩm 1</td>
+          <td width="235" height="174" valign="top"><img src="../images/product1.jpg" width="235" height="165" /></td>
           </tr>
-        <tr>
-          <td height="162" valign="top" class="SanPham">Sản Phẩm 2</td>
-        </tr>
-        <tr>
-          <td height="138" valign="top" class="SanPham">Sản Phẩm 3</td>
-        </tr>
         
         <tr>
-          <td height="137" valign="top" class="SanPham">Sản Phẩm 4</td>
-        </tr>
+          <td height="152" valign="top"><img src="../images/product7.PNG" width="235" height="144" /></td>
+          </tr>
+        
+        <tr>
+          <td height="162" valign="top"><img src="../images/product4.PNG" width="235" height="151" /></td>
+          </tr>
+        
+        
+          <tr>
+            <td height="158" valign="top"><img src="../images/product5.PNG" width="235" height="145" /></td>
+          </tr>
+        
+        
+        
+        
+        
         
       </table></td>
     </tr>
     <tr>
-      <td height="343" valign="top"><!-- TemplateBeginEditable name="TinTuc" -->
+      <td height="386" valign="top"><!-- TemplateBeginEditable name="EditRegion4" -->
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
           <!--DWLayoutTable-->
           <tr>
-            <td width="796" height="343">&nbsp;</td>
+            <td width="815" height="386">&nbsp;</td>
           </tr>
         </table>
       <!-- TemplateEndEditable --></td>
     </tr>
     
     <tr>
-      <td height="47" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <td height="90" colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="1281" height="47" valign="top" class="Footer">Footer (Bản quyền ....)</td>
-        </tr>
-      </table>      </td>
+          <td width="1274" height="90" valign="top"><img src="../images/footer.PNG" width="1274" height="90" /></td>
+          </tr>
+      </table></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td height="1"></td>
+      <td></td>
+      <td width="229"></td>
+      <td></td>
     </tr>
   </table>
 </div>
