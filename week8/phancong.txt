@@ -1,0 +1,8 @@
+﻿bài tập tuần gồm 2 bài thẻ mobi và thẻ thành viên( đề đã up lên svn)
+thẻ mobi (thiết kế trạng thái, ko cần testcase)	- Tăng Kiên Tường
+thẻ thành viên (thiết kế trạng thái, cần test case)
+	Trần Văn Tri, Nguyễn Minh Trí	- thiết kế trạng thái.
+	Trần Trung Kiên, Nguyễn Anh Trí  - thiết kế test case ( chú ý test case phải theo template: có nêu rõ mục đích, cách thực hiển, và id test case,...)
+	Deadline: trước 12:00 PM 6/4/2011   nguyễn anh trí tổng hợp và nộp
+Người phân công
+	Tăng Kiên Tường
