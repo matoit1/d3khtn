@@ -1,5 +1,0 @@
-E:\web\D3\D3\obj\Debug\ResolveAssemblyReference.cache
-E:\web\D3\D3\bin\D3.dll
-E:\web\D3\D3\bin\D3.pdb
-E:\web\D3\D3\obj\Debug\D3.dll
-E:\web\D3\D3\obj\Debug\D3.pdb
