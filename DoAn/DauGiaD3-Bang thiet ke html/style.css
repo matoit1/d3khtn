@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* CSS Document */
+*
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+body, img, fieldset, form
+{
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+}
+body, select, textarea, input
+{
+    font-size: 12px;
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    color: #303030;
+    line-height: 16px;
+}
+body
+{
+    text-align: center;
+	background:url(images/bg_body.gif) repeat-x;
+}
+a
+{
+    color: #003399;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+p
+{
+    margin: 0 0 8px 0;
+}
+
+.header
+{
+	margin:auto;
+	width : 960px;
+	height: 240px;
+	
+}
+.toppage
+{
+	background-image:url(images/header.png);
+	background-position: center top;
+	background-repeat: no-repeat;
+	height:190px;
+	text-align: left;
+}
+.logo
+{
+	float: left;
+	width:650px;
+	height:190px;
+	margin: auto;
+	padding-left:0px;
+}
+.dang_nhap
+{
+	float:right;
+	width: auto; 
+	text-align: right;
+	margin: auto;
+	padding-top: 10px;
+}
+
+.button {
+	padding: 0px 25px 10px 20px;
+	color: #990000;
+ 	font-size:15px;
+}
+
+
+ .menu .current_item a {
+	background: url(images/img05.gif) repeat-x left top;
+	text-decoration: none;
+	color: #1437AD;
+}
+
+
+.clear
+{
+	clear:both;
+}
+.logo_Main{
+	width: 190px;
+	height: 190px;
+	float: left;
+}
+.ad_top
+{
+	float:right;
+	width: 460px;
+	height: 190px;
+	margin: auto;
+	padding: 0px;
+	position:relative;
+}
+.main
+{
+	clear:both;
+	padding:0px;
+	margin: 10px auto;
+	width: 960px;
+}
+.left_main
+{
+	float:left;
+	width: 700px;
+	text-align:left;
+	height: 800 px;
+	
+}
+.right_main
+{
+	float:right;
+	width:260px;
+	height: 800px
+}
+.right_main form
+{
+	text-align:right;
+}
+.Title {
+font-family: 'Times New Roman';
+font-size: 25pt;
+font-weight: bold;
+margin-top: 0;
+}
+.Lead {
+font-family: 'Times New Roman';
+font-size: 12pt;
+color: #5F5F5F;
+font-weight: bold;
+}
+
+.Normal {
+font-family: 'Times New Roman';
+font-size: 11.8pt;
+color: black;
+}
+.footer
+{
+	background:url(images/footer.PNG) no-repeat;
+	background-color:#CCCCCC;
+	margin: 10px auto;
+	width: 960px;
+	height: 89px;
+	text-align: left;
+	text-align:center;
+}
+.1 {
+float:left;
+width:600px;
+
+}
+
+#jsddm
+{	margin: 0 auto;
+	padding:0;
+	height: 43px;
+	width: 960px;
+	background-color:#CCCCCC;
+	border-top: 1px #FFFFFF;
+	height: 51px;}
+
+#jsddm li
+{	
+	display:block;
+	float: left;
+}
+#jsddm li a
+{	display: block;
+	height: 35px;
+	padding: 16px 40px 0px 40px;
+	margin-right: 1px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;}
+
+#jsddm li a:hover
+{	background: url(images/img05.gif) repeat-x 		left top;
+	text-decoration: none;
+	color: #FFFFFF;}
+		
+	#jsddm li ul
+	{	margin: 0;
+		padding: 0;
+		position: absolute;
+		visibility: hidden;
+		border-top: 1px solid white}
+	
+		#jsddm li ul li
+		{	float: none;
+			display: inline}
+		
+			#jsddm li ul li a
+			{	width: auto;
+				background: #A9C251;
+				color: #24313C}
+			
+			#jsddm li ul li a:hover
+			{	background: #8EA344}
+
+ #slider{
+
+}	
+#slider ul, #slider li{
+		margin: auto;
+			list-style:none;
+		}
+ #slider li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+		display: list-item;
+		margin: auto;
+		width:460px;
+		height:190px;
+
+		}	
+										
