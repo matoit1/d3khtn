@@ -1,0 +1,5 @@
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\bin\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\bin\DauGia.pdb
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\obj\Debug\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\obj\Debug\DauGia.pdb
