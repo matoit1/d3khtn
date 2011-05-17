@@ -43,7 +43,7 @@
           document.onclick = jsddm_close;
 		</script>
         
-    <script type="text/javascript" src="../../Scripts/jquery-1.4.4.js"></script>
+     <script type="text/javascript" src="../../Scripts/jquery.js"></script>
 	<script type="text/javascript" src="../../Scripts/easySlider1.5.js"></script>
 	<script type="text/javascript">
 	    $(document).ready(function () {
@@ -61,12 +61,12 @@
 <body>
 	<div class="header">
     	<div class="toppage">
-        <div class="logo"> <img src="//localhost:3333/Content/images/logo1.png" width="190" height="190"/>
+        <div class="logo"> <div class=" logo_Main"><img src="../../Content/images/logo1.png" alt="" width="190" height="190"/></div>
              <div class="ad_top">
                 <div id="slider">
                         <ul>				
-                            <li> <img src="//localhost:3333/Content/images/BANNER (4).jpg"/></li>
-                            <li><img src="//localhost:3333/Content/images/banner.png"/></li>
+                            <li> <img src="../../Content/images/BANNER (3).png"/></li>
+                            <li><img src="../../Content/images/banner.png"/></li>
                         </ul>
                  </div>
         </div></div>
