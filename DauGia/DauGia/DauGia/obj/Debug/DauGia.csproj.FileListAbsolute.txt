@@ -1,0 +1,33 @@
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\bin\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\bin\DauGia.pdb
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\obj\Debug\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DoAn\DauGia\DauGia\obj\Debug\DauGia.pdb
+C:\Documents and Settings\Tri\Desktop\TaiLieuWeb\DauGia\DauGia\bin\DauGia.dll
+C:\Documents and Settings\Tri\Desktop\TaiLieuWeb\DauGia\DauGia\bin\DauGia.pdb
+C:\Documents and Settings\Tri\Desktop\TaiLieuWeb\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Tri\Desktop\TaiLieuWeb\DauGia\DauGia\obj\Debug\DauGia.dll
+C:\Documents and Settings\Tri\Desktop\TaiLieuWeb\DauGia\DauGia\obj\Debug\DauGia.pdb
+D:\DauGia\DauGia\bin\DauGia.dll
+D:\DauGia\DauGia\bin\DauGia.pdb
+D:\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
+D:\DauGia\DauGia\obj\Debug\DauGia.dll
+D:\DauGia\DauGia\obj\Debug\DauGia.pdb
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\bin\Models\DauGia.cs
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\bin\Models\DauGia.designer.cs
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\bin\Models\DauGia.dbml
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\bin\Models\DauGia.dbml.layout
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\bin\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\bin\DauGia.pdb
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\obj\Debug\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\DauGia\DauGia\obj\Debug\DauGia.pdb
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\bin\Models\DauGia.cs
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\bin\Models\DauGia.designer.cs
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\bin\Models\DauGia.dbml
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\bin\Models\DauGia.dbml.layout
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\bin\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\bin\DauGia.pdb
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\obj\Debug\DauGia.dll
+C:\Users\VIET\KHTN\III_HK2\Web\BaiTap\Phan cong\d3khtn\DauGia\DauGia\DauGia\obj\Debug\DauGia.pdb
