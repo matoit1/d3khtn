@@ -1,9 +1,0 @@
-﻿          
-           @if(Request.IsAuthenticated) {
-    <text>Chào <b>@Context.User.Identity.Name</b>!
-    @Html.ActionLink("Log out  ", "LogOff", "TaiKhoan") </text>
-}
-else {
-    @:@Html.ActionLink("Đăng nhập", "LogOn", "TaiKhoan")
-    @:@Html.ActionLink("Đăng ký", "DangNhap", "TaiKhoan")
-}

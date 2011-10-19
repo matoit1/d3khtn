@@ -1,5 +1,0 @@
-C:\Users\Tri\Desktop\DoAnWeb\DauGia\DauGia\bin\DauGia.dll
-C:\Users\Tri\Desktop\DoAnWeb\DauGia\DauGia\bin\DauGia.pdb
-C:\Users\Tri\Desktop\DoAnWeb\DauGia\DauGia\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Tri\Desktop\DoAnWeb\DauGia\DauGia\obj\Debug\DauGia.dll
-C:\Users\Tri\Desktop\DoAnWeb\DauGia\DauGia\obj\Debug\DauGia.pdb
