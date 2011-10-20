@@ -38,13 +38,12 @@
         <div style="width: 60%; float: right; height: 24px;">
             <p style="color: White; height: 35px;">
                 <%
-                    GoogleAPI.GoogleModelDataContext goo = new GoogleAPI.GoogleModelDataContext();
-                    
+                    GoogleAPI.User user = null;
                     if (ViewState["user"] != null)
                     {
-                        goo.Users = ViewState["user"].GetType(goo.Users);
+                        user = (GoogleAPI.User)ViewState["user"];
                     }
-                    if (goo.Users == null)
+                    if (user == null)
                     {
                 %>
                 Email<asp:TextBox ID="txb_Email" runat="server" Style="margin-left: 9px" />
@@ -63,7 +62,7 @@
     </div>
     <div id="TimKiem">
         <div style="width: 27%; float: left; margin-top: 0px; height: 75px;">
-            <img src="images/google.png" style="height: 78px; width: 267px" />
+            <img src="images/google.png" style="height: 78px; width: 267px" alt=""/>
         </div>
         <div style="float: left; margin-top: 20px; width: 730px;">
             <input id="txb_TenDiaDiem" type="text" />

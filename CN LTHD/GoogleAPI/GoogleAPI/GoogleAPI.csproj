@@ -55,6 +55,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\googleapp.mdf" />
+    <Content Include="App_Data\googleapp_log.ldf">
+      <DependentUpon>googleapp.mdf</DependentUpon>
+    </Content>
     <Content Include="images\google.png" />
     <Content Include="location.xml" />
     <Content Include="Scripts\gears_init.js" />
