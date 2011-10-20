@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Future Shop</title>
@@ -53,7 +52,7 @@
     <div id="search">
           <form action="#" name="search">
         <input type="text" name="txtsearch" />
-        <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:5px;"/>
+        <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
         <div id="account"> Welcome! <a  href="#"> Create an Account </a>|<a  href="#">Sign In</a> </div>
       </form>
         </div>
@@ -73,7 +72,48 @@
         </div>
     <!-- end #left -->
   </div>
-      <div id="mainContent"> <!-- InstanceBeginEditable name="NoiDungThayDoi" -->NoiDungThayDoi<!-- InstanceEndEditable -->
+      <div id="mainContent"> <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
+    <h1 align="center" style="color: #FFB400; background-color:#A67500">Add New Product</h1>
+    <form action="#" name="AddNewProduct" method="post" >
+      <table width="100%" border="0">
+        <tr>
+          <td width="32%"><div align="right">Name Product:</div></td>
+          <td width="68%"><input type="text" name="txtName" value="" /></td>
+        </tr>
+        <tr>
+          <td><div align="right">Image:</div></td>
+          <td><input type="file" name="fileImage" value=""/>  <a href="#" > Click here to add many images </a></td>
+        </tr>
+        <tr>
+          <td><div align="right">Categories</div></td>
+          <td><select name="cbbCate" >
+              <option value="1">name cate1</option>
+              <option value="2">name cate2</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td><div align="right">Product Price:</div></td>
+          <td><input type="text" name="txtPrice" value="" /></td>
+        </tr>
+        <tr>
+          <td><div align="right">VAT:</div></td>
+          <td><input type="text" name="txtVAT" value="" /></td>
+        </tr>
+        <tr>
+          <td valign="top"><div align="right">Short Description:</div></td>
+          <td><textarea name="txtShortDes" cols="60" rows="5" >  write here </textarea></td>
+        </tr>
+        <tr>
+          <td valign="top"><div align="right">Product Description: </div></td>
+          <td><textarea name="txtLongDes" cols="60" rows="10" >  write here </textarea></td>
+        </tr>
+        <tr>
+          <td><div align="right"></div></td>
+          <td><input type="submit" name="btSubmit" value="Add New Product"></td>
+        </tr>
+      </table>
+    </form>
+    <!-- InstanceEndEditable -->
     <!-- end #mainContent -->
   </div>
       <br class="clearfloat" />
