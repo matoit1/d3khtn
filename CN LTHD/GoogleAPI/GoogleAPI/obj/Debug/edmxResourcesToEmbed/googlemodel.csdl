@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="googleappModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="googleappEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Locations" EntityType="googleappModel.Location" />
+    <EntitySet Name="LocationTypes" EntityType="googleappModel.LocationType" />
+    <EntitySet Name="Stores" EntityType="googleappModel.Store" />
+    <EntitySet Name="sysdiagrams" EntityType="googleappModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="googleappModel.User" />
+    <AssociationSet Name="FK_Location_LocationType" Association="googleappModel.FK_Location_LocationType">
+      <End Role="LocationType" EntitySet="LocationTypes" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Location" Association="googleappModel.FK_Store_Location">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_User" Association="googleappModel.FK_Store_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LocationType" Type="Int32" />
+    <Property Name="Latitude" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Longitude" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LocationType1" Relationship="googleappModel.FK_Location_LocationType" FromRole="Location" ToRole="LocationType" />
+    <NavigationProperty Name="Stores" Relationship="googleappModel.FK_Store_Location" FromRole="Location" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="LocationType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationTypeName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Locations" Relationship="googleappModel.FK_Location_LocationType" FromRole="LocationType" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="LocaionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="googleappModel.FK_Store_Location" FromRole="Store" ToRole="Location" />
+    <NavigationProperty Name="User" Relationship="googleappModel.FK_Store_User" FromRole="Store" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Stores" Relationship="googleappModel.FK_Store_User" FromRole="User" ToRole="Store" />
+  </EntityType>
+  <Association Name="FK_Location_LocationType">
+    <End Role="LocationType" Type="googleappModel.LocationType" Multiplicity="0..1" />
+    <End Role="Location" Type="googleappModel.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="LocationType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Location">
+    <End Role="Location" Type="googleappModel.Location" Multiplicity="1" />
+    <End Role="Store" Type="googleappModel.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="LocaionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_User">
+    <End Role="User" Type="googleappModel.User" Multiplicity="1" />
+    <End Role="Store" Type="googleappModel.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
