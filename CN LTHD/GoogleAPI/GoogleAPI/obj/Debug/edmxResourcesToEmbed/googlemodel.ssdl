@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="googleappModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="googleappModelStoreContainer">
+    <EntitySet Name="Location" EntityType="googleappModel.Store.Location" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationType" EntityType="googleappModel.Store.LocationType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Store" EntityType="googleappModel.Store.Store" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="googleappModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="googleappModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Location_LocationType" Association="googleappModel.Store.FK_Location_LocationType">
+      <End Role="LocationType" EntitySet="LocationType" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Location" Association="googleappModel.Store.FK_Store_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_User" Association="googleappModel.Store.FK_Store_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocationType" Type="int" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LocationType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationTypeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="LocaionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Location_LocationType">
+    <End Role="LocationType" Type="googleappModel.Store.LocationType" Multiplicity="0..1" />
+    <End Role="Location" Type="googleappModel.Store.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="LocationType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Location">
+    <End Role="Location" Type="googleappModel.Store.Location" Multiplicity="1" />
+    <End Role="Store" Type="googleappModel.Store.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="LocaionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_User">
+    <End Role="User" Type="googleappModel.Store.User" Multiplicity="1" />
+    <End Role="Store" Type="googleappModel.Store.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
