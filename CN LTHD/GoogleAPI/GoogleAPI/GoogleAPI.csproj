@@ -99,6 +99,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="GoogleModel.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GoogleModel.designer.cs</LastGenOutput>
@@ -107,9 +110,6 @@
     <None Include="GoogleModel.dbml.layout">
       <DependentUpon>GoogleModel.dbml</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
