@@ -1,5 +1,0 @@
-C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleAPI\bin\GoogleAPI.dll
-C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleAPI\bin\GoogleAPI.pdb
-C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleAPI\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleAPI\obj\Debug\GoogleAPI.dll
-C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleAPI\obj\Debug\GoogleAPI.pdb
