@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GoogleModel">
+  <DataContextMoniker Name="/GoogleModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="42027505-6ed0-4a88-9f12-83b0c89340d1" absoluteBounds="3.5, 0.875, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/GoogleModelDataContext/Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a548b39b-47b9-4134-a53d-8b999feea141" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b802608c-c42c-4e1f-ac6b-d98c482e39ec" absoluteBounds="3.5, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GoogleModelDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00e7fe35-1acd-4f19-9250-cf1f3fea48d5" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9454855e-8d07-429d-b618-eb83297db7f8" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/GoogleModelDataContext/LocationType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34db21e9-adc6-4e29-b5fd-dcfadfc885c3" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e18a9445-7ab0-43df-9114-2b52575ed6ff" absoluteBounds="6.25, 1.125, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/GoogleModelDataContext/Store" />
+      <nestedChildShapes>
+        <elementListCompartment Id="206f0bc0-c5a2-4ae0-bed9-9604bc5b2a7a" absoluteBounds="6.265, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GoogleModelDataContext/LocationType/LocationType_Location" />
+      <nodes>
+        <classShapeMoniker Id="9454855e-8d07-429d-b618-eb83297db7f8" />
+        <classShapeMoniker Id="42027505-6ed0-4a88-9f12-83b0c89340d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.81814697265625); (6.25 : 1.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GoogleModelDataContext/Location/Location_Store" />
+      <nodes>
+        <classShapeMoniker Id="42027505-6ed0-4a88-9f12-83b0c89340d1" />
+        <classShapeMoniker Id="e18a9445-7ab0-43df-9114-2b52575ed6ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.78929768880208); (7.25 : 4.78929768880208); (7.25 : 2.5112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GoogleModelDataContext/User/User_Store" />
+      <nodes>
+        <classShapeMoniker Id="b802608c-c42c-4e1f-ac6b-d98c482e39ec" />
+        <classShapeMoniker Id="e18a9445-7ab0-43df-9114-2b52575ed6ff" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
