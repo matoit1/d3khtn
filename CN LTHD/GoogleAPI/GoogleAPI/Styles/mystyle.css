@@ -1,0 +1,53 @@
+﻿body {
+}
+h2
+{
+    font-weight:bold;
+    font-size:18pt;
+    color:#ADD8E6;
+    font-style:italic;
+    font-family:Arial; 
+}
+#TimKiem
+{
+    background-color:inherit;
+    width:100%;
+    height:77px;
+    background-color:#D3D3D3;
+    
+}
+#signin
+{
+    width:100%;
+    background-color:#2F4F4F;
+    height: 41px;
+}
+
+#map
+{
+    width: 80%;
+	height: 500px;
+	float: right;
+	border: 1px solid #000;
+}
+
+#diadiembox
+{
+    width:100%;
+	height: 500px;
+	overflow:auto;
+	float: left;
+	border: 0px;
+}
+#diadiemcuatoi
+{
+    width: 19%;
+	height: 500px;
+	overflow:auto;
+	float: left;
+	border: 1px solid #000;
+}
+#TenDiaDiem
+{
+    width: 200px;
+}

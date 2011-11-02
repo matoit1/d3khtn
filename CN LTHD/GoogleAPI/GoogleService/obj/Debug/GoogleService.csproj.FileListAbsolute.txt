@@ -1,0 +1,5 @@
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleService\bin\GoogleService.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleService\bin\GoogleService.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleService\obj\Debug\GoogleService.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\GoogleAPI\GoogleService\obj\Debug\GoogleService.pdb
