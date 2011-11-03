@@ -61,6 +61,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\myscript.js" />
     <Content Include="signup.aspx" />
     <Content Include="Styles\mystyle.css" />
     <Content Include="Web.config" />

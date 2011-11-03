@@ -19,6 +19,21 @@ namespace GoogleService
             catch (Exception e) { }
             return user;
         }
+
+        public static bool DangKy(User us)
+        {
+            try
+            {
+                googleentiy.Users.InsertOnSubmit(us);
+                googleentiy.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         //public static bool LuuDiaDiem(Store store)
         //{
 
