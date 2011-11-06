@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\google.png" />
-    <Content Include="location.xml" />
     <Content Include="Scripts\gears_init.js" />
     <Content Include="Scripts\GoogleMap.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />

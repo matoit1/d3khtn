@@ -9,6 +9,7 @@ namespace GoogleService
     {
         
         public int ID { get; set; }
+        public string name { get; set; }
         public string Lat { get; set; }
         public string Lng { get; set; }
        

@@ -1,34 +1,39 @@
 ﻿var map;
-var vietnam = new google.maps.LatLng(14.058324, 108.277199);
 var initLocation;
-var browserSupportFlag;
 var geocoder;
 var marker;
 var infowindow;
 var latitude;
 var longitude;
 var myOptions;
+// chua danh sach marker cua cac dia diem da luu
+var dsMarker = new Array();
+// xac dinh cac tuoc tinh cua dia diem can luu
+var tenDiaDiem;
+var type;
+var lat;
+var lng;
 
 //ham xu ly khong dinh vi duoc
 function handleNoGeolocation(errorFlag) {
     if (errorFlag == true) {
         alert("Dịch vụ định vị địa lý có lỗi!");
-        initLocation = vietnam;
+        initLocation = new google.maps.LatLng(14.058324, 108.277199);
     }
     else {
         alert("Trình duyệt không hỗ trợ định vị địa lý!");
-        initLocation = vietnam;
+        initLocation = new google.maps.LatLng(14.058324, 108.277199); ;
     }
     map.setCenter(initLocation);
 }
 
 function initialize() {
+    var browserSupportFlag;
     myOptions = {
         zoom: 8,
         center: new google.maps.LatLng(14.058324, 108.277199),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-
     map = new google.maps.Map(document.getElementById("map"), myOptions);
     //map.setCenter(new google.maps.LatLng(0, 0));
     //map.setZoom(13);
@@ -40,22 +45,23 @@ function initialize() {
             initLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             map.setCenter(initLocation);
             // adding a marker
-            var here = new google.maps.Latlng(position.coords.latitude, position.coords.longitude);
+            var here = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var marker = new google.maps.Marker({ position: here, map: map });
             //create info window
-            if (infowindow) {
-                infowindow.close();
-            }
-            infowindow = new google.maps.InfoWindow({ content: 'My Location' });
+            var infowindow = new google.maps.InfoWindow({ content: 'My Location' });
             infowindow.open(map, marker);
             map.setZoom(20);
             latitude = position.coords.latitude;
             longitude = position.coords.longitude;
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow = new google.maps.InfoWindow({ content: 'My Location' });
+                infowindow.open(map, marker);
+            });
+            dsMarker.push(marker);
         }, function () {
             handleNoGeolocation(browserSupportFlag);
         });
     }
-
     // Try Google Gears Geolocation
     else if (google.gears) {
         browserSupportFlag = true;
@@ -64,7 +70,7 @@ function initialize() {
             initLocation = new google.maps.LatLng(position.latitude, position.longitude);
             map.setCenter(initLocation);
             // adding a marker
-            var here = new google.maps.Latlng(position.coords.latitude, position.coords.longitude);
+            var here = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var marker = new google.maps.Marker({ position: here, map: map });
             //create info window
             if (infowindow) {
@@ -75,6 +81,7 @@ function initialize() {
             map.setZoom(20);
             latitude = position.coords.latitude;
             longitude = position.coords.longitude;
+            dsMarker.push(marker);
         }, function () {
             handleNoGeolocation(browserSupportFlag);
         });
@@ -100,23 +107,19 @@ function findLocation(address, flag) {
     var geocoderRequest = { address: address };
     geocoder.geocode(geocoderRequest, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            if (!marker) {
-                marker = new google.maps.Marker({ map: map });
-            }
+            var marker = new google.maps.Marker({ map: map });
             marker.setPosition(results[0].geometry.location);
-            //            if (!infowindow) {
-            //                infowindow = new google.maps.InfoWindow();
-            //            }
-            var  infowindow = new google.maps.InfoWindow();
             var content = '<p style="color:Blue">' + results[0].formatted_address + '</p>';
             content += 'Vĩ độ:' + results[0].geometry.location.lat() + '</br>';
             content += 'Kinh độ:' + results[0].geometry.location.lng() + '</br>';
-//            content += '<a href="google.aspx?Them=Them&name=' + results[0].formatted_address + '&type=' + results[0].types + '&lat=' + results[0].geometry.location.lat() + '&long=' + results[0].geometry.location.lng() + '">Thêm</a>';
-//            content += "     ";
-//            content += '<a href="google.aspx?Xoa=Xoa&name=' + results[0].formatted_address + '&type=' + results[0].types + '">Xóa</a>';
-//            content += "     ";
-//            content += '<a href="google.aspx?Xoa=Sua&name=' + results[0].formatted_address + '&type=' + results[0].types + '">Sửa</a>';
+            tenDiaDiem = results[0].formatted_address;
+            type = results[0].types;
+            //alert(type);
+            lat = results[0].geometry.location.lat();
+            lng = results[0].geometry.location.lng();
+            content += "<a href='javascript:void(0);' onclick=LuuDiaDiem()>Thêm</a>";
             map.setZoom(12);
+            var infowindow = new google.maps.InfoWindow();
             infowindow.setContent(content);
             infowindow.open(map, marker);
             if (flag == true) {
@@ -124,13 +127,14 @@ function findLocation(address, flag) {
                 var panelContent = "<strong>Các kết quả tìm được:</strong></br>";
                 for (var i in results) {
                     panelContent += "<a href='javascript:void(0);' name='" + results[i].formatted_address + "' onclick=linkDiaDiem_Click(this)>" + results[i].formatted_address + "</a>" + "</br></br>";
-                    panelContent += "<a href='google.aspx?save=save&name=" + results[i].formatted_address + "&type=" + results[i].types + "&lat=" + results[0].geometry.location.lat() + "&long=" + results[0].geometry.location.lng() + "'>Lưu lại</a></br></br>";
+
                 }
                 panel.innerHTML = panelContent;
             }
             google.maps.event.addListener(marker, 'click', function () {
                 infowindow.open(map, marker);
             });
+            dsMarker.push(marker);
         }
         else {
             map = new google.maps.Map(document.getElementById("map"), {
@@ -138,19 +142,8 @@ function findLocation(address, flag) {
                 center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-            //alert('Không tìm thấy địa chỉ cần tìm');
         }
     });
-}
-
-
-function searchKeyPress(e) {
-    // look for window.event in case event isn't passed in
-    if (window.event) { e = window.event; }
-    if (e.keyCode == 13) {
-        //document.getElementById('btn_TimDiaDiem').click();
-        btn_TimDiaDiem_Click();
-    }
 }
 
 //ham xu ly su kien button click
@@ -162,6 +155,7 @@ function btn_TimDiaDiem_Click() {
 //ham xu ly su kien link click
 function linkDiaDiem_Click(link) {
     var DiaDiem = link.name;
+
     findLocation(DiaDiem, false);
 }
 
@@ -175,13 +169,12 @@ function btn_MyLocation_Click() {
         map: map
     });
     // Creating a InfoWindow
-    if (infowindow)
-        infowindow.close();
-    infowindow = new google.maps.InfoWindow({
+    var infowindow = new google.maps.InfoWindow({
         content: content
     });
     // Adding the InfoWindow to the map
     infowindow.open(map, marker);
+    dsMarker.push(marker);
 }
 
 /**
@@ -191,7 +184,6 @@ function btn_MyLocation_Click() {
 */
 
 function HomeControl(controlDiv, map) {
-
     // Set CSS styles for the DIV containing the control
     // Setting padding to 5 px will offset the control
     // from the edge of the map
@@ -230,35 +222,48 @@ function btn_ChonDiaDiem_Click() {
     });
 }
 
-var saveMarker;
 function placeMarker(location) {
-    saveMarker = new google.maps.Marker({
+    var saveMarker = new google.maps.Marker({
         position: location,
         draggable: true,
         animation: google.maps.Animation.DROP,
         map: map
     });
-    //google.maps.event.addListener(marker, 'click', toggleBounce);
+    //alert(location.lat() +"\r\n"+ location.lng());
+
     google.maps.event.addListener(saveMarker, 'click', function () {
+        lat = saveMarker.getPosition().lat();
+        lng = saveMarker.getPosition().lng();
         if (infowindow)
             infowindow.close();
         var content = "</br>Tên địa điểm : " + "<input type='text' id='txb_LuuTenDiaDiem'/></br>"
+        content += "</br>Loại địa điểm : " + "<input type='text' id='txb_LuuLoaiDiaDiem'/></br>"
         content += "Kinh độ : " + saveMarker.getPosition().lat() + '</br>' + "Vĩ độ : " + saveMarker.getPosition().lng()
-        content += "</br><a href='javascript:void(0);' onclick=LuuDiaDiem()>Thêm</a>" + "</br></br>"
-         infowindow = new google.maps.InfoWindow({
+        content += "</br><a href='javascript:void(0);' onclick=LuuDiaDiemMoi()>Thêm</a>" + "</br></br>"
+        infowindow = new google.maps.InfoWindow({
             content : content
         });
         infowindow.open(map, saveMarker);
     });
+    dsMarker.push(saveMarker);
 }
 
-function LuuDiaDiem() {
+function LuuDiaDiemMoi() {
     var nameLocation = document.getElementById("txb_LuuTenDiaDiem").value;
-    var lat = saveMarker.getPosition().lat();
-    var lng = saveMarker.getPosition().lng();
-    var idUser = document.getElementById("user");
+    var typeofLocation = document.getElementById("txb_LuuLoaiDiaDiem").value;
+    var latitude = lat;
+    var longitude = lng;
+    var idUser;
+    try {
+        idUser = document.getElementById("idUser").value;
+    } catch (r) {
+        alert("Chưa đăng nhập");
+        return;
+    }
+    //alert(idUser + "\r\n " + nameLocation + "\r\n " + typeofLocation + "\r\n " + latitude + "\r\n " + longitude);
+    //them dia diem moi
     if (idUser != null) {
-        $.ajax({ url: "http://localhost:2817/Service1.svc/ThemDiaDiem/DiaDiem?idUser=" + idUser + "&nameLoc=" + nameLocation + "&lat=" + lat + "&lng=" + lng,
+        $.ajax({ url: "http://localhost:2817/Service1.svc/ThemDiaDiemMoi/DiaDiem?idUser=" + idUser + "&nameloc=" + nameLocation + "&type=" + typeofLocation + "&lat=" + latitude + "&lng=" + longitude,
             success: function (data) {
                 if (data) {
                     alert("Đã thêm địa điểm");
@@ -267,7 +272,118 @@ function LuuDiaDiem() {
                     alert("Thêm địa điểm không thành công");
             }
         });
-    }else
-        alert("Chưa đăng nhập");
+    }
 }
 
+function LuuDiaDiem() {
+    var idUser;
+    try {
+        idUser = document.getElementById("idUser").value;
+    } catch (r) {
+        alert("Chưa đăng nhập");
+        return;
+    }
+   
+    //them dia diem moi
+    if (idUser != null) {
+        //alert(idUser + "\r\n " + tenDiaDiem + "\r\n " + type + "\r\n " + lat + "\r\n " + lng);
+        $.ajax({ url: "http://localhost:2817/Service1.svc/ThemDiaDiemMoi/DiaDiem?idUser=" + idUser + "&nameloc=" + tenDiaDiem + "&type=" + type + "&lat=" + lat + "&lng=" + lng,
+            success: function (data) {
+                if (data) {
+                    alert("Đã thêm địa điểm");
+                }
+                else
+                    alert("Thêm địa điểm không thành công");
+            }
+        });
+    }
+}
+
+
+
+function btn_DiaDiemCuaToi_Click() {
+    var idUser;
+    try {
+        idUser = document.getElementById("idUser").value;
+    } catch (r) {
+        alert("Chưa đăng nhập");
+        return;
+    }
+    if (idUser != null) {
+        $.ajax({ url: "http://localhost:2817/Service1.svc/LayDanhSachDiaDiemTheoNguoiDung?idUser=" + idUser,
+            success: function (data) {
+                if (data) {
+                    //hien thi danh sach marker len ban do\
+                    //alert(data[0].name);
+                    HienThiDanhSachMarkerLenBanDo(data);
+                }
+                else
+                    alert("Chưa lưu địa điểm nào");
+            }
+        });
+    }
+}
+var dsDiaDiem = new Array();
+function HienThiDanhSachMarkerLenBanDo(ds) {
+    dsDiaDiem = new Array();
+    dsDiaDiem = ds;
+    if(dsMarker){
+        for(j in dsMarker)
+        {
+            dsMarker[j].setMap(null);
+            
+        }
+        dsMarker.splice(0, dsMarker.length);
+    }
+    for (i in ds) {
+        //alert(ds[i].name);
+        var myLatlng = new google.maps.LatLng(ds[i].Lat, ds[i].Lng);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map : map
+        });
+//        var content = '<p style="color:Blue">' + ds[i].name + '</p>';
+//            content += 'Vĩ độ: ' + ds[i].Lat + '</br>';
+//            content += 'Kinh độ: ' + ds[i].Lng + '</br>';
+//            content += "</br><a href='javascript:void(0);' onclick=XoaDiaDiem("+ds[i].ID+")>Xóa</a>" + "</br></br>"
+//        var infowindow = new google.maps.InfoWindow({
+//            content: content
+//        });
+        //infowindow.open(map, marker);
+        google.maps.event.addListener(marker, 'click', function () {   
+            if (infowindow)
+                infowindow.close();
+            var content = '<p style="color:Blue">' + ds[i].name + '</p>';
+            content += 'Vĩ độ: ' + ds[i].Lat + '</br>';
+            content += 'Kinh độ: ' + ds[i].Lng + '</br>';
+            content += "</br><a href='javascript:void(0);' onclick=XoaDiaDiem(" + ds[i].ID + ")>Xóa</a>" + "</br></br>"
+            infowindow = new google.maps.InfoWindow({
+                content: content
+            });
+            infowindow.open(map, marker);
+        });
+        dsMarker.push(marker);  
+    }
+    //alert(dsMarker.length);
+    map.setCenter(new google.maps.LatLng(ds[0].Lat, ds[0].Lng));
+    map.setZoom(10);
+}
+
+function XoaDiaDiem(id) {
+    for (i in dsDiaDiem) {
+        if (dsDiaDiem[i].ID == id) {
+            dsMarker[i].setMap(null);
+            dsMarker.splice(i, 1);
+            dsDiaDiem.splice(i, 1);
+        }
+    }
+    $.ajax({ url: "http://localhost:2817/Service1.svc/XoaDiaDiem?id=" + id,
+        success: function (data) {
+            if (data) {
+                alert("Đã xóa");
+            }
+            else
+                alert("Không thể xóa");
+        }
+    });
+}
