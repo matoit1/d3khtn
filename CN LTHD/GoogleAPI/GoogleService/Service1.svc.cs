@@ -5,6 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Net;
+using System.IO;
+using System.Xml;
 
 namespace GoogleService
 {
@@ -14,18 +17,19 @@ namespace GoogleService
 
         #region IService1 Members
 
-        public bool ThemDiaDiem(int idUser, string nameLoc, string lat, string lng)
+        public bool ThemDiaDiemMoi(string idUser, string nameloc, string type, string lat, string lng)
         {
             BypassCrossDomain();
-            if (GoogleDAO.LuuDiaDiemVaNguoiDung(idUser, nameLoc, lat, lng))
+            int id = int.Parse(idUser);
+            if (GoogleDAO.LuuDiaDiemVaNguoiDung(id, nameloc, type, lat, lng))
                 return true;
             return false;
         }
 
         public List<DiaDiem> LayDanhSachDiaDiem()
         {
-          //  BypassCrossDomain();
-            List<Location> ds= GoogleDAO.LayDanhSachDiaDiem();
+            BypassCrossDomain();
+            List<Location> ds = GoogleDAO.LayDanhSachDiaDiem();
             List<DiaDiem> kq = new List<DiaDiem>();
             for (int i = 0; i < ds.Count; i++)
             {
@@ -37,27 +41,97 @@ namespace GoogleService
 
             }
             return kq;
-            
+
         }
 
+        public List<DiaDiem> LayDanhSachDiaDiemTheoNguoiDung(string idUser)
+        {
+            BypassCrossDomain();
+            int id = int.Parse(idUser);
+            List<DiaDiem> listDiaDiem = new List<DiaDiem>();
+            List<Location> listLocation = GoogleDAO.LayDanhSachDiaDiemTheoNguoiDung(id);
+            foreach (Location lc in listLocation)
+            {
+                DiaDiem dd = new DiaDiem();
+                dd.ID = lc.ID;
+                dd.name = lc.LocationName;
+                dd.Lat = lc.Latitude;
+                dd.Lng = lc.Longitude;
+
+                listDiaDiem.Add(dd);
+            }
+            return listDiaDiem;
+        }
 
         private void BypassCrossDomain()
         {
-
             WebOperationContext.Current.OutgoingResponse.Headers.Add("Access-Control-Allow-Origin", "*");
-
         }
 
-        #endregion
+        //public bool ThemDiaDiem(string idUser, string nameloc)
+        //{
+        //    string type = "", lat = "", lng = "";
+        //    bool result = false;
+        //    try
+        //    {
+        //        HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://maps.googleapis.com/maps/api/geocode/xml?sensor=false&address=" + nameloc);
+        //        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        //        StreamReader reader = new StreamReader(response.GetResponseStream());
+        //        XmlDocument xml = new XmlDocument();
+        //        xml.LoadXml(reader.ReadToEnd());
+        //        XmlElement root = xml.DocumentElement;
+        //        XmlElement status = (XmlElement)root.SelectSingleNode("/GeocodeResponse/status");
+        //        if (status.Name == "OK")
+        //        {
+        //            foreach (XmlElement e in root.ChildNodes)
+        //            {
+        //                if(e.Name.Equals("result"))
+        //                {
+        //                    foreach (XmlElement ex in e)
+        //                    {
+        //                        if (ex.Name.Equals("type"))
+        //                        {
+        //                            type = ex.InnerText;
+        //                        }
+        //                        if (ex.Name.Equals("geometry"))
+        //                        {
+        //                            foreach (XmlElement exx in ex)
+        //                            {
+        //                                if (exx.Name.Equals("geometry"))
+        //                                {
 
-        #region IService1 Members
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
 
+        //    }
+        //    catch
+        //    {
+        //        result = false;
+        //    }
+        //    return result;
+        //}
 
-        public string Hello()
+        public bool XoaDiaDiem(string id)
         {
-            //throw new NotImplementedException();
-            return "Hello";
+            BypassCrossDomain();
+            bool result = false;
+            try
+            {
+                result = GoogleDAO.XoaDiaDiem(id);  
+            }
+            catch (Exception e)
+            {
+                result = false;
+            }
+            return result;
         }
+
+
 
         #endregion
     }

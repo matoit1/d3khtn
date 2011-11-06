@@ -49,7 +49,7 @@
                     <asp:TextBox ID="tb_Email2" runat="server" CssClass="textEntry"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Email2" runat="server" ControlToValidate="tb_Email2"
                         ErrorMessage="Lặp lại email không được để trống" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="cv_Email2" runat="server" ControlToCompare="tb_Email2"
+                    <asp:CompareValidator ID="cv_Email2" runat="server" ControlToCompare="tb_Email"
                         ControlToValidate="tb_Email2" ErrorMessage="Lặp lại email không đúng"
                         SetFocusOnError="True">*</asp:CompareValidator>
                 </p>
@@ -67,7 +67,7 @@
                     <asp:TextBox ID="tb_MatKhau2" TextMode="Password" runat="server" CssClass="textEntry"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_MatKhau2" runat="server" ControlToValidate="tb_MatKhau2"
                         ErrorMessage="Lặp lại mật khẩu không được để trống" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="cv_MatKhau2" runat="server" ControlToCompare="tb_MatKhau2"
+                    <asp:CompareValidator ID="cv_MatKhau2" runat="server" ControlToCompare="tb_MatKhau"
                         ControlToValidate="tb_MatKhau2" ErrorMessage="Lặp lại mật khẩu không đúng"
                         SetFocusOnError="True">*</asp:CompareValidator>
                 </p>

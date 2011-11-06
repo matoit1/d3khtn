@@ -35,7 +35,12 @@
 <%
     if (Request.QueryString["thoat"] != null)
     {
-        Session.Remove("user");
+        string thoat = Request.QueryString["thoat"].ToString();
+        if (thoat.Equals("thoat"))
+        {
+            Session.Remove("user");
+            Response.Redirect("google.aspx");
+        }
     }
 %>
 <body onload="initialize()">
@@ -55,11 +60,12 @@
                     OnClick="Unnamed1_Click" />
                 <% }
                     else if (user != null)
-                    {%>
+                    {
+                %>
                 <a href="google.aspx?thoat=thoat">
                     <%=user.Email%></a>
-                    <input type="hidden" id="user" name="user" value="<%=user.ID %>" />    
-                <%} %>                     
+                    <input type="hidden" id="idUser" value="<%=user.ID %>"/>
+                <%} %>
                 <a href="signup.aspx">Đăng kí tài khoản</a>
                 
             </p>
@@ -71,7 +77,7 @@
         </div>
         <div style="float: left; margin-top: 20px; width: 730px;">
             <input type="text" id="txb_TenDiaDiem" />
-            <input type="button" id="btn_TimDiaDiem" value="Tìm Địa Điểm" onclick="btn_TimDiaDiem_Click()" />
+            <input type="button" id="btn_TimDiaDiem" value="Tìm Địa Điểm" onclick="btn_TimDiaDiem_Click()" accesskey="enter" />
             <input type="button" id="btn_MyLocation" value="Vị trí của bạn" onclick="btn_MyLocation_Click()" />
             <input type="button" id="btn_ChonDiaDiem" value="Chọn địa điểm" onclick="btn_ChonDiaDiem_Click()" />
         </div>
@@ -83,13 +89,12 @@
         <div style="width: 192px">
             <%if (user != null)
               { %>
-            <asp:Button ID="btn_DiaDiemCuaToi" Text="Địa Điểm Của Tôi" runat="server" OnClick="btn_DiaDiemCuaToi_Click" />
+            <input type="button" id="btn_DiaDiemCuaToi" value="Địa Điểm Của Tôi" onclick="btn_DiaDiemCuaToi_Click()" />
             <%} %>
         </div>
         <!--ShowCheckBoxes="Leaf"-->
         <div id="diadiembox">
-            <asp:TreeView ID="treeView" runat="server" PathSeparator=":" ShowExpandCollapse="true"
-                OnSelectedNodeChanged="treeView_SelectedNodeChanged">
+            <asp:TreeView ID="treeView" runat="server" PathSeparator=":" ShowExpandCollapse="true">
                 <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                 <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
                     VerticalPadding="0px" />

@@ -13,17 +13,30 @@ namespace GoogleService
     public interface IService1
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "ThemDiaDiem/DiaDiem?idUser={idUser}&nameLoc={nameLoc}&lat={lat}&lng={lng}",ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool ThemDiaDiem(int idUser, string nameLoc, string lat, string lng);
+        [WebGet(UriTemplate = "ThemDiaDiemMoi/DiaDiem?idUser={idUser}&nameloc={nameLoc}&type={type}&lat={lat}&lng={lng}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //http://localhost:2817/Service1.svc/ThemDiaDiem/DiaDiem?idUser=1&nameLoc=123&type=123&lat=543535&lng=432423
+        bool ThemDiaDiemMoi(string idUser,string nameloc, string type,string lat, string lng);
+
+
+        //[OperationContract]
+        //[WebGet(UriTemplate = "ThemDiaDiem/DiaDiem?idUser={idUser}&nameloc={nameLoc}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        ////http://localhost:2817/Service1.svc/ThemDiaDiem/DiaDiem?idUser=1&nameLoc=123
+        //bool ThemDiaDiem(string idUser, string nameloc);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "LayDanhSachDiaDiemTheoNguoiDung?idUser={idUser}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //http://localhost:2817/Service1.svc/LayDanhSachDiaDiemTheoNguoiDung?idUser=1
+        List<DiaDiem> LayDanhSachDiaDiemTheoNguoiDung(string idUser);
 
         [OperationContract]
         [WebGet(UriTemplate = "DanhSachDiaDiem", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         //http://localhost:2817/Service1.svc/DanhSachDiaDiem
         List<DiaDiem> LayDanhSachDiaDiem();
-        // TODO: Add your service operations here
 
         [OperationContract]
-        [WebGet(UriTemplate = "Hello")]
-        string Hello();
+        [WebGet(UriTemplate = "XoaDiaDiem?id={id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //http://localhost:2817/Service1.svc/DanhSachDiaDiem
+        bool XoaDiaDiem(string id);
+
     }
 }

@@ -34,10 +34,6 @@ namespace GoogleService
             }
         }
 
-        //public static bool LuuDiaDiem(Store store)
-        //{
-
-        //}
         public static int ThemLoaiDiaDiem(string namelocationType)
         {
             LocationType locationtype = new LocationType();
@@ -91,24 +87,36 @@ namespace GoogleService
             return loc;
         }
 
-        public static bool LuuDiaDiemVaNguoiDung(int idUser, string nameLoc, string lat, string lng)
+        public static bool LuuDiaDiemVaNguoiDung(int idUser, string nameLoc, string type, string lat, string lng)
         {
             bool result = false;
             try
             {
+                // kiem tra loai dia diem, neu chua co thi insert
+                LocationType locType = new LocationType();
+                locType = KiemTraLoaiDiaDiem(type);
+                int idType = 0;
+                if (locType.ID == 0)
+                    idType = ThemLoaiDiaDiem(type);
+                else
+                    idType = locType.ID;
+
+
+                // them dia diem moi
                 Location loc = new Location();
                 loc.LocationName = nameLoc;
+                loc.LocationType = idType;
                 loc.Latitude = lat;
                 loc.Longitude = lng;
+                int index = ThemDiaDiem(loc);
 
+                // luu trua dia diem voi nguoi dung
                 Store store = new Store();
                 store.UserID = idUser;
-
-                int index = ThemDiaDiem(loc);
                 store.LocaionID = index;
-
                 googleentiy.Stores.InsertOnSubmit(store);
                 googleentiy.SubmitChanges();
+
                 result = true;
             }
             catch (Exception ex)
@@ -119,16 +127,23 @@ namespace GoogleService
             return result;
         }
 
-        public static bool XoaDiaDiem(Location location)
+        public static bool XoaDiaDiem(string id)
         {
+            int idloc = int.Parse(id);
             bool result = false;
             try
             {
-                var query = googleentiy.Locations.Where(l => l.LocationName.Contains(location.LocationName) && l.LocationType == location.LocationType).Single();
+                //xoa dia diem khoa ngoai cua table Store
+                var query1 = googleentiy.Stores.Where(s => s.LocaionID == idloc).Single();
+                googleentiy.Stores.DeleteOnSubmit(query1);
+                // xoa dia diem trong bang Location
+                var query = googleentiy.Locations.Where(l => l.ID == idloc).Single();
                 googleentiy.Locations.DeleteOnSubmit(query);
+                // update database
                 googleentiy.SubmitChanges();
+                result = true;
             }
-            catch (Exception e) { }
+            catch (Exception e) { result = false; }
             return result;
         }
 
