@@ -230,7 +230,6 @@ function placeMarker(location) {
         map: map
     });
     //alert(location.lat() +"\r\n"+ location.lng());
-
     google.maps.event.addListener(saveMarker, 'click', function () {
         lat = saveMarker.getPosition().lat();
         lng = saveMarker.getPosition().lng();
@@ -238,7 +237,7 @@ function placeMarker(location) {
             infowindow.close();
         var content = "</br>Tên địa điểm : " + "<input type='text' id='txb_LuuTenDiaDiem'/></br>"
         content += "</br>Loại địa điểm : " + "<input type='text' id='txb_LuuLoaiDiaDiem'/></br>"
-        content += "Kinh độ : " + saveMarker.getPosition().lat() + '</br>' + "Vĩ độ : " + saveMarker.getPosition().lng()
+        content += "Vĩ độ : " + saveMarker.getPosition().lat() + '</br>' + "kinh độ : " + saveMarker.getPosition().lng()
         content += "</br><a href='javascript:void(0);' onclick=LuuDiaDiemMoi()>Thêm</a>" + "</br></br>"
         infowindow = new google.maps.InfoWindow({
             content : content
@@ -327,32 +326,25 @@ var dsDiaDiem = new Array();
 function HienThiDanhSachMarkerLenBanDo(ds) {
     dsDiaDiem = new Array();
     dsDiaDiem = ds;
-    if(dsMarker){
-        for(j in dsMarker)
+    if (dsMarker) {
+        for(var j in  dsMarker)
         {
             dsMarker[j].setMap(null);
-            
         }
         dsMarker.splice(0, dsMarker.length);
     }
-    for (i in ds) {
+    for (var i in ds) {
         //alert(ds[i].name);
         var myLatlng = new google.maps.LatLng(ds[i].Lat, ds[i].Lng);
         var marker = new google.maps.Marker({
             position: myLatlng,
-            map : map
+            map: map
         });
-//        var content = '<p style="color:Blue">' + ds[i].name + '</p>';
-//            content += 'Vĩ độ: ' + ds[i].Lat + '</br>';
-//            content += 'Kinh độ: ' + ds[i].Lng + '</br>';
-//            content += "</br><a href='javascript:void(0);' onclick=XoaDiaDiem("+ds[i].ID+")>Xóa</a>" + "</br></br>"
-//        var infowindow = new google.maps.InfoWindow({
-//            content: content
-//        });
-        //infowindow.open(map, marker);
-        google.maps.event.addListener(marker, 'click', function () {   
-            if (infowindow)
+        dsMarker.push(marker);
+        google.maps.event.addListener(marker, 'click', function () {
+            if (infowindow) {
                 infowindow.close();
+            }
             var content = '<p style="color:Blue">' + ds[i].name + '</p>';
             content += 'Vĩ độ: ' + ds[i].Lat + '</br>';
             content += 'Kinh độ: ' + ds[i].Lng + '</br>';
@@ -362,7 +354,6 @@ function HienThiDanhSachMarkerLenBanDo(ds) {
             });
             infowindow.open(map, marker);
         });
-        dsMarker.push(marker);  
     }
     //alert(dsMarker.length);
     map.setCenter(new google.maps.LatLng(ds[0].Lat, ds[0].Lng));
@@ -370,7 +361,7 @@ function HienThiDanhSachMarkerLenBanDo(ds) {
 }
 
 function XoaDiaDiem(id) {
-    for (i in dsDiaDiem) {
+    for (var i in dsDiaDiem) {
         if (dsDiaDiem[i].ID == id) {
             dsMarker[i].setMap(null);
             dsMarker.splice(i, 1);
