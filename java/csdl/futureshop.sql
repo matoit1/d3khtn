@@ -24,6 +24,61 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `futureshop` /*!40100 DEFAULT CHARACTER
 USE `futureshop`;
 
 --
+-- Table structure for table `khachhang`
+--
+
+DROP TABLE IF EXISTS `khachhang`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `khachhang` (
+  `MaKhachHang` int(11) NOT NULL AUTO_INCREMENT,
+  `TenDangNhap` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MatKhau` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `HoTen` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `GioiTinh` tinyint(1) DEFAULT NULL,
+  `Email` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NgaySinh` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChi` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MaLoaiKhach` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MaKhachHang`),
+  KEY `FK_KhachHang_MaLoaiKhach` (`MaLoaiKhach`),
+  CONSTRAINT `FK_KhachHang_MaLoaiKhach` FOREIGN KEY (`MaLoaiKhach`) REFERENCES `loaikhachhang` (`MaLoaiKhachHang`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `khachhang`
+--
+
+LOCK TABLES `khachhang` WRITE;
+/*!40000 ALTER TABLE `khachhang` DISABLE KEYS */;
+/*!40000 ALTER TABLE `khachhang` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loaikhachhang`
+--
+
+DROP TABLE IF EXISTS `loaikhachhang`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loaikhachhang` (
+  `MaLoaiKhachHang` int(11) NOT NULL AUTO_INCREMENT,
+  `TenLoaiKhachHang` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MaLoaiKhachHang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loaikhachhang`
+--
+
+LOCK TABLES `loaikhachhang` WRITE;
+/*!40000 ALTER TABLE `loaikhachhang` DISABLE KEYS */;
+/*!40000 ALTER TABLE `loaikhachhang` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `loaimathang`
 --
 
@@ -82,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-11-21 19:01:22
+-- Dump completed on 2011-11-22 11:20:42
