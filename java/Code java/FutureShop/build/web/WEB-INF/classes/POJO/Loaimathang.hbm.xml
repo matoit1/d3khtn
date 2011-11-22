@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 22, 2011 9:57:04 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="POJO.Loaimathang" table="loaimathang" catalog="futureshop">
+        <id name="maLoaiMatHang" type="java.lang.Integer">
+            <column name="MaLoaiMatHang" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tinhtrang" class="POJO.Tinhtrang" fetch="select">
+            <column name="MaTinhTrang" />
+        </many-to-one>
+        <property name="tenLoaiMatHang" type="string">
+            <column name="TenLoaiMatHang" length="100" />
+        </property>
+        <property name="ngayCongBo" type="timestamp">
+            <column name="NgayCongBo" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>
