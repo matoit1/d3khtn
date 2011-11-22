@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 22, 2011 9:57:04 AM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Nov 22, 2011 12:52:53 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="POJO.Tinhtrang" table="tinhtrang" catalog="futureshop">
         <id name="maTinhTrang" type="java.lang.Integer">
@@ -11,11 +11,29 @@
         <property name="tenTinhTrang" type="string">
             <column name="TenTinhTrang" length="45" />
         </property>
-        <set name="loaimathangs" inverse="true">
+        <set name="sanphams" inverse="true">
             <key>
                 <column name="MaTinhTrang" />
             </key>
-            <one-to-many class="POJO.Loaimathang" />
+            <one-to-many class="POJO.Sanpham" />
+        </set>
+        <set name="loaisanphams" inverse="true">
+            <key>
+                <column name="MaTinhTrang" />
+            </key>
+            <one-to-many class="POJO.Loaisanpham" />
+        </set>
+        <set name="chitietdondathangs" inverse="true">
+            <key>
+                <column name="MaTinhTrang" />
+            </key>
+            <one-to-many class="POJO.Chitietdondathang" />
+        </set>
+        <set name="nhomsanphams" inverse="true">
+            <key>
+                <column name="MaTinhTrang" />
+            </key>
+            <one-to-many class="POJO.Nhomsanpham" />
         </set>
     </class>
 </hibernate-mapping>
