@@ -16,7 +16,7 @@
     <definition name="template" template="/Template.jsp">
         <put-attribute name="header"  value="/subpages/Header.jsp" /> 
         <put-attribute name="left" value="/subpages/Left.jsp" /> 
-        <put-attribute name="mainContent" value="/subpages/SanPhamBanChayContent.jsp" />  
+        <put-attribute name="mainContent" value="/subpages/MainIndex.jsp" />  
         <put-attribute name="footer" value="/subpages/Footer.jsp" /> 
     </definition>
     <definition name="index" extends="template"> 
