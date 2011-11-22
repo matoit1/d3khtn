@@ -10,7 +10,7 @@
 <c:catch var="ex">
     <div id="header">
         <div id="banner">
-            <div id="logo"><a href="#"><img src="../images/futureshop_logo.png"/></a></div>
+            <div id="logo"><a href="#"><img src="images/futureshop_logo.png"/></a></div>
             <div id="menu_right">
                 <div id="mainmenu">
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> ABOUT </a></div>
@@ -48,13 +48,13 @@
                     </ul>
                 </li>
                 <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
-                <div id="subtotal"><a href="#" ><img src="../images/view_cart.gif" /></a></div>
+                <div id="subtotal"><a href="#" ><img src="images/view_cart.gif" /></a></div>
             </ul>
         </div>
         <div id="search">
             <form action="#" name="search">
                 <input type="text" name="txtsearch" />
-                <input type="image" src="../images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
+                <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
                 <div id="account"> Welcome! <a  href="#"> Create an Account </a>|<a  href="#">Sign In</a> </div>
             </form>
         </div>
