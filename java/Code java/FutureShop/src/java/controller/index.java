@@ -6,6 +6,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,17 +32,10 @@ public class index extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet index</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet index at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-             */
-        } finally {            
+            String url = "index.jsp";
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);
+        } finally {
             out.close();
         }
     }
