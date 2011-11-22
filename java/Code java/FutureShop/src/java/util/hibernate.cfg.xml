@@ -7,7 +7,17 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/futureshop</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">0973606205</property>
-    <mapping resource="POJO/Loaimathang.hbm.xml"/>
+    <mapping resource="POJO/Binhluan.hbm.xml"/>
+    <mapping resource="POJO/Khachhang.hbm.xml"/>
+    <mapping resource="POJO/Loaisanpham.hbm.xml"/>
+    <mapping resource="POJO/Tinhtrangdondathang.hbm.xml"/>
+    <mapping resource="POJO/Hangsanxuat.hbm.xml"/>
+    <mapping resource="POJO/Loaikhachhang.hbm.xml"/>
     <mapping resource="POJO/Tinhtrang.hbm.xml"/>
+    <mapping resource="POJO/Hinhanh.hbm.xml"/>
+    <mapping resource="POJO/Dondathang.hbm.xml"/>
+    <mapping resource="POJO/Chitietdondathang.hbm.xml"/>
+    <mapping resource="POJO/Sanpham.hbm.xml"/>
+    <mapping resource="POJO/Nhomsanpham.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

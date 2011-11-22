@@ -1,5 +1,5 @@
 package POJO;
-// Generated Nov 22, 2011 9:57:02 AM by Hibernate Tools 3.2.1.GA
+// Generated Nov 22, 2011 12:52:53 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,14 +13,20 @@ public class Tinhtrang  implements java.io.Serializable {
 
      private Integer maTinhTrang;
      private String tenTinhTrang;
-     private Set loaimathangs = new HashSet(0);
+     private Set sanphams = new HashSet(0);
+     private Set loaisanphams = new HashSet(0);
+     private Set chitietdondathangs = new HashSet(0);
+     private Set nhomsanphams = new HashSet(0);
 
     public Tinhtrang() {
     }
 
-    public Tinhtrang(String tenTinhTrang, Set loaimathangs) {
+    public Tinhtrang(String tenTinhTrang, Set sanphams, Set loaisanphams, Set chitietdondathangs, Set nhomsanphams) {
        this.tenTinhTrang = tenTinhTrang;
-       this.loaimathangs = loaimathangs;
+       this.sanphams = sanphams;
+       this.loaisanphams = loaisanphams;
+       this.chitietdondathangs = chitietdondathangs;
+       this.nhomsanphams = nhomsanphams;
     }
    
     public Integer getMaTinhTrang() {
@@ -37,12 +43,33 @@ public class Tinhtrang  implements java.io.Serializable {
     public void setTenTinhTrang(String tenTinhTrang) {
         this.tenTinhTrang = tenTinhTrang;
     }
-    public Set getLoaimathangs() {
-        return this.loaimathangs;
+    public Set getSanphams() {
+        return this.sanphams;
     }
     
-    public void setLoaimathangs(Set loaimathangs) {
-        this.loaimathangs = loaimathangs;
+    public void setSanphams(Set sanphams) {
+        this.sanphams = sanphams;
+    }
+    public Set getLoaisanphams() {
+        return this.loaisanphams;
+    }
+    
+    public void setLoaisanphams(Set loaisanphams) {
+        this.loaisanphams = loaisanphams;
+    }
+    public Set getChitietdondathangs() {
+        return this.chitietdondathangs;
+    }
+    
+    public void setChitietdondathangs(Set chitietdondathangs) {
+        this.chitietdondathangs = chitietdondathangs;
+    }
+    public Set getNhomsanphams() {
+        return this.nhomsanphams;
+    }
+    
+    public void setNhomsanphams(Set nhomsanphams) {
+        this.nhomsanphams = nhomsanphams;
     }
 
 
