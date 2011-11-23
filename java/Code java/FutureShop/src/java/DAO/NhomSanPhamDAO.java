@@ -21,7 +21,7 @@ public class NhomSanPhamDAO {
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
-            Query query = (Query) session.createQuery("from Nhomsanpham");
+            Query query = (Query) session.createQuery("from Nhomsanpham nsp where nsp.tinhtrang = 1");
             dsNhomSanPham = (ArrayList<Nhomsanpham>) query.list();
         } catch (HibernateException e) {
         }
