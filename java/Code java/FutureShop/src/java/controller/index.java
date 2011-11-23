@@ -4,14 +4,18 @@
  */
 package controller;
 
+import DAO.NhomSanPhamDAO;
+import POJO.Nhomsanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,7 +35,12 @@ public class index extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+       
+        ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
         try {
+            dsNhomSanPham = NhomSanPhamDAO.LayDanhSachNhomSanPham();
+            HttpSession session = request.getSession();
+            session.setAttribute("dsNhomsanPham", dsNhomSanPham);
             String url = "index.jsp";
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

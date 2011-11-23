@@ -29,12 +29,9 @@
             <ul id="jsddm">
                 <li class="current_item"><a href="#"> Short by Department </a>
                     <ul>
-                        <li><a href="#">Apple</a></li>
-                        <li><a href="#">Bell Internet</a></li>
-                        <li><a href="#">Bell Mobility</a></li>
-                        <li><a href="#">Bell TV</a></li>
-                        <li><a href="#">BlackBerry</a></li>
-                        <li><a href="#">Intel</a></li>
+                        <c:forEach begin="0" items="${dsNhomSanPham}" var="nhomSanPham">
+                            <li><a href="#">${nhomSanPham.tenNhomSanPham}</a></li>
+                        </c:forEach> 
                     </ul>
                 </li>
                 <li class="current_item"><a href="#">Specially Stores</a>
