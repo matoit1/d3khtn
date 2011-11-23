@@ -37,10 +37,10 @@ CREATE TABLE `binhluan` (
   `ThoiGian` datetime DEFAULT NULL,
   `NoiDung` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`MaBinhLuan`),
-  KEY `FK_BinhLuan_SanPham` (`MaSanPham`),
-  KEY `FK_BinhLuan_KhacHang` (`MaKhachHang`),
-  CONSTRAINT `FK_BinhLuan_SanPham` FOREIGN KEY (`MaSanPham`) REFERENCES `sanpham` (`MaSanPham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_BinhLuan_KhacHang` FOREIGN KEY (`MaKhachHang`) REFERENCES `khachhang` (`MaKhachHang`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_BINHLUAN_SANPHAM` (`MaSanPham`),
+  KEY `FK_BINHLUAN_KHACHHANG` (`MaKhachHang`),
+  CONSTRAINT `FK_BINHLUAN_SANPHAM` FOREIGN KEY (`MaSanPham`) REFERENCES `sanpham` (`MaSanPham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_BINHLUAN_KHACHHANG` FOREIGN KEY (`MaKhachHang`) REFERENCES `khachhang` (`MaKhachHang`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -234,10 +234,10 @@ CREATE TABLE `loaisanpham` (
   `NgayCongBo` datetime DEFAULT NULL,
   `MaNhomSanPham` int(11) DEFAULT NULL,
   PRIMARY KEY (`MaLoaiSanPham`),
-  KEY `FK_LoaiMatHang_TinhTrang` (`MaTinhTrang`),
-  KEY `FK_LOAIMATHANG_NHOMSANPHAM` (`MaNhomSanPham`),
-  CONSTRAINT `FK_LOAIMATHANG_NHOMSANPHAM` FOREIGN KEY (`MaNhomSanPham`) REFERENCES `nhomsanpham` (`MaNhomSanPham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_LoaiMatHang_TinhTrang` FOREIGN KEY (`MaTinhTrang`) REFERENCES `tinhtrang` (`MaTinhTrang`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_LOAISANPHAM_TINHTRANG` (`MaTinhTrang`),
+  KEY `FK_LOAISANPHAM_NHOMSANPHAM` (`MaNhomSanPham`),
+  CONSTRAINT `FK_LOAISANPHAM_NHOMSANPHAM` FOREIGN KEY (`MaNhomSanPham`) REFERENCES `nhomsanpham` (`MaNhomSanPham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_LOAISANPHAM_TINHTRANG` FOREIGN KEY (`MaTinhTrang`) REFERENCES `tinhtrang` (`MaTinhTrang`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
