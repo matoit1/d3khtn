@@ -4,7 +4,9 @@
  */
 package controller;
 
+import DAO.HangSanXuatDAO;
 import DAO.NhomSanPhamDAO;
+import POJO.Hangsanxuat;
 import POJO.Nhomsanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -37,10 +39,13 @@ public class index extends HttpServlet {
         PrintWriter out = response.getWriter();
        
         ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
+        ArrayList<Hangsanxuat> listSpecialStores = new ArrayList<Hangsanxuat>();
         try {
             dsNhomSanPham = NhomSanPhamDAO.LayDanhSachNhomSanPham();
+            listSpecialStores = HangSanXuatDAO.LayDanhSachSpecialStores();
             HttpSession session = request.getSession();
             session.setAttribute("dsNhomsanPham", dsNhomSanPham);
+            session.setAttribute("listSpecialStores", listSpecialStores);
             String url = "index.jsp";
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

@@ -36,12 +36,9 @@
                 </li>
                 <li class="current_item"><a href="#">Specially Stores</a>
                     <ul>
-                        <li><a href="#">Apple</a></li>
-                        <li><a href="#">Bell Internet</a></li>
-                        <li><a href="#">Bell Mobility</a></li>
-                        <li><a href="#">Bell TV</a></li>
-                        <li><a href="#">BlackBerry</a></li>
-                        <li><a href="#">Intel</a></li>
+                        <c:forEach begin="0" items="${listSpecialStores}" var="hsx">
+                            <li><a href="#">${hsx.tenHangSanXuat}</a></li>
+                        </c:forEach> 
                     </ul>
                 </li>
                 <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
