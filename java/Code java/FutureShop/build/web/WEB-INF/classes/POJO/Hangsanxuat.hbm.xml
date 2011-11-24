@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 22, 2011 12:52:53 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Nov 24, 2011 4:33:46 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="POJO.Hangsanxuat" table="hangsanxuat" catalog="futureshop">
         <id name="maHangSanXuat" type="java.lang.Integer">
@@ -10,6 +10,9 @@
         </id>
         <property name="tenHangSanXuat" type="string">
             <column name="TenHangSanXuat" length="100" />
+        </property>
+        <property name="uuTien" type="java.lang.Boolean">
+            <column name="UuTien" />
         </property>
         <set name="sanphams" inverse="true">
             <key>
