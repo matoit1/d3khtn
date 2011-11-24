@@ -1,5 +1,5 @@
 package POJO;
-// Generated Nov 22, 2011 12:52:53 PM by Hibernate Tools 3.2.1.GA
+// Generated Nov 24, 2011 4:33:44 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,13 +13,15 @@ public class Hangsanxuat  implements java.io.Serializable {
 
      private Integer maHangSanXuat;
      private String tenHangSanXuat;
+     private Boolean uuTien;
      private Set sanphams = new HashSet(0);
 
     public Hangsanxuat() {
     }
 
-    public Hangsanxuat(String tenHangSanXuat, Set sanphams) {
+    public Hangsanxuat(String tenHangSanXuat, Boolean uuTien, Set sanphams) {
        this.tenHangSanXuat = tenHangSanXuat;
+       this.uuTien = uuTien;
        this.sanphams = sanphams;
     }
    
@@ -36,6 +38,13 @@ public class Hangsanxuat  implements java.io.Serializable {
     
     public void setTenHangSanXuat(String tenHangSanXuat) {
         this.tenHangSanXuat = tenHangSanXuat;
+    }
+    public Boolean getUuTien() {
+        return this.uuTien;
+    }
+    
+    public void setUuTien(Boolean uuTien) {
+        this.uuTien = uuTien;
     }
     public Set getSanphams() {
         return this.sanphams;
