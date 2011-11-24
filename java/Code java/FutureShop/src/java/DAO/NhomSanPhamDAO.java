@@ -24,6 +24,7 @@ public class NhomSanPhamDAO {
             Query query = (Query) session.createQuery("from Nhomsanpham nsp where nsp.tinhtrang = 1");
             dsNhomSanPham = (ArrayList<Nhomsanpham>) query.list();
         } catch (HibernateException e) {
+            System.out.println(e.getMessage());
         }
         return dsNhomSanPham;
     }
