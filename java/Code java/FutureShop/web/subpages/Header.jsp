@@ -29,8 +29,8 @@
             <ul id="jsddm">
                 <li class="current_item"><a href="#"> Short by Department </a>
                     <ul>
-                        <c:forEach begin="0" items="${dsNhomSanPham}" var="nhomSanPham">
-                            <li><a href="#">${nhomSanPham.tenNhomSanPham}</a></li>
+                        <c:forEach begin="0" items="${dsNhomsanPham}" var="nsp">
+                            <li><a href="#">${nsp.tenNhomSanPham}</a></li>
                         </c:forEach> 
                     </ul>
                 </li>
