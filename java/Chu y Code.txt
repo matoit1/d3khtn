@@ -1,0 +1,8 @@
+Phan noi dung chi copy tu phan 
+
+ <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
+
+den 
+
+  <!-- InstanceEndEditable -->
+    <!-- end #mainContent -->

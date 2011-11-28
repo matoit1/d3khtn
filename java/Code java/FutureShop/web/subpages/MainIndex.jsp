@@ -5,10 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <c:catch var="ex">
-    <div id="mainContent"> <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
+    <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
     <div class="ad_top">
       <div id="slider">
         <ul>
@@ -67,7 +66,6 @@
     </div>
     <!-- InstanceEndEditable -->
     <!-- end #mainContent -->
-  </div>
 </c:catch>
 <c:if test="${ex ne null}">
     ${ex.message}
