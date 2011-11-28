@@ -5,30 +5,38 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib  uri="http://java.sun.com/jstl/core" prefix="c" %>
 
-<c:catch var="e">
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'
+    'http://www.w3.org/TR/html4/loose.dtd'>
+        
     <html xmlns="http://www.w3.org/1999/xhtml">
+
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <title>Future Shop</title>
             <link href="style/StyteMain.css" type="text/css" rel="stylesheet"/>
             <script src="js/jquery.min.js" type="text/javascript"></script>
         </head>
-        <body class="MainBody">
-            <div id="container">
+        <body class="MainBody"> 
+              <div id="container">
                 <tiles:insertAttribute name="header"/>
                 <tiles:insertAttribute name="left"/>
+                 <div id="mainContent">
                 <tiles:insertAttribute name="mainContent"/>
+                  </div>
+
                 <br class="clearfloat" />
                 <tiles:insertAttribute name="footer"/>
                 <!-- end #container -->
             </div>
-        </body>
-    </html>
-    <script type="text/javascript">
+                
+        </body>   
+    </html>  
+ 
+  <script type="text/javascript">
         var timeout         = 500;
         var closetimer		= 0;
         var ddmenuitem      = 0;
@@ -68,5 +76,3 @@
 		
         });	
     </script>
-</c:catch>
-

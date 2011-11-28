@@ -5,7 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <c:catch var="ex">
     <div id="header">
@@ -49,7 +48,7 @@
             <form action="#" name="search">
                 <input type="text" name="txtsearch" />
                 <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
-                <div id="account"> Welcome! <a  href="#"> Create an Account </a>|<a  href="#">Sign In</a> </div>
+                <div id="account"> Welcome! <a  href="DangKy.do"> Create an Account </a>|<a  href="#">Sign In</a> </div>
             </form>
         </div>
         <!-- end #header -->
