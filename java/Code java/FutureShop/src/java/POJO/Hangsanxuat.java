@@ -53,10 +53,6 @@ public class Hangsanxuat  implements java.io.Serializable {
     public void setSanphams(Set sanphams) {
         this.sanphams = sanphams;
     }
-
-
-
-
 }
 
 
