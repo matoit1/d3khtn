@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author TRANTRI
  */
-@WebServlet(name = "ChiTietSanPham", urlPatterns = {"/ChiTietSanPham.do"})
-public class ChiTietSanPham extends HttpServlet {
+@WebServlet(name = "XemAnhChiTiet", urlPatterns = {"/XemAnhChiTiet.do"})
+public class XemAnhChiTiet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -34,38 +34,16 @@ public class ChiTietSanPham extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-
-            //thiet lap unicode
-            response.setContentType("text/html;charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-            response.setCharacterEncoding("UTF-8");
-            //lay ma chi tiet san pham tu paramater va kiem tra ma
             int maSp = 1;
             if (request.getParameter("maSp") != null) {
                 maSp = Integer.parseInt(request.getParameter("maSp"));
             }
             Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
-            //String tenHangSX = sp.getHangsanxuat().getTenHangSanXuat();
-            
-            
+         
             request.setAttribute("sp", sp);
-            //request.setAttribute("tenHangSX", tenHangSX);
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.jsp");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/XemAnhChiTiet.jsp");
             rd.forward(request, response);
-
-
-            //lay san pham trong du lieu
-
-            // xu ly hien thi san pham
-
-            //chi tiet san pham
-
-            //cac binh luan
-
-            //them binh luan
-
-            //xoa binh luan
-        } finally {
+        } finally {            
             out.close();
         }
     }
