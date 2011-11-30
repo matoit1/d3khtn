@@ -22,11 +22,11 @@
     <div id="black-bl">
         <c:forEach begin="0" var="sp" items="${requestScope.dsSanPham}">
             <div class="black-box">
-                <h2><a href="#" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a></h2>
-                <p><img src="${sp.hinhanh.anhNho}" width="160" height="160" alt="Pic 1" /></p>
+                <h2><a href="ChiTietSanPham.do?maSp=${sp.maSanPham}" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a></h2>
+                <p><img src="images/product/${sp.maSanPham}_0.jpg" width="160" height="160" alt="Pic 1" /></p>
                 <p style="color: #FB4844; font-weight: bold">Price: ${sp.giaGoc}$</p>
                 <p>${sp.moTa}</p>
-                <a href="#"><p class="more">&gt; &gt;More</p></a>
+                <a href="ChiTietSanPham.do?maSp=${sp.maSanPham}"><p class="more">&gt; &gt;More</p></a>
             </div>
         </c:forEach>
         <div class="clear"></div>
