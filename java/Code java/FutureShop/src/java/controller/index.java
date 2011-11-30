@@ -6,8 +6,10 @@ package controller;
 
 import DAO.HangSanXuatDAO;
 import DAO.NhomSanPhamDAO;
+import DAO.SanPhamDAO;
 import POJO.Hangsanxuat;
 import POJO.Nhomsanpham;
+import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -40,12 +42,15 @@ public class index extends HttpServlet {
        
         ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
         ArrayList<Hangsanxuat> listSpecialStores = new ArrayList<Hangsanxuat>();
+        ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             dsNhomSanPham = NhomSanPhamDAO.LayDanhSachNhomSanPham();
             listSpecialStores = HangSanXuatDAO.LayDanhSachSpecialStores();
+            dsSanPham = SanPhamDAO.LayDanhSachNhomSanPham();
             HttpSession session = request.getSession();
             session.setAttribute("dsNhomsanPham", dsNhomSanPham);
             session.setAttribute("listSpecialStores", listSpecialStores);
+            request.setAttribute("dsSanPham", dsSanPham);
             String url = "index.jsp";
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
