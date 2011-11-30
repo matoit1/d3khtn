@@ -17,8 +17,8 @@ import util.HibernateUtil;
  * @author VIET
  */
 public class HangSanXuatDAO {
-    public static ArrayList<Hangsanxuat> LayDanhSachSpecialStores()
-    {
+
+    public static ArrayList<Hangsanxuat> LayDanhSachSpecialStores() {
         ArrayList<Hangsanxuat> dsHangSx = new ArrayList<Hangsanxuat>();
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -29,5 +29,18 @@ public class HangSanXuatDAO {
             System.out.println(e.getMessage());
         }
         return dsHangSx;
+    }
+
+    public static Hangsanxuat LayHangSanXuatTheoMa(int ma) {
+        Hangsanxuat sp = new Hangsanxuat();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            sp = (Hangsanxuat) session.get(Hangsanxuat.class, ma);
+            session.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return sp;
     }
 }
