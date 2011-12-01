@@ -6,6 +6,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
  <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
       <tr bgcolor="#666666">
         <td class="bgColorMain"><strong><font color="#FFFFFF">CREATE AN ACCOUNT</font></strong></td>
@@ -14,7 +23,7 @@
         <td valign="top"><table width="100%" cellpadding="5">
             <tr>
               <td width="50%"><table width="100%">
-                  <form id="frmLogin" name="frmLogin" method="post" action="#">
+                      <form id="frmLogin" name="frmLogin" method="post" action="#" onsubmit="return Check_RegValid();">
                     <tr>
                       <td colspan="2"><strong>Account Information</strong></td>
                     </tr>
@@ -22,9 +31,11 @@
                       <td>* Indicates a required field</td>
                     </tr>
                     <tr>
-                      <td><label for="id">* Your ID</label>
+                      <td>
+                          <label for="id">* Your ID</label>
                       </td>
-                      <td><input type="text" name="id" />
+                      <td>
+                          <input type="text" name="id" />
                       </td>
                     </tr>
                     <tr>
@@ -67,8 +78,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><p>Recaptcha</p></td>
-                      <td> ${recaptcha}</td>
+                      <td>
+                          <p>Recaptcha</p>
+                      </td>
+                      <td> 
+                          ${recaptcha}
+                      </td>
                     </tr>
                     <tr>
                       <td></td>
@@ -84,3 +99,5 @@
           </table></td>
       </tr>
     </table>
+                      
+                      
