@@ -1,0 +1,12 @@
+﻿xoa csdl cu roi, moi cho mysql thuc thi file csdl nay.
+
+-Xoa cac file config hibernate add lai vi co thay doi thuoc tinh ( 1 dua lam roi up len)
+-cdl moi ko co bang hinh anh ma thay vao do minh quy uoc ten anh = masp+jsp
+Vd anh nho 1_0.jsp
+	anh to 1.jsp
+	anh chi tiet 1_1.jsp
+		     1_2.jsp
+cai van de nay Tran tri code roi.
+
+-truoc khi code thi phai Update SVN, code xong thi commit lien
+-khi commit ko commit cac file .properties, cac file conifg mysql vi moi may moi khac
