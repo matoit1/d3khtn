@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Demo HTML5</title>
+<style>
+ 		#title{
+		font-size: 75px;
+              margin: 10px 10px 30px 10px;
+              padding: 20px;
+              text-align: center;
+			text-shadow: rgba(0, 0, 0, 0.5) 0 6px 6px; 
+			background:  -webkit-gradient(linear, left top, left bottom, 
+                   from(rgba(200, 200, 240, 0.66)), to(rgba(255, 255, 255, 0.66)));
+			border-radius: 11px; 
+			-webkit-box-reflect: below 10px
+  				-webkit-gradient(linear, left top, left bottom, 
+                   from(transparent), to(rgba(255, 255, 255, 0)));
+		}
+		  #canvas-area {
+			background: white;
+			-webkit-border-radius: 8px;
+			-khtml-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+			border: 1px solid #bbb;
+		  }
+		  
+</style>
+</head>
+<body>
+<center>
+<div id="title"> HTML5 Video </div>
+<div>
+  <video src="data/micheal.mp4" controls="true"/>
+</div>
+<div id="title"> HTML5 Video/DOM </div>
+<div style="text-align:center">
+  <button onclick="playPause()">Play/Pause</button>
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br />
+  <video id="video1">
+    <source src="data/micheal.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video. </video>
+</div>
+<script type="text/javascript"> 
+var myVideo=document.getElementById("video1"); 
+
+function playPause()
+{ 
+if (myVideo.paused) 
+  myVideo.play(); 
+else 
+  myVideo.pause(); 
+} 
+
+function makeBig()
+{ 
+myVideo.height=(myVideo.videoHeight*2); 
+} 
+
+function makeSmall()
+{ 
+myVideo.height=(myVideo.videoHeight/2); 
+} 
+
+function makeNormal()
+{ 
+myVideo.height=(myVideo.videoHeight); 
+} 
+</script>
+<div id="title"> HTML5 Audio </div>
+<div>
+  <audio src="data/music.mp3" controls="true"> </audio>
+</div>
+<div id="title"> Canvas 2D </div>
+<canvas id="canvas-area" width="838" height="225"></canvas>
+<script defer>
+              var canvasContext = document.getElementById("canvas-area").getContext("2d");
+              canvasContext.fillRect(250, 25, 150, 100);
+              canvasContext.beginPath();
+              canvasContext.arc(450, 110, 100, Math.PI * 1/2, Math.PI * 3/2, false);
+              canvasContext.lineWidth = 15;
+              canvasContext.lineCap = 'round';
+              canvasContext.strokeStyle = 'rgba(255, 127, 0, 0.5)';
+              canvasContext.stroke();
+            </script>
+<div id="title"> Canvas 3D </div>
+<div>
+<html>
+<head>
+<title>San Angeles Observation</title>
+<script type="text/javascript" src="js/matrix4x4.js"></script>
+<script type="text/javascript" src="js/context.js"></script>
+<script type="text/javascript" src="js/demo.js"></script>
+<script type="text/javascript" src="js/angeles.js"></script>
+</head>
+<body onload="main()">
+<div style="text-align: center">
+  <canvas id="c" width="640" height="300"></canvas>
+</div>
+<div style="text-align: center"> </div>
+</body>
+</html>
+</div>
+<div id="title">HTML5 Web Storage</div>
+<div style="color:#FF0000">
+  <h1>
+    <script type="text/javascript">
+if (localStorage.pagecount)
+  {
+  localStorage.pagecount=Number(localStorage.pagecount) +1;
+  }
+else
+  {
+  localStorage.pagecount=1;
+  }
+document.write("Visits "+ localStorage.pagecount + " time(s).");
+</script>
+  </h1>
+</div>
+<div id="title">Native Drag & Drop</div>
+<div>
+  
+</div>
+<div id="title">Desktop Drag-In (File API)</div>
+<div></div>
+</center>
+</body>
+</html>
