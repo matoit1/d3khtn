@@ -1,0 +1,52 @@
+.info fieldset
+{
+    margin-right: 8px;
+}
+
+.info fieldset legend
+{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.info table 
+{
+    margin-left: 125px;
+    font-size: 1.1em;
+}
+
+.info table  td
+{
+    padding: 5px;
+}
+
+.info table  td.label
+{
+    width: 95px;
+}
+
+.info table  td.value
+{
+    margin-left: 50%;
+    width: 210px;
+    color: #cb5106;
+}
+
+.info table  td.value input
+{
+    margin-left: 50%;
+    width: 200px;
+}
+
+.info table td.warning
+{
+    color: red;
+    font-size: 0.9em;
+}
+
+.info btn
+{
+    position:absolute;
+    left:32px;
+    bottom:4px;
+}
