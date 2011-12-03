@@ -48,7 +48,7 @@
             <form action="#" name="search">
                 <input type="text" name="txtsearch" />
                 <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
-                <div id="account"> Welcome! <a  href="DangKy.do"> Create an Account </a>|<a  href="#">Sign In</a> </div>
+                <div id="account"> Welcome! <a  href="DangKy.do"> Create an Account </a>|<a  href="DangNhap.do">Sign In</a> </div>
             </form>
         </div>
         <!-- end #header -->
