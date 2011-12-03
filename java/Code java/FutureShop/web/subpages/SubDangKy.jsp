@@ -13,6 +13,12 @@
         <h3>
             CREATE AN ACCOUNT
         </h3>
+        <c:if test="${requestScope.message ne null}">
+            <p>${requestScope.message}</p>
+        </c:if>
+        <c:if test="${requestScope.Captcha ne null}">
+            <p>${requestScope.Captcha}</p>
+        </c:if>
         <p>* Indicates a required field</p>
         <fieldset>
             <legend>Account Information</legend>

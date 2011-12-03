@@ -74,8 +74,7 @@ public class DangKy extends HttpServlet {
                 ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, challenge, uresponse);
                 if (reCaptchaResponse.isValid()) {
                     try {
-                        boolean kq = KhachHangDAO.kiemTraTonTai(account.getTenDangNhap());
-                        if (KhachHangDAO.kiemTraTonTai(account.getTenDangNhap())) {
+                        if (!KhachHangDAO.kiemTraTonTai(account.getTenDangNhap())) {
                             if (KhachHangDAO.themMoiKhachHang(account)) {
                                 request.setAttribute("message", "Register Successful !");
                             } else {
