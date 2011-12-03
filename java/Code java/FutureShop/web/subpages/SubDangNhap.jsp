@@ -7,12 +7,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="info">
-    <form action="#" method="post" name="frm_DangKy" onsubmit="return IsValid();">
+    <form action="DangNhap.do" method="post" name="frm_DangKy" onsubmit="return IsValid();">
         <h3>
             SIGN IN
         </h3>
         <p> If you have an account already, please sign in for fast and easy check out.</p>
         <p> If you don't, please create a new one.</p>
+        <c:if test="${requestScope.error ne null}">
+            <p>${requestScope.error}</p>
+        </c:if>
         <fieldset>
             <table>
                 <tbody> 
@@ -30,10 +33,10 @@
             </table>
         </fieldset>
         <p style="text-align: center;">
-            <input class="btn" type="submit" value="Sign In"/>
+            <input class="btn" type="submit" name="signin" value="Sign In"/>
             <input class="btn" type="button" value="Cancel"  />
         </p> 
-        <a href=""><font> Create an account now!</font></a>
+        <a href="#"><font> Create an account now!</font></a>
     </form>
 </div>
 

@@ -4,13 +4,17 @@
  */
 package controller;
 
+import DAO.KhachHangDAO;
+import POJO.Khachhang;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,17 +35,30 @@ public class DangNhap extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet DangNhap</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet DangNhap at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-             */
-        } finally {            
+            HttpSession session = request.getSession();
+            String url = "DangNhap.jsp";
+
+            if (session.getAttribute("account") != null) {
+                response.sendRedirect("index.do");
+                return;
+            }
+
+            if (request.getParameter("signin") != null) {
+                String tenDangNhap = request.getParameter("id");
+                String matKhau = request.getParameter("password");
+
+                if (KhachHangDAO.kiemTraDangNhap(tenDangNhap, matKhau)) {
+                    Khachhang kh = KhachHangDAO.layThongTinKhachHang(tenDangNhap);
+                    session.setAttribute("account", kh);
+                    url = "index.do";
+                } else {
+                    request.setAttribute("error", "Your ID or Your Password is incorrect ! Please try again !");
+                    url = "DangNhap.jsp";
+                }
+            }
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);
+        } finally {
             out.close();
         }
     }

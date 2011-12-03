@@ -36,13 +36,16 @@ public class KhachHangDAO {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Lấy thông tin khách hàng">
-    public static Khachhang layThongTinKhachHang(int maKhachHang) {
+    public static Khachhang layThongTinKhachHang(String tenDangNhap) {
         Khachhang kh = new Khachhang();
         Session session = null;
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         try {
-            kh = (Khachhang) session.get(Khachhang.class, maKhachHang);
+             String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
+            Query query = session.createQuery(sql);
+            query.setString("tenDangNhap", tenDangNhap);
+            kh = (Khachhang) query.uniqueResult();
         } catch (HibernateException ex) {
             kh = new Khachhang();
             System.out.println(ex.getMessage());
@@ -53,7 +56,7 @@ public class KhachHangDAO {
     }
     //</editor-fold>
 
-    //<editor-fold defaultstate="collapsed" desc="Kiểm tra thông tin">
+    //<editor-fold defaultstate="collapsed" desc="Kiểm tra đăng nhập">
     public static boolean kiemTraDangNhap(String tenDangNhap, String matKhau) {
         boolean kq = false;
         Session session = null;
@@ -111,7 +114,7 @@ public class KhachHangDAO {
 
     //<editor-fold defaultstate="collapsed" desc="Thêm mới khách hàng">
     public static boolean themMoiKhachHang(Khachhang kh) {
-        if (KhachHangDAO.layThongTinKhachHang(kh.getMaKhachHang()) != null) {
+        if (KhachHangDAO.layThongTinKhachHang(kh.getTenDangNhap()) != null) {
             return false;
         }
         Session session = null;
