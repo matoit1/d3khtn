@@ -4,14 +4,19 @@
  */
 package controller;
 
+import DAO.KhachHangDAO;
+import POJO.Khachhang;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import net.tanesha.recaptcha.ReCaptchaImpl;
+import net.tanesha.recaptcha.ReCaptchaResponse;
 
 /**
  *
@@ -40,20 +45,56 @@ public class DangKy extends HttpServlet {
                 response.sendRedirect("index.jsp");
                 return;
             }
-            
-            if(request.getParameter("action") != null)
-            {
+
+            if (request.getParameter("Register") != null) {
+                Khachhang account = null;
                 String tenDangNhap = request.getParameter("id");
                 String matKhau = request.getParameter("password");
                 String hoTen = request.getParameter("fullname");
                 String email = request.getParameter("email");
-                String dienThoai = request.getParameter("phone");           
-            }
+                String soDienThoai = request.getParameter("phone");
 
-            
-            
-            
-            
+                if (request.getAttribute("account") == null) {
+                    account = new Khachhang(tenDangNhap, matKhau, hoTen, email, soDienThoai);
+                } else {
+                    account = (Khachhang) request.getAttribute("account");
+                    account.setTenDangNhap(tenDangNhap);
+                    account.setMatKhau(matKhau);
+                    account.setHoTen(hoTen);
+                    account.setEmail(email);
+                    account.setSoDienThoai(soDienThoai);
+                }
+
+                String remoteAddr = request.getRemoteAddr();
+                ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+                reCaptcha.setPrivateKey("6LcnlsgSAAAAADTPvlmDbKgAIb7i9DoQT6iv5uGd");
+
+                String challenge = request.getParameter("recaptcha_challenge_field");
+                String uresponse = request.getParameter("recaptcha_response_field");
+                ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, challenge, uresponse);
+                if (reCaptchaResponse.isValid()) {
+                    try {
+                        boolean kq = KhachHangDAO.kiemTraTonTai(account.getTenDangNhap());
+                        if (KhachHangDAO.kiemTraTonTai(account.getTenDangNhap())) {
+                            if (KhachHangDAO.themMoiKhachHang(account)) {
+                                request.setAttribute("message", "Register Successful !");
+                            } else {
+                                request.setAttribute("message", "Register Unsuccessful !");
+                            }
+                        } else {
+                            request.setAttribute("message", "This account is exist ! Please choose another account !");
+                        }
+                    } catch (Exception ex) {
+                        System.err.println(ex);
+                    }
+                } else {
+                    request.setAttribute("Captcha", "Wrong Security Value ! Please Correct Security value !");
+                }
+                request.setAttribute("account", account);
+            }
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);
+
         } finally {
             out.close();
         }

@@ -8,7 +8,6 @@ import POJO.Khachhang;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -55,7 +54,7 @@ public class KhachHangDAO {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Kiểm tra thông tin">
-    public static boolean kiemTraThongTin(String tenDangNhap, String matKhau) {
+    public static boolean kiemTraDangNhap(String tenDangNhap, String matKhau) {
         boolean kq = false;
         Session session = null;
         session = HibernateUtil.getSessionFactory().openSession();
@@ -73,6 +72,31 @@ public class KhachHangDAO {
                 } else {
                     kq = false;
                 }
+            } else {
+                kq = false;
+            }
+        } catch (HibernateException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            session.close();
+        }
+        return kq;
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Kiểm tra tồn tại">
+    public static boolean kiemTraTonTai(String tenDangNhap) {
+        boolean kq = false;
+        Session session = null;
+        session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        try {
+            String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
+            Query query = session.createQuery(sql);
+            query.setString("tenDangNhap", tenDangNhap);
+
+            if (query.uniqueResult() != null) {
+                kq = true;
             } else {
                 kq = false;
             }
