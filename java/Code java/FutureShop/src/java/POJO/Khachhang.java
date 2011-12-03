@@ -1,5 +1,5 @@
 package POJO;
-// Generated Nov 24, 2011 4:33:44 PM by Hibernate Tools 3.2.1.GA
+// Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -18,6 +18,7 @@ public class Khachhang  implements java.io.Serializable {
      private String hoTen;
      private Boolean gioiTinh;
      private String email;
+     private String soDienThoai;
      private String ngaySinh;
      private String diaChi;
      private Set dondathangs = new HashSet(0);
@@ -26,13 +27,14 @@ public class Khachhang  implements java.io.Serializable {
     public Khachhang() {
     }
 
-    public Khachhang(Loaikhachhang loaikhachhang, String tenDangNhap, String matKhau, String hoTen, Boolean gioiTinh, String email, String ngaySinh, String diaChi, Set dondathangs, Set binhluans) {
+    public Khachhang(Loaikhachhang loaikhachhang, String tenDangNhap, String matKhau, String hoTen, Boolean gioiTinh, String email, String soDienThoai, String ngaySinh, String diaChi, Set dondathangs, Set binhluans) {
        this.loaikhachhang = loaikhachhang;
        this.tenDangNhap = tenDangNhap;
        this.matKhau = matKhau;
        this.hoTen = hoTen;
        this.gioiTinh = gioiTinh;
        this.email = email;
+       this.soDienThoai = soDienThoai;
        this.ngaySinh = ngaySinh;
        this.diaChi = diaChi;
        this.dondathangs = dondathangs;
@@ -87,6 +89,13 @@ public class Khachhang  implements java.io.Serializable {
     
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getSoDienThoai() {
+        return this.soDienThoai;
+    }
+    
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
     }
     public String getNgaySinh() {
         return this.ngaySinh;

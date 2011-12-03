@@ -1,5 +1,5 @@
 package POJO;
-// Generated Nov 24, 2011 4:33:44 PM by Hibernate Tools 3.2.1.GA
+// Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -13,7 +13,6 @@ public class Sanpham  implements java.io.Serializable {
 
 
      private Integer maSanPham;
-     private Hinhanh hinhanh;
      private Hangsanxuat hangsanxuat;
      private Tinhtrang tinhtrang;
      private Loaisanpham loaisanpham;
@@ -25,14 +24,14 @@ public class Sanpham  implements java.io.Serializable {
      private Integer soLuong;
      private String moTa;
      private String thongTinChiTiet;
+     private Integer soHinhAnh;
      private Set chitietdondathangs = new HashSet(0);
      private Set binhluans = new HashSet(0);
 
     public Sanpham() {
     }
 
-    public Sanpham(Hinhanh hinhanh, Hangsanxuat hangsanxuat, Tinhtrang tinhtrang, Loaisanpham loaisanpham, String tenSanPham, Float giaGoc, Float giamGia, Integer danhGia, Date ngayHetHan, Integer soLuong, String moTa, String thongTinChiTiet, Set chitietdondathangs, Set binhluans) {
-       this.hinhanh = hinhanh;
+    public Sanpham(Hangsanxuat hangsanxuat, Tinhtrang tinhtrang, Loaisanpham loaisanpham, String tenSanPham, Float giaGoc, Float giamGia, Integer danhGia, Date ngayHetHan, Integer soLuong, String moTa, String thongTinChiTiet, Integer soHinhAnh, Set chitietdondathangs, Set binhluans) {
        this.hangsanxuat = hangsanxuat;
        this.tinhtrang = tinhtrang;
        this.loaisanpham = loaisanpham;
@@ -44,6 +43,7 @@ public class Sanpham  implements java.io.Serializable {
        this.soLuong = soLuong;
        this.moTa = moTa;
        this.thongTinChiTiet = thongTinChiTiet;
+       this.soHinhAnh = soHinhAnh;
        this.chitietdondathangs = chitietdondathangs;
        this.binhluans = binhluans;
     }
@@ -54,13 +54,6 @@ public class Sanpham  implements java.io.Serializable {
     
     public void setMaSanPham(Integer maSanPham) {
         this.maSanPham = maSanPham;
-    }
-    public Hinhanh getHinhanh() {
-        return this.hinhanh;
-    }
-    
-    public void setHinhanh(Hinhanh hinhanh) {
-        this.hinhanh = hinhanh;
     }
     public Hangsanxuat getHangsanxuat() {
         return this.hangsanxuat;
@@ -138,6 +131,13 @@ public class Sanpham  implements java.io.Serializable {
     
     public void setThongTinChiTiet(String thongTinChiTiet) {
         this.thongTinChiTiet = thongTinChiTiet;
+    }
+    public Integer getSoHinhAnh() {
+        return this.soHinhAnh;
+    }
+    
+    public void setSoHinhAnh(Integer soHinhAnh) {
+        this.soHinhAnh = soHinhAnh;
     }
     public Set getChitietdondathangs() {
         return this.chitietdondathangs;

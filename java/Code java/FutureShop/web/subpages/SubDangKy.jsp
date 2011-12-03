@@ -3,101 +3,80 @@
     Created on : Nov 28, 2011, 2:02:56 PM
     Author     : TRANTRI
 --%>
-
+<%@page import="net.tanesha.recaptcha.ReCaptchaFactory"%>
+<%@page import="net.tanesha.recaptcha.ReCaptcha"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
- <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
- 
- 
- 
- 
- 
- 
- 
- 
- 
-    <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
-      <tr bgcolor="#666666">
-        <td class="bgColorMain"><strong><font color="#FFFFFF">CREATE AN ACCOUNT</font></strong></td>
-      </tr>
-      <tr>
-        <td valign="top"><table width="100%" cellpadding="5">
-            <tr>
-              <td width="50%"><table width="100%">
-                      <form id="frmLogin" name="frmLogin" method="post" action="#" onsubmit="return Check_RegValid();">
+<!-- InstanceBeginEditable name="NoiDungThayDoi" -->
+
+<div class="info">
+    <form action="DangKy.do" method="post" name="frm_DangKy" onsubmit="return IsValid();">
+        <h3>
+            CREATE AN ACCOUNT
+        </h3>
+        <p>* Indicates a required field</p>
+        <fieldset>
+            <legend>Account Information</legend>
+            <table>
+                <tbody> 
                     <tr>
-                      <td colspan="2"><strong>Account Information</strong></td>
+                        <td class="label">* Your ID</td>
+                        <td class="value"><input type="text" name="id" id="id" /></td>
+                        <td class="warning" id="invalid_id"></td>
                     </tr>
                     <tr>
-                      <td>* Indicates a required field</td>
+                        <td class="label">* Password</td>
+                        <td class="value"><input type="password" name="password" id="password"/></td>
+                        <td class="warning" id="invalid_pass"></td>
                     </tr>
                     <tr>
-                      <td>
-                          <label for="id">* Your ID</label>
-                      </td>
-                      <td>
-                          <input type="text" name="id" />
-                      </td>
+                        <td class="label">* Retype Password</td>
+                        <td class="value"><input type="password" name="password2" id="password2"/></td>
+                        <td class="warning" id="invalid_pass2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label">  Full Name</td>
+                        <td class="value"><input type="text" name="fullname" id="fullname"/></td>
+                        <td class="warning" id="invalid_name"></td>
                     </tr>
                     <tr>
-                      <td><label for="password">* Password</label>
-                      </td>
-                      <td><input type="password" name="password" />
-                      </td>
+                        <td class="label">* Email Address</td>
+                        <td class="value"><input type="text" name="email" id="email"></td>
+                        <td class="warning" id="invalid_email"></td>
                     </tr>
                     <tr>
-                      <td><label for="password2">* Retype Password</label>
-                      </td>
-                      <td><input type="password" name="password2" />
-                      </td>
+                        <td class="label">* Retype Email Address</td>
+                        <td class="value"><input type="text" name="email2" id="email2"></td>
+                        <td class="warning" id="invalid_email2"></td>
                     </tr>
                     <tr>
-                      <td colspan="2"><strong>Personal Information</strong></td>
+                        <td class="label">  Mobile Phone</td>
+                        <td class="value"><input type="text" name="phone" id="phone"/></td>
+                        <td class="warning" id="invalid_phone"></td>
                     </tr>
                     <tr>
-                      <td><label for="fullname">Full Name</label>
-                      </td>
-                      <td><input type="text" name="fullname" />
-                      </td>
+                        <td class="value" colspan="2">
+                            <%
+                                ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LerlcgSAAAAAAP0l7ODPRSoZZwAqGR79M3DDduc ", "6LerlcgSAAAAAKtqZ-i0pyUjyydapnlv2emH1UBD", false);
+                                out.print(c.createRecaptchaHtml(null, null));
+                            %>
+                            <br />
+                            <span id="invalid_captcha" style="color:red;"></span>
+                        </td>
                     </tr>
-                    <tr>
-                      <td><label for="email">* Email Address</label>
-                      </td>
-                      <td><input type="text" name="email" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="email2">* Retyoe Email Address </label>
-                      </td>
-                      <td><input type="text" name="email2" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="phone">Mobile Phone</label>
-                      </td>
-                      <td><input type="text" name="phone" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                          <p>Recaptcha</p>
-                      </td>
-                      <td> 
-                          ${recaptcha}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td><input type="submit" name="btnRegister" value="Register" onclick='return checkinput();'/>
-                      </td>
-                    </tr>
-                  </form>
-                </table></td>
-            </tr>
-          </table></td>
-      </tr>
-    </table>
-                      
-                      
+                </tbody>
+            </table>
+        </fieldset>
+        <p style="text-align: center;">
+            <input class="btn" type="submit" value="Register"/>
+            <input class="btn" type="button" value="Cancel"  />
+        </p>                    
+    </form>
+</div>
+

@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 24, 2011 4:33:46 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Dec 3, 2011 10:29:15 AM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="POJO.Sanpham" table="sanpham" catalog="futureshop">
         <id name="maSanPham" type="java.lang.Integer">
             <column name="MaSanPham" />
             <generator class="identity" />
         </id>
-        <many-to-one name="hinhanh" class="POJO.Hinhanh" fetch="select" lazy="false">
-            <column name="MaHinhAnh" />
-        </many-to-one>
         <many-to-one name="hangsanxuat" class="POJO.Hangsanxuat" fetch="select">
             <column name="MaHangSanXuat" />
         </many-to-one>
@@ -32,8 +29,8 @@
         <property name="danhGia" type="java.lang.Integer">
             <column name="DanhGia" />
         </property>
-        <property name="ngayHetHan" type="timestamp">
-            <column name="NgayHetHan" length="19" />
+        <property name="ngayHetHan" type="date">
+            <column name="NgayHetHan" length="10" />
         </property>
         <property name="soLuong" type="java.lang.Integer">
             <column name="SoLuong" />
@@ -42,7 +39,10 @@
             <column name="MoTa" length="1000" />
         </property>
         <property name="thongTinChiTiet" type="string">
-            <column name="ThongTinChiTiet" length="5000" />
+            <column name="ThongTinChiTiet" length="20000" />
+        </property>
+        <property name="soHinhAnh" type="java.lang.Integer">
+            <column name="SoHinhAnh" />
         </property>
         <set name="chitietdondathangs" inverse="true">
             <key>

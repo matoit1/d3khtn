@@ -11,14 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author TRANTRI
+ * @author Nguyen Anh Tri
  */
-@WebServlet(name = "DangKy", urlPatterns = {"/DangKy.do"})
-public class DangKy extends HttpServlet {
+@WebServlet(name = "DangNhap", urlPatterns = {"/DangNhap.do"})
+public class DangNhap extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,29 +31,17 @@ public class DangKy extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            HttpSession session = request.getSession();
-            String url = "DangKy.jsp";
-            request.setCharacterEncoding("UTF-8");
-            response.setContentType("UTF-8");
-            if (session.getAttribute("account") != null) {
-                response.sendRedirect("index.jsp");
-                return;
-            }
-            
-            if(request.getParameter("action") != null)
-            {
-                String tenDangNhap = request.getParameter("id");
-                String matKhau = request.getParameter("password");
-                String hoTen = request.getParameter("fullname");
-                String email = request.getParameter("email");
-                String dienThoai = request.getParameter("phone");           
-            }
-
-            
-            
-            
-            
-        } finally {
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet DangNhap</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet DangNhap at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
+        } finally {            
             out.close();
         }
     }
