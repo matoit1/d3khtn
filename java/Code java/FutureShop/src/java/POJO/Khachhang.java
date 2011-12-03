@@ -40,6 +40,18 @@ public class Khachhang  implements java.io.Serializable {
        this.dondathangs = dondathangs;
        this.binhluans = binhluans;
     }
+    
+    public Khachhang(String tenDangNhap, String matKhau, String hoTen, String email, String soDienThoai) {
+       this.tenDangNhap = tenDangNhap;
+       this.matKhau = matKhau;
+       this.hoTen = hoTen;
+       this.email = email;
+       this.soDienThoai = soDienThoai;     
+       Loaikhachhang loaikh = new Loaikhachhang();
+       loaikh.setMaLoaiKhachHang(2);
+       loaikh.setTenLoaiKhachHang("");
+       this.loaikhachhang = loaikh;
+    }
    
     public Integer getMaKhachHang() {
         return this.maKhachHang;

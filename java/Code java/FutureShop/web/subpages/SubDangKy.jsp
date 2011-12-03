@@ -20,7 +20,7 @@
                 <tbody> 
                     <tr>
                         <td class="label">* Your ID</td>
-                        <td class="value"><input type="text" name="id" id="id" /></td>
+                        <td class="value"><input type="text" name="id" id="id" value="${requestScope.account.tenDangNhap}"/></td>
                         <td class="warning" id="invalid_id"></td>
                     </tr>
                     <tr>
@@ -42,12 +42,12 @@
                 <tbody>
                     <tr>
                         <td class="label">  Full Name</td>
-                        <td class="value"><input type="text" name="fullname" id="fullname"/></td>
+                        <td class="value"><input type="text" name="fullname" id="fullname" value="${requestScope.account.hoTen}"/></td>
                         <td class="warning" id="invalid_name"></td>
                     </tr>
                     <tr>
                         <td class="label">* Email Address</td>
-                        <td class="value"><input type="text" name="email" id="email"></td>
+                        <td class="value"><input type="text" name="email" id="email" value="${requestScope.account.email}"></td>
                         <td class="warning" id="invalid_email"></td>
                     </tr>
                     <tr>
@@ -57,13 +57,13 @@
                     </tr>
                     <tr>
                         <td class="label">  Mobile Phone</td>
-                        <td class="value"><input type="text" name="phone" id="phone"/></td>
+                        <td class="value"><input type="text" name="phone" id="phone" value="${requestScope.account.soDienThoai}"/></td>
                         <td class="warning" id="invalid_phone"></td>
                     </tr>
                     <tr>
                         <td class="value" colspan="2">
                             <%
-                                ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LerlcgSAAAAAAP0l7ODPRSoZZwAqGR79M3DDduc ", "6LerlcgSAAAAAKtqZ-i0pyUjyydapnlv2emH1UBD", false);
+                                ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LcnlsgSAAAAAMXdgM7gmpR8CAh9RLOxbMGCXRyg", "6LcnlsgSAAAAADTPvlmDbKgAIb7i9DoQT6iv5uGd", false);
                                 out.print(c.createRecaptchaHtml(null, null));
                             %>
                             <br />
@@ -74,7 +74,7 @@
             </table>
         </fieldset>
         <p style="text-align: center;">
-            <input class="btn" type="submit" value="Register"/>
+            <input class="btn" type="submit" name="Register" value="Register"/>
             <input class="btn" type="button" value="Cancel"  />
         </p>                    
     </form>
