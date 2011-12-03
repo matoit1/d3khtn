@@ -64,6 +64,7 @@
         document.onclick = jsddm_close;
     </script>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/query.js"></script>
     <script type="text/javascript" src="js/easySlider1.5.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){	

@@ -1,5 +1,5 @@
 package POJO;
-// Generated Nov 24, 2011 4:33:44 PM by Hibernate Tools 3.2.1.GA
+// Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -53,6 +53,10 @@ public class Hangsanxuat  implements java.io.Serializable {
     public void setSanphams(Set sanphams) {
         this.sanphams = sanphams;
     }
+
+
+
+
 }
 
 

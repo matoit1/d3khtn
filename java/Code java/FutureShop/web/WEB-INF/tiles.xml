@@ -48,6 +48,9 @@
     <definition name="dangky" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubDangKy.jsp" />  
     </definition>
+    <definition name="dangnhap" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubDangNhap.jsp" />  
+    </definition>
     <definition name="chitietsanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubChiTietSanPham.jsp" />  
     </definition>
