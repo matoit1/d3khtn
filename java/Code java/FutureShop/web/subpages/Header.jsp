@@ -18,7 +18,8 @@
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
-                    <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Acount </a></div>
+                    <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
+                    <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="noi dung cua menu"> >> My Acount </a></div>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
                 </div>
@@ -48,7 +49,22 @@
             <form action="#" name="search">
                 <input type="text" name="txtsearch" />
                 <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
-                <div id="account"> Welcome! <a  href="DangKy.do"> Create an Account </a>|<a  href="DangNhap.do">Sign In</a> </div>
+                <c:if test="${sessionScope.account eq null}">
+                    <div id="account">
+                        <c:url var="DangKy" value="DangKy.do"/>
+                        <a  href="${DangKy}"> Create an Account </a> |
+                        <c:url var="DangNhap" value="DangNhap.do"/>
+                        <a  href="${DangNhap}">Sign In</a> 
+                    </div> 
+                </c:if>
+                <c:if test="${sessionScope.account ne null}">
+                    <div id="account"> Welcome, 
+                        <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
+                        <a  href="${TrangThongTinCaNhan}"> ${sessionScope.account.hoTen} </a> |   
+                        <c:url var="DangXuat" value="DangXuat.do"/>
+                        <a href="${DangXuat}">Sign Out</a> 
+                    </div> 
+                </c:if>
             </form>
         </div>
         <!-- end #header -->
