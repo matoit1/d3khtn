@@ -22,8 +22,8 @@
     <definition name="index" extends="template"> 
     </definition> 
     <definition name="timkiemnhanh" extends="template"> 
-          <put-attribute name="mainContent" value="/subpages/TimKiemNhanhContent.jsp" />  
-        </definition> 
+        <put-attribute name="mainContent" value="/subpages/TimKiemNhanhContent.jsp" />  
+    </definition> 
     <definition name="themsanpham1" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/ThemSanPham1Content.jsp" />  
     </definition> 
@@ -35,7 +35,7 @@
     </definition>
     <definition name="giohang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/GioHangContent.jsp" />  
-   </definition>
+    </definition>
     <definition name="datmua" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/DatMuaContent.jsp" />  
     </definition>
@@ -50,6 +50,22 @@
     </definition>
     <definition name="dangnhap" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubDangNhap.jsp" />  
+    </definition>
+    <definition name="trangthongtincanhan" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubTrangThongTinCaNhan.jsp" />  
+    </definition>
+    <definition name="capnhatthongtincanhan" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubCapNhatThongTinCaNhan.jsp" />  
+    </definition>
+    <definition name="capnhatmatkhau" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubCapNhatMatKhau.jsp" />  
+    </definition>
+    <definition name="capnhatemail" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubCapNhatEmail.jsp" />  
     </definition>
     <definition name="chitietsanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubChiTietSanPham.jsp" />  
