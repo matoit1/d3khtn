@@ -11,13 +11,13 @@
 <div id="left">
     <div id="categories">
         <h2>My Account Home</h2>
-        <a>Shopping</a>
+        <p><strong>Shopping</strong></p>
         <ul>
             <li><a href="#">Order History</a></li>
             <li><a href="#">Wish List</a></li>
             <li><a href="#">Price Watch</a></li>
         </ul>
-        <a>Account Details</a>
+        <p><strong>Account Details</strong></p>
         <ul>
             <c:url var="CapNhatThongTinCaNhan" value="CapNhatThongTinCaNhan.do"/>
             <li><a href="${CapNhatThongTinCaNhan}">Account Profile</a></li>

@@ -42,7 +42,7 @@ public class KhachHangDAO {
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         try {
-             String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
+            String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
             Query query = session.createQuery(sql);
             query.setString("tenDangNhap", tenDangNhap);
             kh = (Khachhang) query.uniqueResult();
@@ -123,6 +123,29 @@ public class KhachHangDAO {
             kh.setMatKhau(maHoa_MD5(kh.getMatKhau()));
             session.beginTransaction();
             session.save(kh);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            session.getTransaction().rollback();
+            System.out.println(ex);
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Thay đổi mật khẩu">
+    public static boolean capNhatTaiKhoan(Khachhang kh) {
+        if (KhachHangDAO.layThongTinKhachHang(kh.getTenDangNhap()) == null) {
+            return false;
+        }
+        Session session = null;
+        session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            kh.setMatKhau(maHoa_MD5(kh.getMatKhau()));
+            session.getTransaction().begin();
+            session.update(kh);
             session.getTransaction().commit();
             return true;
         } catch (Exception ex) {

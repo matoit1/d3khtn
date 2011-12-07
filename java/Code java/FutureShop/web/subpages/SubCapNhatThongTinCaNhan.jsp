@@ -8,8 +8,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="info">
-    <c:if test="${requestScope.message eq null}">
-        <form action="#" method="post" name="frm_CapNhatTaiKhoan" onsubmit="return IsValid();">
+    <c:if test="${requestScope.error eq null}">
+        <c:url var="CapNhatTaiKhoan" value="CapNhatTaiKhoan.do"/>
+        <form action="${CapNhatTaiKhoan}" method="post" name="frm_CapNhatTaiKhoan" onsubmit="return UpdateAccount();">
             <h3>
                 UPDATE ACCOUNT INFORMATION
             </h3>   
@@ -34,12 +35,12 @@
                             <td class="warning" id="invalid_gender"></td>
                         </tr>
                         <tr>
-                            <td class="label">  Mobile Phone</td>
+                            <td class="label">* Mobile Phone</td>
                             <td class="value"><input type="text" name="phone" id="phone" value="${requestScope.account.soDienThoai}"/></td>
                             <td class="warning" id="invalid_phone"></td>
                         </tr>
                         <tr>
-                            <td class="label">* Address </td>
+                            <td class="label">  Address </td>
                             <td class="value"><input type="text" name="address" id="address"/></td>
                             <td class="warning" id="invalid_address"></td>
                         </tr>
@@ -52,7 +53,7 @@
             </p>                    
         </form>
     </c:if>
-    <c:if test="${requestScope.message ne null}">
-        <p>${requestScope.message}</p>
+    <c:if test="${requestScope.error ne null}">
+        <p>${requestScope.error}</p>
     </c:if>
 </div>
