@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2011 at 03:14 AM
+-- Generation Time: Dec 07, 2011 at 08:21 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -140,15 +140,16 @@ CREATE TABLE IF NOT EXISTS `khachhang` (
   `MaLoaiKhach` int(11) DEFAULT NULL,
   PRIMARY KEY (`MaKhachHang`),
   KEY `FK_KHACHHANG_LOAIKHACHHANG` (`MaLoaiKhach`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `khachhang`
 --
 
-INSERT INTO `khachhang` (`MaKhachHang`, `TenDangNhap`, `MatKhau`, `HoTen`, `GioiTinh`, `Email`, `NgaySinh`, `DiaChi`, `MaLoaiKhach`) VALUES
-(1, 'admin', '123', 'Tran Van Tri', 1, 'trantri2006@gmail.com', '1990-12-2', 'bentre', 1),
-(2, 'trantri', '123', 'tran van tri', 1, 'trantri06@yahoo.com', '1990-12-2', 'hcm', 2);
+INSERT INTO `khachhang` (`MaKhachHang`, `TenDangNhap`, `MatKhau`, `HoTen`, `GioiTinh`, `Email`, `SoDienThoai`, `NgaySinh`, `DiaChi`, `MaLoaiKhach`) VALUES
+(1, 'admin', '159625006308299318752733514459097601554', 'Tran Van Tri', 1, 'admin@gmail.com', NULL, '1990-12-2', 'bentre', 1),
+(2, 'trantri', '299132688689127175738334524183350839358', 'tran van tri', 1, 'trantri06@yahoo.com', NULL, '1990-12-2', 'hcm', 2),
+(3, 'nguyenanhtri', '299132688689127175738334524183350839358', 'Nguyễn Anh Trí', NULL, 'nguyenanhtri@gmail.com', '01696873563', NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
