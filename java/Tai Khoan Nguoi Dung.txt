@@ -1,0 +1,6 @@
+Password trong do t da ma hoa het roi do nha
+
+tendangnhap			password
+admin				admin
+trantri				123456
+nguyenanhtri			123456

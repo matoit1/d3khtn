@@ -10,7 +10,8 @@
 <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
 
 <div class="info">
-    <form action="DangKy.do" method="post" name="frm_DangKy" onsubmit="return IsValid();">
+    <c:url var="DangKy" value="DangKy.do"/>
+    <form action="${DangKy}" method="post" name="frm_DangKy" onsubmit="return RegisterAccount();">
         <h3>
             CREATE AN ACCOUNT
         </h3>   
@@ -48,7 +49,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td class="label">  Full Name</td>
+                        <td class="label">* Full Name</td>
                         <td class="value"><input type="text" name="fullname" id="fullname" value="${requestScope.account.hoTen}"/></td>
                         <td class="warning" id="invalid_name"></td>
                     </tr>
@@ -63,7 +64,7 @@
                         <td class="warning" id="invalid_email2"></td>
                     </tr>
                     <tr>
-                        <td class="label">  Mobile Phone</td>
+                        <td class="label">* Mobile Phone</td>
                         <td class="value"><input type="text" name="phone" id="phone" value="${requestScope.account.soDienThoai}"/></td>
                         <td class="warning" id="invalid_phone"></td>
                     </tr>

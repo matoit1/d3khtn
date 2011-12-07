@@ -7,7 +7,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="info">
-    <form action="DangNhap.do" method="post" name="frm_DangKy" onsubmit="return IsValid();">
+    <c:url var="DangNhap" value="DangNhap.do"/>
+    <form action="${DangNhap}" method="post" name="frm_DangNhap" onsubmit="return SigninAccount();">
         <h3>
             SIGN IN
         </h3>

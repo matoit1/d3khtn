@@ -38,7 +38,7 @@ public class TrangThongTinCaNhan extends HttpServlet {
             
             if(session.getAttribute("account") == null)
             {
-                request.setAttribute("message", "You're not sign in, Please sign in ! If you does'nt have account, plese sign up for new account !");
+                request.setAttribute("error", "You're not sign in, Please sign in ! If you does'nt have account, plese sign up for new account !");
             }
 
             RequestDispatcher rd = request.getRequestDispatcher(url);

@@ -41,11 +41,12 @@ public class DangKy extends HttpServlet {
             String url = "DangKy.jsp";
             request.setCharacterEncoding("UTF-8");
             response.setContentType("UTF-8");
+            // Kiểm tra có ai đăng nhập hay chưa
             if (session.getAttribute("account") != null) {
                 response.sendRedirect("index.jsp");
                 return;
             }
-
+            // Bắt sự kiện click vào nút đăng ký
             if (request.getParameter("Register") != null) {
                 Khachhang account = null;
                 String tenDangNhap = request.getParameter("id");
