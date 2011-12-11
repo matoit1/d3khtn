@@ -31,7 +31,12 @@
                         </tr>
                         <tr>
                             <td class="label"> Gender </td>
-                            <td class="value"><input type="text" name="gender" id="gender"/></td>
+                            <td class="value">
+                                <select name="gender" id="gender" style="width:100%"/>
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
+                                </select>
+                            </td>
                             <td class="warning" id="invalid_gender"></td>
                         </tr>
                         <tr>
