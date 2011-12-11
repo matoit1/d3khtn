@@ -4,6 +4,7 @@
  */
 package controller;
 
+import DAO.EmailDAO;
 import DAO.KhachHangDAO;
 import POJO.Khachhang;
 import java.io.IOException;
@@ -72,12 +73,17 @@ public class DangKy extends HttpServlet {
 
                 String challenge = request.getParameter("recaptcha_challenge_field");
                 String uresponse = request.getParameter("recaptcha_response_field");
+                request.setAttribute("account", account);
                 ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, challenge, uresponse);
                 if (reCaptchaResponse.isValid()) {
                     try {
                         if (!KhachHangDAO.kiemTraTonTai(account.getTenDangNhap())) {
                             if (KhachHangDAO.themMoiKhachHang(account)) {
                                 request.setAttribute("message", "Register Successful !");
+                                String subject = "Registration Infomation";
+                                String body = String.format("Hi %s, /nHere is your account infomation : /nYour ID : %s /nYour Password : %s /n ",account.getHoTen(),account.getMaKhachHang(),account.getMatKhau());
+                                EmailDAO.send(account.getEmail(), subject, body);
+                                request.removeAttribute("account");
                             } else {
                                 request.setAttribute("message", "Register Unsuccessful !");
                             }
@@ -89,8 +95,7 @@ public class DangKy extends HttpServlet {
                     }
                 } else {
                     request.setAttribute("Captcha", "Wrong Security Value ! Please Correct Security value !");
-                }
-                request.setAttribute("account", account);
+                }        
             }
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
