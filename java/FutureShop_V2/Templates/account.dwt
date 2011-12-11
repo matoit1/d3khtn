@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Future Shop</title>
+<link href="../style/StyteMain.css" type="text/css" rel="stylesheet"/>
+</head>
+    <body class="MainBody">
+<div id="container">
+      <div id="header">
+    <div id="banner">
+          <div id="logo"><a href="#"><img src="../images/futureshop_logo.png"/></a></div>
+          <div id="menu_right">
+        <div id="mainmenu">
+              <div class="menumainItem"> <a href="#" title="noi dung cua menu"> ABOUT </a></div>
+              <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HELP </a></div>
+              <div class="menumainItem"> <a href="#" title="noi dung cua menu"> SEARCH </a></div>
+              <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HOME </a></div>
+            </div>
+        <div id="profilemenu">
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Acount </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
+            </div>
+      </div>
+        </div>
+    <div id="menu">
+          <ul id="jsddm">
+        <li class="current_item"><a href="#"> Short by Department </a>
+              <ul>
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Bell Internet</a></li>
+            <li><a href="#">Bell Mobility</a></li>
+            <li><a href="#">Bell TV</a></li>
+            <li><a href="#">BlackBerry</a></li>
+            <li><a href="#">Intel</a></li>
+          </ul>
+            </li>
+        <li class="current_item"><a href="#">Specially Stores</a>
+              <ul>
+            <li><a href="#">Apple</a></li>
+            <li><a href="#">Bell Internet</a></li>
+            <li><a href="#">Bell Mobility</a></li>
+            <li><a href="#">Bell TV</a></li>
+            <li><a href="#">BlackBerry</a></li>
+            <li><a href="#">Intel</a></li>
+          </ul>
+            </li>
+        <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
+        <div id="subtotal"><a href="#" ><img src="../images/view_cart.gif" /></a></div>
+      </ul>
+        </div>
+    <div id="search">
+          <form action="#" name="search">
+        <input type="text" name="txtsearch" />
+        <input type="image" src="../images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
+        <div id="account"> Welcome! <a  href="#"> Create an Account </a>|<a  href="#">Sign In</a> </div>
+      </form>
+        </div>
+    <!-- end #header -->
+  </div>
+      <div id="left">
+    <div id="categories">
+          <h2>My Account Home</h2>
+          <a>Shopping</a>
+          <ul>
+        <li><a href="#">Order History</a></li>
+        <li><a href="#">Wish List</a></li>
+        <li><a href="#">Price Watch</a></li>
+      </ul>
+      <a>Account Details</a>
+      <ul>
+        <li><a href="#">Account Profile</a></li>
+        <li><a href="#">Change Password</a></li>
+        <li><a href="#">Change Email Address</a></li>
+      </ul>
+        </div>
+    <!-- end #left -->
+  </div>
+      <div id="mainContent"> <!-- TemplateBeginEditable name="NoiDungThayDoi" -->NoiDungThayDoi<!-- TemplateEndEditable -->
+    <!-- end #mainContent -->
+  </div>
+      <br class="clearfloat" />
+      <div id="footer">
+    <p>© 2011 Future Shop. All rights reserved. For personal, noncommercial use only. Desiged by TranTri.</p>
+    <!-- end #footer -->
+  </div>
+      <!-- end #container -->
+    </div>
+</body>
+    </html>
+<script src="../js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		var timeout         = 500;
+		var closetimer		= 0;
+		var ddmenuitem      = 0;
+		
+		function jsddm_open()
+		{	jsddm_canceltimer();
+			jsddm_close();
+			ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
+		
+		function jsddm_close()
+		{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+		
+		function jsddm_timer()
+		{	closetimer = window.setTimeout(jsddm_close, timeout);}
+		
+		function jsddm_canceltimer()
+		{	if(closetimer)
+			{	window.clearTimeout(closetimer);
+				closetimer = null;}}
+		
+		$(document).ready(function()
+		{	$('#jsddm > li').bind('mouseover', jsddm_open);
+			$('#jsddm > li').bind('mouseout',  jsddm_timer);});
+		
+		document.onclick = jsddm_close;
+		</script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/easySlider1.5.js"></script>
+<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				controlsBefore:	'<p id="controls">',
+				controlsAfter:	'</p>',
+				auto: true, 
+				continuous: true
+			});
+		
+		});	
+	</script>
+	

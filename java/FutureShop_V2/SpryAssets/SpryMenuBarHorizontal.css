@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+ul.MenuBarHorizontal
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 100%;
+	cursor: default;
+	width: auto;
+}
+
+ul.MenuBarActive
+{
+	z-index: 1000;
+}
+
+ul.MenuBarHorizontal li
+{
+	margin: 0 5px 0 0;
+	padding: 3px 0 3px 0;
+	list-style-type: none;
+	font-size: 100%;
+	position: relative;
+	text-align: left;
+	cursor: pointer;
+	width: auto;
+	float: left;
+	background-image: url(../images/cam.jpg);
+}
+
+ul.MenuBarHorizontal ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 100%;
+	z-index: 1020;
+	cursor: default;
+	width: 150px;
+	position: absolute;
+	left: -1000em;
+	display:block;
+	
+}
+
+ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
+{
+	left: auto;
+}
+
+ul.MenuBarHorizontal ul li
+{
+	width: 300px;
+	background-image: url(../images/transparent_bg.png);
+	background-repeat:repeat;
+}
+ul.MenuBarHorizontal ul li:last
+{
+
+border-radius:10px
+}
+
+/* border of menu con*/
+
+ul.MenuBarHorizontal ul
+{
+	
+}
+/*****************************************/
+ul.MenuBarHorizontal a
+{
+	display: block;
+	cursor: pointer;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+/* hover of menu con*/
+ul.MenuBarHorizontal ul li a
+{
+	color:#FFFFFF;
+}
+ /***********************************/
+/* Hover of menu cha */
+ul.MenuBarHorizontal a:hover
+{
+	color:#000000;
+}
+
+
+
+ul.MenuBarHorizontal a.MenuBarItemSubmenuHover
+{
+	color:#000000;
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+}
+
+/**************************************/
+
+ul.MenuBarHorizontal iframe
+{
+	position: absolute;
+	z-index: 1010;
+}
+
+@media screen, projection
+{
+	ul.MenuBarHorizontal li.MenuBarItemIE
+	{
+		display: inline;
+		f\loat: left;
+		
+	}
+}
