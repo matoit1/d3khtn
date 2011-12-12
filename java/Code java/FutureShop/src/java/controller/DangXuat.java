@@ -38,6 +38,7 @@ public class DangXuat extends HttpServlet {
             String url = "index.do";
             if (session.getAttribute("account") != null) {
                 session.removeAttribute("account");
+                session.removeAttribute("admin");
             }
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

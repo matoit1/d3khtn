@@ -88,8 +88,6 @@
         </c:forEach>
         <div class="clear"></div>
     </div>
-    <!-- InstanceEndEditable -->
-    <!-- end #mainContent -->
 </c:catch>
 <c:if test="${ex ne null}">
     ${ex.message}

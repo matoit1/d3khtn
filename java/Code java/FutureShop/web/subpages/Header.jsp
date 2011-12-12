@@ -12,7 +12,7 @@
             <div id="logo"><a href="index.do"><img src="images/futureshop_logo.png"/></a></div>
             <div id="menu_right">
                 <div id="mainmenu">
-                    <div class="menumainItem"> <a href="#" title="noi dung cua menu"> ABOUT </a></div>
+                    <div class="menumainItem"> <a href="About.jsp" title="noi dung cua menu"> ABOUT </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HELP </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> SEARCH </a></div>
                     <div class="menumainItem"> <a href="index.do" title="noi dung cua menu"> HOME </a></div>

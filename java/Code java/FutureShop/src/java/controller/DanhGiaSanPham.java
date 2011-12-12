@@ -39,12 +39,16 @@ public class DanhGiaSanPham extends HttpServlet {
                 maSp = Integer.parseInt(request.getParameter("maSp"));
             }
             Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
-            //String tenHangSX = sp.getHangsanxuat().getTenHangSanXuat();
+           
             
-            
-            request.setAttribute("sp", sp);
-            //request.setAttribute("tenHangSX", tenHangSX);
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.jsp");
+            int rate = 5;
+            if (request.getParameter("rate") != null) {
+                rate = Integer.parseInt(request.getParameter("rate"));
+            }
+            //cap nhap lai danh gia san pham
+            sp.setDanhGia(rate);
+            SanPhamDAO.CapNhapSanPham(sp);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.do?maSp="+sp.getMaSanPham());
             rd.forward(request, response);
         } finally {            
             out.close();

@@ -50,7 +50,12 @@ public class DangNhap extends HttpServlet {
                 if (KhachHangDAO.kiemTraDangNhap(tenDangNhap, matKhau)) {
                     Khachhang kh = KhachHangDAO.layThongTinKhachHang(tenDangNhap);
                     session.setAttribute("account", kh);
-                    url = "index.do";
+                    if (kh.getLoaikhachhang().getMaLoaiKhachHang() == 1) {
+                        session.setAttribute("admin", 1);
+                        url = "AdminQuanLySanPham.jsp";
+                    } else {
+                        url = "index.do";
+                    }
                 } else {
                     request.setAttribute("error", "Your ID or Your Password is incorrect ! Please try again !");
                     url = "DangNhap.jsp";
