@@ -8,16 +8,73 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <c:catch var="ex">
     <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
-    <div class="ad_top">
-        <div id="slider">
-            <ul>
-                <li> <img src="images/banner(2).png"/></li>
-                <li> <img src="images/BANNER (3).png"/></li>
-                <li> <img src="images/banner(4).png"/></li>
-            </ul>
-        </div>
-    </div>
-    <br/>
+     <br class="clearfloat"/>
+    <div id="slite"><div id="container">
+<div id="lofslidecontent45" class="lof-slidecontent">
+<div class="preload"><div></div></div>
+ <!-- MAIN CONTENT -->
+  <div class="lof-main-outer">
+  	<ul class="lof-main-wapper">
+  		<li>
+        		<img src="images/banner/homepage-slide-ho_en.jpg" title="Newsflash 2" height="300"/>
+                 <div class="lof-main-item-desc"> </div>
+        </li>
+
+      	<li>
+        	<img src="images/banner/p-homepage-slide-tv_en.jpg" title="Newsflash 3" height="300" width="600"/>
+             <div class="lof-main-item-desc"> </div>
+        </li>
+       	<li>
+
+        	<img src="images/banner/p-homepage-slide-di_en.jpg" title="Newsflash 5" height="300" width="600"/>
+             <div class="lof-main-item-desc"></div>
+        </li>
+        	<li>
+
+        	<img src="images/banner/p-homepage-slide-major-app_en.jpg"  title="Newsflash 5" height="300" width="600"/>
+             <div class="lof-main-item-desc"></div>
+        </li>
+
+        
+     </ul>
+ </div>
+  <div class="lof-navigator-outer">
+  		<ul class="lof-navigator">
+            <li>
+            	<div>
+                	<img src="images/banner/homepage-slide--thumb-ho.png" />
+                	<h3>Wrap up the perfect laptop. </h3>
+                </div>
+            </li>
+           <li>
+            	<div>
+                    <img src="images/banner/homepage-slide--thumb-tv.png" />
+                    <h3> Get the best holiday deals on TVs. </h3>
+                </div>
+            </li>
+
+           <li>
+           		<div>
+                    <img src="images/banner/homepage-slide--thumb-camera.png" />
+                    <h3> Gifts they want, prices you'll love.</h3>
+                </div>
+            </li>
+             <li>
+           		<div>
+                    <img src="images/banner/homepage-slide--thumb-major-app.png" />
+                    <h3> We pay the tax on all major appliances!</h3>
+                </div>
+            </li>
+ 
+
+        </ul>
+  </div>
+ </div>
+</div></div>
+
+
+
+    <br class="clearfloat"/>
     <h1 align="center" style="color: #FFB400; background-color:#A67500">Featured Promotions</h1>  
     <div id="black-bl">
         <c:forEach begin="0" var="sp" items="${requestScope.dsSanPham}">

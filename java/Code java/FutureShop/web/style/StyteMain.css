@@ -35,7 +35,7 @@ body {
 }
 .MainBody #banner {
 	height: 96px;
-	background: url(/images/mainheader_content.png) repeat-x top left;
+	background: url(..//images/mainheader_content.png) repeat-x top left;
 	text-align: left;
 }
 .MainBody #logo {
@@ -43,6 +43,19 @@ body {
 	width: 365px;
 	font-size: 1px;
 }
+
+.MainBody #menu {
+	background-image:url(../images/bgmn.png);
+	height:25px;
+
+	color:#FFFFFF;
+	font-weight:bold;
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:6px;
+	clear:both;
+	border-radius:8px}
+
 .MainBody #menu_right {
 	float: right;
 	width: 515px;
@@ -103,6 +116,8 @@ body {
 	padding-top:20px;
 	
 }
+
+
 .MainBody #footer {
 	padding: 0 10px;
 	background:#DDDDDD;
@@ -137,55 +152,7 @@ body {
 	font-size: 1px;
 	line-height: 0px;
 }
-/* js  menu*/
-#jsddm {
-	padding:0;
-	height: 50px;
-	width: 880px;
-	background-color:#CCCCCC;
-	border-top: 1px #FFFFFF;
-	margin-top: 0;
-	margin-right: 0px;
-	margin-bottom: 0;
-	margin-left: 0px;
-}
-#jsddm li {
-	display:block;
-	float: left;
-}
-#jsddm li a {
-	display: block;
-	height: 30px;
-	padding: 5px 10px 0px 10px;
-	margin-right: 1px;
-	text-align: left;
-	text-decoration: none;
-	font-weight: bold;
-	color: #000000;
-}
-#jsddm li a:hover {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-#jsddm li ul {
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	visibility: hidden;
-	border-top: 1px solid white
-}
-#jsddm li ul li {
-	float: none;
-	display: inline
-}
-#jsddm li ul li a {
-	width: auto;
-	background: #F5F5F5;
-	color: #24313C
-}
-#jsddm li ul li a:hover {
-	background: #FFB100
-}
+
 /*categori*/
 #categories h2 {
 	color: #fff;
@@ -237,7 +204,7 @@ body {
 
 .black-box {
 	float: left;
-	width: 170px;
+	width: 180px;
 	margin: 10px 10px 10px 10px;
 	background:#EFEFEF;
 	padding: 5px 5px 5px 5px;
