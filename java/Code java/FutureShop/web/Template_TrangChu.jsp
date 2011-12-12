@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Template
-    Created on : Nov 21, 2011, 9:09:00 AM
-    Author     : VIET
+    Document   : Template_TrangChu
+    Created on : Dec 12, 2011, 10:59:09 AM
+    Author     : TRANTRI
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -18,6 +18,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Future Shop</title>
         <link href="style/StyteMain.css" type="text/css" rel="stylesheet"/>
+        <link href="style/style.css" type="text/css" rel="stylesheet"/>
         <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
         <script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
         <script language="javascript" type="text/javascript" src="js/script.js"></script>
@@ -41,8 +42,7 @@
     <body class="MainBody"> 
         <div id="container">
             <tiles:insertAttribute name="header"/>
-            <tiles:insertAttribute name="left"/>
-            <div id="mainContent">
+            <div id="mainContent" style="margin:5px; width:890px">
                 <tiles:insertAttribute name="mainContent"/>
             </div>
 
@@ -53,3 +53,4 @@
 
     </body>   
 </html>  
+
