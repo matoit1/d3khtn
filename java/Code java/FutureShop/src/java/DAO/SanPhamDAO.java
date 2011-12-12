@@ -24,6 +24,7 @@ public class SanPhamDAO {
             session.beginTransaction();
             Query query = (Query) session.createQuery("from Sanpham order by id DESC limit 0,4");
             dsSanPham = (ArrayList<Sanpham>) query.list();
+            session.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         }
@@ -41,8 +42,20 @@ public class SanPhamDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
         return sp;
+    }
+    
+     public static boolean CapNhapSanPham(Sanpham sp) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        try {
+            session.getTransaction().begin();
+            session.update(sp);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            System.out.print(e);
+            return false;
+        }
     }
 }

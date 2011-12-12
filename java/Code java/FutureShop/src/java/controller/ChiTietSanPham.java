@@ -4,10 +4,15 @@
  */
 package controller;
 
+import DAO.BinhLuanDAO;
+import DAO.HangSanXuatDAO;
 import DAO.SanPhamDAO;
+import POJO.Binhluan;
+import POJO.Hangsanxuat;
 import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,20 +49,20 @@ public class ChiTietSanPham extends HttpServlet {
                 maSp = Integer.parseInt(request.getParameter("maSp"));
             }
             Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
-            //String tenHangSX = sp.getHangsanxuat().getTenHangSanXuat();
+            Hangsanxuat hang = HangSanXuatDAO.LayHangSanXuatTheoMa(sp.getHangsanxuat().getMaHangSanXuat());
+            String tenHangSX = hang.getTenHangSanXuat();
+            ArrayList<Binhluan> dsBL = BinhLuanDAO.LayDanhSachBinhLuanTheoMaSP(sp.getMaSanPham());
+            
             
             
             request.setAttribute("sp", sp);
-            //request.setAttribute("tenHangSX", tenHangSX);
+            request.setAttribute("tenHangSX", tenHangSX);
+            request.setAttribute("dsBL", dsBL);
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.jsp");
             rd.forward(request, response);
 
 
-            //lay san pham trong du lieu
-
-            // xu ly hien thi san pham
-
-            //chi tiet san pham
+          
 
             //cac binh luan
 

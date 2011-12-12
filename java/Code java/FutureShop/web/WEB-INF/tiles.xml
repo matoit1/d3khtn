@@ -30,11 +30,13 @@
     <definition name="timkiemnhanh" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/TimKiemNhanhContent.jsp" />  
     </definition> 
-    <definition name="themsanpham1" extends="template"> 
-        <put-attribute name="mainContent" value="/subpages/ThemSanPham1Content.jsp" />  
-    </definition> 
+    <definition name="quanlysanpham" extends="template"> 
+    <put-attribute name="left" value="/subpages/Left_Admin.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubAdminQuanLySanPham.jsp" />  
+    </definition>
     <definition name="themsanpham" extends="template"> 
-        <put-attribute name="mainContent" value="/subpages/ThemSanPhamContent.jsp" />  
+    <put-attribute name="left" value="/subpages/Left_Admin.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubAdminThemSanPham.jsp" />  
     </definition> 
     <definition name="lichsumuahang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/LichSuMuaHangContent.jsp" />  
@@ -78,6 +80,9 @@
     </definition>
     <definition name="quanlydondathang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/QuanLyDonDatHangContent.jsp" />  
+    </definition>
+    <definition name="about" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubAbout.jsp" />  
     </definition>
 </tiles-definitions> 
 

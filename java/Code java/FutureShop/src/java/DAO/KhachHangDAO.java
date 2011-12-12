@@ -18,6 +18,19 @@ import util.HibernateUtil;
  * @author Nguyen Anh Tri
  */
 public class KhachHangDAO {
+    
+    public static Khachhang LayKhachHangTheoMa(int ma) {
+        Khachhang kh = new Khachhang();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            kh = (Khachhang) session.get(Khachhang.class, ma);
+            session.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return kh;
+    }
 
     //<editor-fold defaultstate="collapsed" desc="Mã hoá MD5">
     public static String maHoa_MD5(String text) {
