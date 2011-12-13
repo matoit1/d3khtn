@@ -65,8 +65,6 @@
     $(document).ready(function()
     {	$('#jsddm > li').bind('mouseover', jsddm_open);
         $('#jsddm > li').bind('mouseout',  jsddm_timer);
-        $('#jsddm1 > li').bind('mouseover', jsddm_open);
-        $('#jsddm1 > li').bind('mouseout',  jsddm_timer);
     });
 		
     document.onclick = jsddm_close;
@@ -131,7 +129,6 @@
             <div id="mainContent">
                 <tiles:insertAttribute name="mainContent"/>
             </div>
-
             <br class="clearfloat" />
             <tiles:insertAttribute name="footer"/>
             <!-- end #container -->
