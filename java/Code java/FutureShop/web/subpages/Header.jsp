@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
+
 <c:catch var="ex">
     <div id="header">
         <div id="banner">
@@ -30,9 +31,16 @@
             <ul id="MenuBar1" class="MenuBarHorizontal">
 
                 <li><a href="">Short by Department</a>
-                    <ul>
+                    <ul id="jsddm1">
                         <c:forEach begin="0" items="${dsNhomsanPham}" var="nsp">
-                            <li><a href="#">${nsp.tenNhomSanPham}</a></li>
+                            <li>
+                                <a href="#">${nsp.tenNhomSanPham}</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">123</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </c:forEach> 
 
                     </ul>
