@@ -71,9 +71,6 @@
                 </div>
             </div>
         </div></div>
-
-
-
     <br class="clearfloat"/>
     <h1 align="center" style="color: #FFB400; background-color:#A67500">Featured Promotions</h1>  
     <div id="black-bl">

@@ -5,10 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib  uri="http://java.sun.com/jstl/core" prefix="c" %>
-
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'
     'http://www.w3.org/TR/html4/loose.dtd'>
 
@@ -19,24 +17,18 @@
         <link type="text/css" rel="stylesheet" href="SpryAssets/SpryMenuBarHorizontal.css"/>
         <link type="text/css" rel="stylesheet" href="style/StyteMain.css"/>
         <link type="text/css" rel="stylesheet" href="style/css.css"/>
-        <script type="text/javascript" src="js/jquery.js"/>
-        <script type="text/javascript" src="js/query.js"/>
-        <script type="text/javascript" src="js/script.js"/>
-        <script type="text/javascript" src="js/jquery.easing.js"/>
-        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"/>
+        <link type="text/css" rel="stylesheet" href="style/style.css"/>
+        <script type="text/javascript" src="js/jquery.js" language="javascript"></script>
+        <script type="text/javascript" src="js/query.js" language="javascript"></script>
+        <script type="text/javascript" src="js/script.js" language="javascript"></script>
+        <script type="text/javascript" src="js/jquery.easing.js" language="javascript"></script>
+        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript" language="javascript"></script>
         <script type="text/javascript">
             $(document).ready( function(){ 
-                $('#lofslidecontent45').lofJSidernews( { interval:2000,
-                    easing:'easeInOutQuad',
-                    duration:1200,
-                    auto:true } );
+                $('#lofslidecontent45').lofJSidernews( { interval:2000, easing:'easeInOutQuad', duration:1200, auto:true } );
                 $("#cdn").hide();
-                $(".btn").click(function(){
-
-                    $("#cdn").slideToggle(1000);
-                });
+                $(".btn").click(function(){$("#cdn").slideToggle(1000);});
             });
-
         </script>
     </head>
     <body class="MainBody"> 
