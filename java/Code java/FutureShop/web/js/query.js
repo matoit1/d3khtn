@@ -226,12 +226,22 @@ function ChangeEmail()
         $('#invalid_pass').html('');
     }
     
+    var newemail = $('#newemail').val().trim();
     if($('#newemail').val().trim().length == 0){
         $('#invalid_newemail').html('New Email Address is required !');
         $('#newemail').focus();
         return false;
     }else{
-        $('#invalid_newemail').html('');
+        if(echeck(newemail)==false)
+        {
+            $('#invalid_newemail').html('Email Address is not correct !');
+            $('#newemail').focus();
+            return false;
+        }
+        else
+        {
+            $('#invalid_newemail').html('');
+        }
     }
     
     if($('#newemail2').val().trim().length == 0){

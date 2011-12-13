@@ -4,6 +4,8 @@
  */
 package controller;
 
+import DAO.KhachHangDAO;
+import POJO.Khachhang;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -35,15 +37,37 @@ public class CapNhatThongTinCaNhan extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             String url = "CapNhatThongTinCaNhan.jsp";
-            
-            if(session.getAttribute("account") == null)
-            {
+            request.setCharacterEncoding("UTF-8");
+            response.setContentType("UTF-8");
+            if (session.getAttribute("account") == null) {
                 request.setAttribute("error", "You're not sign in, Please sign in ! If you does'nt have account, plese sign up for new account !");
+            } else {
+                if (request.getParameter("Update") != null) {
+                    Khachhang kh = (Khachhang) session.getAttribute("account");
+                    String fullname = request.getParameter("fullname");
+                    int gender = Integer.parseInt(request.getParameter("gender"));
+                    String phone = request.getParameter("phone");
+                    String address = request.getParameter("address");
+                    kh.setHoTen(fullname);
+                    if (gender == 0) {
+                        kh.setGioiTinh(Boolean.TRUE);
+                    } else {
+                        kh.setGioiTinh(Boolean.FALSE);
+                    }
+                    kh.setSoDienThoai(phone);
+                    kh.setDiaChi(address);
+
+                    if (KhachHangDAO.capNhatTaiKhoan(kh)) {
+                        request.setAttribute("message", "Your Account Profile have been successfully changed !");
+                    } else {
+                        request.setAttribute("message", "Your Account Profile have not been successfully changed !");
+                    }
+                }
             }
-            
+
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
-        } finally {            
+        } finally {
             out.close();
         }
     }

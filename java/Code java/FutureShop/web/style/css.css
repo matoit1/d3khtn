@@ -11,7 +11,7 @@
 
 .info table 
 {
-    margin-left: 125px;
+    margin-left: 25px;
     font-size: 1.1em;
 }
 
@@ -22,19 +22,17 @@
 
 .info table  td.label
 {
-    width: 95px;
+    width: 220px;
 }
 
 .info table  td.value
 {
-    margin-left: 50%;
     width: 210px;
     color: #cb5106;
 }
 
 .info table  td.value input
 {
-    margin-left: 50%;
     width: 200px;
 }
 

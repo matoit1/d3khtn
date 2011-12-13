@@ -19,6 +19,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Future Shop</title>
         <link href="style/StyteMain.css" type="text/css" rel="stylesheet"/>
+<<<<<<< .mine
+        <link href='style/css.css' type='text/css' rel='stylesheet'  />
+=======
         <script src="js/jquery.min.js" type="text/javascript"></script>
     </head>
     <body class="MainBody"> 
@@ -85,7 +88,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Future Shop</title>
         <link href="style/StyteMain.css" type="text/css" rel="stylesheet"/>
+>>>>>>> .r182
         <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="js/query.js"></script>
         <script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
         <script language="javascript" type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript">
