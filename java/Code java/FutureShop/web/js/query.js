@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 
-
 function echeck(str) {
 
     var at="@"
@@ -40,13 +39,13 @@ function echeck(str) {
         //alert("Invalid E-mail ID")
         return false
     }
-		
+                
     if (str.indexOf(" ")!=-1){
         //alert("Invalid E-mail ID")
         return false
     }
 
-    return true					
+    return true                                 
 }
 
 
@@ -300,5 +299,4 @@ function ChangePassword()
     
     return true;
 }
-
 

@@ -1,0 +1,15 @@
+﻿Chú ý các nội dung sau:
+1/ Account Future Shop
+	Username : knight_tri@yahoo.com
+	Password : anhtriuns
+2/ Account FutureShop
+	Username			Password
+	admin				admin
+	trantri				123456
+	nguyenanhtri		123456
+	nguyenvanviet		123456
+3/ Yêu cầu khi commit
+	-	Clean project trước khi commit
+	-	Không commit lên các file properties vì mỗi máy cấu hình khác nhau
+4/ Một số chú ý
+	-	Santo cấu hình hiberate có password

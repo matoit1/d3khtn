@@ -70,6 +70,7 @@ public class CapNhatEmail extends HttpServlet {
 
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
+
         } finally {
             out.close();
         }

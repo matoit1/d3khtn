@@ -18,7 +18,7 @@ import util.HibernateUtil;
  * @author Nguyen Anh Tri
  */
 public class KhachHangDAO {
-    
+
     public static Khachhang LayKhachHangTheoMa(int ma) {
         Khachhang kh = new Khachhang();
         try {
@@ -170,7 +170,7 @@ public class KhachHangDAO {
         }
     }
     //</editor-fold>
-    
+
     //<editor-fold defaultstate="collapsed" desc="Cập nhật tài khoản">
     public static boolean capNhatTaiKhoan(Khachhang kh) {
         if (KhachHangDAO.layThongTinKhachHang(kh.getTenDangNhap()) == null) {
