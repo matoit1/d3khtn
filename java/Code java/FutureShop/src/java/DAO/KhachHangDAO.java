@@ -148,8 +148,8 @@ public class KhachHangDAO {
     }
     //</editor-fold>
 
-    //<editor-fold defaultstate="collapsed" desc="Thay đổi mật khẩu">
-    public static boolean capNhatTaiKhoan(Khachhang kh) {
+    //<editor-fold defaultstate="collapsed" desc="Cập nhật mật khẩu">
+    public static boolean capNhatMatKhau(Khachhang kh) {
         if (KhachHangDAO.layThongTinKhachHang(kh.getTenDangNhap()) == null) {
             return false;
         }
@@ -157,6 +157,28 @@ public class KhachHangDAO {
         session = HibernateUtil.getSessionFactory().openSession();
         try {
             kh.setMatKhau(maHoa_MD5(kh.getMatKhau()));
+            session.getTransaction().begin();
+            session.update(kh);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            session.getTransaction().rollback();
+            System.out.println(ex);
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Cập nhật tài khoản">
+    public static boolean capNhatTaiKhoan(Khachhang kh) {
+        if (KhachHangDAO.layThongTinKhachHang(kh.getTenDangNhap()) == null) {
+            return false;
+        }
+        Session session = null;
+        session = HibernateUtil.getSessionFactory().openSession();
+        try {
             session.getTransaction().begin();
             session.update(kh);
             session.getTransaction().commit();

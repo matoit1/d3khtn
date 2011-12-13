@@ -4,6 +4,7 @@
  */
 package controller;
 
+import DAO.EmailDAO;
 import DAO.KhachHangDAO;
 import POJO.Khachhang;
 import java.io.IOException;
@@ -42,19 +43,26 @@ public class CapNhatMatKhau extends HttpServlet {
                 request.setAttribute("error", "You're not sign in, Please sign in ! If you does'nt have account, plese sign up for new account !");
             } else {
                 if (request.getParameter("Update") != null) {
-                    Khachhang kh = (Khachhang) session.getAttribute("account");
-                    String pass = request.getParameter("password");
-                    String tenDangNhap = kh.getTenDangNhap();
-                    if (KhachHangDAO.kiemTraDangNhap(tenDangNhap, pass)) {
-                        String matkhau = request.getParameter("newpass");
-                        kh.setMatKhau(matkhau);
-                        if (KhachHangDAO.capNhatTaiKhoan(kh)) {
-                            request.setAttribute("message", "Your Password have been successful changed !");
+                    try {
+                        Khachhang kh = (Khachhang) session.getAttribute("account");
+                        String pass = request.getParameter("password");
+                        String tenDangNhap = kh.getTenDangNhap();
+                        if (KhachHangDAO.kiemTraDangNhap(tenDangNhap, pass)) {
+                            String matkhau = request.getParameter("newpass");
+                            kh.setMatKhau(matkhau);
+                            if (KhachHangDAO.capNhatMatKhau(kh)) {
+                                request.setAttribute("message", "Your Password have been successful changed !");
+//                                String subject = "Account Infomation";
+//                                String body = String.format("Hi %s, /nHere is your account infomation : /nYour ID : %s /nYour Password : %s /n ", kh.getHoTen(), kh.getMaKhachHang(), kh.getMatKhau());
+//                                EmailDAO.send(kh.getEmail(), subject, body);
+                            } else {
+                                request.setAttribute("message", "Your Password have not been successful changed !");
+                            }
                         } else {
-                            request.setAttribute("message", "Your Password have not been successful changed !");
+                            request.setAttribute("message", "Your Password is incorrect !");
                         }
-                    } else {
-                        request.setAttribute("message", "Your Password is incorrect !");
+                    } catch (Exception ex) {
+                        System.err.println(ex);
                     }
                 }
             }

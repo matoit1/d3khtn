@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div>
+<div class="info">
     <c:if test="${requestScope.error eq null}">
         <c:url var="CapNhatMatKhau" value="CapNhatMatKhau.do"/>
         <form action="${CapNhatMatKhau}" method="post" name="frm_CapNhatMatKhau" onsubmit="return ChangePassword();">
