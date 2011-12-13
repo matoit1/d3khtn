@@ -5,7 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib  uri="http://java.sun.com/jstl/core" prefix="c" %>
 
@@ -13,7 +12,6 @@
     'http://www.w3.org/TR/html4/loose.dtd'>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Future Shop</title>
@@ -24,17 +22,10 @@
         <script language="javascript" type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript">
             $(document).ready( function(){ 
-                $('#lofslidecontent45').lofJSidernews( { interval:2000,
-                    easing:'easeInOutQuad',
-                    duration:1200,
-                    auto:true } );
+                $('#lofslidecontent45').lofJSidernews( { interval:2000, easing:'easeInOutQuad', duration:1200, auto:true } );
                 $("#cdn").hide();
-                $(".btn").click(function(){
-
-                    $("#cdn").slideToggle(1000);
-                });
+                $(".btn").click(function(){$("#cdn").slideToggle(1000);});
             });
-
         </script>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
@@ -45,7 +36,6 @@
             <div id="mainContent" style="margin:5px; width:890px">
                 <tiles:insertAttribute name="mainContent"/>
             </div>
-
             <br class="clearfloat" />
             <tiles:insertAttribute name="footer"/>
             <!-- end #container -->

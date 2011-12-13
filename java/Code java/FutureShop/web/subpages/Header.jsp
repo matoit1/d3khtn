@@ -28,7 +28,6 @@
         </div>
         <div id="menu">
             <ul id="MenuBar1" class="MenuBarHorizontal">
-
                 <li><a href="">Short by Department</a>
                     <ul id="jsddm1">
                         <c:forEach begin="0" items="${dsNhomsanPham}" var="nsp">
@@ -41,7 +40,6 @@
                                 </ul>
                             </li>
                         </c:forEach> 
-
                     </ul>
                 </li>
                 <li><a href="">Specially Stores</a>
