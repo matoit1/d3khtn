@@ -26,7 +26,6 @@
                 </div>
             </div>
         </div>
-
         <div id="menu">
             <ul id="MenuBar1" class="MenuBarHorizontal">
 
