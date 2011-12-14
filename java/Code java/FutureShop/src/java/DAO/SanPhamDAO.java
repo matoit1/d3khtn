@@ -17,12 +17,33 @@ import util.HibernateUtil;
  */
 public class SanPhamDAO {
 
-    public static ArrayList<Sanpham> LayDanhSachNhomSanPham() {
+    public static ArrayList<Sanpham> LayDanhSachToanBoSanPham() {
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
-            Query query = (Query) session.createQuery("from Sanpham order by id DESC limit 0,4");
+            Query query = (Query) session.createQuery("from Sanpham");
+            dsSanPham = (ArrayList<Sanpham>) query.list();
+            session.close();
+        } catch (HibernateException e) {
+            System.out.println(e.getMessage());
+        }
+        return dsSanPham;
+    }
+    public static int SoLuongTongSanPham()
+    {
+        return LayDanhSachToanBoSanPham().size();
+    }
+    public static ArrayList<Sanpham> LayDanhSachSanPhamPhanTrang(int batdau, int sl, boolean flag) {//flag = false thi lay cac san pham da xoa luon
+        ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            String s="";
+            if (flag){
+                s=" where sp.tinhtrang =1 ";
+            }
+            Query query = (Query) session.createQuery("from Sanpham sp "+s+"order by id DESC limit "+batdau+","+sl);
             dsSanPham = (ArrayList<Sanpham>) query.list();
             session.close();
         } catch (HibernateException e) {
@@ -44,8 +65,8 @@ public class SanPhamDAO {
         }
         return sp;
     }
-    
-     public static boolean CapNhapSanPham(Sanpham sp) {
+
+    public static boolean CapNhapSanPham(Sanpham sp) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
             session.getTransaction().begin();

@@ -18,6 +18,7 @@
         <put-attribute name="left" value="/subpages/Left.jsp" /> 
         <put-attribute name="mainContent" value="/subpages/MainIndex.jsp" />  
         <put-attribute name="footer" value="/subpages/Footer.jsp" /> 
+        <put-attribute name="left_admin" value="/subpages/Left_Admin.jsp" />
     </definition>
     <definition name="template_trangchu" template="/Template_TrangChu.jsp">
         <put-attribute name="header"  value="/subpages/Header.jsp" /> 
@@ -30,13 +31,14 @@
     <definition name="timkiemnhanh" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/TimKiemNhanhContent.jsp" />  
     </definition> 
-    <definition name="quanlysanpham" extends="template"> 
-    <put-attribute name="left" value="/subpages/Left_Admin.jsp" />
+    <definition name="quanlysanpham" extends="template">    
         <put-attribute name="mainContent" value="/subpages/SubAdminQuanLySanPham.jsp" />  
     </definition>
     <definition name="themsanpham" extends="template"> 
-    <put-attribute name="left" value="/subpages/Left_Admin.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubAdminThemSanPham.jsp" />  
+    </definition> 
+    <definition name="capnhapsanpham" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubAdminCapNhapSanPham.jsp" />  
     </definition> 
     <definition name="lichsumuahang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/LichSuMuaHangContent.jsp" />  

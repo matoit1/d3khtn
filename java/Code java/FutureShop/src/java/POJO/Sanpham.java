@@ -2,6 +2,8 @@ package POJO;
 // Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
 
 
+import DAO.HangSanXuatDAO;
+import DAO.LoaiSanPhamDAO;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -154,8 +156,19 @@ public class Sanpham  implements java.io.Serializable {
         this.binhluans = binhluans;
     }
 
-
-
+//them vao
+    public String getTenHangSX()
+    {
+        return HangSanXuatDAO.LayHangSanXuatTheoMa(hangsanxuat.getMaHangSanXuat()).getTenHangSanXuat();
+    }
+    public String getTenLoaiSanPham()
+    {
+        return LoaiSanPhamDAO.LayLoaiSanPhamTheoMa(loaisanpham.getMaLoaiSanPham()).getTenLoaiSanPham();
+    }
+    public int getMaTinhTrang()
+    {
+        return tinhtrang.getMaTinhTrang();
+    }
 
 }
 

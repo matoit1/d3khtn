@@ -4,8 +4,9 @@
  */
 package controller;
 
-import DAO.KhachHangDAO;
-import POJO.Khachhang;
+import DAO.SanPhamDAO;
+import POJO.Sanpham;
+import POJO.Tinhtrang;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,14 +15,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Nguyen Anh Tri
+ * @author TRANTRI
  */
-@WebServlet(name = "DangNhap", urlPatterns = {"/DangNhap.do"})
-public class DangNhap extends HttpServlet {
+@WebServlet(name = "XoaSanPham", urlPatterns = {"/XoaSanPham.do"})
+public class XoaSanPham extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -35,34 +35,18 @@ public class DangNhap extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            HttpSession session = request.getSession();
-            String url = "DangNhap.jsp";
-
-            if (session.getAttribute("account") != null) {
-                response.sendRedirect("index.do");
-                return;
+            int maSp = 1;
+            if (request.getParameter("maSp") != null) {
+                maSp = Integer.parseInt(request.getParameter("maSp"));
             }
-
-            if (request.getParameter("signin") != null) {
-                String tenDangNhap = request.getParameter("id");
-                String matKhau = request.getParameter("password");
-
-                if (KhachHangDAO.kiemTraDangNhap(tenDangNhap, matKhau)) {
-                    Khachhang kh = KhachHangDAO.layThongTinKhachHang(tenDangNhap);
-                    session.setAttribute("account", kh);
-                    if (kh.getLoaikhachhang().getMaLoaiKhachHang() == 1) {
-                        session.setAttribute("admin", 1);
-                        url = "AdminQuanLySanPham.do";
-                    } else {
-                        url = "index.do";
-                    }
-                } else {
-                    request.setAttribute("error", "Your ID or Your Password is incorrect ! Please try again !");
-                    url = "DangNhap.jsp";
-                }
-            }
-            RequestDispatcher rd = request.getRequestDispatcher(url);
+            Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
+            Tinhtrang tt = new Tinhtrang();
+            tt.setMaTinhTrang(2);
+            sp.setTinhtrang(tt);
+            SanPhamDAO.CapNhapSanPham(sp);
+            RequestDispatcher rd = request.getRequestDispatcher("AdminQuanLySanPham.do");
             rd.forward(request, response);
+            
         } finally {
             out.close();
         }
