@@ -36,6 +36,7 @@
         <td><div align="center">
                 <c:if test="${sessionScope.admin ne null}">
                     <a href="AdminCapNhapSanPham.do?mSp=${sp.maSanPham}"><img src="images/button_edit_grey.gif"/></a>
+                    <a href="XoaSanPham.do?mSp=${sp.maSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
                     </c:if>
                     <c:if test="${sessionScope.admin eq null}">
                     <a href="MuaSanPham.do?mSp=${sp.maSanPham}"><img src="images/buy_now_big_on.gif"/></a>
@@ -87,6 +88,7 @@
         {
             var oFCKeditor = new FCKeditor( 'binhLuan' ) ;
             oFCKeditor.BasePath="fckeditor/";
+            oFCKeditor.Height= 400;
             oFCKeditor.ReplaceTextarea() ;
         }
 

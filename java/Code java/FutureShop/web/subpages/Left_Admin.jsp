@@ -11,8 +11,8 @@
         <p><strong>Product Manager</strong></p>
         <ul>
             <li><a href="AdminThemSanPham.jsp">Add New Product</a></li>
-            <li><a href="#">Edit Product</a></li>
-            <li><a href="#">Delete Product</a></li>
+            <li><a href="AdminQuanLySanPham.do">Edit Product</a></li>
+            <li><a href="AdminQuanLySanPham.do">Delete Product</a></li>
         </ul>
         <p><strong>Account Manager</strong></p>
         <ul>

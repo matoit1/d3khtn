@@ -20,7 +20,12 @@
                 </div>
                 <div id="profilemenu">
                     <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
-                    <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="noi dung cua menu"> >> My Acount </a></div>
+                    <c:if test="${sessionScope.admin eq null}">
+                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="noi dung cua menu"> >> My Acount </a></div>
+                    </c:if>
+                    <c:if test="${sessionScope.admin ne null}">
+                        <div class="profilemenuItem"> <a href="AdminQuanLySanPham.do" title="chức năng của admin"> >> Admin </a></div>
+                    </c:if>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
                 </div>
