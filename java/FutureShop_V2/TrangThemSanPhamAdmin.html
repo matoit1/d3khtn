@@ -103,7 +103,7 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
       <table width="100%" border="0">
         <tr>
           <td width="32%"><div align="right">Name Product:</div></td>
-          <td width="68%"><input type="text" name="txtName" value="" /></td>
+          <td width="68%"><input type="text" name="txtName" value="" width="400" /></td>
         </tr>
         <tr>
           <td><div align="right">Image:</div></td>
@@ -116,12 +116,29 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
               <option value="2">name cate2</option>
             </select></td>
         </tr>
+		 <tr>
+          <td><div align="right">Store</div></td>
+          <td>
+		  <select name="cbbStore" >
+              <option value="1">name HP</option>
+              <option value="2">TOSHIBA</option>
+            </select></td>
+        </tr>
+		 <tr>
+          <td><div align="right">Time Deadline</div></td>
+          <td><input type="text" name="txtTime" value="" /> 
+          (yyyy/mm/dd) </td>
+        </tr>
+		 <tr>
+          <td><div align="right">Quality</div></td>
+          <td><input type="text" name="txtQuality" value="" /></td>
+        </tr>
         <tr>
           <td><div align="right">Product Price:</div></td>
           <td><input type="text" name="txtPrice" value="" /></td>
         </tr>
         <tr>
-          <td><div align="right">VAT:</div></td>
+          <td><div align="right">Sale Price:</div></td>
           <td><input type="text" name="txtVAT" value="" /></td>
         </tr>
         <tr>
@@ -130,7 +147,7 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
         </tr>
         <tr>
           <td valign="top"><div align="right">Product Description: </div></td>
-          <td><textarea name="txtLongDes" cols="60" rows="10" >  write here </textarea></td>
+          <td><textarea name="txtLongDes" cols="80" rows="30" >  write here </textarea></td>
         </tr>
         <tr>
           <td><div align="right"></div></td>

@@ -11,12 +11,10 @@
         <div id="categories">
             <h2>Categories</h2>
             <ul>
-                <li><a href="#">Apple</a></li>
-                <li><a href="#">Bell Internet</a></li>
-                <li><a href="#">Bell Mobility</a></li>
-                <li><a href="#">Bell TV</a></li>
-                <li><a href="#">BlackBerry</a></li>
-                <li><a href="#">Intel</a></li>
+                <c:forEach var="lsp" items="${dsLoaiSanPham}">
+                <li><a href="#">${lsp.getTenLoaiSanPham()}</a></li>
+                </c:forEach>
+
             </ul>
         </div>
         <!-- end #left -->
