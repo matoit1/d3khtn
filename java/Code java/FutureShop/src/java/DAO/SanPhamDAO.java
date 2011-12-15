@@ -79,4 +79,22 @@ public class SanPhamDAO {
             return false;
         }
     }
+    
+    public static int ThemSanPham(Sanpham sp) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        int id =-1;
+        try {
+            session.beginTransaction();
+            id = (Integer)session.save(sp);
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            System.out.println(e);
+        } finally {
+            session.close();
+            return id;
+        }
+
+    }
 }

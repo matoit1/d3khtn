@@ -23,7 +23,7 @@
                         <a href="DanhGiaSanPham.do?maSp=${sp.maSanPham}&rate=${i}"> <img src="images/rating_on.png"/></a>
                         </c:forEach>
 
-                    <c:forEach begin="1" end="${5-sp.danhGia}" var="i">
+                    <c:forEach begin="${sp.danhGia+1}" end="${5}" var="i">
                         <a href="DanhGiaSanPham.do?maSp=${sp.maSanPham}&rate=${i}"> <img src="images/rating_off.png"/></a>
                     </c:forEach> ${sp.danhGia}/5</span></div>
         <td><div align="center">Quantity Remaining: ${sp.soLuong} </div></td>

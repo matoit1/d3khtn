@@ -10,15 +10,14 @@
         <h2>Welcome Admin</h2>
         <p><strong>Product Manager</strong></p>
         <ul>
-            <li><a href="AdminThemSanPham.jsp">Add New Product</a></li>
+            <li><a href="AdminThemSanPham.do">Add New Product</a></li>
             <li><a href="AdminQuanLySanPham.do">Edit Product</a></li>
             <li><a href="AdminQuanLySanPham.do">Delete Product</a></li>
         </ul>
         <p><strong>Account Manager</strong></p>
         <ul>
-            <li><a href="#">Add New Account</a></li>
-            <li><a href="#">Edit Account</a></li>
-            <li><a href="#">Delete Account</a></li>
+            <li><a href="CapNhatMatKhau.do">Chang Password Admin</a></li>
+            <li><a href="">Block Account Member</a></li>
         </ul>
     </div>
 </div>

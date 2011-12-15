@@ -30,7 +30,18 @@ public class HangSanXuatDAO {
         }
         return dsHangSx;
     }
-
+     public static ArrayList<Hangsanxuat> LayDanhSachHangSanXuat() {
+        ArrayList<Hangsanxuat> dsHangSx = new ArrayList<Hangsanxuat>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            Query query = (Query) session.createQuery("from Hangsanxuat");
+            dsHangSx = (ArrayList<Hangsanxuat>) query.list();
+        } catch (HibernateException e) {
+            System.out.println(e.getMessage());
+        }
+        return dsHangSx;
+    }
     public static Hangsanxuat LayHangSanXuatTheoMa(int ma) {
         Hangsanxuat sp = new Hangsanxuat();
         try {

@@ -8,7 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <h1 align="center" style="color: #FFB400; background-color:#A67500">Products Manager</h1>  
 
-<div style="font-weight:bold"><a href="AdminThemSanPham.jsp"><img src="images/new.gif" height="40" width="100"/> Add new product</a></div>
+<div style="font-weight:bold"><a href="AdminThemSanPham.do"><img src="images/new.gif" height="40" width="100"/> Add new product</a></div>
 
 <div align="right">           
     Page
@@ -34,7 +34,7 @@
 <c:forEach  var="sp" items="${dsSP}">
     <tr>
         <td><div align="center">${sp.maSanPham}</div></td>
-        <td><span style="font-weight: bold; color:#993300">${sp.tenSanPham}</span></td>
+        <td><span style="font-weight: bold; color:#993300"><a href="ChiTietSanPham.do?maSp=${sp.maSanPham}">${sp.tenSanPham}</a></span></td>
         <td><img src="images/product/${sp.maSanPham}_0.jpg" height="100" width="100"></td>
         <td>${sp.getTenLoaiSanPham()}</td>
         <td>${sp.getTenHangSX()}</td>
@@ -48,3 +48,5 @@
     </tr>
 </c:forEach>
 </table>
+<br/>
+<br/>
