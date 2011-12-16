@@ -34,15 +34,10 @@
         <div id="menu">
             <ul id="MenuBar1" class="MenuBarHorizontal">
                 <li><a href="">Short by Department</a>
-                    <ul id="jsddm1">
+                    <ul>
                         <c:forEach begin="0" items="${dsNhomsanPham}" var="nsp">
                             <li>
-                                <a href="#">${nsp.tenNhomSanPham}</a>
-                                <ul>
-                                    <li style="margin-left: 500px">
-                                        <a href="#">123</a>
-                                    </li>
-                                </ul>
+                                <a href="DanhSachSanPham.do?MaNhomSanPham=${nsp.maNhomSanPham}">${nsp.tenNhomSanPham}</a>
                             </li>
                         </c:forEach> 
                     </ul>

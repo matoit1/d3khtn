@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/futureshop?useUnicode=true&amp;characterEncoding=UTF-8</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password"/>
+    <property name="hibernate.connection.password">0973606205</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.connection.autocommit">true</property>
     <mapping resource="POJO/Tinhtrang.hbm.xml"/>
