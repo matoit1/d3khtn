@@ -13,3 +13,4 @@
 	-	Không commit lên các file properties vì mỗi máy cấu hình khác nhau
 4/ Một số chú ý
 	-	Santo cấu hình hiberate có password
+	-	Các file thư viện để trong WEB-INF/lib rồi attach vào
