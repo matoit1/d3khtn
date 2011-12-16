@@ -163,8 +163,8 @@ public class Sanpham  implements java.io.Serializable {
     }
     public String getTenLoaiSanPham()
     {
-        //return LoaiSanPhamDAO.LayLoaiSanPhamTheoMa(loaisanpham.getMaLoaiSanPham()).getTenLoaiSanPham();
-        return null;
+        return LoaiSanPhamDAO.LayLoaiSanPhamTheoMa(loaisanpham.getMaLoaiSanPham()).getTenLoaiSanPham();
+        //return null;
     }
     public int getMaTinhTrang()
     {
