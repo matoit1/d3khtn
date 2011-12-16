@@ -64,7 +64,7 @@ public class AdminThemSanPham extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String url;
+            String url = "";
             if (request.getParameter("txtName") == null)//load trang
             {
                 //khoi tao danh sach loai san pham va danh sach hang san xuat
@@ -101,47 +101,51 @@ public class AdminThemSanPham extends HttpServlet {
                 //url ="ThemHinhAnhSanPham.do?maSP="+masp;
 
                 //upload hinh anh
-
-                DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
-                fileItemFactory.setSizeThreshold(1 * 1024 * 1024); //1 MB        
-                fileItemFactory.setRepository(tmpDir);
-                ServletFileUpload uploadHandler = new ServletFileUpload(fileItemFactory);
                 try {
-                    List items = uploadHandler.parseRequest(request);
-                    Iterator itr = items.iterator();
+                    DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
+                    fileItemFactory.setSizeThreshold(1 * 1024 * 1024); //1 MB        
+                    fileItemFactory.setRepository(tmpDir);
+                    ServletFileUpload uploadHandler = new ServletFileUpload(fileItemFactory);
+                    try {
+                        List items = uploadHandler.parseRequest(request);
+                        Iterator itr = items.iterator();
 
-                    while (itr.hasNext()) {
-                        FileItem item = (FileItem) itr.next();
-                        if (item.isFormField()) {
-                        } else {
+                        while (itr.hasNext()) {
+                            FileItem item = (FileItem) itr.next();
+                            if (item.isFormField()) {
+                            } else {
 
-                            String content = item.getContentType();
-                            if (content.contains("png") || content.contains("jpg") || content.contains("gif") || content.contains("jpeg")) {
-                                File file = new File(destinationDir, item.getName());
-                                //String fileName = file.getName();
-                                //HttpSession session = request.getSession();
-                                //session.setAttribute("filename", fileName);
-                                item.write(file);
-                                RequestDispatcher rd = getServletContext().getRequestDispatcher("/AdminQuanLySanPham.dp");
-                                rd.forward(request, response);
+                                String content = item.getContentType();
+                                if (content.contains("png") || content.contains("jpg") || content.contains("gif") || content.contains("jpeg")) {
+                                    File file = new File(destinationDir, item.getName());
+                                    //String fileName = file.getName();
+                                    //HttpSession session = request.getSession();
+                                    //session.setAttribute("filename", fileName);
+
+                                    item.write(file);
+                                    RequestDispatcher rd = getServletContext().getRequestDispatcher("/AdminQuanLySanPham.do");
+                                    rd.forward(request, response);
+                                }
                             }
                         }
+
+                        url = "/AdminQuanLySanPham.do";
+
+                    } catch (FileUploadException ex) {
+                        log("Lỗi phân tích yêu cầu upload file !", ex);
                     }
-
-                } catch (FileUploadException ex) {
-                    log("Lỗi phân tích yêu cầu upload file !", ex);
-                }
-                url = "/AdminQuanLySanPham.do";
-            }
-
+                } catch (Exception ex) {
+                    log("Lỗi xãy ra trong quá trình upload file !", ex);
+                }//ket thuc up anh
+            }//ket thuc up san pham
             RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
             rd.forward(request, response);
         } finally {
             out.close();
         }
     }
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request
