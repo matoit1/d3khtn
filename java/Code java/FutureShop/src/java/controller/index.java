@@ -14,6 +14,7 @@ import POJO.Nhomsanpham;
 import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.channels.SeekableByteChannel;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,16 +42,19 @@ public class index extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-       
+
         ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
+        ArrayList<Loaisanpham> dsLoaiSanPham = new ArrayList<Loaisanpham>();
         ArrayList<Hangsanxuat> listSpecialStores = new ArrayList<Hangsanxuat>();
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             dsNhomSanPham = NhomSanPhamDAO.LayDanhSachNhomSanPham();
+            dsLoaiSanPham = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
             listSpecialStores = HangSanXuatDAO.LayDanhSachSpecialStores();
-            dsSanPham = SanPhamDAO.LayDanhSachSanPhamPhanTrang(0, 4,true);
+            dsSanPham = SanPhamDAO.LayDanhSachSanPhamPhanTrang(0, 4, true);
             HttpSession session = request.getSession();
             session.setAttribute("dsNhomsanPham", dsNhomSanPham);
+            session.setAttribute("dsLoaiSanPham", dsLoaiSanPham);
             session.setAttribute("listSpecialStores", listSpecialStores);
             request.setAttribute("dsSanPham", dsSanPham);
             String url = "index.jsp";

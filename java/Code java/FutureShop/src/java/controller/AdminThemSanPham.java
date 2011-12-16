@@ -69,8 +69,8 @@ public class AdminThemSanPham extends HttpServlet {
             {
                 //khoi tao danh sach loai san pham va danh sach hang san xuat
                 ArrayList<Loaisanpham> dsLoaiSP = new ArrayList<Loaisanpham>();
-                
-                //        LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
+
+                dsLoaiSP = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
                 ArrayList<Hangsanxuat> dsHang = HangSanXuatDAO.LayDanhSachHangSanXuat();
 
                 request.setAttribute("dsLoaiSP", dsLoaiSP);
