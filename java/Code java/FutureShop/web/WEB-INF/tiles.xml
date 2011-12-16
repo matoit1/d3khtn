@@ -31,10 +31,19 @@
     <definition name="timkiemnhanh" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/TimKiemNhanhContent.jsp" />  
     </definition> 
+<<<<<<< .mine
+    <definition name="quanlysanpham" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Admin.jsp" />
+=======
     <definition name="quanlysanpham" extends="template">    
+>>>>>>> .r191
         <put-attribute name="mainContent" value="/subpages/SubAdminQuanLySanPham.jsp" />  
     </definition>
     <definition name="themsanpham" extends="template"> 
+<<<<<<< .mine
+        <put-attribute name="left" value="/subpages/Left_Admin.jsp" />
+=======
+>>>>>>> .r191
         <put-attribute name="mainContent" value="/subpages/SubAdminThemSanPham.jsp" />  
     </definition> 
     <definition name="capnhapsanpham" extends="template"> 
@@ -50,7 +59,8 @@
         <put-attribute name="mainContent" value="/subpages/DatMuaContent.jsp" />  
     </definition>
     <definition name="danhsach" extends="template"> 
-        <put-attribute name="mainContent" value="/subpages/DanhSachContent.jsp" />  
+        <put-attribute name="left" value="/subpages/Left.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubDanhSach.jsp" />  
     </definition>
     <definition name="dangnhap" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/DangNhapContent.jsp" />  

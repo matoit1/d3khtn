@@ -11,10 +11,16 @@
         <div id="categories">
             <h2>Categories</h2>
             <ul>
+<<<<<<< .mine
+                <c:forEach begin="0" items="${requestScope.DSLoaiSanPham}" var="lsp">
+                    <li><a href="#">${lsp.tenLoaiSanPham}</a></li>
+                </c:forEach>
+=======
                 <c:forEach var="lsp" items="${dsLoaiSanPham}">
                 <li><a href="#">${lsp.getTenLoaiSanPham()}</a></li>
                 </c:forEach>
 
+>>>>>>> .r191
             </ul>
         </div>
         <!-- end #left -->
