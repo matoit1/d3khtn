@@ -68,7 +68,9 @@ public class AdminThemSanPham extends HttpServlet {
             if (request.getParameter("txtName") == null)//load trang
             {
                 //khoi tao danh sach loai san pham va danh sach hang san xuat
-                ArrayList<Loaisanpham> dsLoaiSP = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
+                ArrayList<Loaisanpham> dsLoaiSP = new ArrayList<Loaisanpham>();
+                
+                //        LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
                 ArrayList<Hangsanxuat> dsHang = HangSanXuatDAO.LayDanhSachHangSanXuat();
 
                 request.setAttribute("dsLoaiSP", dsLoaiSP);
