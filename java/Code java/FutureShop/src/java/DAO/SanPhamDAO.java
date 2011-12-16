@@ -95,6 +95,5 @@ public class SanPhamDAO {
             session.close();
             return id;
         }
-
     }
 }

@@ -43,18 +43,14 @@ public class index extends HttpServlet {
         PrintWriter out = response.getWriter();
        
         ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
-        ArrayList<Loaisanpham> dsLoaiSanPham = new ArrayList<Loaisanpham>();
         ArrayList<Hangsanxuat> listSpecialStores = new ArrayList<Hangsanxuat>();
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             dsNhomSanPham = NhomSanPhamDAO.LayDanhSachNhomSanPham();
-            dsLoaiSanPham = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
             listSpecialStores = HangSanXuatDAO.LayDanhSachSpecialStores();
             dsSanPham = SanPhamDAO.LayDanhSachSanPhamPhanTrang(0, 4,true);
-            
             HttpSession session = request.getSession();
             session.setAttribute("dsNhomsanPham", dsNhomSanPham);
-            session.setAttribute("dsLoaiSanPham", dsLoaiSanPham);
             session.setAttribute("listSpecialStores", listSpecialStores);
             request.setAttribute("dsSanPham", dsSanPham);
             String url = "index.jsp";

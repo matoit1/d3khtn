@@ -59,7 +59,6 @@
         <put-attribute name="mainContent" value="/subpages/DatMuaContent.jsp" />  
     </definition>
     <definition name="danhsach" extends="template"> 
-        <put-attribute name="left" value="/subpages/Left.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubDanhSach.jsp" />  
     </definition>
     <definition name="dangnhap" extends="template"> 
