@@ -12,7 +12,7 @@
         <td width="417"><h3><span>${sp.tenSanPham}</span></h3></td>
     </tr>
     <tr>
-        <td><img src="images/product/${sp.maSanPham}.jpg"/>
+        <td><img src="images/product/${sp.maSanPham}_1.jpg" width="250px" height="250px"/>
             <div align="center"><a href="XemAnhChiTiet.do?maSp=${sp.maSanPham}" target="_blank">See more</a> </div></td>
         <td>${sp.moTa}</td>
     </tr>

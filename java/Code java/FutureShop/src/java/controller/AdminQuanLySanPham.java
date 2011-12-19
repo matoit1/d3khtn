@@ -50,6 +50,7 @@ public class AdminQuanLySanPham extends HttpServlet {
             
             request.setAttribute("soTrang", soTrang);
             request.setAttribute("dsSP", dsSP);
+            request.setAttribute("page", page);
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/AdminQuanLySanPham.jsp");
             rd.forward(request, response);
             

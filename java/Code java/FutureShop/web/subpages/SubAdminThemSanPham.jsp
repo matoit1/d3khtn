@@ -7,15 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <h1 align="center" style="color: #FFB400; background-color:#A67500">Add New Product</h1>
-<form action="AdminThemSanPham.do" name="AddNewProduct" method="post" >
+<form action="AdminThemSanPham.do" name="AddNewProduct" method="post">
     <table width="100%" border="0">
         <tr>
             <td width="32%"><div align="right">Name Product:</div></td>
-            <td width="68%"><input type="text" name="txtName" value="" style="width: 400" /></td>
-        </tr>
-        <tr>
-            <td><div align="right">Image:</div></td>
-            <td><input type="file" name="fileImage" value="" multiple ="true"/> (Admin can add many images) </td>
+            <td width="68%"><input type="text" name="txtName" value="" style="width: 400px" /></td>
         </tr>
         <tr>
             <td><div align="right">Categories</div></td>

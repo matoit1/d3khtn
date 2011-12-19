@@ -11,23 +11,18 @@ import POJO.Hangsanxuat;
 import POJO.Loaisanpham;
 import POJO.Sanpham;
 import POJO.Tinhtrang;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.tomcat.util.http.fileupload.FileItem;
-import org.apache.tomcat.util.http.fileupload.FileUploadException;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+
 
 /**
  *
@@ -43,21 +38,7 @@ public class AdminThemSanPham extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private static final String TMP_DIR_PATH = "C:\\temp";
-    private File tmpDir;
-    private static final String DESTINATION_DIR_PATH = "..//..//web//images//product";
-    private File destinationDir;
-
-    public void jspInit() {
-        tmpDir = new File(TMP_DIR_PATH);
-
-        if (tmpDir.exists() == false) {
-            tmpDir.mkdir();
-        }
-
-        String realPath = getServletContext().getRealPath(DESTINATION_DIR_PATH);
-        destinationDir = new File(realPath);
-    }
+   
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -99,46 +80,10 @@ public class AdminThemSanPham extends HttpServlet {
                 tt.setMaTinhTrang(1);
                 sp.setTinhtrang(tt);
 
-                int masp = SanPhamDAO.ThemSanPham(sp);
-                //url ="ThemHinhAnhSanPham.do?maSP="+masp;
-
-                //upload hinh anh
-                try {
-                    DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
-                    fileItemFactory.setSizeThreshold(1 * 1024 * 1024); //1 MB        
-                    fileItemFactory.setRepository(tmpDir);
-                    ServletFileUpload uploadHandler = new ServletFileUpload(fileItemFactory);
-                    try {
-                        List items = uploadHandler.parseRequest(request);
-                        Iterator itr = items.iterator();
-
-                        while (itr.hasNext()) {
-                            FileItem item = (FileItem) itr.next();
-                            if (item.isFormField()) {
-                            } else {
-
-                                String content = item.getContentType();
-                                if (content.contains("png") || content.contains("jpg") || content.contains("gif") || content.contains("jpeg")) {
-                                    File file = new File(destinationDir, item.getName());
-                                    //String fileName = file.getName();
-                                    //HttpSession session = request.getSession();
-                                    //session.setAttribute("filename", fileName);
-
-                                    item.write(file);
-                                    RequestDispatcher rd = getServletContext().getRequestDispatcher("/AdminQuanLySanPham.do");
-                                    rd.forward(request, response);
-                                }
-                            }
-                        }
-
-                        url = "/AdminQuanLySanPham.do";
-
-                    } catch (FileUploadException ex) {
-                        log("Lỗi phân tích yêu cầu upload file !", ex);
-                    }
-                } catch (Exception ex) {
-                    log("Lỗi xãy ra trong quá trình upload file !", ex);
-                }//ket thuc up anh
+                int maSP = SanPhamDAO.ThemSanPham(sp);
+                request.setAttribute("tenSP", sp.getTenSanPham());
+                request.setAttribute("maSP", maSP);
+                url="/UploadHinhAnh.jsp";
             }//ket thuc up san pham
             RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
             rd.forward(request, response);
