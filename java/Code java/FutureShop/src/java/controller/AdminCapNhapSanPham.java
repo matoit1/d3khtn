@@ -32,9 +32,13 @@ public class AdminCapNhapSanPham extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-             RequestDispatcher rd = getServletContext().getRequestDispatcher("/AdminCapNhapSanPham.jsp");
+            int maSp = 1;
+            if (request.getParameter("maSp") != null) {
+                maSp = Integer.parseInt(request.getParameter("maSp"));
+            }
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/AdminCapNhapSanPham.jsp");
             rd.forward(request, response);
-        } finally {            
+        } finally {
             out.close();
         }
     }

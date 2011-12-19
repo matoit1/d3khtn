@@ -90,6 +90,9 @@
     <definition name="about" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAbout.jsp" />  
     </definition>
+    <definition name="uploadhinhanh" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubUploadHinhAnh.jsp" />  
+    </definition>
 </tiles-definitions> 
 
 

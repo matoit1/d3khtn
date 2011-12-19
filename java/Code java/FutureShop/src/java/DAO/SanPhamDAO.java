@@ -43,7 +43,9 @@ public class SanPhamDAO {
             if (flag){
                 s=" where sp.tinhtrang =1 ";
             }
-            Query query = (Query) session.createQuery("from Sanpham sp "+s+"order by id DESC limit "+batdau+","+sl);
+            Query query = (Query) session.createQuery("from Sanpham sp "+s+"order by id DESC");//lay nhung san pham moi nhat truoc
+            query.setFirstResult(batdau);
+            query.setMaxResults(sl);
             dsSanPham = (ArrayList<Sanpham>) query.list();
             session.close();
         } catch (HibernateException e) {

@@ -39,12 +39,16 @@ public class XoaSanPham extends HttpServlet {
             if (request.getParameter("maSp") != null) {
                 maSp = Integer.parseInt(request.getParameter("maSp"));
             }
+            int page = 1;
+            if (request.getParameter("page") != null) {
+                page = Integer.parseInt(request.getParameter("page"));
+            }
             Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
             Tinhtrang tt = new Tinhtrang();
             tt.setMaTinhTrang(2);
             sp.setTinhtrang(tt);
             SanPhamDAO.CapNhapSanPham(sp);
-            RequestDispatcher rd = request.getRequestDispatcher("AdminQuanLySanPham.do");
+            RequestDispatcher rd = request.getRequestDispatcher("AdminQuanLySanPham.do?page="+page);
             rd.forward(request, response);
             
         } finally {
