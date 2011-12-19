@@ -19,19 +19,6 @@ import util.HibernateUtil;
  */
 public class KhachHangDAO {
 
-    public static Khachhang LayKhachHangTheoMa(int ma) {
-        Khachhang kh = new Khachhang();
-        try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            kh = (Khachhang) session.get(Khachhang.class, ma);
-            session.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return kh;
-    }
-
     //<editor-fold defaultstate="collapsed" desc="Mã hoá MD5">
     public static String maHoa_MD5(String text) {
         String kq = null;
@@ -45,6 +32,47 @@ public class KhachHangDAO {
             System.out.println("khong the ma hoa duoc:" + ex.getMessage());
         }
         return kq;
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Ngẫu nhiên mật khẩu">
+    public static String randomPassword() {
+        String password = "";
+        int i = 0;
+        double randomNumber;
+        while (i < 8) {
+            randomNumber = (Math.floor((Math.random() * 100)) % 94) + 33;
+            if ((randomNumber >= 33) && (randomNumber <= 47)) {
+                continue;
+            }
+            if ((randomNumber >= 58) && (randomNumber <= 64)) {
+                continue;
+            }
+            if ((randomNumber >= 91) && (randomNumber <= 96)) {
+                continue;
+            }
+            if ((randomNumber >= 123) && (randomNumber <= 126)) {
+                continue;
+            }
+            i++;
+            password += String.valueOf((char) randomNumber);
+        }
+        return password;
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Lấy thông tin khách hàng theo mã">
+    public static Khachhang LayKhachHangTheoMa(int ma) {
+        Khachhang kh = new Khachhang();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            kh = (Khachhang) session.get(Khachhang.class, ma);
+            session.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return kh;
     }
     //</editor-fold>
 
