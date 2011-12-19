@@ -35,11 +35,11 @@
             <div align="center"><span style="font-weight: bold; color: #FF0000; font-size: medium">Price: ${sp.giaGoc}$ </span></div></td>
         <td><div align="center">
                 <c:if test="${sessionScope.admin ne null}">
-                    <a href="AdminCapNhapSanPham.do?mSp=${sp.maSanPham}"><img src="images/button_edit_grey.gif"/></a>
-                    <a href="XoaSanPham.do?mSp=${sp.maSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
+                    <a href="AdminCapNhapSanPham.do?maSp=${sp.maSanPham}"><img src="images/button_edit_grey.gif"/></a>
+                    <a href="XoaSanPham.do?maSp=${sp.maSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
                     </c:if>
                     <c:if test="${sessionScope.admin eq null}">
-                    <a href="MuaSanPham.do?mSp=${sp.maSanPham}"><img src="images/buy_now_big_on.gif"/></a>
+                    <a href="MuaSanPham.do?maSp=${sp.maSanPham}"><img src="images/buy_now_big_on.gif"/></a>
                     </c:if>
 
 

@@ -79,7 +79,7 @@
                 <h2><a href="ChiTietSanPham.do?maSp=${sp.maSanPham}" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a></h2>
                 <p><img src="images/product/${sp.maSanPham}_1.jpg" width="160" height="160" alt="Pic 1" /></p>
                 <p style="color: #FB4844; font-weight: bold">Price: ${sp.giaGoc}$</p>
-                <p>${sp.moTa}</p>
+                <p>${sp.tenSanPham}</p>
                 <a href="ChiTietSanPham.do?maSp=${sp.maSanPham}"><p class="more">&gt; &gt;More</p></a>
             </div>
         </c:forEach>
