@@ -19,9 +19,10 @@ import javax.mail.internet.MimeMessage;
  * @author Nguyen Anh Tri
  */
 public class EmailDAO {
+    //<editor-fold defaultstate="collapsed" desc="Gửi email">
 
     public static void send(String to, String subject, String body) throws Exception {
-// Code provide by congdongjava.com
+        // Code provide by congdongjava.com
         String smtpServer = "smtp.gmail.com";
         String from = "0812546@gmail.com";
         String psw = "futureshop";
@@ -35,29 +36,30 @@ public class EmailDAO {
         if (login != null && pwd != null) {
             props.put("mail.smtp.auth", "true");
             pa = new Authenticator() {
+
                 public PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(login, pwd);
                 }
             };
         }//else: no authentication
         Session session = Session.getInstance(props, pa);
-// — Create a new message –
+        // — Create a new message –
         Message msg = new MimeMessage(session);
-// — Set the FROM and TO fields –
+        // — Set the FROM and TO fields –
         msg.setFrom(new InternetAddress(from));
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(
                 to, false));
 
-// — Set the subject and body text –
+        // — Set the subject and body text –
         msg.setSubject(subject);
         msg.setText(body);
-// — Set some other header information –
+        // — Set some other header information –
         msg.setHeader("X-Mailer", "LOTONtechEmail");
         msg.setSentDate(new Date());
         msg.saveChanges();
-// — Send the message –
+        // — Send the message –
         Transport.send(msg);
         System.out.println("Email have been sent!");
-
     }
+    //</editor-fold>
 }

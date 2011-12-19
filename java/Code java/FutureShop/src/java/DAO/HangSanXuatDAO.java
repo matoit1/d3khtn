@@ -5,7 +5,6 @@
 package DAO;
 
 import POJO.Hangsanxuat;
-import POJO.Nhomsanpham;
 import java.util.ArrayList;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
