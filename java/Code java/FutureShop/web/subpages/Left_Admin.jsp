@@ -13,6 +13,7 @@
             <li><a href="AdminThemSanPham.do">Add New Product</a></li>
             <li><a href="AdminQuanLySanPham.do">Edit Product</a></li>
             <li><a href="AdminQuanLySanPham.do">Delete Product</a></li>
+            <li><a href="AdminThemHangSanXuat.do">Add New Store</a></li>
         </ul>
         <p><strong>Account Manager</strong></p>
         <ul>

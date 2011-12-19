@@ -54,4 +54,21 @@ public class HangSanXuatDAO {
         }
         return sp;
     }
+    
+    public static int ThemHangSanXuat(Hangsanxuat h) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        int id =-1;
+        try {
+            session.beginTransaction();
+            id = (Integer)session.save(h);
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            System.out.println(e);
+        } finally {
+            session.close();
+            return id;
+        }
+    }
 }
