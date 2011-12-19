@@ -37,7 +37,7 @@
                     <ul>
                         <c:forEach begin="0" items="${dsNhomsanPham}" var="nsp">
                             <li>
-                                <a href="DanhSachSanPham.do?MaNhomSanPham=${nsp.maNhomSanPham}">${nsp.tenNhomSanPham}</a>
+                                <a href="DanhSachSanPham.do?maNhomSanPham=${nsp.maNhomSanPham}">${nsp.tenNhomSanPham}</a>
                             </li>
                         </c:forEach> 
                     </ul>
