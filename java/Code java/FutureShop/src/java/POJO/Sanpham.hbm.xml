@@ -14,7 +14,7 @@
         <many-to-one name="tinhtrang" class="POJO.Tinhtrang" fetch="select">
             <column name="MaTinhTrang" />
         </many-to-one>
-        <many-to-one name="loaisanpham" class="POJO.Loaisanpham" fetch="select">
+        <many-to-one name="loaisanpham" class="POJO.Loaisanpham" fetch="select" lazy="false">
             <column name="MaLoaiSanPham" />
         </many-to-one>
         <property name="tenSanPham" type="string">

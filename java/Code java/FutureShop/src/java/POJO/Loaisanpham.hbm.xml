@@ -8,7 +8,7 @@
             <column name="MaLoaiSanPham" />
             <generator class="identity" />
         </id>
-        <many-to-one name="nhomsanpham" class="POJO.Nhomsanpham" fetch="select">
+        <many-to-one name="nhomsanpham" class="POJO.Nhomsanpham" fetch="select" lazy="false">
             <column name="MaNhomSanPham" />
         </many-to-one>
         <many-to-one name="tinhtrang" class="POJO.Tinhtrang" fetch="select">

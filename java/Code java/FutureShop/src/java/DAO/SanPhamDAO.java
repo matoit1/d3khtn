@@ -101,16 +101,33 @@ public class SanPhamDAO {
         }
     }
 
-    // chua sua
-    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoNhomSanPham(int maNhomSanPham, int trang) {
+    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoNhomSanPham(int maNhomSanPham,int trang) {
+        ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            int dongBatDau = (trang - 1) * 4;
+            String hql = "FROM Sanpham sp WHERE sp.loaisanpham.nhomsanpham.maNhomSanPham =:maNhom order by id DESC";
+            Query query = ss.createQuery(hql);
+            query.setInteger("maNhom", maNhomSanPham);
+            query.setFirstResult(dongBatDau);
+            query.setMaxResults(4);
+            dsSanPham = (ArrayList<Sanpham>) query.list();
+        } catch (HibernateException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return dsSanPham;
+    }
+    
+    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoLoaiSanPham(int maLoaiSanPham, int trang) {
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
             ss.beginTransaction();
             int dongBatDau = (trang - 1) * 15;
-            String hql = "from SanPhamPOJO sp where sp.maTrangThai != 3 AND sp.maThuongHieu = :maThuongHieu";
+            String hql = "FROM Sanpham sp WHERE sp.loaisanpham.maLoaiSanPham =:maNhom order by id DESC";
             Query query = ss.createQuery(hql);
-            query.setInteger("maThuongHieu", maNhomSanPham);
+            query.setInteger("maNhom", maLoaiSanPham);
             query.setFirstResult(dongBatDau);
             query.setMaxResults(15);
             dsSanPham = (ArrayList<Sanpham>) query.list();
@@ -120,7 +137,7 @@ public class SanPhamDAO {
         return dsSanPham;
     }
     
-    public static int TinhSoTrang(int maNhomSanPham) {
+    public static int TinhSoTrangTheoNhomSanPham(int maNhomSanPham) {
         int soTrang = 1;
         int soLuong = 0;
         try {
@@ -129,6 +146,30 @@ public class SanPhamDAO {
             String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.loaisanpham.nhomsanpham.maNhomSanPham =:maNhom";
             Query query = ss.createQuery(hql);
             query.setInteger("maNhom", maNhomSanPham);
+            soLuong = query.uniqueResult().hashCode();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        if (soLuong < 4) {
+            soTrang = 1;
+        } else {
+            soTrang = soLuong / 4;
+            if (soLuong % 4 != 0) {
+                soTrang++;
+            }
+        }
+        return soTrang;
+    }
+    
+    public static int TinhSoTrangTheoLoaiSanPham(int maLoaiSanPham) {
+        int soTrang = 1;
+        int soLuong = 0;
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.loaisanpham.maLoaiSanPham =:maLoai";
+            Query query = ss.createQuery(hql);
+            query.setInteger("maLoai", maLoaiSanPham);
             soLuong = query.uniqueResult().hashCode();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

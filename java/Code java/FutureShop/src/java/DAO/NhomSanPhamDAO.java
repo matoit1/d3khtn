@@ -28,4 +28,19 @@ public class NhomSanPhamDAO {
         }
         return dsNhomSanPham;
     }
+    
+    public static int TimMaNhomSanPham(int maLoaiSanPham)
+    {
+        int maNhom = 0 ;
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            Query query = (Query) session.createQuery("select nhomsanpham.maNhomSanPham from Loaisanpham lsp where lsp.maLoaiSanPham =:maLoaiSanPham");
+            query.setInteger("maLoaiSanPham", maLoaiSanPham);
+            maNhom = query.uniqueResult().hashCode();
+        } catch (HibernateException e) {
+            System.out.println(e.getMessage());
+        }
+        return maNhom;
+    }
 }
