@@ -4,6 +4,9 @@
  */
 package controller;
 
+import DAO.EmailDAO;
+import DAO.KhachHangDAO;
+import POJO.Khachhang;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -35,11 +38,39 @@ public class KhoiPhucMatKhau extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             String url = "KhoiPhucMatKhau.jsp";
-            
-            
+            request.setCharacterEncoding("UTF-8");
+            response.setContentType("UTF-8");
+
+            if (request.getParameter("reset") != null) {
+                String tenDangNhap = request.getParameter("id");
+                String email = request.getParameter("email");
+
+                Khachhang account = KhachHangDAO.layThongTinKhachHang(tenDangNhap);
+                if (account == null) {
+                    request.setAttribute("error", "Your ID is incorrect ! Please try again !");
+                } else {
+                    if (!account.getEmail().equals(email)) {
+                        request.setAttribute("error", "Your Email Address is incorrect ! Please try again !");
+                    } else {
+                        String password = KhachHangDAO.randomPassword();
+                        account.setMatKhau(password);
+                        if (KhachHangDAO.capNhatMatKhau(account)) {
+                            try {
+                                String subject = "Reset Password Infomation";
+                                String body = String.format("Hi %s, /nHere is your account infomation : /nYour ID : %s /nYour New Password : %s /nPlease login and reset your password! /n ", account.getHoTen(), account.getMaKhachHang(), password);
+                                EmailDAO.send(account.getEmail(), subject, body);
+                                request.setAttribute("message", "Your New Password have been sent to your email !");
+                            } catch (Exception ex) {
+                                System.err.println(ex);
+                            }
+                        }
+                    }
+                }
+            }
+
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
-        } finally {            
+        } finally {
             out.close();
         }
     }

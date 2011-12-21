@@ -81,7 +81,7 @@ public class DangKy extends HttpServlet {
                             if (KhachHangDAO.themMoiKhachHang(account)) {
                                 request.setAttribute("message", "Register Successful !");
                                 String subject = "Registration Infomation";
-                                String body = String.format("Hi %s, /nHere is your account infomation : /nYour ID : %s /nYour Password : %s /n ",account.getHoTen(),account.getMaKhachHang(),account.getMatKhau());
+                                String body = String.format("Hi %s, /nHere is your account infomation : /nYour ID : %s /nYour Password : %s /n ",account.getHoTen(),account.getMaKhachHang(),matKhau);
                                 EmailDAO.send(account.getEmail(), subject, body);
                                 request.removeAttribute("account");
                             } else {

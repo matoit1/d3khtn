@@ -4,6 +4,7 @@
     Author     : Nguyen Anh Tri
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="info">
@@ -37,7 +38,11 @@
             <input class="btn" type="submit" name="signin" value="Sign In"/>
             <input class="btn" type="button" value="Cancel"  />
         </p> 
-        <a href="#"><font> Create an account now!</font></a>
+        <c:url var="Reset" value="KhoiPhucMatKhau.do"/>
+        <a href="${Reset}"><font> Reset password</font></a>
+        <br/>
+        <c:url var="Dangky" value="DangKy.do"/>
+        <a href="${Dangky}"><font> Create an account now!</font></a>
     </form>
 </div>
 
