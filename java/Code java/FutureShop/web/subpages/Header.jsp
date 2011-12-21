@@ -13,18 +13,20 @@
             <div id="logo"><a href="index.do"><img src="images/futureshop_logo.png"/></a></div>
             <div id="menu_right">
                 <div id="mainmenu">
+                    <c:url var="index" value="index.do"/>
                     <div class="menumainItem"> <a href="About.jsp" title="noi dung cua menu"> ABOUT </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HELP </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> SEARCH </a></div>
-                    <div class="menumainItem"> <a href="index.do" title="noi dung cua menu"> HOME </a></div>
+                    <div class="menumainItem"> <a href="${index}" title="noi dung cua menu"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
                     <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
+                    <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
                     <c:if test="${sessionScope.admin eq null}">
-                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="noi dung cua menu"> >> My Acount </a></div>
+                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="Account Infomation"> >> My Acount </a></div>
                     </c:if>
                     <c:if test="${sessionScope.admin ne null}">
-                        <div class="profilemenuItem"> <a href="AdminQuanLySanPham.do" title="chức năng của admin"> >> Admin </a></div>
+                        <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right"> >> Admin </a></div>
                     </c:if>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
@@ -35,23 +37,24 @@
             <ul id="MenuBar1" class="MenuBarHorizontal">
                 <li><a href="">Short by Department</a>
                     <ul>
-                        <c:forEach begin="0" items="${dsNhomsanPham}" var="nsp">
+                        <c:forEach items="${dsNhomsanPham}" var="nsp">
+                            <c:url var="DanhSachSanPham" value="DanhSachSanPham.do?maNhomSanPham=${nsp.maNhomSanPham}"/>
                             <li>
-                                <a href="DanhSachSanPham.do?maNhomSanPham=${nsp.maNhomSanPham}">${nsp.tenNhomSanPham}</a>
+                                <a href="${DanhSachSanPham}">${nsp.tenNhomSanPham}</a>
                             </li>
                         </c:forEach> 
                     </ul>
                 </li>
                 <li><a href="">Specially Stores</a>
                     <ul>
-                        <c:forEach begin="0" items="${listSpecialStores}" var="hsx">
+                        <c:forEach items="${listSpecialStores}" var="hsx">
                             <li><a href="#">${hsx.tenHangSanXuat}</a></li>
                         </c:forEach> 
                     </ul>
                 </li>
 
             </ul>
-            <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
+            <div id="subtotal"><a href="#">SUBTOTAL </a></div>
             <div id="subtotal"><a href="#" ><img src="images/view_cart.gif" /></a></div>
             <script type="text/javascript">
 
