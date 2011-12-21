@@ -57,7 +57,7 @@ public class KhoiPhucMatKhau extends HttpServlet {
                         if (KhachHangDAO.capNhatMatKhau(account)) {
                             try {
                                 String subject = "Reset Password Infomation";
-                                String body = String.format("Hi %s, \r\nHere is your account infomation : \r\nYour ID : %s \r\nYour New Password : %s \r\nPlease login and reset your password! \r\n ", account.getHoTen(), account.getTenDangNhap(), password);
+                                String body = String.format("Hi %s, <br/>Here is your account infomation : <br/>Your ID : %s <br/>Your New Password : %s <br/>Please login and reset your password! <br/> ", account.getHoTen(), account.getTenDangNhap(), password);
                                 EmailDAO.send(account.getEmail(), subject, body);
                                 request.setAttribute("message", "Your New Password have been sent to your email !");
                             } catch (Exception ex) {
