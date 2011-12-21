@@ -5,6 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
+
 <h1 align="center" style="color: #FFB400; background-color:#A67500">Product Description</h1>
 <table width="675" border="1" bordercolor="#C8C8C8" cellspacing='0' cellpadding='5'>
     <tr>
@@ -39,7 +40,11 @@
                     <a href="XoaSanPham.do?maSp=${sp.maSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
                     </c:if>
                     <c:if test="${sessionScope.admin eq null}">
-                    <a href="MuaSanPham.do?maSp=${sp.maSanPham}"><img src="images/buy_now_big_on.gif"/></a>
+                        <c:url var="DatMua" value="GioHang.do">
+                            <c:param name="action" value="DatMua"/>
+                            <c:param name="maSanPham" value="${sp.maSanPham}"/>
+                        </c:url>
+                    <a href="${DatMua}"><img src="images/buy_now_big_on.gif"/></a>
                     </c:if>
 
 

@@ -81,6 +81,10 @@
         <put-attribute name="left" value="/subpages/Left_Account.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubCapNhatMatKhau.jsp" />  
     </definition>
+    <definition name="khoiphucmatkhau" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubKhoiPhucMatKhau.jsp" />  
+    </definition>
     <definition name="capnhatemail" extends="template"> 
         <put-attribute name="left" value="/subpages/Left_Account.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubCapNhatEmail.jsp" />  
@@ -96,6 +100,9 @@
     </definition>
     <definition name="uploadhinhanh" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubUploadHinhAnh.jsp" />  
+    </definition>
+    <definition name="giohang" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubGioHang.jsp" />  
     </definition>
 </tiles-definitions> 
 
