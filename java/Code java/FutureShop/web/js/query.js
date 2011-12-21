@@ -300,3 +300,34 @@ function ChangePassword()
     return true;
 }
 
+function ResetPassword()
+{  
+     if($('#id').val().trim().length == 0){
+        $('#invalid_id').html('Your ID is required !');
+        $('#id').focus();
+        return false;
+    }else{
+        $('#invalid_id').html('');
+    }
+    
+    var email = $('#email').val().trim();
+    
+    if($('#email').val().trim().length == 0){
+        $('#invalid_email').html('Email Address is required !');
+        $('#email').focus();
+        return false;
+    }else{
+        if(echeck(email)==false)
+        {
+            $('#invalid_email').html('Email Address is not correct !');
+            $('#email').focus();
+            return false;
+        }
+        else
+        {
+            $('#invalid_email').html('');
+        }
+    }
+    
+   return true;
+}
