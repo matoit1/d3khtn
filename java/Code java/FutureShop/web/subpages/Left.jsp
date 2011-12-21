@@ -11,11 +11,8 @@
         <div id="categories">
             <h2>Categories</h2>
             <ul>
-                <c:forEach begin="0" items="${requestScope.DSLoaiSanPham}" var="lsp">
-                    <li><a href="#">${lsp.tenLoaiSanPham}</a></li>
-                </c:forEach>
                 <c:forEach var="lsp" items="${dsLoaiSanPham}">
-                    <li><a href="#">${lsp.getTenLoaiSanPham()}</a></li>
+                    <li><a href="DanhSachSanPham.do?maLoaiSanPham=${lsp.maLoaiSanPham}&trang=1">${lsp.getTenLoaiSanPham()}</a></li>
                 </c:forEach>
             </ul>
         </div>

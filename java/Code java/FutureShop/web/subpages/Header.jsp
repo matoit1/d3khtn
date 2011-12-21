@@ -38,7 +38,7 @@
                 <li><a href="">Short by Department</a>
                     <ul>
                         <c:forEach items="${dsNhomsanPham}" var="nsp">
-                            <c:url var="DanhSachSanPham" value="DanhSachSanPham.do?maNhomSanPham=${nsp.maNhomSanPham}"/>
+                            <c:url var="DanhSachSanPham" value="DanhSachSanPham.do?maNhomSanPham=${nsp.maNhomSanPham}&trang=1"/>
                             <li>
                                 <a href="${DanhSachSanPham}">${nsp.tenNhomSanPham}</a>
                             </li>
