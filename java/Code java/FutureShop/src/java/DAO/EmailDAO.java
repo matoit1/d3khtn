@@ -52,7 +52,8 @@ public class EmailDAO {
 
         // — Set the subject and body text –
         msg.setSubject(subject);
-        msg.setText(body);
+        msg.setContent(body, "text/html; charset=UTF-8");
+        //msg.setText(body);
         // — Set some other header information –
         msg.setHeader("X-Mailer", "LOTONtechEmail");
         msg.setSentDate(new Date());
