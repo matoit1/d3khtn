@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <h1 align="center" style="color: #FFB400; background-color:#A67500">Edit Product</h1>
 <form action="AdminCapNhapSanPham.do?maSp=${sp.maSanPham}" name="EditProduct" method="post">
     <table width="100%" border="0">

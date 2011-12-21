@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <h1 align="center" style="color: #FFB400; background-color:#A67500">Add New Product</h1>
 <form action="AdminThemSanPham.do" name="AddNewProduct" method="post">
     <table width="100%" border="0">
@@ -15,11 +16,13 @@
         </tr>
         <tr>
             <td><div align="right">Categories</div></td>
-            <td><select name="cbbCate" >
+            <td>
+                <select name="cbbCate" >
                     <c:forEach var="loaisp" items="${dsLoaiSP}">
                         <option value="${loaisp.getMaLoaiSanPham()}">${loaisp.getTenLoaiSanPham()}</option>
                     </c:forEach>
-                </select></td>
+                </select>
+            </td>
         </tr>
         <tr>
             <td><div align="right">Store</div></td>
@@ -32,8 +35,10 @@
         </tr>
         <tr>
             <td><div align="right">Time Deadline</div></td>
-            <td><input type="text" name="txtTime" value="" /> 
-                (yyyy/mm/dd) </td>
+            <td>
+                <input type="text" name="txtTime" value="" /> 
+                (yyyy/mm/dd) 
+            </td>
         </tr>
         <tr>
             <td><div align="right">Quality</div></td>
@@ -52,7 +57,6 @@
             <td><textarea name="txtShortDes" cols="70" rows="5" >  write here </textarea></td>
         </tr>
         <tr>
-
         <script type="text/javascript" src="fckeditor/fckeditor.js"></script>
         <script type="text/javascript">
             window.onload = function()
@@ -62,7 +66,6 @@
                 oFCKeditor.Height= 400;
                 oFCKeditor.ReplaceTextarea() ;
             }
-
         </script>  
         <td valign="top"><div align="right">Product Description: </div></td>
         <td><textarea name="txtLongDes" cols="70" rows="30" >  write here </textarea></td>

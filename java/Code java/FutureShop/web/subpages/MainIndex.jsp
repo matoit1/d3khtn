@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <c:catch var="ex">
-    <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
     <br class="clearfloat"/>
     <div id="slite"><div id="container">
             <div id="lofslidecontent45" class="lof-slidecontent">
@@ -19,23 +18,18 @@
                             <img src="images/banner/homepage-slide-ho_en.jpg" title="Newsflash 2" height="300"/>
                             <div class="lof-main-item-desc"> </div>
                         </li>
-
                         <li>
                             <img src="images/banner/p-homepage-slide-tv_en.jpg" title="Newsflash 3" height="300" width="600"/>
                             <div class="lof-main-item-desc"> </div>
                         </li>
                         <li>
-
                             <img src="images/banner/p-homepage-slide-di_en.jpg" title="Newsflash 5" height="300" width="600"/>
                             <div class="lof-main-item-desc"></div>
                         </li>
                         <li>
-
                             <img src="images/banner/p-homepage-slide-major-app_en.jpg"  title="Newsflash 5" height="300" width="600"/>
                             <div class="lof-main-item-desc"></div>
                         </li>
-
-
                     </ul>
                 </div>
                 <div class="lof-navigator-outer">
@@ -65,8 +59,6 @@
                                 <h3> We pay the tax on all major appliances!</h3>
                             </div>
                         </li>
-
-
                     </ul>
                 </div>
             </div>
@@ -76,11 +68,16 @@
     <div id="black-bl">
         <c:forEach begin="0" var="sp" items="${requestScope.dsSanPham}">
             <div class="black-box">
-                <h2><a href="ChiTietSanPham.do?maSp=${sp.maSanPham}" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a></h2>
+                <h2>
+                    <c:url var="ChiTietSanPham" value="ChiTietSanPham.do">
+                        <c:param name="maSp" value="${sp.maSanPham}"/>
+                    </c:url>
+                    <a href="${ChiTietSanPham}" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a>
+                </h2>
                 <p><img src="images/product/${sp.maSanPham}_1.jpg" width="160" height="160" alt="Pic 1" /></p>
                 <p style="color: #FB4844; font-weight: bold">Price: ${sp.giaGoc}$</p>
                 <p>${sp.tenSanPham}</p>
-                <a href="ChiTietSanPham.do?maSp=${sp.maSanPham}"><p class="more">&gt; &gt;More</p></a>
+                <a href="${ChiTietSanPham}"><p class="more">&gt; &gt;More</p></a>
             </div>
         </c:forEach>
         <div class="clear"></div>

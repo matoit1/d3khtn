@@ -12,7 +12,11 @@
             <h2>Categories</h2>
             <ul>
                 <c:forEach var="lsp" items="${dsLoaiSanPham}">
-                    <li><a href="DanhSachSanPham.do?maLoaiSanPham=${lsp.maLoaiSanPham}&trang=1">${lsp.getTenLoaiSanPham()}</a></li>
+                    <c:url var="DanhSachSanPham" value="DanhSachSanPham.do">
+                        <c:param name="maLoaiSanPham" value="${lsp.maLoaiSanPham}"/>
+                        <c:param name="trang" value="1"/>
+                    </c:url>
+                    <li><a href="${DanhSachSanPham}">${lsp.getTenLoaiSanPham()}</a></li>
                 </c:forEach>
             </ul>
         </div>

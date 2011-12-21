@@ -19,5 +19,4 @@
     <p >As a proud corporate citizen, Future Shop is committed to employee volunteerism and supporting non-profits organizations dedicated to transforming local youth into Future Leaders.</p>
     <p >The Company is helping keep used electronics out of the landfills with an in-store recycling program for seven types of products.</p>
     <p >Future Shop stores operate as a division of Burnaby-based Best Buy Canada Ltd., a wholly-owned subsidiary of Best Buy Co., Inc. (NYSE:BBY).</p>
-    <p ></p>
     <br/>

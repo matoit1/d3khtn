@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div class="info">
     <c:if test="${requestScope.error eq null}">
         <c:url var="CapNhatEmail" value="CapNhatEmail.do"/>

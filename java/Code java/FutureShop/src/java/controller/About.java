@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Nguyen Anh Tri
  */
-@WebServlet(name = "DangXuat", urlPatterns = {"/DangXuat.do"})
-public class DangXuat extends HttpServlet {
+@WebServlet(name = "About", urlPatterns = {"/About.do"})
+public class About extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -34,15 +34,11 @@ public class DangXuat extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             HttpSession session = request.getSession();
-            String url = "index.do";
-            if (session.getAttribute("account") != null) {
-                session.removeAttribute("account");
-                session.removeAttribute("admin");
-            }
+            String url = "About.jsp";
+
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
-
-        } finally {
+        } finally {            
             out.close();
         }
     }
