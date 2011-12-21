@@ -18,23 +18,27 @@
         <td>${sp.moTa}</td>
     </tr>
     <tr>
-        <td><div align="left" style="font-weight: bold"><span style="font-size: small; color: #FF9900">
+        <td>
+            <div align="left" style="font-weight: bold">
+                <span style="font-size: small; color: #FF9900">
                     Customer Rating 
                     <c:forEach begin="1" end="${sp.danhGia}" var="i">
                         <a href="DanhGiaSanPham.do?maSp=${sp.maSanPham}&rate=${i}"> <img src="images/rating_on.png"/></a>
                         </c:forEach>
-
-                    <c:forEach begin="${sp.danhGia+1}" end="${5}" var="i">
+                        <c:forEach begin="${sp.danhGia+1}" end="${5}" var="i">
                         <a href="DanhGiaSanPham.do?maSp=${sp.maSanPham}&rate=${i}"> <img src="images/rating_off.png"/></a>
-                    </c:forEach> ${sp.danhGia}/5</span></div>
+                    </c:forEach> ${sp.danhGia}/5
+                </span>
+            </div>
+        </td>
         <td><div align="center">Quantity Remaining: ${sp.soLuong} </div></td>
     </tr>
     <tr>
         <td><div align="center"><span style="font-weight: bold; color:#FF9900; font-size: small">Save: ${sp.giamGia}$ </span></div>
-
             <br/>
             <div align="center"><span style="font-weight: bold; color: #FF0000; font-size: medium">Price: ${sp.giaGoc}$ </span></div></td>
-        <td><div align="center">
+        <td>
+            <div align="center">
                 <c:if test="${sessionScope.admin ne null}">
                     <a href="AdminCapNhapSanPham.do?maSp=${sp.maSanPham}"><img src="images/button_edit_grey.gif"/></a>
                     <a href="XoaSanPham.do?maSp=${sp.maSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
@@ -46,39 +50,41 @@
                         </c:url>
                     <a href="${DatMua}"><img src="images/buy_now_big_on.gif"/></a>
                     </c:if>
-
-
-            </div></td>
+            </div>
+        </td>
     </tr>
 </table>
 <p>&nbsp;</p>
 <table width="674" border="1" cellspacing='0' cellpadding='5'>
     <tr>
-        <th width="664" scope="col"><div align="left"><span style="color: #CC0000">Features &amp; Specs </span></div></th>
-</tr>
-<tr>
-    <td>
-        ${sp.thongTinChiTiet}
-    </td>
-</tr>
+        <td width="664" scope="col">
+            <div align="left">
+                <span style="color: #CC0000">Features &amp; Specs </span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ${sp.thongTinChiTiet}
+        </td>
+    </tr>
 </table>
 <p><br/>
 </p>
 <table width="674" border="1">
     <tr>
-        <th width="664" bgcolor="#333333" scope="col"><div align="left"><span style="color: #FFCC00">Comments</span></div></th>
-</tr>
-<c:if test="${dsBL.size() == 0}">
-    <tr>
-        <td> No comment </td>
+        <td width="664" bgcolor="#333333" scope="col"><div align="left"><span style="color: #FFCC00">Comments</span></div></td>
     </tr>
-</c:if>
-<c:forEach  var="bl" items="${dsBL}">
-    <tr>
-
-        <td><strong>${bl.LayTenKhachTheoMa()} (${bl.getThoiGian()}) said: </strong>${bl.noiDung}</td>
-    </tr>
-</c:forEach>
+    <c:if test="${dsBL.size() == 0}">
+        <tr>
+            <td> No comment </td>
+        </tr>
+    </c:if>
+    <c:forEach  var="bl" items="${dsBL}">
+        <tr>
+            <td><strong>${bl.LayTenKhachTheoMa()} (${bl.getThoiGian()}) said: </strong>${bl.noiDung}</td>
+        </tr>
+    </c:forEach>
 </table>
 <br/>
 <c:if test="${sessionScope.account eq null}">
@@ -96,21 +102,22 @@
             oFCKeditor.Height= 400;
             oFCKeditor.ReplaceTextarea() ;
         }
-
     </script>
     <table width='100%' border='1' cellspacing='0' cellpadding='5'>
         <tr bgcolor='#666666'>
             <td class='bgColorMain'><strong><font color='#FFFFFF'>YOUR COMMENT ABOUT THIS PRODUCT</font></strong></td>
         </tr>
         <tr>
-            <td><form action="BinhLuanSanPham.do?maSp=${sp.getMaSanPham()}" method="post" accept-charset="UTF-8" >
+            <td>
+                <form action="BinhLuanSanPham.do?maSp=${sp.getMaSanPham()}" method="post" accept-charset="UTF-8" >
                     <p>
                         <textarea name="binhLuan" rows="200" cols="80"  style="width: 100%; height: 600px">write here</textarea>
                     </p>
                     <p>
                         <input type="submit" value="Submit" name="btComment" />
                     </p>
-                </form></td>
+                </form>
+            </td>
         </tr>
     </table>
 </c:if>

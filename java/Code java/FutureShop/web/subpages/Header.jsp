@@ -12,11 +12,12 @@
         <div id="banner">
             <div id="logo"><a href="index.do"><img src="images/futureshop_logo.png"/></a></div>
             <div id="menu_right">
-                <div id="mainmenu">
-                    <c:url var="index" value="index.do"/>
-                    <div class="menumainItem"> <a href="About.jsp" title="noi dung cua menu"> ABOUT </a></div>
+                <div id="mainmenu">   
+                    <c:url var="about" value="about.do"/>
+                    <div class="menumainItem"> <a href="${about}" title="noi dung cua menu"> ABOUT </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HELP </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> SEARCH </a></div>
+                    <c:url var="index" value="index.do"/>
                     <div class="menumainItem"> <a href="${index}" title="noi dung cua menu"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
@@ -38,7 +39,10 @@
                 <li><a href="">Short by Department</a>
                     <ul>
                         <c:forEach items="${dsNhomsanPham}" var="nsp">
-                            <c:url var="DanhSachSanPham" value="DanhSachSanPham.do?maNhomSanPham=${nsp.maNhomSanPham}&trang=1"/>
+                            <c:url var="DanhSachSanPham" value="DanhSachSanPham.do">
+                                <c:param name="maNhomSanPham" value="${nsp.maNhomSanPham}"/>
+                                <c:param name="trang" value="1"/>
+                            </c:url>
                             <li>
                                 <a href="${DanhSachSanPham}">${nsp.tenNhomSanPham}</a>
                             </li>
@@ -52,16 +56,12 @@
                         </c:forEach> 
                     </ul>
                 </li>
-
             </ul>
             <div id="subtotal"><a href="#">SUBTOTAL </a></div>
             <div id="subtotal"><a href="#" ><img src="images/view_cart.gif" /></a></div>
             <script type="text/javascript">
-
                 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
-
             </script>
-
         </div>
         <div id="search">
             <form action="#" name="search">
@@ -85,7 +85,6 @@
                 </c:if>
             </form>
         </div>
-        <!-- end #header -->
     </div>
 </c:catch>
 <c:if test="${ex ne null}">
