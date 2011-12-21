@@ -7,7 +7,6 @@
 <%@page import="net.tanesha.recaptcha.ReCaptchaFactory"%>
 <%@page import="net.tanesha.recaptcha.ReCaptcha"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!-- InstanceBeginEditable name="NoiDungThayDoi" -->
 
 <div class="info">
     <c:url var="DangKy" value="DangKy.do"/>
