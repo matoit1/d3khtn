@@ -35,11 +35,16 @@ public class NhomSanPhamDAO {
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
-            Query query = (Query) session.createQuery("select nhomsanpham.maNhomSanPham from Loaisanpham lsp where lsp.maLoaiSanPham =:maLoaiSanPham");
+            Query query = (Query) session.createQuery("SELECT nsp.maNhomSanPham FROM Loaisanpham lsp, Nhomsanpham nsp "
+                    + "WHERE lsp.nhomsanpham.maNhomSanPham = nsp.maNhomSanPham AND lsp.maLoaiSanPham =:maLoaiSanPham");
             query.setInteger("maLoaiSanPham", maLoaiSanPham);
             maNhom = query.uniqueResult().hashCode();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
         }
         return maNhom;
     }
