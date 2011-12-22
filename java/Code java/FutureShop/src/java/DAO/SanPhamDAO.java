@@ -106,12 +106,12 @@ public class SanPhamDAO {
         try {
             Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
             ss.beginTransaction();
-            int dongBatDau = (trang - 1) * 4;
+            int dongBatDau = (trang - 1) * 15;
             String hql = "FROM Sanpham sp WHERE sp.loaisanpham.nhomsanpham.maNhomSanPham =:maNhom order by id DESC";
             Query query = ss.createQuery(hql);
             query.setInteger("maNhom", maNhomSanPham);
             query.setFirstResult(dongBatDau);
-            query.setMaxResults(4);
+            query.setMaxResults(15);
             dsSanPham = (ArrayList<Sanpham>) query.list();
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
@@ -150,11 +150,11 @@ public class SanPhamDAO {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        if (soLuong < 4) {
+        if (soLuong < 15) {
             soTrang = 1;
         } else {
-            soTrang = soLuong / 4;
-            if (soLuong % 4 != 0) {
+            soTrang = soLuong / 15;
+            if (soLuong % 15 != 0) {
                 soTrang++;
             }
         }
