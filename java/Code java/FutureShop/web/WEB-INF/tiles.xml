@@ -43,11 +43,9 @@
     <definition name="capnhapsanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminCapNhapSanPham.jsp" />  
     </definition> 
-    
     <definition name="themhangsanxuat" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminThemHangSanXuat.jsp" />  
     </definition> 
-    
     <definition name="lichsumuahang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/LichSuMuaHangContent.jsp" />  
     </definition>
@@ -60,13 +58,12 @@
     <definition name="danhsach" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubDanhSach.jsp" />  
     </definition>
-    <definition name="dangnhap" extends="template"> 
-        <put-attribute name="mainContent" value="/subpages/DangNhapContent.jsp" />  
-    </definition>
     <definition name="dangky" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubDangKy.jsp" />  
     </definition>
     <definition name="dangnhap" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubDangNhap.jsp" />  
     </definition>
     <definition name="trangthongtincanhan" extends="template"> 
