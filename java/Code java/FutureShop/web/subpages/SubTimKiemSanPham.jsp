@@ -8,9 +8,9 @@
 <!DOCTYPE html>
 Trang
 <c:forEach begin="1" end="${soTrang}" var="t">
-    <a href="DanhSachSanPham.do?maNhomSanPham=${maNhomSanPham}&trang=${t}&maLoaiSanPham=${maLoaiSanPham}">${t}</a>
+    <a href="TimKiemSanPham.do?tenSanPham=${tenSanPham}&trang=${t}">${t}</a>
 </c:forEach>
-<c:forEach items="${requestScope.dsSanPham}" var="sp">
+<c:forEach items="${requestScope.dsSanPham}" var="sp"  >
     <div class="danhsach"> 
         <div id="hinhanh"><a href="#" ><img alt="#"  src="images/product/${sp.maSanPham}_1.jpg" height="100" width="100" align="middle"/></a></div>
         <div id="chitiet">

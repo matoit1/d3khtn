@@ -210,9 +210,8 @@ public class SanPhamDAO {
         try {
             Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
             ss.beginTransaction();
-            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tenSanPham =:tenSP";
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tenSanPham like '%" + tenSP +"%'";
             Query query = ss.createQuery(hql);
-            query.setString("tenSP", tenSP);
             soLuong = query.uniqueResult().hashCode();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

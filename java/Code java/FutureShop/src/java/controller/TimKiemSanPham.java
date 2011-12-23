@@ -4,10 +4,12 @@
  */
 package controller;
 
+import DAO.SanPhamDAO;
 import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +37,30 @@ public class TimKiemSanPham extends HttpServlet {
         try {
             ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
             String tenSanPham = "";
+            
+            int soTrang = 1;
+            
             if(request.getParameter("txtsearch") != null)
             {
                 tenSanPham = request.getParameter("txtsearch").toString();
+                soTrang = SanPhamDAO.TinhSoTrangTheoTenSanPham(tenSanPham);
             }
+            
+            if(request.getParameter("tenSanPham") != null)
+            {
+                tenSanPham = request.getParameter("txtsearch").toString();
+                soTrang = SanPhamDAO.TinhSoTrangTheoTenSanPham(tenSanPham);
+            }
+            
+            
+            int trang = 1;
+            if (request.getParameter("trang")!= null) {
+                trang = Integer.parseInt(request.getParameter("").toString());
+            }
+            dsSanPham = SanPhamDAO.LayDanhSachSanPhamTheoTen(tenSanPham, trang);
+            request.setAttribute("dsSanPham",dsSanPham);
+            RequestDispatcher rd = request.getRequestDispatcher("TimKiemSanPham.jsp");
+            rd.forward(request, response);
         } finally {            
             out.close();
         }
