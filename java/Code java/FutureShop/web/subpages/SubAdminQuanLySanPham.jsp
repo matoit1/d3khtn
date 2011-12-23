@@ -69,10 +69,10 @@
         <td>${sp.getTenHangSX()}</td>
         <td>
             <div align="center">
-                <c:url var="AdminCapNhatSanPham" value="AdminCapNhatSanPham.do">
+                <c:url var="AdminCapNhapSanPham" value="AdminCapNhapSanPham.do">
                     <c:param name="maSp" value="${sp.maSanPham}"/>
                 </c:url>
-                <a href="${AdminCapNhatSanPham}" ><img src="images/button_edit_grey.gif"/></a>
+                <a href="${AdminCapNhapSanPham}" ><img src="images/button_edit_grey.gif"/></a>
             </div>
         </td>
         <c:if test="${sp.getMaTinhTrang() eq 1}">
