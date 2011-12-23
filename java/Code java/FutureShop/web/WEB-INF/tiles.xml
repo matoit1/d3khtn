@@ -29,7 +29,7 @@
     <definition name="index" extends="template_trangchu">  
     </definition> 
     <definition name="timkiemnhanh" extends="template"> 
-        <put-attribute name="mainContent" value="/subpages/TimKiemNhanhContent.jsp" />  
+        <put-attribute name="mainContent" value="/subpages/SubTimKiemSanPham.jsp" />  
     </definition> 
 
     <definition name="quanlysanpham" extends="template"> 

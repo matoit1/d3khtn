@@ -70,6 +70,25 @@ public class SanPhamDAO {
         return sp;
     }
     
+    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoTen(String ten, int trang) {
+        
+        ArrayList<Sanpham> ds = new ArrayList<Sanpham>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            int dongBatDau = (trang - 1) * 15;
+            String hql = "From Sanpham sp Where sp.tenSanPham like '%" + ten + "%'";
+            Query query = session.createQuery(hql);
+            query.setFirstResult(dongBatDau);
+            query.setMaxResults(15);
+            ds = (ArrayList<Sanpham>) query.list();
+            session.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return ds;
+    }
+    
     public static boolean CapNhapSanPham(Sanpham sp) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
@@ -170,6 +189,30 @@ public class SanPhamDAO {
             String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.loaisanpham.maLoaiSanPham =:maLoai";
             Query query = ss.createQuery(hql);
             query.setInteger("maLoai", maLoaiSanPham);
+            soLuong = query.uniqueResult().hashCode();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        if (soLuong < 15) {
+            soTrang = 1;
+        } else {
+            soTrang = soLuong / 15;
+            if (soLuong % 15 != 0) {
+                soTrang++;
+            }
+        }
+        return soTrang;
+    }
+    
+    public static int TinhSoTrangTheoTenSanPham(String tenSP) {
+        int soTrang = 1;
+        int soLuong = 0;
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tenSanPham =:tenSP";
+            Query query = ss.createQuery(hql);
+            query.setString("tenSP", tenSP);
             soLuong = query.uniqueResult().hashCode();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

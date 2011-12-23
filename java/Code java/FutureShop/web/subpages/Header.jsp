@@ -64,7 +64,7 @@
             </script>
         </div>
         <div id="search">
-            <form action="#" name="search">
+            <form action="TimKiemSanPham.do" name="search">
                 <input type="text" name="txtsearch" style="width: 200px; height: 25px"/>
                 <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
                 <c:if test="${sessionScope.account eq null}">
