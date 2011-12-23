@@ -1,0 +1,5 @@
+D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\ResolveAssemblyReference.cache
+D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\bin\nvvQLNT_BUS_WS.dll
+D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\bin\nvvQLNT_BUS_WS.pdb
+D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\nvvQLNT_BUS_WS.dll
+D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\nvvQLNT_BUS_WS.pdb

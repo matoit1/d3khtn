@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="ServiceBUS.asmx.cs" Class="nvvQLNT_BUS_WS.Service1" %>
