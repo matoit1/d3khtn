@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12276441-9138-403E-A7E9-CE3648B86CD9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nvvQLTMN_Presentation</RootNamespace>
+    <AssemblyName>nvvQLTMN_Presentation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoGiaoVien.designer.cs">
+      <DependentUpon>BaoCaoGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTre.designer.cs">
+      <DependentUpon>BaoCaoTre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportGV1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportGV.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportTRE1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTRE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoVien.designer.cs">
+      <DependentUpon>GiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lop.designer.cs">
+      <DependentUpon>Lop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhuHuynh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhuHuynh.designer.cs">
+      <DependentUpon>PhuHuynh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoGiaoVien.resx">
+      <DependentUpon>BaoCaoGiaoVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoTre.resx">
+      <DependentUpon>BaoCaoTre.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportGV.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportGV1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportTRE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTRE1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoVien.resx">
+      <DependentUpon>GiaoVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lop.resx">
+      <DependentUpon>Lop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhuHuynh.resx">
+      <DependentUpon>PhuHuynh.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SucKhoe.resx">
+      <DependentUpon>SucKhoe.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemGV.resx">
+      <DependentUpon>ThemGV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLop.resx">
+      <DependentUpon>ThemLop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemTre.resx">
+      <DependentUpon>ThemTre.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinTruong.resx">
+      <DependentUpon>ThongTinTruong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuGiaoVien.resx">
+      <DependentUpon>TraCuuGiaoVien.Cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuLop.resx">
+      <DependentUpon>TraCuuLop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuTre.resx">
+      <DependentUpon>TraCuuTre.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tre.resx">
+      <DependentUpon>Tre.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SucKhoe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SucKhoe.designer.cs">
+      <DependentUpon>SucKhoe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemGV.designer.cs">
+      <DependentUpon>ThemGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLop.designer.cs">
+      <DependentUpon>ThemLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemTre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemTre.designer.cs">
+      <DependentUpon>ThemTre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinTruong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinTruong.designer.cs">
+      <DependentUpon>ThongTinTruong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuGiaoVien.Cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuGiaoVien.designer.cs">
+      <DependentUpon>TraCuuGiaoVien.Cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuLop.designer.cs">
+      <DependentUpon>TraCuuLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuTre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuTre.designer.cs">
+      <DependentUpon>TraCuuTre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tre.designer.cs">
+      <DependentUpon>Tre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nvvQLTMN_BUS_WS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:55395/ServiceBUS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nvvQLTMN_BUS_WS\</RelPath>
+      <UpdateFromURL>http://localhost:55395/ServiceBUS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>nvvQLTMN_Presentation_nvvQLTMN_BUS_WS_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="HelpQLNT.chm" />
+    <None Include="Web References\nvvQLTMN_BUS_WS\GiaoVienDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\KhoiDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\LopDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\PhuHuynhDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\ServiceBUS.disco" />
+    <None Include="Web References\nvvQLTMN_BUS_WS\ServiceBUS.wsdl" />
+    <None Include="Web References\nvvQLTMN_BUS_WS\TinhTrangSucKhoeDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\TreDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\nvvQLTMN_BUS_WS\TruongDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bel.ico" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\boy.ico" />
+    <None Include="Resources\teacher.ico" />
+    <None Include="Resources\xoagv.ICO" />
+    <None Include="Resources\tracuugv.ICO" />
+    <None Include="Resources\them gv.ICO" />
+    <None Include="Resources\baocao.ico" />
+    <None Include="Resources\tre.gif" />
+    <None Include="Resources\tracuu.gif" />
+    <None Include="Resources\lop.ico" />
+    <None Include="Resources\Help.ico" />
+    <None Include="Resources\gv.ICO" />
+    <None Include="Resources\hethong.ico" />
+    <None Include="Resources\fodder050655.jpg" />
+    <None Include="Resources\Fedora_DNA_____by_pizzfedora.jpg" />
+    <None Include="Resources\Fedora_Borealis___Night_Sky_by_pookstar.png" />
+    <None Include="Resources\caribbean.jpg" />
+    <None Include="Resources\Beach16.jpg" />
+    <None Include="Resources\A_Dreamy_World_67th_by_grafixeye.jpg" />
+    <None Include="Resources\A_Dreamy_World_30th_by_grafixeye.jpg" />
+    <None Include="Resources\1 %2842%29.jpg" />
+    <None Include="Resources\10802_Green_Abstract800_600.jpg" />
+    <None Include="Resources\10799_Windows7_Green800_600.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="ServiceDAL.asmx.cs" Class="nvvQLTMN_DAL_WS.Service1" %>
