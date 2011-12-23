@@ -31,15 +31,12 @@
     <definition name="timkiemnhanh" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubTimKiemSanPham.jsp" />  
     </definition> 
-
     <definition name="quanlysanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminQuanLySanPham.jsp" />  
     </definition>
-    
     <definition name="themsanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminThemSanPham.jsp" />  
     </definition> 
-    
     <definition name="capnhapsanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminCapNhapSanPham.jsp" />  
     </definition> 
