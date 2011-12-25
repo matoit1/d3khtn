@@ -52,7 +52,11 @@
                 <li><a href="">Specially Stores</a>
                     <ul>
                         <c:forEach items="${listSpecialStores}" var="hsx">
-                            <li><a href="#">${hsx.tenHangSanXuat}</a></li>
+                            <c:url var="DanhSachSanPham" value="DanhSachSanPham.do">
+                                <c:param name="maHangSanXuat" value="${hsx.maHangSanXuat}"/>
+                                <c:param name="trang" value="1"/>
+                            </c:url>
+                            <li><a href="${DanhSachSanPham}">${hsx.tenHangSanXuat}</a></li>
                         </c:forEach> 
                     </ul>
                 </li>

@@ -71,6 +71,15 @@ public class DanhSachSanPham extends HttpServlet {
 
                 soTrang = SanPhamDAO.TinhSoTrangTheoLoaiSanPham(maLoaiSanPham);
             }
+            
+            int maHangSanXuat = 0 ;
+            if (request.getParameter("maHangSanXuat") != null && !request.getParameter("maHangSanXuat").equals("0")) {
+                maHangSanXuat = Integer.parseInt(request.getParameter("maHangSanXuat").toString().trim());
+                dsSanPham.clear();
+                dsSanPham = SanPhamDAO.LayDanhSachSanPhamTheoHangSanXuat(maHangSanXuat, trang);
+
+                soTrang = SanPhamDAO.TinhSoTrangTheoHangSanXuat(maHangSanXuat);
+            }
 
             request.setAttribute("soTrang", soTrang);
             request.setAttribute("maNhomSanPham", maNhomSanPham);

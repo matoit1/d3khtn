@@ -89,6 +89,26 @@ public class SanPhamDAO {
         return ds;
     }
     
+    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoHangSanXuat(int maHangSanXuat, int trang) {
+        
+        ArrayList<Sanpham> ds = new ArrayList<Sanpham>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            int dongBatDau = (trang - 1) * 15;
+            String hql = "From Sanpham sp Where sp.hangsanxuat.maHangSanXuat=:maHang";
+            Query query = session.createQuery(hql);
+            query.setInteger("maHang", maHangSanXuat);
+            query.setFirstResult(dongBatDau);
+            query.setMaxResults(15);
+            ds = (ArrayList<Sanpham>) query.list();
+            session.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return ds;
+    }
+    
     public static boolean CapNhapSanPham(Sanpham sp) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
@@ -165,6 +185,30 @@ public class SanPhamDAO {
             String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.loaisanpham.nhomsanpham.maNhomSanPham =:maNhom";
             Query query = ss.createQuery(hql);
             query.setInteger("maNhom", maNhomSanPham);
+            soLuong = query.uniqueResult().hashCode();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        if (soLuong < 15) {
+            soTrang = 1;
+        } else {
+            soTrang = soLuong / 15;
+            if (soLuong % 15 != 0) {
+                soTrang++;
+            }
+        }
+        return soTrang;
+    }
+    
+    public static int TinhSoTrangTheoHangSanXuat(int maHangSanXuat) {
+        int soTrang = 1;
+        int soLuong = 0;
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.hangsanxuat.maHangSanXuat =:maHangSanXuat";
+            Query query = ss.createQuery(hql);
+            query.setInteger("maHangSanXuat", maHangSanXuat);
             soLuong = query.uniqueResult().hashCode();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
