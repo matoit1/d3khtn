@@ -3,3 +3,8 @@ D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\bin\nvvQLNT_BUS_WS.dll
 D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\bin\nvvQLNT_BUS_WS.pdb
 D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\nvvQLNT_BUS_WS.dll
 D:\Practicce\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\nvvQLNT_BUS_WS.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\bin\nvvQLNT_BUS_WS.dll
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\bin\nvvQLNT_BUS_WS.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\ResolveAssemblyReference.cache
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\nvvQLNT_BUS_WS.dll
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLNT_BUS_WS\nvvQLNT_BUS_WS\obj\Debug\nvvQLNT_BUS_WS.pdb

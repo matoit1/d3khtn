@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nvvQLNT_BUS_WS", "nvvQLNT_BUS_WS\nvvQLNT_BUS_WS.csproj", "{4B440FA9-C2F4-4A8C-888A-839BD4BD3E5F}"
 EndProject
 Global
