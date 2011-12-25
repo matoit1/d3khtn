@@ -19,6 +19,16 @@
                     <li><a href="${DanhSachSanPham}">${lsp.getTenLoaiSanPham()}</a></li>
                 </c:forEach>
             </ul>
+            <h2>Manufacturer</h2>
+            <ul>
+                <c:forEach var="hsx" items="${listSpecialStores}">
+                    <c:url var="DanhSachSanPham" value="DanhSachSanPham.do">
+                        <c:param name="maHangSanXuat" value="${hsx.maHangSanXuat}"/>
+                        <c:param name="trang" value="1"/>
+                    </c:url>
+                    <li><a href="${DanhSachSanPham}">${hsx.tenHangSanXuat}</a></li>
+                </c:forEach>
+            </ul>
         </div>
         <!-- end #left -->
     </div>

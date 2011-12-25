@@ -59,6 +59,8 @@ public class index extends HttpServlet {
             String url = "index.jsp";
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
         } finally {
             out.close();
         }
