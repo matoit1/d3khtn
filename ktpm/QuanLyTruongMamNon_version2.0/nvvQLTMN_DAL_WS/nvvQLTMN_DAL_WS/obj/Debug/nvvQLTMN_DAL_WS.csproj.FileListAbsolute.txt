@@ -3,3 +3,8 @@ D:\Practicce\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.pdb
 D:\Practicce\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\ResolveAssemblyReference.cache
 D:\Practicce\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.dll
 D:\Practicce\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\ResolveAssemblyReference.cache
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.dll
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.dll
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.pdb

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nvvQLTMN_DAL_WS", "nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS.csproj", "{BA30224B-DC3B-478B-9C52-D391C5EB9EDF}"
 EndProject
 Global
