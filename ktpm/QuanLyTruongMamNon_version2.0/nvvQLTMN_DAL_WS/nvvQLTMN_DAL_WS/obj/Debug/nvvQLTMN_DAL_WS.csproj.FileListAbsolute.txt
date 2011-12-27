@@ -8,3 +8,8 @@ D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_D
 D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.dll
 D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.pdb
 D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\bin\nvvQLTMN_DAL_WS.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_DAL_WS\nvvQLTMN_DAL_WS\obj\Debug\nvvQLTMN_DAL_WS.pdb
