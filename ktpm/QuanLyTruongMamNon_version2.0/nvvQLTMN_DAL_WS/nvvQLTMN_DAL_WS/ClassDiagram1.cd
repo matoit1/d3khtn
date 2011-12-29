@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="nvvQLTMN_DAL_WS.GiaoVienDAO" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQAAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>GiaoVienDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.GiaoVienDTO">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAUAABAgAAAQAApAAAEKAAAAAAAAAAgAgCAIAI=</HashCode>
+      <FileName>GiaoVienDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.KhoiDAO" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KhoiDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.KhoiDTO">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAAACAAAAAgAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>KhoiDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.LopDAO" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAIAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>LopDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.LopDTO">
+    <Position X="2" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAkAACAAAAAgAAAACAEAAAgAAAAACAAAAAA=</HashCode>
+      <FileName>LopDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.PhuHuynhDAO" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PhuHuynhDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.PhuHuynhDTO">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAACQAAAAgAAABAAAIgQAICAAQSAAAAEAAgAASAIAU=</HashCode>
+      <FileName>PhuHuynhDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.QLNTDataContext" Collapsed="true">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAIAAAQJAAIAAAQDAACACEAICAAACQEGAgQMKEGEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.GiaoVien" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QJggAhCVAAhAkCQAQAEBBIAFqDiAAQADpAOCUAggIAI=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.Khoi" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAARAAgAAAAAQAGAAAATuiAAwAAAAAAAAiAgAAg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.Lop" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABogIIABIAgAACARQgGAAAARiCEAyQgCgAAAEAABwQQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.PhuHuynh" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIJggQABoBoACCThQCMgAEIBiCQTwiAAAQwIAAgBCgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TinhTrangSucKhoe" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgKgACAhPJgAAUAxcAkAAAAhyGMQxQEAcAxkGAgQAAQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.Tre" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwgCBAJARhIASAwUgEABAABiGkAAAACpAIKQAiAJCI=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.Truong" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgCACFAAAAAAAAQAEBBIAFiCAAAEAIAAEBEAAFAEA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.Service1" Collapsed="true">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MQQQAAAAgAoAAkAEAKAACQAAIAgYgkgBAAAggBAUAIA=</HashCode>
+      <FileName>ServiceDAL.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TinhTrangSucKhoeDAO" Collapsed="true">
+    <Position X="4" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAA=</HashCode>
+      <FileName>TinhTrangSucKhoeDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TinhTrangSucKhoeDTO">
+    <Position X="9.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgCAECABABgAAQAAAAAAAAAAIAgAASQAIAkkEAIIoBA=</HashCode>
+      <FileName>TinhTrangSucKhoeDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TreDAO" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAgAAAAAAAAggAAEAAA=</HashCode>
+      <FileName>TreDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TreDTO">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACCAAAAkCAAAQEgAAEBAAAAEAAAAAIAAgAgAAIAI=</HashCode>
+      <FileName>TreDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TruongDAO" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TruongDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nvvQLTMN_DAL_WS.TruongDTO">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAASAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAEAEg=</HashCode>
+      <FileName>TruongDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
