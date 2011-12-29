@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class TraCuuGiaoVien : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public TraCuuGiaoVien()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace nvvQLTMN_Presentation
         public void TraCuuGV()
         {
             List<GiaoVienDTO> dsKQgv = new List<GiaoVienDTO>();
-            IList<GiaoVienDTO> dsGV = ws.LayDanhSachGiaoVien();
+            IList<GiaoVienDTO> dsGV = RemoteObjectEngine.GiaoVien.LayDanhSachGiaoVien();
             if (textBox1.Text.Trim() != "")
             {
                 if (FormMain.KiemTraChuoiLaSo(textBox1.Text) == true)

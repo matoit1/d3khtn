@@ -6,14 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
+
 
 namespace nvvQLTMN_Presentation
 {
     public partial class Tre : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
-
         public static string TenTreDuocChon;
         public static int maPhuHuynh;
         public static int maSucKhoe;
@@ -22,12 +22,12 @@ namespace nvvQLTMN_Presentation
         public Tre()
         {
             InitializeComponent();
-            DSTreTatCa = ws.LayDanhSachTre();
-            DSLopTatCa = ws.LayDanhSachLop();
+            DSTreTatCa = RemoteObjectEngine.Tre.LayDanhSachTre();
+            DSLopTatCa = RemoteObjectEngine.Lop.LayDanhSachLop();
         }
         public void LoadDSTre()
         {
-            IList<TreDTO> dsTre = ws.LayDSTreTheoLop(cbbLopXem.Text);
+            IList<TreDTO> dsTre = RemoteObjectEngine.Tre.LayDSTreTheoLop(cbbLopXem.Text);
             dataGridView1.DataSource = dsTre;
             for (int i = 0; i < dsTre.Count; i++)
             {
@@ -70,7 +70,7 @@ namespace nvvQLTMN_Presentation
                         rBtnNam.Checked = true;
                     else rBtnNu.Checked = true;
                     dtNgaySinh.Value = tre.NgaySinh;
-                    IList<LopDTO> DSLop = ws.LayDanhSachLop();
+                    IList<LopDTO> DSLop = RemoteObjectEngine.Lop.LayDanhSachLop();
                     for (int i = 0; i < DSLop.Count; i++)
                     {
                         if (DSLop[i].TenLop == tre.TenLop)
@@ -95,9 +95,9 @@ namespace nvvQLTMN_Presentation
             //    LoadDSTre();
             //}
             //else 
-            if (cbbLopXem.SelectedIndex >= 0 && cbbLopXem.SelectedIndex <= ws.LayDanhSachLop().Count())
+            if (cbbLopXem.SelectedIndex >= 0 && cbbLopXem.SelectedIndex <= RemoteObjectEngine.Lop.LayDanhSachLop().Count())
             {
-                IList<TreDTO> dsTre = ws.LayDSTreTheoLop(cbbLopXem.Text);
+                IList<TreDTO> dsTre = RemoteObjectEngine.Tre.LayDSTreTheoLop(cbbLopXem.Text);
                 if (dsTre.Count == 0)
                 {
                     dataGridView1.DataSource = null;
@@ -139,7 +139,7 @@ namespace nvvQLTMN_Presentation
                 tre.NgaySinh = dtNgaySinh.Value;
                 if (tbTen.Text.Trim() != "" && tbConThu.Text.Trim() != "" && FormMain.KiemTraChuoiLaSo(tbConThu.Text) == true)
                 {
-                    if (ws.CapNhapTre(tre) == true)
+                    if (RemoteObjectEngine.Tre.CapNhapTre(tre) == true)
                         MessageBox.Show("Cập nhập Trẻ thành công!");
                     else MessageBox.Show("Cập nhập Trẻ thất bại!");
                 }
@@ -162,7 +162,7 @@ namespace nvvQLTMN_Presentation
                 if (dataGridView1.CurrentRow.Tag != null)
                 {
                    TreDTO tre = (TreDTO) dataGridView1.CurrentRow.Tag;
-                   if (ws.XoaTre(tre) == true && ws.XoaPhuHuynh(tre.MaPhuHuynh)== true && ws.XoaSucKhoe(tre.MaTinhTrangSucKhoe)==true)
+                   if (RemoteObjectEngine.Tre.XoaTre(tre) == true && RemoteObjectEngine.PhuHuynh.XoaPhuHuynh(tre.MaPhuHuynh)== true && RemoteObjectEngine.TinhTrangSucKhoe.XoaSucKhoe(tre.MaTinhTrangSucKhoe)==true)
                         MessageBox.Show("Xóa Trẻ thành công!");
                     else MessageBox.Show("Xóa Trẻ thất bại!");
                     LoadDSTre();

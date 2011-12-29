@@ -7,12 +7,12 @@ namespace RemoteObjectEngine
 {
     public class Trương
     {      
-        public TruongDTO LayThongTinTruong()
+        public static TruongDTO LayThongTinTruong()
         {
             return RemoteObjectManager.Service.LayThongTinTruong();
         }
         
-        public bool SuaThongTinTruong(TruongDTO truonghoc)
+        public static bool SuaThongTinTruong(TruongDTO truonghoc)
         {
             return RemoteObjectManager.Service.SuaThongTinTruong(truonghoc);
         }

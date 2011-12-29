@@ -9,29 +9,29 @@ namespace RemoteObjectEngine
     {
         
         
-        public List<TreDTO> LayDanhSachTre()
+        public static List<TreDTO> LayDanhSachTre()
         {
             return RemoteObjectManager.Service.LayDanhSachTre().ToList();
         }
         
-        public List<TreDTO> LayDSTreTheoLop(string tenlop)
+        public static List<TreDTO> LayDSTreTheoLop(string tenlop)
         {
             return RemoteObjectManager.Service.LayDSTreTheoLop(tenlop).ToList();
         }
         
-        public bool ThemTre(TreDTO tretam)
+        public static bool ThemTre(TreDTO tretam)
         {
 
             return RemoteObjectManager.Service.ThemTre(tretam);
         }
         
-        public bool CapNhapTre(TreDTO tretam)
+        public static bool CapNhapTre(TreDTO tretam)
         {
 
             return RemoteObjectManager.Service.CapNhapTre(tretam);
         }
         
-        public bool XoaTre(TreDTO tretam)
+        public static bool XoaTre(TreDTO tretam)
         {
  
             return RemoteObjectManager.Service.XoaTre(tretam);

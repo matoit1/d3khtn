@@ -9,24 +9,24 @@ namespace RemoteObjectEngine
     {
         
         
-        public List<PhuHuynhDTO> LayThongTinPhuHuynh(int maphuhuynh)
+        public static List<PhuHuynhDTO> LayThongTinPhuHuynh(int maphuhuynh)
         {
             return RemoteObjectManager.Service.LayThongTinPhuHuynh(maphuhuynh).ToList() ;
         }
         
-        public int ThemPhuHuynh(PhuHuynhDTO phuhuynh)
+        public static int ThemPhuHuynh(PhuHuynhDTO phuhuynh)
         {
          
             return RemoteObjectManager.Service.ThemPhuHuynh(phuhuynh);
         }
         
-        public bool CapNhapPhuHuynh(PhuHuynhDTO phuhuynh)
+        public static bool CapNhapPhuHuynh(PhuHuynhDTO phuhuynh)
         {
             
             return RemoteObjectManager.Service.CapNhapPhuHuynh(phuhuynh);
         }
         
-        public bool XoaPhuHuynh(int maPH)
+        public static bool XoaPhuHuynh(int maPH)
         {
             return XoaPhuHuynh(maPH);
         }

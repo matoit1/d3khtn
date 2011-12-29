@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class GiaoVien : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public GiaoVien()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace nvvQLTMN_Presentation
         public IList<GiaoVienDTO> DSGV;
         public void LoadDSGV()
         {
-            DSGV = ws.LayDanhSachGiaoVien();
+            DSGV = RemoteObjectEngine.GiaoVien.LayDanhSachGiaoVien();
             dataGridView1.DataSource = DSGV;
             for (int i = 0; i < DSGV.Count; i++)
             {
@@ -40,7 +41,7 @@ namespace nvvQLTMN_Presentation
         private void GiaoVien_Load(object sender, EventArgs e)
         {
             LoadDSGV();
-            cbbTenLop.DataSource = ws.LayDanhSachLop();
+            cbbTenLop.DataSource = RemoteObjectEngine.Lop.LayDanhSachLop();
             cbbTenLop.DisplayMember = "TenLop";
 
         }
@@ -62,7 +63,7 @@ namespace nvvQLTMN_Presentation
                 else rBtnNu.Checked = true;
                 dtNgaySinh.Value = gv.NgaySinh;
 
-                IList<LopDTO> DSLop = ws.LayDanhSachLop();
+                IList<LopDTO> DSLop = RemoteObjectEngine.Lop.LayDanhSachLop();
                 for (int i = 0; i < DSLop.Count; i++)
                 {
                     if (DSLop[i].TenLop == gv.TenLopPhuTrach)
@@ -92,7 +93,7 @@ namespace nvvQLTMN_Presentation
                 gv.NgaySinh = dtNgaySinh.Value;
                 if (tbTen.Text.Trim() != "" && tbLuong.Text.Trim() != "" && tbBangCap.Text.Trim() != "")
                 {
-                    if (ws.CapNhapGiaoVien(gv) == true)
+                    if (RemoteObjectEngine.GiaoVien.CapNhapGiaoVien(gv) == true)
                         MessageBox.Show("Cập nhập Giáo Viên thành công!");
                     else MessageBox.Show("Cập nhập Giáo Viên thất bại!");
                 }
@@ -109,7 +110,7 @@ namespace nvvQLTMN_Presentation
                 if (dataGridView1.CurrentRow.Tag != null)
                 {
                     GiaoVienDTO gv = (GiaoVienDTO)dataGridView1.CurrentRow.Tag;
-                    if (ws.XoaGiaoVien(gv)== true)
+                    if (RemoteObjectEngine.GiaoVien.XoaGiaoVien(gv)== true)
                     {
                         MessageBox.Show("Xóa Giáo Viên thành công!");
 

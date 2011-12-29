@@ -22,15 +22,5 @@ namespace nvvQLTMN_Presentation.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:55395/ServiceBUS.asmx")]
-        public string nvvQLTMN_Presentation_nvvQLTMN_BUS_WS_Service1 {
-            get {
-                return ((string)(this["nvvQLTMN_Presentation_nvvQLTMN_BUS_WS_Service1"]));
-            }
-        }
     }
 }
