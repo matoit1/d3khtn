@@ -1,0 +1,12 @@
+C:\Users\VIET\KHTN\IV_HKI\KTPM\code\1_DistributedObject\QuanLiSinhVien_WS\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll.config
+C:\Users\VIET\KHTN\IV_HKI\KTPM\code\1_DistributedObject\QuanLiSinhVien_WS\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll
+C:\Users\VIET\KHTN\IV_HKI\KTPM\code\1_DistributedObject\QuanLiSinhVien_WS\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.pdb
+C:\Users\VIET\KHTN\IV_HKI\KTPM\code\1_DistributedObject\QuanLiSinhVien_WS\RemoteObjectEngine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\IV_HKI\KTPM\code\1_DistributedObject\QuanLiSinhVien_WS\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.dll
+C:\Users\VIET\KHTN\IV_HKI\KTPM\code\1_DistributedObject\QuanLiSinhVien_WS\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll.config
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.pdb
