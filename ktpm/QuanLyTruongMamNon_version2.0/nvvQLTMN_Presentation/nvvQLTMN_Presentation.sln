@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nvvQLTMN_Presentation", "nvvQLTMN_Presentation\nvvQLTMN_Presentation.csproj", "{12276441-9138-403E-A7E9-CE3648B86CD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteObjectEngine", "RemoteObjectEngine\RemoteObjectEngine.csproj", "{7D7D2474-2252-43E3-B57B-38117B709620}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{12276441-9138-403E-A7E9-CE3648B86CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12276441-9138-403E-A7E9-CE3648B86CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12276441-9138-403E-A7E9-CE3648B86CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7D2474-2252-43E3-B57B-38117B709620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7D2474-2252-43E3-B57B-38117B709620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7D2474-2252-43E3-B57B-38117B709620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7D2474-2252-43E3-B57B-38117B709620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
