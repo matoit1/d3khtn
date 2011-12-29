@@ -9,24 +9,24 @@ namespace RemoteObjectEngine
     {
         
         
-        public List<TinhTrangSucKhoeDTO> LayThongTinSucKhoe(int masuckhoe)
+        public static List<TinhTrangSucKhoeDTO> LayThongTinSucKhoe(int masuckhoe)
         {
             return RemoteObjectManager.Service.LayThongTinSucKhoe(masuckhoe).ToList();
         }
         
-        public int ThemSucKhoe(TinhTrangSucKhoeDTO suckhoe)
+        public static int ThemSucKhoe(TinhTrangSucKhoeDTO suckhoe)
         {
             
             return RemoteObjectManager.Service.ThemSucKhoe(suckhoe);
         }
         
-        public bool CapNhapSucKhoe(TinhTrangSucKhoeDTO suckhoe)
+        public static bool CapNhapSucKhoe(TinhTrangSucKhoeDTO suckhoe)
         {
           
             return RemoteObjectManager.Service.CapNhapSucKhoe(suckhoe);
         }
         
-        public bool XoaSucKhoe(int maSk)
+        public static bool XoaSucKhoe(int maSk)
         {
             return RemoteObjectManager.Service.XoaSucKhoe(maSk);
         }

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
@@ -16,16 +17,15 @@ namespace nvvQLTMN_Presentation
         public FormMain()
         {
             InitializeComponent();
+            RemoteObjectManager.Connect();
             
         }
-
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
         public List<Image> imageList = new List<Image>();
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
-                TruongDTO truong = ws.LayThongTinTruong();
+                TruongDTO truong = Trương.LayThongTinTruong();
                 label5.Text = truong.TenTruong;
                 label6.Text = truong.DiaChi;
                 label7.Text = truong.Sdt;
@@ -149,7 +149,7 @@ namespace nvvQLTMN_Presentation
         {
             ThongTinTruong frm = new ThongTinTruong();
             frm.ShowDialog();
-            TruongDTO truong = ws.LayThongTinTruong();
+            TruongDTO truong = RemoteObjectEngine.Trương.LayThongTinTruong();
             label5.Text = truong.TenTruong;
             label6.Text = truong.DiaChi;
             label7.Text = truong.Sdt;

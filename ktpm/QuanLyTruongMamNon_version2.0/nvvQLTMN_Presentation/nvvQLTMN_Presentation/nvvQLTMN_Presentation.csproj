@@ -44,6 +44,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="RemoteObjectEngine">
+      <HintPath>..\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -266,11 +269,6 @@
     <Compile Include="Tre.designer.cs">
       <DependentUpon>Tre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Web References\nvvQLTMN_BUS_WS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -279,48 +277,8 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:55395/ServiceBUS.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\nvvQLTMN_BUS_WS\</RelPath>
-      <UpdateFromURL>http://localhost:55395/ServiceBUS.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>nvvQLTMN_Presentation_nvvQLTMN_BUS_WS_Service1</CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="HelpQLNT.chm" />
-    <None Include="Web References\nvvQLTMN_BUS_WS\GiaoVienDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\KhoiDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\LopDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\PhuHuynhDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\ServiceBUS.disco" />
-    <None Include="Web References\nvvQLTMN_BUS_WS\ServiceBUS.wsdl" />
-    <None Include="Web References\nvvQLTMN_BUS_WS\TinhTrangSucKhoeDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\TreDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\nvvQLTMN_BUS_WS\TruongDTO.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bel.ico" />
@@ -350,12 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RemoteObjectEngine\RemoteObjectEngine.csproj">
-      <Project>{7D7D2474-2252-43E3-B57B-38117B709620}</Project>
-      <Name>RemoteObjectEngine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

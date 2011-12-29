@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class TraCuuLop : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public TraCuuLop()
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace nvvQLTMN_Presentation
 
         private void TraCuuLop_Load(object sender, EventArgs e)
         {
-            dsLop = ws.LayDanhSachLop();
+            dsLop = RemoteObjectEngine.Lop.LayDanhSachLop();
             comboBox1.DataSource = dsLop;
             comboBox1.DisplayMember ="TenLop";
         }

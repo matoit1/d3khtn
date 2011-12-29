@@ -6,13 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class TraCuuTre : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
         public TraCuuTre()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace nvvQLTMN_Presentation
         public void LayKetQuaTraCuuTre()
         {
             List<TreDTO> dsKQTre = new List<TreDTO>();
-            IList<TreDTO> dsTre = ws.LayDanhSachTre();
+            IList<TreDTO> dsTre = RemoteObjectEngine.Tre.LayDanhSachTre();
             if (textBox1.Text.Trim() != "")
             {
                 if (FormMain.KiemTraChuoiLaSo(textBox1.Text) == true)

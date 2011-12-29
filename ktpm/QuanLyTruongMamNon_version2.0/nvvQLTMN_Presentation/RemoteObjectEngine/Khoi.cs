@@ -8,7 +8,7 @@ namespace RemoteObjectEngine
 {
     public class Khoi
     {
-        public List<KhoiDTO> LayDanhSachKhoi()
+        public static List<KhoiDTO> LayDanhSachKhoi()
         {
             return RemoteObjectManager.Service.LayDanhSachKhoi().ToList();
         }

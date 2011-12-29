@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class ThemGV : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public ThemGV()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace nvvQLTMN_Presentation
         private void ThemGV_Load(object sender, EventArgs e)
         {
             rBtnNam.Checked = true;
-            cbbTenLop.DataSource = ws.LayDanhSachLop();
+            cbbTenLop.DataSource = RemoteObjectEngine.Lop.LayDanhSachLop();
             cbbTenLop.DisplayMember = "TenLop";
 
         }
@@ -42,7 +43,7 @@ namespace nvvQLTMN_Presentation
             gv.NgaySinh = dtNgaySinh.Value;
             if (tbTen.Text.Trim() != "" && tbLuong.Text.Trim() != "" && tbBangCap.Text.Trim() != "")
             {
-                if (ws.ThemGiaoVien(gv) == true)
+                if (RemoteObjectEngine.GiaoVien.ThemGiaoVien(gv) == true)
                     MessageBox.Show("Thêm Giáo Viên thành công!");
                 else MessageBox.Show("Thêm Giáo Viên thất bại!");
             }

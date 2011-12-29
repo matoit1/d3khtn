@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class ThemLop : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public ThemLop()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace nvvQLTMN_Presentation
 
         private void ThemLop_Load(object sender, EventArgs e)
         {
-            cbbTenKhoi.DataSource = ws.LayDanhSachKhoi();
+            cbbTenKhoi.DataSource = RemoteObjectEngine.Khoi.LayDanhSachKhoi();
             cbbTenKhoi.DisplayMember = "TenKhoi";
         }
 
@@ -34,7 +35,7 @@ namespace nvvQLTMN_Presentation
             lop.TenKhoi = cbbTenKhoi.Text;
             if (tbTenLop.Text.Trim() != "" && tbDoTuoi.Text.Trim() != "" && tbSiSo.Text.Trim() != "" && FormMain.KiemTraChuoiLaSo(tbSiSo.Text) == true)
             {
-                if (ws.ThemLop(lop) == true)
+                if (RemoteObjectEngine.Lop.ThemLop(lop) == true)
                     MessageBox.Show("Thêm Lớp thành công!");
                 else MessageBox.Show("Thêm Lớp thất bại!");
             }

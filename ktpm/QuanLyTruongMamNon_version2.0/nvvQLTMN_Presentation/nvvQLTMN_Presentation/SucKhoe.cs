@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;  
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class SucKhoe : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public SucKhoe()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace nvvQLTMN_Presentation
         private void SucKhoe_Load(object sender, EventArgs e)
         {
             label1.Text += " " + Tre.TenTreDuocChon;
-            IList<TinhTrangSucKhoeDTO> DSSK = ws.LayThongTinSucKhoe(Tre.maSucKhoe);
+            IList<TinhTrangSucKhoeDTO> DSSK = RemoteObjectEngine.TinhTrangSucKhoe.LayThongTinSucKhoe(Tre.maSucKhoe);
             sk = DSSK[0];
             textBox1.Text = sk.MaTinhTrangSucKhoe.ToString();
             textBox2.Text = sk.ChieuCao.ToString();
@@ -53,7 +54,7 @@ namespace nvvQLTMN_Presentation
                 sk.DuongHoHap = textBox10.Text;
                 sk.TiemNgua = textBox11.Text;
                 sk.DinhDuong = textBox12.Text;
-                if (ws.CapNhapSucKhoe(sk) == true)
+                if (RemoteObjectEngine.TinhTrangSucKhoe.CapNhapSucKhoe(sk) == true)
                     MessageBox.Show("Cập nhập Sức Khỏe thành công!");
                 else MessageBox.Show("Cập nhập Sức Khỏe thất bại!");
             }

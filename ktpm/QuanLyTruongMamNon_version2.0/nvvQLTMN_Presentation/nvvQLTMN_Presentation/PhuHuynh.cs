@@ -6,13 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class PhuHuynh : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
         public PhuHuynh()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace nvvQLTMN_Presentation
         private void PhuHuynh_Load(object sender, EventArgs e)
         {
             label1.Text += " "+ Tre.TenTreDuocChon;
-            IList<PhuHuynhDTO> DsPhuHuynh = ws.LayThongTinPhuHuynh(Tre.maPhuHuynh);
+            IList<PhuHuynhDTO> DsPhuHuynh = RemoteObjectEngine.PhuHuynh.LayThongTinPhuHuynh(Tre.maPhuHuynh);
             ph = DsPhuHuynh[0];
             textBox1.Text = ph.TenCha;
             textBox2.Text = ph.TuoiCha.ToString();
@@ -47,7 +47,7 @@ namespace nvvQLTMN_Presentation
                     ph.TuoiMe = int.Parse(textBox7.Text);
                 ph.SdtMe = textBox6.Text;
                 ph.DiaChiCoQuanMe = textBox5.Text;
-                if (ws.CapNhapPhuHuynh(ph) == true)
+                if (RemoteObjectEngine.PhuHuynh.CapNhapPhuHuynh(ph) == true)
                     MessageBox.Show("Cập nhập Phụ Huynh thành công!");
                 else MessageBox.Show("Cập nhập Phụ Huynh thất bại!");
             }

@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class ThemTre : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public ThemTre()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace nvvQLTMN_Presentation
         private void ThemTre_Load(object sender, EventArgs e)
         {
             rBtnNam.Checked= true;
-            cbbTenLop.DataSource = ws.LayDanhSachLop();
+            cbbTenLop.DataSource = RemoteObjectEngine.Lop.LayDanhSachLop();
             cbbTenLop.DisplayMember = "TenLop";
         }
 
@@ -40,7 +41,7 @@ namespace nvvQLTMN_Presentation
                 ph.TuoiCha = int.Parse(tbTuoiCha.Text);
                 ph.TuoiMe = int.Parse(tbTuoiMe.Text);
             }
-            int maPhuHuynh = ws.ThemPhuHuynh(ph);
+            int maPhuHuynh = RemoteObjectEngine.PhuHuynh.ThemPhuHuynh(ph);
             //them suc khoe
             TinhTrangSucKhoeDTO sk = new TinhTrangSucKhoeDTO();
             sk.BenhDiTruyen = tbDiTruyen.Text;
@@ -57,7 +58,7 @@ namespace nvvQLTMN_Presentation
             sk.RangHamMat = tbRanghamMat.Text;
             sk.TaiMuiHong = tbRanghamMat.Text;
             sk.TiemNgua = tbTiemNgua.Text;
-            int maSK = ws.ThemSucKhoe(sk);
+            int maSK = RemoteObjectEngine.TinhTrangSucKhoe.ThemSucKhoe(sk);
             //them tre
             if (maSK != -1 && maPhuHuynh != -1)
             {
@@ -73,7 +74,7 @@ namespace nvvQLTMN_Presentation
                 tre.MaTinhTrangSucKhoe = maSK;
                 if (tbTenTre.Text.Trim() != "" && tbConThu.Text.Trim() != "" && FormMain.KiemTraChuoiLaSo(tbConThu.Text) ==true)
                 {
-                    if (ws.ThemTre(tre) == true)
+                    if (RemoteObjectEngine.Tre.ThemTre(tre) == true)
                         MessageBox.Show("Thêm Trẻ thành công!");
                     else MessageBox.Show("Thêm Trẻ thất bại!");
                 }

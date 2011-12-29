@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using nvvQLTMN_Presentation.nvvQLTMN_BUS_WS;
+using RemoteObjectEngine;
+using RemoteObjectEngine.nvvQLTMN_BUS_WS;
 
 namespace nvvQLTMN_Presentation
 {
     public partial class ThongTinTruong : Form
     {
-        public nvvQLTMN_BUS_WS.Service1 ws = new Service1();
+        
         public ThongTinTruong()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace nvvQLTMN_Presentation
 
         private void ThongTinTruong_Load(object sender, EventArgs e)
         {
-            TruongDTO truong = ws.LayThongTinTruong();
+            TruongDTO truong = RemoteObjectEngine.Trương.LayThongTinTruong();
             textBox1.Text = truong.TenTruong;
             textBox2.Text = truong.DiaChi;
             textBox3.Text = truong.Sdt;
@@ -34,7 +35,7 @@ namespace nvvQLTMN_Presentation
                 truong.TenTruong = textBox1.Text;
                 truong.DiaChi = textBox2.Text;
                 truong.Sdt = textBox3.Text;
-                if (ws.SuaThongTinTruong(truong) == true)
+                if (RemoteObjectEngine.Trương.SuaThongTinTruong(truong) == true)
                     MessageBox.Show("Cập nhập thành công!");
                 else MessageBox.Show("Cập nhập thất bại!");
             }
