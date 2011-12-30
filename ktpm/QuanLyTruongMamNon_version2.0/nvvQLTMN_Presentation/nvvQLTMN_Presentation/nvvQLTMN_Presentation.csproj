@@ -181,6 +181,9 @@
       <DependentUpon>ThemTre.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThietLapGiaoDien.resx">
+      <DependentUpon>ThietLapGiaoDien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongTinTruong.resx">
       <DependentUpon>ThongTinTruong.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -238,6 +241,12 @@
     </Compile>
     <Compile Include="ThemTre.designer.cs">
       <DependentUpon>ThemTre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThietLapGiaoDien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThietLapGiaoDien.Designer.cs">
+      <DependentUpon>ThietLapGiaoDien.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongTinTruong.cs">
       <SubType>Form</SubType>
