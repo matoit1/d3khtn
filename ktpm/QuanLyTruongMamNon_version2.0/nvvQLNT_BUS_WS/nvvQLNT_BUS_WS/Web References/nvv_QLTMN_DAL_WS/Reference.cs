@@ -27,6 +27,7 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="Service1Soap", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectClass))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback LayDanhSachGiaoVienOperationCompleted;
@@ -274,24 +275,24 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XoaGiaoVien", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool XoaGiaoVien(GiaoVienDTO gvtam) {
+        public bool XoaGiaoVien(int maGv) {
             object[] results = this.Invoke("XoaGiaoVien", new object[] {
-                        gvtam});
+                        maGv});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void XoaGiaoVienAsync(GiaoVienDTO gvtam) {
-            this.XoaGiaoVienAsync(gvtam, null);
+        public void XoaGiaoVienAsync(int maGv) {
+            this.XoaGiaoVienAsync(maGv, null);
         }
         
         /// <remarks/>
-        public void XoaGiaoVienAsync(GiaoVienDTO gvtam, object userState) {
+        public void XoaGiaoVienAsync(int maGv, object userState) {
             if ((this.XoaGiaoVienOperationCompleted == null)) {
                 this.XoaGiaoVienOperationCompleted = new System.Threading.SendOrPostCallback(this.OnXoaGiaoVienOperationCompleted);
             }
             this.InvokeAsync("XoaGiaoVien", new object[] {
-                        gvtam}, this.XoaGiaoVienOperationCompleted, userState);
+                        maGv}, this.XoaGiaoVienOperationCompleted, userState);
         }
         
         private void OnXoaGiaoVienOperationCompleted(object arg) {
@@ -415,24 +416,24 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XoaLop", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool XoaLop(LopDTO loptam) {
+        public bool XoaLop(int maLop) {
             object[] results = this.Invoke("XoaLop", new object[] {
-                        loptam});
+                        maLop});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void XoaLopAsync(LopDTO loptam) {
-            this.XoaLopAsync(loptam, null);
+        public void XoaLopAsync(int maLop) {
+            this.XoaLopAsync(maLop, null);
         }
         
         /// <remarks/>
-        public void XoaLopAsync(LopDTO loptam, object userState) {
+        public void XoaLopAsync(int maLop, object userState) {
             if ((this.XoaLopOperationCompleted == null)) {
                 this.XoaLopOperationCompleted = new System.Threading.SendOrPostCallback(this.OnXoaLopOperationCompleted);
             }
             this.InvokeAsync("XoaLop", new object[] {
-                        loptam}, this.XoaLopOperationCompleted, userState);
+                        maLop}, this.XoaLopOperationCompleted, userState);
         }
         
         private void OnXoaLopOperationCompleted(object arg) {
@@ -790,24 +791,24 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XoaTre", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool XoaTre(TreDTO tretam) {
+        public bool XoaTre(int maTre) {
             object[] results = this.Invoke("XoaTre", new object[] {
-                        tretam});
+                        maTre});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void XoaTreAsync(TreDTO tretam) {
-            this.XoaTreAsync(tretam, null);
+        public void XoaTreAsync(int maTre) {
+            this.XoaTreAsync(maTre, null);
         }
         
         /// <remarks/>
-        public void XoaTreAsync(TreDTO tretam, object userState) {
+        public void XoaTreAsync(int maTre, object userState) {
             if ((this.XoaTreOperationCompleted == null)) {
                 this.XoaTreOperationCompleted = new System.Threading.SendOrPostCallback(this.OnXoaTreOperationCompleted);
             }
             this.InvokeAsync("XoaTre", new object[] {
-                        tretam}, this.XoaTreOperationCompleted, userState);
+                        maTre}, this.XoaTreOperationCompleted, userState);
         }
         
         private void OnXoaTreOperationCompleted(object arg) {
@@ -898,7 +899,7 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class GiaoVienDTO {
+    public partial class GiaoVienDTO : CharacterClass {
         
         private int maGiaoVienField;
         
@@ -1022,60 +1023,44 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TreDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhuHuynhDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GiaoVienDTO))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class TruongDTO {
-        
-        private int maTruongField;
-        
-        private string tenTruongField;
-        
-        private string diaChiField;
-        
-        private string sdtField;
-        
-        /// <remarks/>
-        public int MaTruong {
-            get {
-                return this.maTruongField;
-            }
-            set {
-                this.maTruongField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenTruong {
-            get {
-                return this.tenTruongField;
-            }
-            set {
-                this.tenTruongField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string DiaChi {
-            get {
-                return this.diaChiField;
-            }
-            set {
-                this.diaChiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Sdt {
-            get {
-                return this.sdtField;
-            }
-            set {
-                this.sdtField = value;
-            }
-        }
+    public abstract partial class CharacterClass : ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StateClass))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TinhTrangSucKhoeDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityClass))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TruongDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LopDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KhoiDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CharacterClass))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TreDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhuHuynhDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GiaoVienDTO))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public abstract partial class ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TinhTrangSucKhoeDTO))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public abstract partial class StateClass : ObjectClass {
     }
     
     /// <remarks/>
@@ -1084,112 +1069,7 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class TreDTO {
-        
-        private int maTreField;
-        
-        private string hoTenField;
-        
-        private string gioiTinhField;
-        
-        private System.DateTime ngaySinhField;
-        
-        private int conThuField;
-        
-        private string tenLopField;
-        
-        private int maTinhTrangSucKhoeField;
-        
-        private int maPhuHuynhField;
-        
-        /// <remarks/>
-        public int MaTre {
-            get {
-                return this.maTreField;
-            }
-            set {
-                this.maTreField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string HoTen {
-            get {
-                return this.hoTenField;
-            }
-            set {
-                this.hoTenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string GioiTinh {
-            get {
-                return this.gioiTinhField;
-            }
-            set {
-                this.gioiTinhField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime NgaySinh {
-            get {
-                return this.ngaySinhField;
-            }
-            set {
-                this.ngaySinhField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ConThu {
-            get {
-                return this.conThuField;
-            }
-            set {
-                this.conThuField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenLop {
-            get {
-                return this.tenLopField;
-            }
-            set {
-                this.tenLopField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int MaTinhTrangSucKhoe {
-            get {
-                return this.maTinhTrangSucKhoeField;
-            }
-            set {
-                this.maTinhTrangSucKhoeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int MaPhuHuynh {
-            get {
-                return this.maPhuHuynhField;
-            }
-            set {
-                this.maPhuHuynhField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class TinhTrangSucKhoeDTO {
+    public partial class TinhTrangSucKhoeDTO : StateClass {
         
         private int maTinhTrangSucKhoeField;
         
@@ -1337,12 +1217,300 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TruongDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LopDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KhoiDTO))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class PhuHuynhDTO {
+    public abstract partial class EntityClass : ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class TruongDTO : EntityClass {
+        
+        private int maTruongField;
+        
+        private string tenTruongField;
+        
+        private string diaChiField;
+        
+        private string sdtField;
+        
+        /// <remarks/>
+        public int MaTruong {
+            get {
+                return this.maTruongField;
+            }
+            set {
+                this.maTruongField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenTruong {
+            get {
+                return this.tenTruongField;
+            }
+            set {
+                this.tenTruongField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DiaChi {
+            get {
+                return this.diaChiField;
+            }
+            set {
+                this.diaChiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Sdt {
+            get {
+                return this.sdtField;
+            }
+            set {
+                this.sdtField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class LopDTO : EntityClass {
+        
+        private int maLopField;
+        
+        private string tenLopField;
+        
+        private string doTuoiField;
+        
+        private int siSoField;
+        
+        private string tenKhoiField;
+        
+        /// <remarks/>
+        public int MaLop {
+            get {
+                return this.maLopField;
+            }
+            set {
+                this.maLopField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenLop {
+            get {
+                return this.tenLopField;
+            }
+            set {
+                this.tenLopField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DoTuoi {
+            get {
+                return this.doTuoiField;
+            }
+            set {
+                this.doTuoiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SiSo {
+            get {
+                return this.siSoField;
+            }
+            set {
+                this.siSoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenKhoi {
+            get {
+                return this.tenKhoiField;
+            }
+            set {
+                this.tenKhoiField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class KhoiDTO : EntityClass {
+        
+        private int maKhoiField;
+        
+        private string tenKhoiField;
+        
+        private int soLopField;
+        
+        /// <remarks/>
+        public int MaKhoi {
+            get {
+                return this.maKhoiField;
+            }
+            set {
+                this.maKhoiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenKhoi {
+            get {
+                return this.tenKhoiField;
+            }
+            set {
+                this.tenKhoiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SoLop {
+            get {
+                return this.soLopField;
+            }
+            set {
+                this.soLopField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class TreDTO : CharacterClass {
+        
+        private int maTreField;
+        
+        private string hoTenField;
+        
+        private string gioiTinhField;
+        
+        private System.DateTime ngaySinhField;
+        
+        private int conThuField;
+        
+        private string tenLopField;
+        
+        private int maTinhTrangSucKhoeField;
+        
+        private int maPhuHuynhField;
+        
+        /// <remarks/>
+        public int MaTre {
+            get {
+                return this.maTreField;
+            }
+            set {
+                this.maTreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string HoTen {
+            get {
+                return this.hoTenField;
+            }
+            set {
+                this.hoTenField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GioiTinh {
+            get {
+                return this.gioiTinhField;
+            }
+            set {
+                this.gioiTinhField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime NgaySinh {
+            get {
+                return this.ngaySinhField;
+            }
+            set {
+                this.ngaySinhField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ConThu {
+            get {
+                return this.conThuField;
+            }
+            set {
+                this.conThuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenLop {
+            get {
+                return this.tenLopField;
+            }
+            set {
+                this.tenLopField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaTinhTrangSucKhoe {
+            get {
+                return this.maTinhTrangSucKhoeField;
+            }
+            set {
+                this.maTinhTrangSucKhoeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaPhuHuynh {
+            get {
+                return this.maPhuHuynhField;
+            }
+            set {
+                this.maPhuHuynhField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class PhuHuynhDTO : CharacterClass {
         
         private int maPhuHuynhField;
         
@@ -1473,120 +1641,6 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
             }
             set {
                 this.diaChiCoQuanMeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class LopDTO {
-        
-        private int maLopField;
-        
-        private string tenLopField;
-        
-        private string doTuoiField;
-        
-        private int siSoField;
-        
-        private string tenKhoiField;
-        
-        /// <remarks/>
-        public int MaLop {
-            get {
-                return this.maLopField;
-            }
-            set {
-                this.maLopField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenLop {
-            get {
-                return this.tenLopField;
-            }
-            set {
-                this.tenLopField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string DoTuoi {
-            get {
-                return this.doTuoiField;
-            }
-            set {
-                this.doTuoiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int SiSo {
-            get {
-                return this.siSoField;
-            }
-            set {
-                this.siSoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenKhoi {
-            get {
-                return this.tenKhoiField;
-            }
-            set {
-                this.tenKhoiField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class KhoiDTO {
-        
-        private int maKhoiField;
-        
-        private string tenKhoiField;
-        
-        private int soLopField;
-        
-        /// <remarks/>
-        public int MaKhoi {
-            get {
-                return this.maKhoiField;
-            }
-            set {
-                this.maKhoiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenKhoi {
-            get {
-                return this.tenKhoiField;
-            }
-            set {
-                this.tenKhoiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int SoLop {
-            get {
-                return this.soLopField;
-            }
-            set {
-                this.soLopField = value;
             }
         }
     }

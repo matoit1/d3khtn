@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class TruongDAO
+    public class TruongDAO : EntityMethod
     {
         public TruongDTO LayThongTinTruong()
         {

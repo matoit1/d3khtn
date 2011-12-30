@@ -39,9 +39,9 @@ namespace nvvQLTMN_DAL_WS
             return gv.CapNhapGiaoVien(gvtam);
         }
         [WebMethod]
-        public bool XoaGiaoVien(GiaoVienDTO gvtam)
+        public bool XoaGiaoVien(int maGv)
         {
-            return gv.XoaGiaoVien(gvtam);
+            return gv.XoaGiaoVien(maGv);
         }
 
         //khoi
@@ -70,9 +70,9 @@ namespace nvvQLTMN_DAL_WS
             return lop.CapNhapLop(loptam);
         }
         [WebMethod]
-        public bool XoaLop(LopDTO loptam)
+        public bool XoaLop(int maLop)
         {
-            return lop.XoaLop(loptam);
+            return lop.XoaLop(maLop);
         }
 
         //phuhuynh
@@ -144,9 +144,9 @@ namespace nvvQLTMN_DAL_WS
             return tr.CapNhapTre(tretam);
         }
         [WebMethod]
-        public bool XoaTre(TreDTO tretam)
+        public bool XoaTre(int maTre)
         {
-            return tr.XoaTre(tretam);
+            return tr.XoaTre(maTre);
         }
 
         //Truong

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class LopDAO
+    public class LopDAO : EntityMethod
     {
         public List<LopDTO> LayDanhSachLop()
         {
@@ -55,13 +55,13 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool XoaLop(LopDTO loptam)
+        public bool XoaLop(int maLop)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.Lops.Single(k => k.MaLop == loptam.MaLop);
+                var query = db.Lops.Single(k => k.MaLop == maLop);
                 db.Lops.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }

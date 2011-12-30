@@ -64,12 +64,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChacracterMethodManager.cs" />
+    <Compile Include="CharacterClass.cs" />
+    <Compile Include="CharacterClassManager.cs" />
+    <Compile Include="CharacterMethod.cs" />
+    <Compile Include="EntityClass.cs" />
+    <Compile Include="EntityClassManager.cs" />
+    <Compile Include="EntityMethod.cs" />
+    <Compile Include="entityMethodManager.cs" />
     <Compile Include="GiaoVienDAO.cs" />
     <Compile Include="GiaoVienDTO.cs" />
     <Compile Include="KhoiDAO.cs" />
     <Compile Include="KhoiDTO.cs" />
     <Compile Include="LopDAO.cs" />
     <Compile Include="LopDTO.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="ObjectClass.cs" />
+    <Compile Include="ObjectClassManager.cs" />
     <Compile Include="ObjectMethod.cs" />
     <Compile Include="PhuHuynhDAO.cs" />
     <Compile Include="PhuHuynhDTO.cs" />
@@ -83,6 +94,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateClass.cs" />
+    <Compile Include="StateClassManager.cs" />
+    <Compile Include="StateMethod.cs" />
+    <Compile Include="StateMethodManager.cs" />
     <Compile Include="TinhTrangSucKhoeDAO.cs" />
     <Compile Include="TinhTrangSucKhoeDTO.cs" />
     <Compile Include="TreDAO.cs" />

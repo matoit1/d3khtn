@@ -44,7 +44,7 @@ namespace nvvQLTMN_Presentation
         }
         private void Tre_Load(object sender, EventArgs e)
         {
-           // IList<LopDTO> DsLop = BUS.LopBUS.LayDanhSachLop();
+            // IList<LopDTO> DsLop = BUS.LopBUS.LayDanhSachLop();
             LoadDSTre();
             cbbTenLop.DataSource = DSLopTatCa;
             cbbTenLop.DisplayMember = "TenLop";
@@ -62,7 +62,7 @@ namespace nvvQLTMN_Presentation
             {
                 if (dataGridView1.CurrentRow.Tag != null)
                 {
-                    
+
                     TreDTO tre = (TreDTO)dataGridView1.CurrentRow.Tag;
                     tbTen.Text = tre.HoTen;
                     tbConThu.Text = tre.ConThu.ToString();
@@ -102,10 +102,10 @@ namespace nvvQLTMN_Presentation
                 {
                     dataGridView1.DataSource = null;
                     return;
-                   // TreDTO tre = new TreDTO();
-                   //// tre.HoTen = "Chưa Có trẻ";
-                   // tre.NgaySinh = DateTime.Now;
-                   // dsTre.Add(tre);
+                    // TreDTO tre = new TreDTO();
+                    //// tre.HoTen = "Chưa Có trẻ";
+                    // tre.NgaySinh = DateTime.Now;
+                    // dsTre.Add(tre);
                 }
                 dataGridView1.DataSource = dsTre;
                 for (int i = 0; i < dsTre.Count; i++)
@@ -120,7 +120,7 @@ namespace nvvQLTMN_Presentation
                 dataGridView1.Columns[5].HeaderText = "Tên Lớp";
                 dataGridView1.Columns[6].HeaderText = "Mã Tình Trạng Sức Khỏe";
                 dataGridView1.Columns[7].HeaderText = "Mã Phụ Huynh";
-                
+
             }
         }
 
@@ -132,7 +132,7 @@ namespace nvvQLTMN_Presentation
                 tre.HoTen = tbTen.Text;
                 if (FormMain.KiemTraChuoiLaSo(tbConThu.Text) == true)
                     tre.ConThu = int.Parse(tbConThu.Text);
-              
+
                 if (rBtnNam.Checked == true)
                     tre.GioiTinh = "Nam";
                 else tre.GioiTinh = "Nữ";
@@ -159,9 +159,9 @@ namespace nvvQLTMN_Presentation
         {
             try
             {
-                if (MessageBox.Show("Bạn có chắc muốn xóa ko?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridView1.CurrentRow.Tag != null)
                 {
-                    if (dataGridView1.CurrentRow.Tag != null)
+                    if (MessageBox.Show("Bạn có chắc muốn xóa ko?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         TreDTO tre = (TreDTO)dataGridView1.CurrentRow.Tag;
                         if (RemoteObjectEngine.Tre.XoaTre(tre) == true && RemoteObjectEngine.PhuHuynh.XoaPhuHuynh(tre.MaPhuHuynh) == true && RemoteObjectEngine.TinhTrangSucKhoe.XoaSucKhoe(tre.MaTinhTrangSucKhoe) == true)
@@ -170,9 +170,11 @@ namespace nvvQLTMN_Presentation
                         LoadDSTre();
                     }
                 }
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Không còn trẻ!");
             }
         }
 

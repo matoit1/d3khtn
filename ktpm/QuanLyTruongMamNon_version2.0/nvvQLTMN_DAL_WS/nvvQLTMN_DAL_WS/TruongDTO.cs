@@ -5,7 +5,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class TruongDTO
+    public class TruongDTO : EntityClass
     {
         int maTruong;
 

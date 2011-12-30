@@ -40,7 +40,7 @@ namespace nvvQLNT_BUS_WS
 
         public bool XoaLop()
         {
-            return ws.XoaLop(lp);
+            return ws.XoaLop(lp.MaLop);
         }
 
 }

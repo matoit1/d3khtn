@@ -5,7 +5,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class TreDTO
+    public class TreDTO : CharacterClass
     {
         int maTre;
 
@@ -63,6 +63,6 @@ namespace nvvQLTMN_DAL_WS
         }
         string tenLop;
 
-    
+
     }
 }
