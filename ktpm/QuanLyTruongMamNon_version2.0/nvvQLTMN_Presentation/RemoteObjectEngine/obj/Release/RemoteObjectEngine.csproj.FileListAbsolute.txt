@@ -1,0 +1,8 @@
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Release\RemoteObjectEngine.dll.config
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Release\RemoteObjectEngine.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Release\RemoteObjectEngine.XmlSerializers.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Release\RemoteObjectEngine.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Release\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Release\RemoteObjectEngine.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Release\RemoteObjectEngine.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Release\RemoteObjectEngine.XmlSerializers.dll
