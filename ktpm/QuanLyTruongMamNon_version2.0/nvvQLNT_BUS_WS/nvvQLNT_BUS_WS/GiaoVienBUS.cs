@@ -38,7 +38,7 @@ namespace nvvQLNT_BUS_WS
         }
         public bool XoaGiaoVien()
         {
-            return ws.XoaGiaoVien(gv);
+            return ws.XoaGiaoVien(gv.MaGiaoVien);
         }
     }
 }

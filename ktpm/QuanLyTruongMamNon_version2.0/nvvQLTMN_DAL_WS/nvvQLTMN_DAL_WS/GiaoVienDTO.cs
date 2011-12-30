@@ -5,7 +5,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class GiaoVienDTO
+    public class GiaoVienDTO : CharacterClass
     {
         int maGiaoVien;
 

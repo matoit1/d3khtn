@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class TreDAO
+    public class TreDAO : CharacterMethod
     {
         public List<TreDTO> LayDanhSachTre()
         {
@@ -66,13 +66,13 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool XoaTre(TreDTO tretam)
+        public bool XoaTre(int maTre)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.Tres.Single(k => k.MaTre == tretam.MaTre);
+                var query = db.Tres.Single(k => k.MaTre == maTre);
                 db.Tres.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }

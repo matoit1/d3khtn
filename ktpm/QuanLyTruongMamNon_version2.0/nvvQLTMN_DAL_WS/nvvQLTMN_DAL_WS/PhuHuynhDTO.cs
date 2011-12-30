@@ -5,7 +5,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class PhuHuynhDTO
+    public class PhuHuynhDTO : CharacterClass
     {
         int maPhuHuynh;
 

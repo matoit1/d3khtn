@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class TinhTrangSucKhoeDAO
+    public class TinhTrangSucKhoeDAO : StateMethod
     {
         public List<TinhTrangSucKhoeDTO> LayThongTinSucKhoe(int masuckhoe)
         {

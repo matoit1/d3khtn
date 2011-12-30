@@ -27,6 +27,7 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="Service1Soap", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectClass))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback LayDanhSachGiaoVienOperationCompleted;
@@ -898,7 +899,7 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class GiaoVienDTO {
+    public partial class GiaoVienDTO : CharacterClass {
         
         private int maGiaoVienField;
         
@@ -1022,12 +1023,55 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TreDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhuHuynhDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GiaoVienDTO))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class TruongDTO {
+    public abstract partial class CharacterClass : ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityClass))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TruongDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LopDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KhoiDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StateClass))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TinhTrangSucKhoeDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CharacterClass))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TreDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhuHuynhDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GiaoVienDTO))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public abstract partial class ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TruongDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LopDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KhoiDTO))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public abstract partial class EntityClass : ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class TruongDTO : EntityClass {
         
         private int maTruongField;
         
@@ -1084,71 +1128,25 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class TreDTO {
+    public partial class LopDTO : EntityClass {
         
-        private int maTreField;
-        
-        private string hoTenField;
-        
-        private string gioiTinhField;
-        
-        private System.DateTime ngaySinhField;
-        
-        private int conThuField;
+        private int maLopField;
         
         private string tenLopField;
         
-        private int maTinhTrangSucKhoeField;
+        private string doTuoiField;
         
-        private int maPhuHuynhField;
+        private int siSoField;
         
-        /// <remarks/>
-        public int MaTre {
-            get {
-                return this.maTreField;
-            }
-            set {
-                this.maTreField = value;
-            }
-        }
+        private string tenKhoiField;
         
         /// <remarks/>
-        public string HoTen {
+        public int MaLop {
             get {
-                return this.hoTenField;
+                return this.maLopField;
             }
             set {
-                this.hoTenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string GioiTinh {
-            get {
-                return this.gioiTinhField;
-            }
-            set {
-                this.gioiTinhField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime NgaySinh {
-            get {
-                return this.ngaySinhField;
-            }
-            set {
-                this.ngaySinhField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ConThu {
-            get {
-                return this.conThuField;
-            }
-            set {
-                this.conThuField = value;
+                this.maLopField = value;
             }
         }
         
@@ -1163,22 +1161,32 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
         }
         
         /// <remarks/>
-        public int MaTinhTrangSucKhoe {
+        public string DoTuoi {
             get {
-                return this.maTinhTrangSucKhoeField;
+                return this.doTuoiField;
             }
             set {
-                this.maTinhTrangSucKhoeField = value;
+                this.doTuoiField = value;
             }
         }
         
         /// <remarks/>
-        public int MaPhuHuynh {
+        public int SiSo {
             get {
-                return this.maPhuHuynhField;
+                return this.siSoField;
             }
             set {
-                this.maPhuHuynhField = value;
+                this.siSoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenKhoi {
+            get {
+                return this.tenKhoiField;
+            }
+            set {
+                this.tenKhoiField = value;
             }
         }
     }
@@ -1189,7 +1197,62 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class TinhTrangSucKhoeDTO {
+    public partial class KhoiDTO : EntityClass {
+        
+        private int maKhoiField;
+        
+        private string tenKhoiField;
+        
+        private int soLopField;
+        
+        /// <remarks/>
+        public int MaKhoi {
+            get {
+                return this.maKhoiField;
+            }
+            set {
+                this.maKhoiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenKhoi {
+            get {
+                return this.tenKhoiField;
+            }
+            set {
+                this.tenKhoiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SoLop {
+            get {
+                return this.soLopField;
+            }
+            set {
+                this.soLopField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TinhTrangSucKhoeDTO))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public abstract partial class StateClass : ObjectClass {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class TinhTrangSucKhoeDTO : StateClass {
         
         private int maTinhTrangSucKhoeField;
         
@@ -1342,7 +1405,112 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class PhuHuynhDTO {
+    public partial class TreDTO : CharacterClass {
+        
+        private int maTreField;
+        
+        private string hoTenField;
+        
+        private string gioiTinhField;
+        
+        private System.DateTime ngaySinhField;
+        
+        private int conThuField;
+        
+        private string tenLopField;
+        
+        private int maTinhTrangSucKhoeField;
+        
+        private int maPhuHuynhField;
+        
+        /// <remarks/>
+        public int MaTre {
+            get {
+                return this.maTreField;
+            }
+            set {
+                this.maTreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string HoTen {
+            get {
+                return this.hoTenField;
+            }
+            set {
+                this.hoTenField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GioiTinh {
+            get {
+                return this.gioiTinhField;
+            }
+            set {
+                this.gioiTinhField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime NgaySinh {
+            get {
+                return this.ngaySinhField;
+            }
+            set {
+                this.ngaySinhField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ConThu {
+            get {
+                return this.conThuField;
+            }
+            set {
+                this.conThuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenLop {
+            get {
+                return this.tenLopField;
+            }
+            set {
+                this.tenLopField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaTinhTrangSucKhoe {
+            get {
+                return this.maTinhTrangSucKhoeField;
+            }
+            set {
+                this.maTinhTrangSucKhoeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaPhuHuynh {
+            get {
+                return this.maPhuHuynhField;
+            }
+            set {
+                this.maPhuHuynhField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class PhuHuynhDTO : CharacterClass {
         
         private int maPhuHuynhField;
         
@@ -1473,120 +1641,6 @@ namespace RemoteObjectEngine.nvvQLTMN_BUS_WS {
             }
             set {
                 this.diaChiCoQuanMeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class LopDTO {
-        
-        private int maLopField;
-        
-        private string tenLopField;
-        
-        private string doTuoiField;
-        
-        private int siSoField;
-        
-        private string tenKhoiField;
-        
-        /// <remarks/>
-        public int MaLop {
-            get {
-                return this.maLopField;
-            }
-            set {
-                this.maLopField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenLop {
-            get {
-                return this.tenLopField;
-            }
-            set {
-                this.tenLopField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string DoTuoi {
-            get {
-                return this.doTuoiField;
-            }
-            set {
-                this.doTuoiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int SiSo {
-            get {
-                return this.siSoField;
-            }
-            set {
-                this.siSoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenKhoi {
-            get {
-                return this.tenKhoiField;
-            }
-            set {
-                this.tenKhoiField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class KhoiDTO {
-        
-        private int maKhoiField;
-        
-        private string tenKhoiField;
-        
-        private int soLopField;
-        
-        /// <remarks/>
-        public int MaKhoi {
-            get {
-                return this.maKhoiField;
-            }
-            set {
-                this.maKhoiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenKhoi {
-            get {
-                return this.tenKhoiField;
-            }
-            set {
-                this.tenKhoiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int SoLop {
-            get {
-                return this.soLopField;
-            }
-            set {
-                this.soLopField = value;
             }
         }
     }

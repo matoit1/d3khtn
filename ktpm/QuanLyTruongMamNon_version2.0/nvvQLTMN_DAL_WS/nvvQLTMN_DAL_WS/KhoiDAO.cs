@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class KhoiDAO
+    public class KhoiDAO : EntityMethod
     {
         public List<KhoiDTO> LayDanhSachKhoi()
         {

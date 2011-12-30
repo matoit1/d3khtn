@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class GiaoVienDAO
+    public class GiaoVienDAO : CharacterMethod
     {
         public List<GiaoVienDTO> LayDanhSachGiaoVien()
         {
@@ -15,6 +15,7 @@ namespace nvvQLTMN_DAL_WS
 
             return query.ToList<GiaoVienDTO>();
         }
+
         public bool ThemGiaoVien(GiaoVienDTO gvtam)
         {
             bool kq = true;
@@ -69,13 +70,13 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool XoaGiaoVien(GiaoVienDTO gvtam)
+        public bool XoaGiaoVien(int maGv)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.GiaoViens.Single(gv => gv.MaGiaoVien == gvtam.MaGiaoVien);
+                var query = db.GiaoViens.Single(gv => gv.MaGiaoVien == maGv);
                 db.GiaoViens.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }

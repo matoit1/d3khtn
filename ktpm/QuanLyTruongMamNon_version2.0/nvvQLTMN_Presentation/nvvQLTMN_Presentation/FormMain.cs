@@ -35,7 +35,6 @@ namespace nvvQLTMN_Presentation
                 MessageBox.Show("Vui lòng kiểm tra add file QLNT.mdf vào SQl server. \r\nKiểm tra kết nối webServiceDAL và WebServiceBUS.","Chưa kết nối dữ liệu!");
                 menuStrip1.Enabled = false;
             }
-            timer1.Enabled = true;
             imageList.Add(nvvQLTMN_Presentation.Properties.Resources.a);
             imageList.Add(nvvQLTMN_Presentation.Properties.Resources.b);
             imageList.Add(nvvQLTMN_Presentation.Properties.Resources.c);

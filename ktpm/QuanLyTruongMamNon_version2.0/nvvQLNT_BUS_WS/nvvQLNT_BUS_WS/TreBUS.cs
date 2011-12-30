@@ -44,7 +44,7 @@ namespace nvvQLNT_BUS_WS
         }
         public bool XoaTre()
         {
-            return ws.XoaTre(tr);
+            return ws.XoaTre(tr.MaTre);
         }
     }
 }

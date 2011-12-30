@@ -6,7 +6,7 @@ using System.Text;
 
 namespace nvvQLTMN_DAL_WS
 {
-    public class PhuHuynhDAO
+    public class PhuHuynhDAO : CharacterMethod
     {
         public List<PhuHuynhDTO> LayThongTinPhuHuynh(int maphuhuynh)
         {
