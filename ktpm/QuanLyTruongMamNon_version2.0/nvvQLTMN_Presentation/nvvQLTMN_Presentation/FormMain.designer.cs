@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thiếtLậpCácThôngTinHệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đôiGiaoDiênNênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +59,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +67,7 @@
             // 
             this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thiếtLậpCácThôngTinHệThốngToolStripMenuItem,
+            this.đôiGiaoDiênNênToolStripMenuItem,
             this.toolStripMenuItem2,
             this.thoátToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Image = global::nvvQLTMN_Presentation.Properties.Resources.hethong;
@@ -82,6 +82,13 @@
             this.thiếtLậpCácThôngTinHệThốngToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
             this.thiếtLậpCácThôngTinHệThốngToolStripMenuItem.Text = "Thiết lập các thông tin nhà trường";
             this.thiếtLậpCácThôngTinHệThốngToolStripMenuItem.Click += new System.EventHandler(this.thiếtLậpCácThôngTinHệThốngToolStripMenuItem_Click);
+            // 
+            // đôiGiaoDiênNênToolStripMenuItem
+            // 
+            this.đôiGiaoDiênNênToolStripMenuItem.Name = "đôiGiaoDiênNênToolStripMenuItem";
+            this.đôiGiaoDiênNênToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
+            this.đôiGiaoDiênNênToolStripMenuItem.Text = "Thiết lập giao diện";
+            this.đôiGiaoDiênNênToolStripMenuItem.Click += new System.EventHandler(this.đôiGiaoDiênNênToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -253,11 +260,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bell MT", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.YellowGreen;
             this.label2.Location = new System.Drawing.Point(67, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(531, 31);
+            this.label2.Size = new System.Drawing.Size(553, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Phần mềm QUẢN LÍ TRƯỜNG MẦM NON";
             // 
@@ -325,10 +332,6 @@
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "label7";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menuStrip1
             // 
@@ -404,9 +407,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem đôiGiaoDiênNênToolStripMenuItem;
 
     }
 }

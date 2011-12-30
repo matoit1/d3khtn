@@ -10,3 +10,9 @@ C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.dll
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll.config
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.dll
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\bin\Debug\RemoteObjectEngine.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\ResolveAssemblyReference.cache
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.dll
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\RemoteObjectEngine\obj\Debug\RemoteObjectEngine.pdb

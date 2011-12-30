@@ -20,7 +20,7 @@ namespace nvvQLTMN_Presentation
             RemoteObjectManager.Connect();
             
         }
-        public List<Image> imageList = new List<Image>();
+        public static  List<Image> imageList = new List<Image>();
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -177,19 +177,18 @@ namespace nvvQLTMN_Presentation
         {
             Help.ShowHelp(this, Application.StartupPath + "//HelpQLNT.chm");
         }
-        int i = 0;
-        int j = 0;
-        private void timer1_Tick(object sender, EventArgs e)
+       
+
+        public void GetValue(String str)
         {
-            i++;
-            if (i == 100)
-            {
-                this.BackgroundImage = imageList[j];
-                if (j == imageList.Count-1) 
-                    j = -1;
-                j++;
-                i = 0;
-            }
+            this.BackgroundImage = imageList[int.Parse(str)];//
+
+        }
+        private void đôiGiaoDiênNênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThietLapGiaoDien f2 = new ThietLapGiaoDien();
+            f2.MyGetData = new ThietLapGiaoDien.GetString(GetValue);
+            f2.Show();
         }
     }
 }

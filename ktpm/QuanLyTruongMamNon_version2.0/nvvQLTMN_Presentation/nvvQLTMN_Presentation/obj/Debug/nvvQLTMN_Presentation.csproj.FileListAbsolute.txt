@@ -72,3 +72,6 @@ C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\nvvQLTMN_Presentation\obj\Debug\ResGen.write.1.tlog
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\nvvQLTMN_Presentation\bin\Debug\RemoteObjectEngine.dll
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\nvvQLTMN_Presentation\bin\Debug\RemoteObjectEngine.pdb
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\nvvQLTMN_Presentation\obj\Debug\nvvQLTMN_Presentation.ThietLapGiaoDien.resources
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\nvvQLTMN_Presentation\obj\Debug\ResGen.read.1.tlog
+D:\Java_FutureShop\ktpm\QuanLyTruongMamNon_version2.0\nvvQLTMN_Presentation\nvvQLTMN_Presentation\obj\Debug\ResGen.write.1.tlog
