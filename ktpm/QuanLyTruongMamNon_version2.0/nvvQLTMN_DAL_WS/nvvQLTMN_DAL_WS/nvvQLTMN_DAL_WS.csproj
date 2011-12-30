@@ -70,6 +70,7 @@
     <Compile Include="KhoiDTO.cs" />
     <Compile Include="LopDAO.cs" />
     <Compile Include="LopDTO.cs" />
+    <Compile Include="ObjectMethod.cs" />
     <Compile Include="PhuHuynhDAO.cs" />
     <Compile Include="PhuHuynhDTO.cs" />
     <Compile Include="QLNT.designer.cs">

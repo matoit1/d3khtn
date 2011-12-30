@@ -28,7 +28,7 @@ namespace RemoteObjectEngine
         
         public static bool XoaPhuHuynh(int maPH)
         {
-            return XoaPhuHuynh(maPH);
+            return RemoteObjectManager.Service.XoaPhuHuynh(maPH);
         }
     }
 }

@@ -104,7 +104,7 @@ namespace nvvQLNT_BUS_WS
         [WebMethod]
         public bool XoaPhuHuynh(int maPH)
         {
-            return XoaPhuHuynh(maPH);
+            return ph.XoaPhuHuynh(maPH);
         }
 
         //suckhoe
