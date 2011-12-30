@@ -157,17 +157,22 @@ namespace nvvQLTMN_Presentation
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa ko?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                if (dataGridView1.CurrentRow.Tag != null)
+                if (MessageBox.Show("Bạn có chắc muốn xóa ko?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                   TreDTO tre = (TreDTO) dataGridView1.CurrentRow.Tag;
-                   if (RemoteObjectEngine.Tre.XoaTre(tre) == true && RemoteObjectEngine.PhuHuynh.XoaPhuHuynh(tre.MaPhuHuynh)== true && RemoteObjectEngine.TinhTrangSucKhoe.XoaSucKhoe(tre.MaTinhTrangSucKhoe)==true)
-                        MessageBox.Show("Xóa Trẻ thành công!");
-                    else MessageBox.Show("Xóa Trẻ thất bại!");
-                    LoadDSTre();
-
+                    if (dataGridView1.CurrentRow.Tag != null)
+                    {
+                        TreDTO tre = (TreDTO)dataGridView1.CurrentRow.Tag;
+                        if (RemoteObjectEngine.Tre.XoaTre(tre) == true && RemoteObjectEngine.PhuHuynh.XoaPhuHuynh(tre.MaPhuHuynh) == true && RemoteObjectEngine.TinhTrangSucKhoe.XoaSucKhoe(tre.MaTinhTrangSucKhoe) == true)
+                            MessageBox.Show("Xóa Trẻ thành công!");
+                        else MessageBox.Show("Xóa Trẻ thất bại!");
+                        LoadDSTre();
+                    }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
