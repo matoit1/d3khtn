@@ -71,7 +71,7 @@ public class KhachHangDAO {
             session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }
+        } 
         return kh;
     }
     //</editor-fold>

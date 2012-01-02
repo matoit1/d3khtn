@@ -78,13 +78,13 @@ public class DatHang extends HttpServlet {
                         if (reCaptchaResponse.isValid()) {
                             Dondathang ddh_temp = new Dondathang();
                             ddh_temp.setKhachhang(account);
-                            Date d = new Date(request.getParameter("orderday"));
-                            ddh_temp.setNgayDatHang(d);
+                            ddh_temp.setNgayDatHang(orderday);
                             // Lấy thông tin tình trạng đơn đặt hàng
                             Tinhtrangdondathang ttddh = TinhTrangDonDatHangDAO.layThongTin(1);
                             // Lấy thông tin tình trạng
                             Tinhtrang tt = TinhTrangDAO.layThongTin(1);
-
+                            float subTotal = (Float)session.getAttribute("subTotal");
+                            ddh_temp.setTongTien(subTotal);
                             ddh_temp.setTinhtrangdondathang(ttddh);
                             ddh_temp.setTinhtrang(tt);
                             int hinhThuc = Integer.parseInt(request.getParameter("Availability"));
@@ -109,8 +109,9 @@ public class DatHang extends HttpServlet {
                                 ctddh.setDondathang(ddh);
                                 ctddh.setDonGia((spgh.getGiaGoc() - spgh.getGiamGia()) * spgh.getSoLuong());
                                 ctddh.setSoLuong(spgh.getSoLuong());
-
+                                
                                 boolean kq = ChiTietDonDatHangDAO.themChiTiet(ctddh);
+                                
                             }
                             // Thực hiện gửi email
                             try {
@@ -128,6 +129,7 @@ public class DatHang extends HttpServlet {
                                 EmailDAO.send(account.getEmail(), subject, body);
                                 session.removeAttribute("subTotal");
                                 session.removeAttribute("GioHang");
+                                url = "TrangThongTinCaNhan.jsp";
                             } catch (Exception ex) {
                                 System.err.println(ex);
                             }

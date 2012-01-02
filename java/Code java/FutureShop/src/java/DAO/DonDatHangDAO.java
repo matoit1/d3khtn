@@ -5,6 +5,7 @@
 package DAO;
 
 import POJO.Dondathang;
+import POJO.Tinhtrang;
 import java.util.ArrayList;
 import java.util.List;
 import util.HibernateUtil;
@@ -49,13 +50,16 @@ public class DonDatHangDAO {
         try {
             session.beginTransaction();
 
-            String hql = "from Dondathang ddh where ddh.khachHang.maKhachHang =:maKhachHang";
+            String hql = "select ddh from Dondathang ddh where ddh.khachhang.maKhachHang =:maKhachHang and ddh.tinhtrang.maTinhTrang =:maTinhTrang";
             Query query = session.createQuery(hql);
             query.setInteger("maKhachHang", maKhachHang);
+            query.setInteger("maTinhTrang", 1);
 
             ddh = query.list();
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
+        }finally {
+            session.close();
         }
         return ddh;
     }
@@ -71,8 +75,35 @@ public class DonDatHangDAO {
             ddh = (Dondathang) session.get(Dondathang.class, maDonDatHang);
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            session.close();
         }
         return ddh;
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Xoá đơn đặt hàng">
+    public static boolean xoaDonDatHang(Dondathang ddh) {
+        if (DonDatHangDAO.layThongTinDonDatHang(ddh.getMaDonDatHang()) == null) {
+            return false;
+        }
+        Session session = null;
+        Tinhtrang tt = TinhTrangDAO.layThongTin(2);
+
+        session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            ddh.setTinhtrang(tt);
+            session.getTransaction().begin();
+            session.update(ddh);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            session.getTransaction().rollback();
+            System.out.println(ex);
+            return false;
+        } finally {
+            session.close();
+        }
     }
     //</editor-fold>
 }

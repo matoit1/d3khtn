@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Jan 2, 2012 5:03:35 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jan 2, 2012 10:31:44 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="POJO.Dondathang" table="dondathang" catalog="futureshop">
         <id name="maDonDatHang" type="java.lang.Integer">
             <column name="MaDonDatHang" />
             <generator class="identity" />
         </id>
-        <many-to-one name="khachhang" class="POJO.Khachhang" fetch="select">
+        <many-to-one name="khachhang" class="POJO.Khachhang" fetch="select" lazy="false">
             <column name="MaKhachHang" />
         </many-to-one>
-        <many-to-one name="tinhtrangdondathang" class="POJO.Tinhtrangdondathang" fetch="select">
+        <many-to-one name="tinhtrangdondathang" class="POJO.Tinhtrangdondathang" fetch="select" lazy="false">
             <column name="MaTinhTrangDonDatHang" />
         </many-to-one>
-        <many-to-one name="tinhtrang" class="POJO.Tinhtrang" fetch="select">
+        <many-to-one name="tinhtrang" class="POJO.Tinhtrang" fetch="select" lazy="false">
             <column name="MaTinhTrang" />
         </many-to-one>
-        <property name="ngayDatHang" type="timestamp">
-            <column name="NgayDatHang" length="19" />
+        <property name="ngayDatHang" type="string">
+            <column name="NgayDatHang" length="45" />
         </property>
         <property name="hinhThucMuaHang" type="string">
             <column name="HinhThucMuaHang" length="45" />
@@ -26,8 +26,8 @@
         <property name="diaDiemGiaoHang" type="string">
             <column name="DiaDiemGiaoHang" length="100" />
         </property>
-        <property name="tongTien" type="java.lang.Integer">
-            <column name="TongTien" />
+        <property name="tongTien" type="java.lang.Float">
+            <column name="TongTien" precision="12" scale="0" />
         </property>
         <set name="chitietdondathangs" inverse="true">
             <key>

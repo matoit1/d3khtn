@@ -12,7 +12,8 @@
         <h2>My Account Home</h2>
         <p><strong>Shopping</strong></p>
         <ul>
-            <li><a href="#">Order History</a></li>
+            <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
+            <li><a href="${XemHoaDon}">Order History</a></li>
             <li><a href="#">Wish List</a></li>
             <li><a href="#">Price Watch</a></li>
         </ul>
