@@ -36,7 +36,7 @@
         </fieldset>
         <p style="text-align: center;">
             <input class="btn" type="submit" name="signin" value="Sign In"/>
-            <input class="btn" type="button" value="Cancel"  />
+            <input class="btn" type="button" value="Cancel" onclick="GoIndex();"/>
         </p> 
         <c:url var="Reset" value="KhoiPhucMatKhau.do"/>
         <a href="${Reset}"><font> Reset password</font></a>

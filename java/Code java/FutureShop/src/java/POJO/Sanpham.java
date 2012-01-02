@@ -1,5 +1,5 @@
 package POJO;
-// Generated Jan 1, 2012 11:48:19 PM by Hibernate Tools 3.2.1.GA
+// Generated Jan 2, 2012 5:03:35 PM by Hibernate Tools 3.2.1.GA
 
 import DAO.HangSanXuatDAO;
 import DAO.LoaiSanPhamDAO;
@@ -168,8 +168,8 @@ public class Sanpham implements java.io.Serializable {
         this.binhluans = binhluans;
     }
 
-// thêm vào
     public String getTenHangSX() {
+
         return HangSanXuatDAO.LayHangSanXuatTheoMa(hangsanxuat.getMaHangSanXuat()).getTenHangSanXuat();
     }
 

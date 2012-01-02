@@ -5,6 +5,8 @@
 package DAO;
 
 import POJO.Dondathang;
+import java.util.ArrayList;
+import java.util.List;
 import util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -39,7 +41,27 @@ public class DonDatHangDAO {
     }
     //</editor-fold>
 
-    //<editor-fold defaultstate="collapsed" desc="Lấy thông tin">
+    //<editor-fold defaultstate="collapsed" desc="Lấy thông tin theo người dùng">
+    public static List<Dondathang> layDonDatHang(int maKhachHang) {
+        List<Dondathang> ddh = new ArrayList<Dondathang>();
+        Session session = null;
+        session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+
+            String hql = "from Dondathang ddh where ddh.khachHang.maKhachHang =:maKhachHang";
+            Query query = session.createQuery(hql);
+            query.setInteger("maKhachHang", maKhachHang);
+
+            ddh = query.list();
+        } catch (HibernateException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return ddh;
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Lấy thông tin theo mã">
     public static Dondathang layThongTinDonDatHang(int maDonDatHang) {
         Dondathang ddh = new Dondathang();
         Session session = null;

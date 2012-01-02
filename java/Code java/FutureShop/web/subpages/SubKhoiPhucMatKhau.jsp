@@ -39,7 +39,7 @@
         </fieldset>
         <p style="text-align: center;">
             <input class="btn" type="submit" name="reset" value="Reset Password"/>
-            <input class="btn" type="button" value="Cancel"  />
+            <input class="btn" type="button" value="Cancel" onclick="GoProfile();"/>
         </p> 
         <c:url var="Dangky" value="DangKy.do"/>
         <a href="${Dangky}"><font> Create an account now!</font></a>

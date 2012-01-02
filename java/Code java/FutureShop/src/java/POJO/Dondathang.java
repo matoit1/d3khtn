@@ -1,5 +1,5 @@
 package POJO;
-// Generated Jan 1, 2012 11:48:19 PM by Hibernate Tools 3.2.1.GA
+// Generated Jan 2, 2012 5:03:35 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -19,18 +19,20 @@ public class Dondathang  implements java.io.Serializable {
      private Date ngayDatHang;
      private String hinhThucMuaHang;
      private String diaDiemGiaoHang;
+     private Integer tongTien;
      private Set chitietdondathangs = new HashSet(0);
 
     public Dondathang() {
     }
 
-    public Dondathang(Khachhang khachhang, Tinhtrangdondathang tinhtrangdondathang, Tinhtrang tinhtrang, Date ngayDatHang, String hinhThucMuaHang, String diaDiemGiaoHang, Set chitietdondathangs) {
+    public Dondathang(Khachhang khachhang, Tinhtrangdondathang tinhtrangdondathang, Tinhtrang tinhtrang, Date ngayDatHang, String hinhThucMuaHang, String diaDiemGiaoHang, Integer tongTien, Set chitietdondathangs) {
        this.khachhang = khachhang;
        this.tinhtrangdondathang = tinhtrangdondathang;
        this.tinhtrang = tinhtrang;
        this.ngayDatHang = ngayDatHang;
        this.hinhThucMuaHang = hinhThucMuaHang;
        this.diaDiemGiaoHang = diaDiemGiaoHang;
+       this.tongTien = tongTien;
        this.chitietdondathangs = chitietdondathangs;
     }
    
@@ -82,6 +84,13 @@ public class Dondathang  implements java.io.Serializable {
     
     public void setDiaDiemGiaoHang(String diaDiemGiaoHang) {
         this.diaDiemGiaoHang = diaDiemGiaoHang;
+    }
+    public Integer getTongTien() {
+        return this.tongTien;
+    }
+    
+    public void setTongTien(Integer tongTien) {
+        this.tongTien = tongTien;
     }
     public Set getChitietdondathangs() {
         return this.chitietdondathangs;

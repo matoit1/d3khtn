@@ -17,8 +17,8 @@
         <table width='100%' border='1' cellspacing='0' cellpadding='5'>
             <tr>
                 <td>
-                    <p>Bạn chưa đăng nhập, Vui lòng đăng nhập!</p>
-                    <p>Nếu bạn chưa có tài khoản xin vui lòng đăng ký!</p>
+                    <p>Your are not sign in. Please sign in your account!</p>
+                    <p>If you have not an account. Please sign up for an account</p>
                 </td>
             </tr>
         </table>
@@ -27,7 +27,7 @@
         <table width='100%' border='1' cellspacing='0' cellpadding='5'>
             <tr>
                 <td>
-                    <p>Chức năng này chỉ đùng cho người dùng!</p>
+                    <p>For user only!</p>
                 </td>
             </tr>
         </table>

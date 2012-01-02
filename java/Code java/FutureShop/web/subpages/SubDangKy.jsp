@@ -18,9 +18,6 @@
         <c:if test="${requestScope.message ne null}">
             <p>${requestScope.message}</p>
         </c:if>
-        <c:if test="${requestScope.Captcha ne null}">
-            <p>${requestScope.Captcha}</p>
-        </c:if>
         <fieldset>
             <legend>Account Information</legend>
             <table>
@@ -82,7 +79,7 @@
         </fieldset>
         <p style="text-align: center;">
             <input class="btn" type="submit" name="Register" value="Register"/>
-            <input class="btn" type="button" value="Cancel"  />
+            <input class="btn" type="button" value="Cancel" onclick="GoIndex();"/>
         </p>                    
     </form>
 </div>
