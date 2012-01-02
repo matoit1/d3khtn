@@ -1,0 +1,8 @@
+-Gioi thieu:
+http://vi.wikipedia.org/wiki/Google_D%E1%BB%8Bch
+
+-Google Translate API
+
+http://code.google.com/apis/language/translate/overview.html
+
+-Dung RESTful
