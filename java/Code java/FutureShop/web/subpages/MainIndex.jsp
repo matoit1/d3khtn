@@ -46,7 +46,6 @@
                                 <h3> Get the best holiday deals on TVs. </h3>
                             </div>
                         </li>
-
                         <li>
                             <div>
                                 <img src="images/banner/homepage-slide--thumb-camera.png" />

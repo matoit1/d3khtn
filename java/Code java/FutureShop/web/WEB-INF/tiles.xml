@@ -98,6 +98,9 @@
     <definition name="giohang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubGioHang.jsp" />  
     </definition>
+        <definition name="dathang" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubDatHang.jsp" />  
+    </definition>
 </tiles-definitions> 
 
 

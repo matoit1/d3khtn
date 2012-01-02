@@ -2,6 +2,41 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+function Date_Check(str)
+{
+    if(str.indexOf("/") == -1){
+        return false;
+    }
+    dt1 = str.split("/")
+    mm1 = parseInt(dt1[0]);
+    dd1 = parseInt(dt1[1]);
+    yy1 = parseInt(dt1[2]);
+    if(isNaN(dd1) || isNaN(mm1) || isNaN(yy1)){
+        return false;
+    }
+    dt2 = new Date(mm1+'/'+dd1+'/'+yy1)
+    dd2 = dt2.getDate();
+    mm2 = dt2.getMonth()+1;
+    yy2 = dt2.getFullYear();
+		
+    if(dd1==dd2 && mm1==mm2 && yy1==yy2)
+        return true;
+    else
+        return false;
+}
+
+function AddressShow()
+{
+    if($('#Availability').val() == 0)
+    {
+        $('#OrderAddress').hide();
+    }
+    else
+    {
+        $('#OrderAddress').show();  
+    }
+}
+
 
 function echeck(str) {
 
@@ -47,7 +82,6 @@ function echeck(str) {
 
     return true                                 
 }
-
 
 function RegisterAccount(){
     
@@ -187,6 +221,28 @@ function UpdateAccount()
         $('#invalid_name').html('');
     }
     
+    var dayofbirth = $('#dayofbirth').val().trim();
+    
+    if($('#dayofbirth').val().trim().length == 0)
+    {
+        $('#invalid_dayofbirth').html('Day Of Birth is required !');
+        $('#dayofbirth').focus();
+        return false;
+    }
+    else
+    { 
+        if(Date_Check(dayofbirth) == false)
+        {
+            $('#invalid_dayofbirth').html('Day Of Birth is invalid !');
+            $('#dayofbirth').focus();
+            return false;
+        }
+        else
+        {
+            $('#invalid_dayofbirth').html('');
+        }
+    }
+    
     if($('#phone').val().trim().length == 0){
         $('#invalid_phone').html('Mobile Phone is required !');
         $('#phone').focus();
@@ -202,6 +258,14 @@ function UpdateAccount()
         {
             $('#invalid_phone').html('');
         }
+    }
+    
+    if($('#address').val().trim().length == 0){
+        $('#invalid_address').html('Address is required !');
+        $('#address').focus();
+        return false;
+    }else{
+        $('#invalid_address').html('');
     }
     
     return true;
@@ -302,7 +366,7 @@ function ChangePassword()
 
 function ResetPassword()
 {  
-     if($('#id').val().trim().length == 0){
+    if($('#id').val().trim().length == 0){
         $('#invalid_id').html('Your ID is required !');
         $('#id').focus();
         return false;
@@ -329,5 +393,5 @@ function ResetPassword()
         }
     }
     
-   return true;
+    return true;
 }

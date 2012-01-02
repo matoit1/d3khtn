@@ -6,8 +6,10 @@ package controller;
 
 import DAO.SanPhamDAO;
 import POJO.SanPhamGioHang;
+import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,36 +41,38 @@ public class GioHang extends HttpServlet {
             HttpSession session = request.getSession();
             String url = "GioHang.jsp";
 
-            // Thêm giỏ hàng
-            ArrayList<SanPhamGioHang> gioHang;
-            if (session.getAttribute("GioHang") == null) {
-                gioHang = new ArrayList<SanPhamGioHang>();
-                session.setAttribute("GioHang", gioHang);
-            } else {
-                gioHang = (ArrayList<SanPhamGioHang>) session.getAttribute("GioHang");
-            }
+            if (session.getAttribute("account") != null && session.getAttribute("admin") == null) {
 
-            String action = request.getParameter("action");
-            if (action != null) {
-                // Đặt mua sản phẩm
-                if ("DatMua".equals(action)) {
-                    int maSanPham = Integer.parseInt(request.getParameter("maSanPham"));
-                    boolean kq = false;
-                    for (int i = 0; i < gioHang.size(); i++) {
-                        SanPhamGioHang sp = gioHang.get(i);
-                        if (sp.getMaSanPham() == maSanPham) {
-                            sp.setSoLuong(sp.getSoLuong() + 1);
-                            kq = true;
-                            break;
-                        }
-                    }
-                    if (kq == false) {
-                        SanPhamGioHang sp = SanPhamDAO.layThongTinSanPhamGioHang(maSanPham);
-                        sp.setSoLuong(1);
-                        gioHang.add(sp);
-                    }
+                // Thêm giỏ hàng
+                ArrayList<SanPhamGioHang> gioHang;
+                if (session.getAttribute("GioHang") == null) {
+                    gioHang = new ArrayList<SanPhamGioHang>();
                     session.setAttribute("GioHang", gioHang);
                 } else {
+                    gioHang = (ArrayList<SanPhamGioHang>) session.getAttribute("GioHang");
+                }
+
+                String action = request.getParameter("action");
+                if (action != null) {
+                    // Đặt mua sản phẩm
+                    if ("DatMua".equals(action)) {
+                        int maSanPham = Integer.parseInt(request.getParameter("maSanPham"));
+                        boolean kq = false;
+                        for (int i = 0; i < gioHang.size(); i++) {
+                            SanPhamGioHang sp = gioHang.get(i);
+                            if (sp.getMaSanPham() == maSanPham) {
+                                sp.setSoLuong(sp.getSoLuong() + 1);
+                                kq = true;
+                                break;
+                            }
+                        }
+                        if (kq == false) {
+                            SanPhamGioHang sp = SanPhamDAO.layThongTinSanPhamGioHang(maSanPham);
+                            sp.setSoLuong(1);
+                            gioHang.add(sp);
+                        }
+                        session.setAttribute("GioHang", gioHang);
+                    }
                     // Xoá sản phẩm trong giỏ hàng
                     if ("Xoa".equals(action)) {
                         int maSanPham = Integer.parseInt(request.getParameter("maSanPham"));
@@ -80,40 +84,32 @@ public class GioHang extends HttpServlet {
                         }
                         session.setAttribute("GioHang", gioHang);
                     }
+                    // Thanh toán
+                    if ("ThanhToan".equals(action)) {
+                        url = "DatHang.do";
+                    }
                 }
-            }
-//            // Cập nhật giỏ hàng
-//            String capNhat = request.getParameter("capNhat.x");
-//            if (capNhat != null) {
-//                String[] sl = request.getParameterValues("soLuong");
-//                for (int i = 0; i < gioHang.size(); i++) {
-//                    int soLuong = Integer.parseInt(sl[i]);
-//                    gioHang.get(i).setSoLuong(soLuong);
-//                }
-//                
-//            }
-            String capNhat = request.getParameter("capNhat.x");
-            if (capNhat != null) {
-                int stt = Integer.parseInt(request.getParameter("stt"));
-                int soLuong = Integer.parseInt(request.getParameter("soLuong"));
-                gioHang.get(stt).setSoLuong(soLuong);
-                session.setAttribute("GioHang", gioHang);
-            }
-            double tongTien = 0;
-            for(int i=0; i<gioHang.size(); i++)
-            {
-                SanPhamGioHang sp = gioHang.get(i);
-                tongTien += (sp.getGiaGoc() - sp.getGiamGia()) * sp.getSoLuong();
-            }
-            
-            request.setAttribute("tongTien", tongTien);
-            // Check out
-            String checkOut = request.getParameter("checkOut.x");
-            if (checkOut != null) {
-                session.removeAttribute("GioHang");
-                url = "index.do";
-            }
+                // Cập nhật số lượng sản phẩm
+                String capNhat = request.getParameter("capNhat.x");
+                if (capNhat != null) {
+                    int TID = Integer.parseInt(request.getParameter("TID"));
+                    int soLuong = Integer.parseInt(request.getParameter("soLuong"));
+                    gioHang.get(TID).setSoLuong(soLuong);
+                    session.setAttribute("GioHang", gioHang);
+                }
 
+                float temp = 0;
+                for (int i = 0; i < gioHang.size(); i++) {
+                    SanPhamGioHang sp = gioHang.get(i);
+                    temp += (sp.getGiaGoc() - sp.getGiamGia()) * sp.getSoLuong();
+                }
+                DecimalFormat df = new DecimalFormat("#,###.##");
+                float subTotal = Float.valueOf(df.format(temp));
+                float tongTien = Float.valueOf(df.format(temp));
+                session.setAttribute("subTotal", subTotal);
+                request.setAttribute("tongTien", tongTien);
+                
+            }
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
         } finally {

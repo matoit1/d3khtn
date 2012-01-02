@@ -1,5 +1,5 @@
 package POJO;
-// Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
+// Generated Jan 1, 2012 11:48:19 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -15,17 +15,22 @@ public class Tinhtrang  implements java.io.Serializable {
      private String tenTinhTrang;
      private Set sanphams = new HashSet(0);
      private Set loaisanphams = new HashSet(0);
-     private Set chitietdondathangs = new HashSet(0);
+     private Set dondathangs = new HashSet(0);
      private Set nhomsanphams = new HashSet(0);
 
     public Tinhtrang() {
     }
+    
+    public Tinhtrang(int maTinhTrang)
+    {
+        this.maTinhTrang = maTinhTrang;
+    }
 
-    public Tinhtrang(String tenTinhTrang, Set sanphams, Set loaisanphams, Set chitietdondathangs, Set nhomsanphams) {
+    public Tinhtrang(String tenTinhTrang, Set sanphams, Set loaisanphams, Set dondathangs, Set nhomsanphams) {
        this.tenTinhTrang = tenTinhTrang;
        this.sanphams = sanphams;
        this.loaisanphams = loaisanphams;
-       this.chitietdondathangs = chitietdondathangs;
+       this.dondathangs = dondathangs;
        this.nhomsanphams = nhomsanphams;
     }
    
@@ -57,12 +62,12 @@ public class Tinhtrang  implements java.io.Serializable {
     public void setLoaisanphams(Set loaisanphams) {
         this.loaisanphams = loaisanphams;
     }
-    public Set getChitietdondathangs() {
-        return this.chitietdondathangs;
+    public Set getDondathangs() {
+        return this.dondathangs;
     }
     
-    public void setChitietdondathangs(Set chitietdondathangs) {
-        this.chitietdondathangs = chitietdondathangs;
+    public void setDondathangs(Set dondathangs) {
+        this.dondathangs = dondathangs;
     }
     public Set getNhomsanphams() {
         return this.nhomsanphams;

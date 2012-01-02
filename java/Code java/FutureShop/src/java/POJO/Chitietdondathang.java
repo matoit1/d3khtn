@@ -1,5 +1,5 @@
 package POJO;
-// Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
+// Generated Jan 1, 2012 11:48:19 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -12,17 +12,15 @@ public class Chitietdondathang  implements java.io.Serializable {
      private Integer maChiTietDonDatHang;
      private Sanpham sanpham;
      private Dondathang dondathang;
-     private Tinhtrang tinhtrang;
      private Integer soLuong;
      private Float donGia;
 
     public Chitietdondathang() {
     }
 
-    public Chitietdondathang(Sanpham sanpham, Dondathang dondathang, Tinhtrang tinhtrang, Integer soLuong, Float donGia) {
+    public Chitietdondathang(Sanpham sanpham, Dondathang dondathang, Integer soLuong, Float donGia) {
        this.sanpham = sanpham;
        this.dondathang = dondathang;
-       this.tinhtrang = tinhtrang;
        this.soLuong = soLuong;
        this.donGia = donGia;
     }
@@ -47,13 +45,6 @@ public class Chitietdondathang  implements java.io.Serializable {
     
     public void setDondathang(Dondathang dondathang) {
         this.dondathang = dondathang;
-    }
-    public Tinhtrang getTinhtrang() {
-        return this.tinhtrang;
-    }
-    
-    public void setTinhtrang(Tinhtrang tinhtrang) {
-        this.tinhtrang = tinhtrang;
     }
     public Integer getSoLuong() {
         return this.soLuong;

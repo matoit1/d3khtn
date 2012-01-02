@@ -61,8 +61,15 @@
                     </ul>
                 </li>
             </ul>
-            <div id="subtotal"><a href="#">SUBTOTAL </a></div>
-            <div id="subtotal"><a href="#" ><img src="images/view_cart.gif" /></a></div>
+            <c:url var="GioHang" value="GioHang.do"/>
+            <c:if test="${sessionScope.subTotal ne null}">
+                <div id="subtotal"><a href="${GioHang}">SUBTOTAL ${sessionScope.subTotal}$</a></div> 
+            </c:if>
+             <c:if test="${sessionScope.subTotal eq null}">
+               <div id="subtotal"><a href="#">SUBTOTAL</a></div> 
+            </c:if>
+            
+            <div id="viewcart"><a href="${GioHang}" ><img src="images/view_cart.gif" /></a></div>
             <script type="text/javascript">
                 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
             </script>
