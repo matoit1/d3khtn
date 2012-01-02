@@ -17,7 +17,7 @@ import util.HibernateUtil;
  * @author TRANTRI
  */
 public class SanPhamDAO {
-    
+
     public static ArrayList<Sanpham> LayDanhSachToanBoSanPham() {
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
@@ -31,11 +31,11 @@ public class SanPhamDAO {
         }
         return dsSanPham;
     }
-    
+
     public static int SoLuongTongSanPham() {
         return LayDanhSachToanBoSanPham().size();
     }
-    
+
     public static ArrayList<Sanpham> LayDanhSachSanPhamPhanTrang(int batdau, int sl, boolean flag) {//flag = false thi lay cac san pham da xoa luon
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
@@ -55,9 +55,9 @@ public class SanPhamDAO {
         }
         return dsSanPham;
     }
-    
+
     public static Sanpham LaySanPhamTheoMa(int maSP) {
-        
+
         Sanpham sp = new Sanpham();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -69,9 +69,9 @@ public class SanPhamDAO {
         }
         return sp;
     }
-    
+
     public static ArrayList<Sanpham> LayDanhSachSanPhamTheoTen(String ten, int trang) {
-        
+
         ArrayList<Sanpham> ds = new ArrayList<Sanpham>();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -88,9 +88,9 @@ public class SanPhamDAO {
         }
         return ds;
     }
-    
+
     public static ArrayList<Sanpham> LayDanhSachSanPhamTheoHangSanXuat(int maHangSanXuat, int trang) {
-        
+
         ArrayList<Sanpham> ds = new ArrayList<Sanpham>();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -108,7 +108,7 @@ public class SanPhamDAO {
         }
         return ds;
     }
-    
+
     public static boolean CapNhapSanPham(Sanpham sp) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
@@ -122,7 +122,7 @@ public class SanPhamDAO {
             return false;
         }
     }
-    
+
     public static int ThemSanPham(Sanpham sp) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         int id = -1;
@@ -130,7 +130,7 @@ public class SanPhamDAO {
             session.beginTransaction();
             id = (Integer) session.save(sp);
             session.getTransaction().commit();
-            
+
         } catch (Exception e) {
             session.getTransaction().rollback();
             System.out.println(e);
@@ -140,7 +140,7 @@ public class SanPhamDAO {
         }
     }
 
-    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoNhomSanPham(int maNhomSanPham,int trang) {
+    public static ArrayList<Sanpham> LayDanhSachSanPhamTheoNhomSanPham(int maNhomSanPham, int trang) {
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -157,7 +157,7 @@ public class SanPhamDAO {
         }
         return dsSanPham;
     }
-    
+
     public static ArrayList<Sanpham> LayDanhSachSanPhamTheoLoaiSanPham(int maLoaiSanPham, int trang) {
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
@@ -175,7 +175,7 @@ public class SanPhamDAO {
         }
         return dsSanPham;
     }
-    
+
     public static int TinhSoTrangTheoNhomSanPham(int maNhomSanPham) {
         int soTrang = 1;
         int soLuong = 0;
@@ -199,7 +199,7 @@ public class SanPhamDAO {
         }
         return soTrang;
     }
-    
+
     public static int TinhSoTrangTheoHangSanXuat(int maHangSanXuat) {
         int soTrang = 1;
         int soLuong = 0;
@@ -223,7 +223,7 @@ public class SanPhamDAO {
         }
         return soTrang;
     }
-    
+
     public static int TinhSoTrangTheoLoaiSanPham(int maLoaiSanPham) {
         int soTrang = 1;
         int soLuong = 0;
@@ -247,14 +247,14 @@ public class SanPhamDAO {
         }
         return soTrang;
     }
-    
+
     public static int TinhSoTrangTheoTenSanPham(String tenSP) {
         int soTrang = 1;
         int soLuong = 0;
         try {
             Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
             ss.beginTransaction();
-            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tenSanPham like '%" + tenSP +"%'";
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tenSanPham like '%" + tenSP + "%'";
             Query query = ss.createQuery(hql);
             soLuong = query.uniqueResult().hashCode();
         } catch (Exception ex) {
@@ -270,7 +270,8 @@ public class SanPhamDAO {
         }
         return soTrang;
     }
-    
+
+    //<editor-fold defaultstate="collapsed" desc="Lấy thông tin sản phẩm giỏ hàng">
     public static SanPhamGioHang layThongTinSanPhamGioHang(int maSanPham) {
         SanPhamGioHang sanPham = new SanPhamGioHang();
         Session session = null;
@@ -290,4 +291,5 @@ public class SanPhamDAO {
         }
         return sanPham;
     }
+    //</editor-fold>
 }

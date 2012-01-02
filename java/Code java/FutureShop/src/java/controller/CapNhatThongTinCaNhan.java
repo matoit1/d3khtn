@@ -8,6 +8,7 @@ import DAO.KhachHangDAO;
 import POJO.Khachhang;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,6 +47,7 @@ public class CapNhatThongTinCaNhan extends HttpServlet {
                     Khachhang kh = (Khachhang) session.getAttribute("account");
                     String fullname = request.getParameter("fullname");
                     int gender = Integer.parseInt(request.getParameter("gender"));
+                    String dayofbirth = request.getParameter("dayofbirth");
                     String phone = request.getParameter("phone");
                     String address = request.getParameter("address");
                     kh.setHoTen(fullname);
@@ -54,6 +56,7 @@ public class CapNhatThongTinCaNhan extends HttpServlet {
                     } else {
                         kh.setGioiTinh(Boolean.FALSE);
                     }
+                    kh.setNgaySinh(dayofbirth);
                     kh.setSoDienThoai(phone);
                     kh.setDiaChi(address);
 

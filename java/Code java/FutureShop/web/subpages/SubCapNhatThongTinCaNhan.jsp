@@ -25,19 +25,24 @@
                             <td class="warning" id="invalid_name"></td>
                         </tr>
                         <tr>
-                            <td class="label"> Day Of Birth </td>
-                            <td class="value"><input type="text" name="dayofbirth" id="dayofbirth"/></td>
+                            <td class="label">* Day Of Birth </td>
+                            <td class="value">
+                                <input type="text" name="dayofbirth" id="dayofbirth" value="${sessionScope.account.ngaySinh}"/>
+                                (mm/dd/yyyy)
+                            </td>
                             <td class="warning" id="invalid_dayofbirth"></td>
                         </tr>
                         <tr>
-                            <td class="label"> Gender </td>
+                            <td class="label">* Gender </td>
                             <td class="value">
                                 <select style="width:100%" name="gender" id="gender"/>
                                 <c:if test="${sessionScope.account.gioiTinh eq true}">
                         <option value="0">Female</option>
+                        <option value="1">Male</option>
                     </c:if>
                     <c:if test="${sessionScope.account.gioiTinh ne true}">
                         <option value="1">Male</option>
+                        <option value="0">Female</option>
                     </c:if>
                     </select>
                     </td>
@@ -49,7 +54,7 @@
                         <td class="warning" id="invalid_phone"></td>
                     </tr>
                     <tr>
-                        <td class="label">  Address </td>
+                        <td class="label">* Address </td>
                         <td class="value"><input type="text" name="address" id="address" value="${sessionScope.account.diaChi}"/></td>
                         <td class="warning" id="invalid_address"></td>
                     </tr>

@@ -1,5 +1,5 @@
 package POJO;
-// Generated Dec 3, 2011 10:29:11 AM by Hibernate Tools 3.2.1.GA
+// Generated Jan 1, 2012 11:48:19 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -15,16 +15,22 @@ public class Dondathang  implements java.io.Serializable {
      private Integer maDonDatHang;
      private Khachhang khachhang;
      private Tinhtrangdondathang tinhtrangdondathang;
+     private Tinhtrang tinhtrang;
      private Date ngayDatHang;
+     private String hinhThucMuaHang;
+     private String diaDiemGiaoHang;
      private Set chitietdondathangs = new HashSet(0);
 
     public Dondathang() {
     }
 
-    public Dondathang(Khachhang khachhang, Tinhtrangdondathang tinhtrangdondathang, Date ngayDatHang, Set chitietdondathangs) {
+    public Dondathang(Khachhang khachhang, Tinhtrangdondathang tinhtrangdondathang, Tinhtrang tinhtrang, Date ngayDatHang, String hinhThucMuaHang, String diaDiemGiaoHang, Set chitietdondathangs) {
        this.khachhang = khachhang;
        this.tinhtrangdondathang = tinhtrangdondathang;
+       this.tinhtrang = tinhtrang;
        this.ngayDatHang = ngayDatHang;
+       this.hinhThucMuaHang = hinhThucMuaHang;
+       this.diaDiemGiaoHang = diaDiemGiaoHang;
        this.chitietdondathangs = chitietdondathangs;
     }
    
@@ -49,12 +55,33 @@ public class Dondathang  implements java.io.Serializable {
     public void setTinhtrangdondathang(Tinhtrangdondathang tinhtrangdondathang) {
         this.tinhtrangdondathang = tinhtrangdondathang;
     }
+    public Tinhtrang getTinhtrang() {
+        return this.tinhtrang;
+    }
+    
+    public void setTinhtrang(Tinhtrang tinhtrang) {
+        this.tinhtrang = tinhtrang;
+    }
     public Date getNgayDatHang() {
         return this.ngayDatHang;
     }
     
     public void setNgayDatHang(Date ngayDatHang) {
         this.ngayDatHang = ngayDatHang;
+    }
+    public String getHinhThucMuaHang() {
+        return this.hinhThucMuaHang;
+    }
+    
+    public void setHinhThucMuaHang(String hinhThucMuaHang) {
+        this.hinhThucMuaHang = hinhThucMuaHang;
+    }
+    public String getDiaDiemGiaoHang() {
+        return this.diaDiemGiaoHang;
+    }
+    
+    public void setDiaDiemGiaoHang(String diaDiemGiaoHang) {
+        this.diaDiemGiaoHang = diaDiemGiaoHang;
     }
     public Set getChitietdondathangs() {
         return this.chitietdondathangs;

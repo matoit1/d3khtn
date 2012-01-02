@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 3, 2011 10:29:15 AM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jan 1, 2012 11:48:23 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="POJO.Loaisanpham" table="loaisanpham" catalog="futureshop">
         <id name="maLoaiSanPham" type="java.lang.Integer">
             <column name="MaLoaiSanPham" />
             <generator class="identity" />
         </id>
-        <many-to-one name="nhomsanpham" class="POJO.Nhomsanpham" fetch="select" lazy="false">
+        <many-to-one name="nhomsanpham" class="POJO.Nhomsanpham" fetch="select">
             <column name="MaNhomSanPham" />
         </many-to-one>
         <many-to-one name="tinhtrang" class="POJO.Tinhtrang" fetch="select">
