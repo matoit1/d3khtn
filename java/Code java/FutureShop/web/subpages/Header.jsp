@@ -29,7 +29,8 @@
                     <c:if test="${sessionScope.admin ne null}">
                         <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right"> >> Admin </a></div>
                     </c:if>
-                    <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
+                    <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
+                    <div class="profilemenuItem"> <a href="${XemHoaDon}" title="View order history"> >> My Orders </a></div>
                     <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
                 </div>
             </div>
@@ -65,10 +66,10 @@
             <c:if test="${sessionScope.subTotal ne null}">
                 <div id="subtotal"><a href="${GioHang}">SUBTOTAL ${sessionScope.subTotal}$</a></div> 
             </c:if>
-             <c:if test="${sessionScope.subTotal eq null}">
-               <div id="subtotal"><a href="#">SUBTOTAL</a></div> 
+            <c:if test="${sessionScope.subTotal eq null}">
+                <div id="subtotal"><a href="#">SUBTOTAL</a></div> 
             </c:if>
-            
+
             <div id="viewcart"><a href="${GioHang}" ><img src="images/view_cart.gif" /></a></div>
             <script type="text/javascript">
                 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});

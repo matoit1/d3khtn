@@ -410,14 +410,6 @@ function ResetPassword()
 
 function OrderCheck()
 {
-    if($('#address').val().trim().length == 0){
-        $('#invalid_address').html('Your Address is required !');
-        $('#address').focus();
-        return false;
-    }else{
-        $('#invalid_address').html('');
-    }
-    
     if($('#recaptcha_response_field').val().trim().length == 0){
         $('#invalid_captcha').html('Security value is required !');
         $('#recaptcha_response_field').focus();
@@ -427,6 +419,5 @@ function OrderCheck()
     }
     
     return true;
-    
     
 }

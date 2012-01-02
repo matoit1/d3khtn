@@ -26,6 +26,9 @@ public class TinhTrangDAO {
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
         }
+        finally {
+            session.close();
+        }
         return tt;
     }
     //</editor-fold>

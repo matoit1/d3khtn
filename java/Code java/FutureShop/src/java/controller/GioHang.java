@@ -93,7 +93,12 @@ public class GioHang extends HttpServlet {
                 String capNhat = request.getParameter("capNhat.x");
                 if (capNhat != null) {
                     int TID = Integer.parseInt(request.getParameter("TID"));
+                    SanPhamGioHang sp = gioHang.get(TID);
+                    Sanpham sanPham = SanPhamDAO.LaySanPhamTheoMa(sp.getMaSanPham());
                     int soLuong = Integer.parseInt(request.getParameter("soLuong"));
+                    if (soLuong > sanPham.getSoLuong()) {
+                        soLuong = sanPham.getSoLuong();
+                    }
                     gioHang.get(TID).setSoLuong(soLuong);
                     session.setAttribute("GioHang", gioHang);
                 }
@@ -103,12 +108,12 @@ public class GioHang extends HttpServlet {
                     SanPhamGioHang sp = gioHang.get(i);
                     temp += (sp.getGiaGoc() - sp.getGiamGia()) * sp.getSoLuong();
                 }
-                DecimalFormat df = new DecimalFormat("#,###.##");
+                DecimalFormat df = new DecimalFormat(".##");
                 float subTotal = Float.valueOf(df.format(temp));
                 float tongTien = Float.valueOf(df.format(temp));
                 session.setAttribute("subTotal", subTotal);
                 request.setAttribute("tongTien", tongTien);
-                
+
             }
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

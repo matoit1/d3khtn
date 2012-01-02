@@ -1,8 +1,7 @@
 package POJO;
-// Generated Jan 2, 2012 5:03:35 PM by Hibernate Tools 3.2.1.GA
+// Generated Jan 2, 2012 10:31:44 PM by Hibernate Tools 3.2.1.GA
 
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,16 +15,16 @@ public class Dondathang  implements java.io.Serializable {
      private Khachhang khachhang;
      private Tinhtrangdondathang tinhtrangdondathang;
      private Tinhtrang tinhtrang;
-     private Date ngayDatHang;
+     private String ngayDatHang;
      private String hinhThucMuaHang;
      private String diaDiemGiaoHang;
-     private Integer tongTien;
+     private Float tongTien;
      private Set chitietdondathangs = new HashSet(0);
 
     public Dondathang() {
     }
 
-    public Dondathang(Khachhang khachhang, Tinhtrangdondathang tinhtrangdondathang, Tinhtrang tinhtrang, Date ngayDatHang, String hinhThucMuaHang, String diaDiemGiaoHang, Integer tongTien, Set chitietdondathangs) {
+    public Dondathang(Khachhang khachhang, Tinhtrangdondathang tinhtrangdondathang, Tinhtrang tinhtrang, String ngayDatHang, String hinhThucMuaHang, String diaDiemGiaoHang, Float tongTien, Set chitietdondathangs) {
        this.khachhang = khachhang;
        this.tinhtrangdondathang = tinhtrangdondathang;
        this.tinhtrang = tinhtrang;
@@ -64,11 +63,11 @@ public class Dondathang  implements java.io.Serializable {
     public void setTinhtrang(Tinhtrang tinhtrang) {
         this.tinhtrang = tinhtrang;
     }
-    public Date getNgayDatHang() {
+    public String getNgayDatHang() {
         return this.ngayDatHang;
     }
     
-    public void setNgayDatHang(Date ngayDatHang) {
+    public void setNgayDatHang(String ngayDatHang) {
         this.ngayDatHang = ngayDatHang;
     }
     public String getHinhThucMuaHang() {
@@ -85,11 +84,11 @@ public class Dondathang  implements java.io.Serializable {
     public void setDiaDiemGiaoHang(String diaDiemGiaoHang) {
         this.diaDiemGiaoHang = diaDiemGiaoHang;
     }
-    public Integer getTongTien() {
+    public Float getTongTien() {
         return this.tongTien;
     }
     
-    public void setTongTien(Integer tongTien) {
+    public void setTongTien(Float tongTien) {
         this.tongTien = tongTien;
     }
     public Set getChitietdondathangs() {

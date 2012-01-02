@@ -8,7 +8,7 @@
             <column name="MaKhachHang" />
             <generator class="identity" />
         </id>
-        <many-to-one name="loaikhachhang" class="POJO.Loaikhachhang" fetch="select">
+        <many-to-one name="loaikhachhang" class="POJO.Loaikhachhang" fetch="select" lazy="false">
             <column name="MaLoaiKhach" />
         </many-to-one>
         <property name="tenDangNhap" type="string">
@@ -49,3 +49,4 @@
         </set>
     </class>
 </hibernate-mapping>
+

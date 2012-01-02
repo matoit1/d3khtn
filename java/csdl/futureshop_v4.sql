@@ -71,7 +71,6 @@ CREATE TABLE IF NOT EXISTS `chitietdondathang` (
 -- Dumping data for table `chitietdondathang`
 --
 
-
 -- --------------------------------------------------------
 
 --
@@ -81,12 +80,13 @@ CREATE TABLE IF NOT EXISTS `chitietdondathang` (
 DROP TABLE IF EXISTS `dondathang`;
 CREATE TABLE IF NOT EXISTS `dondathang` (
   `MaDonDatHang` int(11) NOT NULL AUTO_INCREMENT,
-  `NgayDatHang` datetime DEFAULT NULL,
+  `NgayDatHang` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `MaKhachHang` int(11) DEFAULT NULL,
   `MaTinhTrangDonDatHang` int(11) DEFAULT NULL,
   `MaTinhTrang` int(11) DEFAULT NULL,
   `HinhThucMuaHang` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `DiaDiemGiaoHang` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TongTien` float DEFAULT NULL,
   PRIMARY KEY (`MaDonDatHang`),
   KEY `FK_DONDATHANG_KHACHHANG` (`MaKhachHang`),
   KEY `FK_DONDATHANG_TINHTRANGDONDATHANG` (`MaTinhTrangDonDatHang`),
@@ -96,7 +96,6 @@ CREATE TABLE IF NOT EXISTS `dondathang` (
 --
 -- Dumping data for table `dondathang`
 --
-
 
 -- --------------------------------------------------------
 
