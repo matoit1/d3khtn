@@ -45,6 +45,9 @@ public class Khachhang implements java.io.Serializable {
         this.hoTen = hoTen;
         this.email = email;
         this.soDienThoai = soDienThoai;
+        Loaikhachhang loaikh = new Loaikhachhang();
+        loaikh.setMaLoaiKhachHang(2);
+        this.loaikhachhang = loaikh;
     }
 
     public Integer getMaKhachHang() {
