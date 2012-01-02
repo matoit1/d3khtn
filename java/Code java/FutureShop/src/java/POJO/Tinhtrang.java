@@ -1,5 +1,5 @@
 package POJO;
-// Generated Jan 1, 2012 11:48:19 PM by Hibernate Tools 3.2.1.GA
+// Generated Jan 2, 2012 5:03:35 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -19,11 +19,6 @@ public class Tinhtrang  implements java.io.Serializable {
      private Set nhomsanphams = new HashSet(0);
 
     public Tinhtrang() {
-    }
-    
-    public Tinhtrang(int maTinhTrang)
-    {
-        this.maTinhTrang = maTinhTrang;
     }
 
     public Tinhtrang(String tenTinhTrang, Set sanphams, Set loaisanphams, Set dondathangs, Set nhomsanphams) {

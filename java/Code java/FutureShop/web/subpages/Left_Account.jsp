@@ -19,11 +19,11 @@
         <p><strong>Account Details</strong></p>
         <ul>
             <c:url var="CapNhatThongTinCaNhan" value="CapNhatThongTinCaNhan.do"/>
-            <li><a href="${CapNhatThongTinCaNhan}">Account Profile</a></li>
+            <li><a href="${CapNhatThongTinCaNhan}" title="Update account information">Account Profile</a></li>
             <c:url var="CapNhatMatKhau" value="CapNhatMatKhau.do"/>
-            <li><a href="${CapNhatMatKhau}">Change Password</a></li>
+            <li><a href="${CapNhatMatKhau}" title="Change your password">Change Password</a></li>
             <c:url var="CapNhatEmail" value="CapNhatEmail.do"/>
-            <li><a href="${CapNhatEmail}">Change Email Address</a></li>
+            <li><a href="${CapNhatEmail}" title="Change your email address">Change Email Address</a></li>
         </ul>
     </div>
 </div>

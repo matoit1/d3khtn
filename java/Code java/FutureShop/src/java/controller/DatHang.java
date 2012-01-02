@@ -88,7 +88,7 @@ public class DatHang extends HttpServlet {
                             ddh_temp.setTinhtrangdondathang(ttddh);
                             ddh_temp.setTinhtrang(tt);
                             int hinhThuc = Integer.parseInt(request.getParameter("Availability"));
-                            
+
                             if (hinhThuc == 1) {
                                 ddh_temp.setHinhThucMuaHang("Ship to home");
                                 String diaDiem = request.getParameter("address");
@@ -132,11 +132,12 @@ public class DatHang extends HttpServlet {
                                 System.err.println(ex);
                             }
                         }
-                    } else {
-                        request.setAttribute("Captcha", "Wrong Security Value ! Please Correct Security value !");
-                        url = "DatHang.jsp";
                     }
                 }
+            }  
+            else
+            {
+                request.setAttribute("error", "This side only for user");
             }
 
             RequestDispatcher rd = request.getRequestDispatcher(url);

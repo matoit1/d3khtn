@@ -46,7 +46,7 @@
             </c:if>
             <p style="text-align: center;">
                 <input class="btn" type="submit" name="Update" value="Save"/>
-                <input class="btn" type="button" value="Cancel"  />
+                <input class="btn" type="button" value="Cancel" onclick="GoProfile();"/>
             </p>                    
         </form>
     </c:if>

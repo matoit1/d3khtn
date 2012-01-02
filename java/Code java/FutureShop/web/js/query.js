@@ -2,6 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+function GoIndex(){
+    document.location.href = 'index.do';
+}
+
+function BackToCart(){
+    document.location.href = 'GioHang.jsp';
+}
+
+function GoProfile(){
+    document.location.href = 'TrangThongTinCaNhan.jsp';
+}
+
+
 function Date_Check(str)
 {
     if(str.indexOf("/") == -1){
@@ -36,7 +49,6 @@ function AddressShow()
         $('#OrderAddress').show();  
     }
 }
-
 
 function echeck(str) {
 
@@ -394,4 +406,27 @@ function ResetPassword()
     }
     
     return true;
+}
+
+function OrderCheck()
+{
+    if($('#address').val().trim().length == 0){
+        $('#invalid_address').html('Your Address is required !');
+        $('#address').focus();
+        return false;
+    }else{
+        $('#invalid_address').html('');
+    }
+    
+    if($('#recaptcha_response_field').val().trim().length == 0){
+        $('#invalid_captcha').html('Security value is required !');
+        $('#recaptcha_response_field').focus();
+        return false;
+    }else{
+        $('#invalid_captcha').html('');
+    }
+    
+    return true;
+    
+    
 }
