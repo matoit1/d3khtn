@@ -46,7 +46,7 @@
                         <th width="5%" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">NO.</span></th>
                         <th width="20%" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">DATE</span></th>
                         <th width="20%" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">TOTAL</span></th>
-                        <th width="25%" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">QUANTITY</span></th>
+                        <th width="25%" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">STATE</span></th>
                         <th colspan="2" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">OPTIONS</span></th>
                     </tr>
                     <c:forEach var="i" begin="0" step="1" end="${requestScope.DonDatHang.size()-1}">
