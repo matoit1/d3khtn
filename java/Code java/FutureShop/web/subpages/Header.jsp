@@ -13,7 +13,7 @@
             <div id="logo"><a href="index.do"><img src="images/futureshop_logo.png"/></a></div>
             <div id="menu_right">
                 <div id="mainmenu">   
-                    <c:url var="about" value="about.do"/>
+                    <c:url var="about" value="About.do"/>
                     <div class="menumainItem"> <a href="${about}" title="noi dung cua menu"> ABOUT </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HELP </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> SEARCH </a></div>
@@ -21,17 +21,17 @@
                     <div class="menumainItem"> <a href="${index}" title="noi dung cua menu"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
+                    <div class="profilemenuItem"> <a href="#" title="noi dung cua menu">>>Wish List</a></div>
+                    <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
+                    <div class="profilemenuItem"> <a href="${XemHoaDon}" title="View order history">>>My Orders</a></div>
                     <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
                     <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
                     <c:if test="${sessionScope.admin eq null}">
-                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="Account Infomation"> >> My Acount </a></div>
+                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="Account Infomation">>>My Account</a></div>
                     </c:if>
                     <c:if test="${sessionScope.admin ne null}">
-                        <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right"> >> Admin </a></div>
+                        <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right">>>Administrator</a></div>
                     </c:if>
-                    <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
-                    <div class="profilemenuItem"> <a href="${XemHoaDon}" title="View order history"> >> My Orders </a></div>
-                    <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
                 </div>
             </div>
         </div>
@@ -77,8 +77,8 @@
         </div>
         <div id="search">
             <form action="TimKiemSanPham.do" name="search">
-                <input type="text" name="txtsearch" style="width: 200px; height: 25px"/>
-                <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
+                <input type="text" name="txtsearch" style="width: 200px; height: 20px;"/>
+                <input type="image" src="images/search_sm_on.gif" name="btSearch" style="width: 100px; height: 20px;margin-top:10px;"/>
                 <c:if test="${sessionScope.account eq null}">
                     <div id="account">
                         <c:url var="DangKy" value="DangKy.do"/>

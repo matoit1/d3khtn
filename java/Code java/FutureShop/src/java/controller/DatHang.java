@@ -118,13 +118,17 @@ public class DatHang extends HttpServlet {
                                 request.setAttribute("message", "Order Successful !");
                                 String subject = "Order Infomation";
                                 String body = String.format("Hi %s, <br/>Here is your order infomation : <br/>", account.getHoTen());
-                                String body1 = "Product                   Quantity<br/>";
+                                String body1 = "<table width='400' border='1'>";
+                                body1 += "<tr><th scope='col'><span style='color: #000033'>Product</span></th>";
+                                body1 += "<th scope='col'><span style='color: #000033'>Quantity</span></th></tr>";
                                 String body2 = "";
-                                String body3 = "<br/>Total : " + session.getAttribute("subTotal");
                                 for (int i = 0; i < gioHang.size(); i++) {
-                                    String tam = String.format("%s                 %s<br/>", gioHang.get(i).getTenSanPham(), gioHang.get(i).getSoLuong());
-                                    body2 = body2 + tam;
+                                    body2 += "<tr><td width='300'><strong>"+gioHang.get(i).getTenSanPham()+"</strong></td>";
+                                    body2 += "<td width='100'><strong>"+gioHang.get(i).getSoLuong()+"</strong></td></tr>";
                                 }
+                                
+                                String body3 = "<tr><td><strong>Total<strong></td><td><strong>" + session.getAttribute("subTotal")+"<strong></td></tr>";
+              
                                 body = body + body1 + body2 + body3;
                                 EmailDAO.send(account.getEmail(), subject, body);
                                 session.removeAttribute("subTotal");
