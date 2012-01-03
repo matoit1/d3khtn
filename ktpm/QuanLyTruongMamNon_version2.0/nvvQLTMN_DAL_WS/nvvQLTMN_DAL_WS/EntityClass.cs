@@ -8,5 +8,14 @@ namespace nvvQLTMN_DAL_WS
 {
     public abstract class EntityClass : ObjectClass
     {
+        public override void Init(int type)
+        {
+
+        }
+
+        public override CharacterClass Clone()
+        {
+            return null;
+        }
     }
 }

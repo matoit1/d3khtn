@@ -31,17 +31,17 @@ namespace nvvQLTMN_DAL_WS
         [WebMethod]
         public bool ThemGiaoVien(GiaoVienDTO gvtam)
         {
-            return gv.ThemGiaoVien(gvtam);
+            return gv.Them(gvtam);
         }
         [WebMethod]
         public bool CapNhapGiaoVien(GiaoVienDTO gvtam)
         {
-            return gv.CapNhapGiaoVien(gvtam);
+            return gv.CapNhap(gvtam);
         }
         [WebMethod]
         public bool XoaGiaoVien(int maGv)
         {
-            return gv.XoaGiaoVien(maGv);
+            return gv.Xoa(maGv);
         }
 
         //khoi
@@ -62,17 +62,17 @@ namespace nvvQLTMN_DAL_WS
         [WebMethod]
         public bool ThemLop(LopDTO loptam)
         {
-            return lop.ThemLop(loptam);
+            return lop.Them(loptam);
         }
         [WebMethod]
         public bool CapNhapLop(LopDTO loptam)
         {
-            return lop.CapNhapLop(loptam);
+            return lop.CapNhap(loptam);
         }
         [WebMethod]
         public bool XoaLop(int maLop)
         {
-            return lop.XoaLop(maLop);
+            return lop.Xoa(maLop);
         }
 
         //phuhuynh
@@ -83,19 +83,24 @@ namespace nvvQLTMN_DAL_WS
             return ph.LayThongTinPhuHuynh(maphuhuynh);
         }
         [WebMethod]
-        public int ThemPhuHuynh(PhuHuynhDTO phuhuynh)
+        public bool ThemPhuHuynh(PhuHuynhDTO phuhuynh)
         {
-            return ph.ThemPhuHuynh(phuhuynh);
+            return ph.Them(phuhuynh);
         }
         [WebMethod]
         public bool CapNhapPhuHuynh(PhuHuynhDTO phuhuynh)
         {
-            return ph.CapNhapPhuHuynh(phuhuynh);
+            return ph.CapNhap(phuhuynh);
         }
         [WebMethod]
         public bool XoaPhuHuynh(int maPH)
         {
-            return ph.XoaPhuHuynh(maPH);
+            return ph.Xoa(maPH);
+        }
+        [WebMethod]
+        public int TimPhuHuynh(PhuHuynhDTO phuHuynh)
+        {
+            return ph.TimPhuHuynh(phuHuynh);
         }
 
         //suckhoe
@@ -113,12 +118,12 @@ namespace nvvQLTMN_DAL_WS
         [WebMethod]
         public bool CapNhapSucKhoe(TinhTrangSucKhoeDTO suckhoe)
         {
-            return sk.CapNhapSucKhoe(suckhoe);
+            return sk.CapNhap(suckhoe);
         }
         [WebMethod]
         public bool XoaSucKhoe(int maSk)
         {
-            return sk.XoaSucKhoe(maSk);
+            return sk.Xoa(maSk);
         }
 
         //tre
@@ -136,17 +141,17 @@ namespace nvvQLTMN_DAL_WS
         [WebMethod]
         public bool ThemTre(TreDTO tretam)
         {
-            return tr.ThemTre(tretam);
+            return tr.Them(tretam);
         }
         [WebMethod]
         public bool CapNhapTre(TreDTO tretam)
         {
-            return tr.CapNhapTre(tretam);
+            return tr.CapNhap(tretam);
         }
         [WebMethod]
         public bool XoaTre(int maTre)
         {
-            return tr.XoaTre(maTre);
+            return tr.Xoa(maTre);
         }
 
         //Truong
@@ -159,7 +164,7 @@ namespace nvvQLTMN_DAL_WS
         [WebMethod]
         public bool SuaThongTinTruong(TruongDTO truonghoc)
         {
-            return truong.SuaThongTinTruong(truonghoc);
+            return truong.CapNhap(truonghoc);
         }
     }
 }

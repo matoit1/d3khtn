@@ -49,9 +49,11 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool CapNhapSucKhoe(TinhTrangSucKhoeDTO suckhoe)
+
+        public override bool CapNhap(StateClass objectClass)
         {
             bool kq = true;
+            TinhTrangSucKhoeDTO suckhoe = (TinhTrangSucKhoeDTO)objectClass;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -75,15 +77,15 @@ namespace nvvQLTMN_DAL_WS
                 kq = false;
             }
             return kq;
-
         }
-        public bool XoaSucKhoe(int maSk)
+
+        public override bool Xoa(int ma)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.TinhTrangSucKhoes.Single(k => k.MaTinhTrangSucKhoe == maSk);
+                var query = db.TinhTrangSucKhoes.Single(k => k.MaTinhTrangSucKhoe == ma);
                 db.TinhTrangSucKhoes.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }
@@ -93,5 +95,7 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
+        
+        
     }
 }

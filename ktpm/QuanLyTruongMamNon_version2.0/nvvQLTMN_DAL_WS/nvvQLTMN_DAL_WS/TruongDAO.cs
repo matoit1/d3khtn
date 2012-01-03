@@ -14,9 +14,11 @@ namespace nvvQLTMN_DAL_WS
             var truong = from t in db.Truongs select new TruongDTO() { MaTruong = t.MaTruong, TenTruong = t.TenTruong, DiaChi =t.DiaChi, Sdt = t.SoDienThoai};
             return truong.ToList<TruongDTO>()[0];
         }
-        public bool SuaThongTinTruong(TruongDTO truonghoc)
+
+        public override bool CapNhap(EntityClass objectClass)
         {
             bool kq = true;
+            TruongDTO truonghoc = (TruongDTO)objectClass;
             try
             {
                 TruongDTO tam = LayThongTinTruong();
@@ -33,5 +35,6 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
+        
     }
 }

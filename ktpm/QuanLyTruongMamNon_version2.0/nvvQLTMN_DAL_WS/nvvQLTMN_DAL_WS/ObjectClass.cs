@@ -8,6 +8,14 @@ namespace nvvQLTMN_DAL_WS
 {
     public abstract class ObjectClass
     {
+        public virtual void Init(int type)
+        {
 
+        }
+
+        public virtual CharacterClass Clone()
+        {
+            return null;
+        }
     }
 }

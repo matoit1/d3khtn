@@ -232,7 +232,7 @@
       <s:element name="ThemPhuHuynhResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ThemPhuHuynhResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThemPhuHuynhResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -261,6 +261,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="XoaPhuHuynhResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimPhuHuynh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phuHuynh" type="tns:PhuHuynhDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimPhuHuynhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TimPhuHuynhResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -553,6 +567,12 @@
   <wsdl:message name="XoaPhuHuynhSoapOut">
     <wsdl:part name="parameters" element="tns:XoaPhuHuynhResponse" />
   </wsdl:message>
+  <wsdl:message name="TimPhuHuynhSoapIn">
+    <wsdl:part name="parameters" element="tns:TimPhuHuynh" />
+  </wsdl:message>
+  <wsdl:message name="TimPhuHuynhSoapOut">
+    <wsdl:part name="parameters" element="tns:TimPhuHuynhResponse" />
+  </wsdl:message>
   <wsdl:message name="LayThongTinSucKhoeSoapIn">
     <wsdl:part name="parameters" element="tns:LayThongTinSucKhoe" />
   </wsdl:message>
@@ -671,6 +691,10 @@
     <wsdl:operation name="XoaPhuHuynh">
       <wsdl:input message="tns:XoaPhuHuynhSoapIn" />
       <wsdl:output message="tns:XoaPhuHuynhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimPhuHuynh">
+      <wsdl:input message="tns:TimPhuHuynhSoapIn" />
+      <wsdl:output message="tns:TimPhuHuynhSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="LayThongTinSucKhoe">
       <wsdl:input message="tns:LayThongTinSucKhoeSoapIn" />
@@ -829,6 +853,15 @@
     </wsdl:operation>
     <wsdl:operation name="XoaPhuHuynh">
       <soap:operation soapAction="http://tempuri.org/XoaPhuHuynh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimPhuHuynh">
+      <soap:operation soapAction="http://tempuri.org/TimPhuHuynh" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1048,6 +1081,15 @@
     </wsdl:operation>
     <wsdl:operation name="XoaPhuHuynh">
       <soap12:operation soapAction="http://tempuri.org/XoaPhuHuynh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimPhuHuynh">
+      <soap12:operation soapAction="http://tempuri.org/TimPhuHuynh" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

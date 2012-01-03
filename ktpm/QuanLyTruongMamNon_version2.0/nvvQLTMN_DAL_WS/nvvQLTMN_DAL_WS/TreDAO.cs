@@ -20,9 +20,11 @@ namespace nvvQLTMN_DAL_WS
             var query = from l in db.Tres join k in db.Lops on l.MaLop equals k.MaLop where k.TenLop == tenlop select new TreDTO() { MaTre = l.MaTre, HoTen = l.HoTen, GioiTinh = l.GioiTinh, NgaySinh = l.NgaySinh, ConThu = l.ConThu, MaPhuHuynh = l.MaPhuHuynh, MaTinhTrangSucKhoe = l.MaTinhTrangSucKhoe, TenLop = k.TenLop };
             return query.ToList<TreDTO>();
         }
-        public bool ThemTre(TreDTO tretam)
+
+        public override bool Them(CharacterClass objectClass)
         {
             bool kq = true;
+            TreDTO tretam = (TreDTO)objectClass;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -45,9 +47,11 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool CapNhapTre(TreDTO tretam)
+
+        public override bool CapNhap(CharacterClass objectClass)
         {
             bool kq = true;
+            TreDTO tretam = (TreDTO)objectClass;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -56,8 +60,8 @@ namespace nvvQLTMN_DAL_WS
                 query.GioiTinh = tretam.GioiTinh;
                 query.ConThu = tretam.ConThu;
                 query.NgaySinh = tretam.NgaySinh;
-                 var lop = db.Lops.Single(k => k.TenLop == tretam.TenLop);
-                 query.MaLop = lop.MaLop;
+                var lop = db.Lops.Single(k => k.TenLop == tretam.TenLop);
+                query.MaLop = lop.MaLop;
                 db.SubmitChanges();
             }
             catch
@@ -66,13 +70,14 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool XoaTre(int maTre)
+
+        public override bool Xoa(int ma)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.Tres.Single(k => k.MaTre == maTre);
+                var query = db.Tres.Single(k => k.MaTre == ma);
                 db.Tres.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }
@@ -82,5 +87,6 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
+        
     }
 }

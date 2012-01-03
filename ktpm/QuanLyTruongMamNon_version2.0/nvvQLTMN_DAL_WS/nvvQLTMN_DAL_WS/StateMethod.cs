@@ -8,5 +8,23 @@ namespace nvvQLTMN_DAL_WS
 {
     public abstract class StateMethod : ObjectMethod
     {
+        public virtual System.Collections.Generic.List<StateClass> LayDanhSach()
+        {
+            return null;
+        }
+
+        public virtual bool Them(StateClass objectClass)
+        {
+            return true;
+        }
+        public virtual bool Xoa(int ma)
+        {
+            return true;
+        }
+
+        public virtual bool CapNhap(StateClass objectClass)
+        {
+            return true;
+        }
     }
 }

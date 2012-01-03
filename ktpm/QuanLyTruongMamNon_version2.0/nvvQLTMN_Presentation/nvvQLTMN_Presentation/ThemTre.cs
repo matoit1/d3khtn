@@ -43,7 +43,8 @@ namespace nvvQLTMN_Presentation
                     ph.TuoiCha = int.Parse(tbTuoiCha.Text);
                     ph.TuoiMe = int.Parse(tbTuoiMe.Text);
                 }
-                int maPhuHuynh = RemoteObjectEngine.PhuHuynh.ThemPhuHuynh(ph);
+                RemoteObjectEngine.PhuHuynh.ThemPhuHuynh(ph);
+                int maPhuHuynh = RemoteObjectEngine.PhuHuynh.TimPhuHuynh(ph);
                 //them suc khoe
                 TinhTrangSucKhoeDTO sk = new TinhTrangSucKhoeDTO();
                 sk.BenhDiTruyen = tbDiTruyen.Text;

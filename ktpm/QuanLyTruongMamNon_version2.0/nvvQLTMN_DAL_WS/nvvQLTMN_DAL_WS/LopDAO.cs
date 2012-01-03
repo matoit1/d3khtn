@@ -14,9 +14,11 @@ namespace nvvQLTMN_DAL_WS
             var query = from l in db.Lops join k in db.Khois on l.MaKhoi equals k.MaKhoi select new LopDTO() {MaLop =l.MaLop,TenLop =l.TenLop,SiSo =l.SiSo, DoTuoi =l.DoTuoi, TenKhoi = k.TenKhoi};
             return query.ToList<LopDTO>();
         }
-        public bool ThemLop(LopDTO loptam)
+
+        public override bool Them(EntityClass objectClass)
         {
             bool kq = true;
+            LopDTO loptam = (LopDTO)objectClass;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -35,9 +37,11 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool CapNhapLop(LopDTO loptam)
+
+        public override bool CapNhap(EntityClass objectClass)
         {
             bool kq = true;
+            LopDTO loptam = (LopDTO)objectClass;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -55,13 +59,14 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool XoaLop(int maLop)
+
+        public override bool Xoa(int ma)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.Lops.Single(k => k.MaLop == maLop);
+                var query = db.Lops.Single(k => k.MaLop == ma);
                 db.Lops.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }
@@ -70,7 +75,6 @@ namespace nvvQLTMN_DAL_WS
                 kq = false;
             }
             return kq;
-
         }
     }
 }

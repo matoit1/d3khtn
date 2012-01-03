@@ -90,7 +90,7 @@ namespace nvvQLNT_BUS_WS
             return ph.LayThongTinPhuHuynh(maphuhuynh);
         }
         [WebMethod]
-        public int ThemPhuHuynh(PhuHuynhDTO phuhuynh)
+        public bool ThemPhuHuynh(PhuHuynhDTO phuhuynh)
         {
             ph.phuHuynh = phuhuynh;
             return ph.ThemPhuHuynh();
@@ -101,6 +101,14 @@ namespace nvvQLNT_BUS_WS
             ph.phuHuynh = phuhuynh;
             return ph.CapNhapPhuHuynh();
         }
+
+        [WebMethod]
+        public int TimPhuHuynh(PhuHuynhDTO phuhuynh)
+        {
+            ph.phuHuynh = phuhuynh;
+            return ph.TimPhuHuynh();
+        }
+
         [WebMethod]
         public bool XoaPhuHuynh(int maPH)
         {

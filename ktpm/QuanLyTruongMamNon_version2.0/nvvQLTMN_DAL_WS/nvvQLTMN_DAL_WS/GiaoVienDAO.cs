@@ -16,8 +16,9 @@ namespace nvvQLTMN_DAL_WS
             return query.ToList<GiaoVienDTO>();
         }
 
-        public bool ThemGiaoVien(GiaoVienDTO gvtam)
+        public override bool Them(CharacterClass objectClass)
         {
+            GiaoVienDTO gvtam = (GiaoVienDTO)objectClass;
             bool kq = true;
             try
             {
@@ -44,9 +45,11 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool CapNhapGiaoVien(GiaoVienDTO gvtam)
+
+        public override bool CapNhap(CharacterClass objectClass)
         {
             bool kq = true;
+            GiaoVienDTO gvtam = (GiaoVienDTO)objectClass;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -70,13 +73,14 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
-        public bool XoaGiaoVien(int maGv)
+
+        public override bool Xoa(int ma)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.GiaoViens.Single(gv => gv.MaGiaoVien == maGv);
+                var query = db.GiaoViens.Single(gv => gv.MaGiaoVien == ma);
                 db.GiaoViens.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }
@@ -86,5 +90,7 @@ namespace nvvQLTMN_DAL_WS
             }
             return kq;
         }
+        
+       
     }
 }
