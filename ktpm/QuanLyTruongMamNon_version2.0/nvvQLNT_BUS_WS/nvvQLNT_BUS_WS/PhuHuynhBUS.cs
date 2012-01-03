@@ -28,7 +28,7 @@ namespace nvvQLNT_BUS_WS
             return ws.LayThongTinPhuHuynh(maphuhuynh).ToList();
         }
 
-        public int ThemPhuHuynh()
+        public bool ThemPhuHuynh()
         {
             return ws.ThemPhuHuynh(ph);
         }
@@ -36,6 +36,10 @@ namespace nvvQLNT_BUS_WS
         public bool CapNhapPhuHuynh()
         {
             return ws.CapNhapPhuHuynh(ph);
+        }
+        public int TimPhuHuynh()
+        {
+            return ws.TimPhuHuynh(ph);
         }
 
         public bool XoaPhuHuynh(int maPH)

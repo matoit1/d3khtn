@@ -41,45 +41,9 @@
         </s:complexContent>
       </s:complexType>
       <s:complexType name="ObjectClass" abstract="true" />
-      <s:complexType name="StateClass" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:ObjectClass" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="TinhTrangSucKhoeDTO">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:StateClass">
-            <s:sequence>
-              <s:element minOccurs="1" maxOccurs="1" name="MaTinhTrangSucKhoe" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="CanNang" type="s:float" />
-              <s:element minOccurs="1" maxOccurs="1" name="ChieuCao" type="s:float" />
-              <s:element minOccurs="0" maxOccurs="1" name="BenhDiTruyen" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="DinhDuong" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="DaNiemMac" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="DuongHoHap" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="HeTimMach" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="TaiMuiHong" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="Mat" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="RangHamMat" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="TiemNgua" type="s:string" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
       <s:complexType name="EntityClass" abstract="true">
         <s:complexContent mixed="false">
           <s:extension base="tns:ObjectClass" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="KhoiDTO">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:EntityClass">
-            <s:sequence>
-              <s:element minOccurs="1" maxOccurs="1" name="MaKhoi" type="s:int" />
-              <s:element minOccurs="0" maxOccurs="1" name="TenKhoi" type="s:string" />
-              <s:element minOccurs="1" maxOccurs="1" name="SoLop" type="s:int" />
-            </s:sequence>
-          </s:extension>
         </s:complexContent>
       </s:complexType>
       <s:complexType name="LopDTO">
@@ -103,6 +67,42 @@
               <s:element minOccurs="0" maxOccurs="1" name="TenTruong" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Sdt" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="KhoiDTO">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityClass">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MaKhoi" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TenKhoi" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SoLop" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StateClass" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObjectClass" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TinhTrangSucKhoeDTO">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StateClass">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MaTinhTrangSucKhoe" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CanNang" type="s:float" />
+              <s:element minOccurs="1" maxOccurs="1" name="ChieuCao" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" name="BenhDiTruyen" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DinhDuong" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DaNiemMac" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DuongHoHap" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HeTimMach" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaiMuiHong" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Mat" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RangHamMat" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TiemNgua" type="s:string" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -285,7 +285,7 @@
       <s:element name="ThemPhuHuynhResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ThemPhuHuynhResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThemPhuHuynhResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -300,6 +300,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="CapNhapPhuHuynhResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimPhuHuynh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phuhuynh" type="tns:PhuHuynhDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimPhuHuynhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TimPhuHuynhResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -547,6 +561,12 @@
   <wsdl:message name="CapNhapPhuHuynhSoapOut">
     <wsdl:part name="parameters" element="tns:CapNhapPhuHuynhResponse" />
   </wsdl:message>
+  <wsdl:message name="TimPhuHuynhSoapIn">
+    <wsdl:part name="parameters" element="tns:TimPhuHuynh" />
+  </wsdl:message>
+  <wsdl:message name="TimPhuHuynhSoapOut">
+    <wsdl:part name="parameters" element="tns:TimPhuHuynhResponse" />
+  </wsdl:message>
   <wsdl:message name="XoaPhuHuynhSoapIn">
     <wsdl:part name="parameters" element="tns:XoaPhuHuynh" />
   </wsdl:message>
@@ -667,6 +687,10 @@
     <wsdl:operation name="CapNhapPhuHuynh">
       <wsdl:input message="tns:CapNhapPhuHuynhSoapIn" />
       <wsdl:output message="tns:CapNhapPhuHuynhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimPhuHuynh">
+      <wsdl:input message="tns:TimPhuHuynhSoapIn" />
+      <wsdl:output message="tns:TimPhuHuynhSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="XoaPhuHuynh">
       <wsdl:input message="tns:XoaPhuHuynhSoapIn" />
@@ -820,6 +844,15 @@
     </wsdl:operation>
     <wsdl:operation name="CapNhapPhuHuynh">
       <soap:operation soapAction="http://tempuri.org/CapNhapPhuHuynh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimPhuHuynh">
+      <soap:operation soapAction="http://tempuri.org/TimPhuHuynh" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1039,6 +1072,15 @@
     </wsdl:operation>
     <wsdl:operation name="CapNhapPhuHuynh">
       <soap12:operation soapAction="http://tempuri.org/CapNhapPhuHuynh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimPhuHuynh">
+      <soap12:operation soapAction="http://tempuri.org/TimPhuHuynh" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -15,9 +15,18 @@ namespace nvvQLTMN_DAL_WS
 
             return query.ToList<PhuHuynhDTO>();
         }
-        public int ThemPhuHuynh(PhuHuynhDTO phuhuynh)
-        {//tra ve mã phụ huynh
-            int kq;
+
+        public int TimPhuHuynh(PhuHuynhDTO phuHuynh)
+        {
+            QLNTDataContext db = new QLNTDataContext();
+            int query = (from ph in db.PhuHuynhs where ph.TenCha==phuHuynh.TenCha || ph.TenMe==phuHuynh.TenMe || ph.SdtCha==phuHuynh.SdtCha || ph.SdtMe==phuHuynh.SdtMe select ph.MaPhuHuynh).FirstOrDefault();
+            return query;
+        }
+
+        public override bool Them(CharacterClass objectClass)
+        {
+            PhuHuynhDTO phuhuynh = (PhuHuynhDTO)objectClass;
+            bool kq;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
@@ -39,16 +48,18 @@ namespace nvvQLTMN_DAL_WS
                 //var maxid = (from vd in db.PhuHuynhs
                 //             orderby vd.MaPhuHuynh
                 //             select vd).Last();
-                kq = ph.MaPhuHuynh;
+                kq = true;
             }
             catch
             {
-                kq =-1;
+                kq = false;
             }
             return kq;
         }
-        public bool CapNhapPhuHuynh(PhuHuynhDTO phuhuynh)
+
+        public override bool CapNhap(CharacterClass objectClass)
         {
+            PhuHuynhDTO phuhuynh = (PhuHuynhDTO)objectClass;
             bool kq = true;
             try
             {
@@ -73,13 +84,13 @@ namespace nvvQLTMN_DAL_WS
             return kq;
         }
 
-        public bool XoaPhuHuynh(int maPH)
+        public override bool Xoa(int ma)
         {
             bool kq = true;
             try
             {
                 QLNTDataContext db = new QLNTDataContext();
-                var query = db.PhuHuynhs.Single(k => k.MaPhuHuynh == maPH);
+                var query = db.PhuHuynhs.Single(k => k.MaPhuHuynh == ma);
                 db.PhuHuynhs.DeleteOnSubmit(query);
                 db.SubmitChanges();
             }

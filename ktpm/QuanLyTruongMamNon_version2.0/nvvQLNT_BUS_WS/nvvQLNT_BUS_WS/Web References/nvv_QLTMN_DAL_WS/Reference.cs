@@ -56,6 +56,8 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         
         private System.Threading.SendOrPostCallback XoaPhuHuynhOperationCompleted;
         
+        private System.Threading.SendOrPostCallback TimPhuHuynhOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LayThongTinSucKhoeOperationCompleted;
         
         private System.Threading.SendOrPostCallback ThemSucKhoeOperationCompleted;
@@ -154,6 +156,9 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         
         /// <remarks/>
         public event XoaPhuHuynhCompletedEventHandler XoaPhuHuynhCompleted;
+        
+        /// <remarks/>
+        public event TimPhuHuynhCompletedEventHandler TimPhuHuynhCompleted;
         
         /// <remarks/>
         public event LayThongTinSucKhoeCompletedEventHandler LayThongTinSucKhoeCompleted;
@@ -474,10 +479,10 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemPhuHuynh", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int ThemPhuHuynh(PhuHuynhDTO phuhuynh) {
+        public bool ThemPhuHuynh(PhuHuynhDTO phuhuynh) {
             object[] results = this.Invoke("ThemPhuHuynh", new object[] {
                         phuhuynh});
-            return ((int)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -556,6 +561,35 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
             if ((this.XoaPhuHuynhCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.XoaPhuHuynhCompleted(this, new XoaPhuHuynhCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/TimPhuHuynh", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int TimPhuHuynh(PhuHuynhDTO phuHuynh) {
+            object[] results = this.Invoke("TimPhuHuynh", new object[] {
+                        phuHuynh});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TimPhuHuynhAsync(PhuHuynhDTO phuHuynh) {
+            this.TimPhuHuynhAsync(phuHuynh, null);
+        }
+        
+        /// <remarks/>
+        public void TimPhuHuynhAsync(PhuHuynhDTO phuHuynh, object userState) {
+            if ((this.TimPhuHuynhOperationCompleted == null)) {
+                this.TimPhuHuynhOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTimPhuHuynhOperationCompleted);
+            }
+            this.InvokeAsync("TimPhuHuynh", new object[] {
+                        phuHuynh}, this.TimPhuHuynhOperationCompleted, userState);
+        }
+        
+        private void OnTimPhuHuynhOperationCompleted(object arg) {
+            if ((this.TimPhuHuynhCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TimPhuHuynhCompleted(this, new TimPhuHuynhCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1923,10 +1957,10 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
         }
         
         /// <remarks/>
-        public int Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -1979,6 +2013,32 @@ namespace nvvQLNT_BUS_WS.nvv_QLTMN_DAL_WS {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    public delegate void TimPhuHuynhCompletedEventHandler(object sender, TimPhuHuynhCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TimPhuHuynhCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TimPhuHuynhCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
             }
         }
     }
