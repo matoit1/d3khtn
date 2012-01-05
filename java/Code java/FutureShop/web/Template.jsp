@@ -22,6 +22,7 @@
         <script type="text/javascript" src="js/query.js" language="javascript"></script>
         <script type="text/javascript" src="js/script.js" language="javascript"></script>
         <script type="text/javascript" src="js/jquery.easing.js" language="javascript"></script>
+        <script type="text/javascript" src="js/jquery.idTabs.min.js" language="javascript"></script>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript" language="javascript"></script>
         <script type="text/javascript">
             $(document).ready( function(){ 
