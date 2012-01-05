@@ -4,8 +4,16 @@
  */
 package controller;
 
+import DAO.HangSanXuatDAO;
+import DAO.LoaiSanPhamDAO;
+import DAO.SanPhamDAO;
+import POJO.Hangsanxuat;
+import POJO.Loaisanpham;
+import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,17 +39,53 @@ public class TimKiemNangCao extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet TimKiemNangCao</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet TimKiemNangCao at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-             */
-        } finally {            
+            String tenSanPham = "";
+            if (request.getParameter("tenSanPham") != null) {
+                tenSanPham = request.getParameter("tenSanPham").toString().trim();
+            }
+            float gia = 0;
+            try {
+                if (request.getParameter("gia") != null) {
+                    gia = Float.parseFloat(request.getParameter("gia").toString().trim());
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+            int maHangSanXuat = 0;
+            if (request.getParameter("maHangSanXuat") != null) {
+                maHangSanXuat = Integer.parseInt(request.getParameter("maHangSanXuat").toString().trim());
+            }
+            int maLoaiSanPham = 0;
+            if (request.getParameter("maLoaiSanPham") != null) {
+                maLoaiSanPham = Integer.parseInt(request.getParameter("maLoaiSanPham").toString().trim());
+            }
+
+            int trang = 1;
+            if (request.getParameter("trang") != null) {
+                trang = Integer.parseInt(request.getParameter("trang").toString());
+            }
+
+            int soTrang = 1;
+            soTrang = SanPhamDAO.TinhSoTrangTheoTimKiemNangCao(tenSanPham, trang, gia, maHangSanXuat, maLoaiSanPham);
+
+            ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
+            dsSanPham = SanPhamDAO.TimKiemSanPhamNangCao(tenSanPham, trang, gia, maHangSanXuat, maLoaiSanPham);
+            ArrayList<Hangsanxuat> dsHangSanXuat = HangSanXuatDAO.LayDanhSachHangSanXuat();
+            ArrayList<Loaisanpham> dsLoaiSanPham = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
+            request.setAttribute("dsHangSanXuat", dsHangSanXuat);
+            request.setAttribute("dsLoaiSanPham", dsLoaiSanPham);
+            request.setAttribute("dsSanPham", dsSanPham);
+            request.setAttribute("soTrang", soTrang);
+            request.setAttribute("tenSanPham",tenSanPham);
+            request.setAttribute("maHangSanXuat",maHangSanXuat);
+            request.setAttribute("maLoaiSanPham",maLoaiSanPham);
+            request.setAttribute("gia",gia);
+            RequestDispatcher rd = request.getRequestDispatcher("TimKiemNangCao.jsp");
+            rd.forward(request, response);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
             out.close();
         }
     }
