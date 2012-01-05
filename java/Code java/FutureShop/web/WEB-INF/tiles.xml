@@ -112,10 +112,16 @@
         <put-attribute name="left" value="/subpages/Left_Account.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubXemChiTietDonDatHang.jsp" />  
     </definition>
+
+    <definition name="help" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubHelp.jsp" />  
+    </definition>
+
     <definition name="xemsanphammongdoi" extends="template"> 
         <put-attribute name="left" value="/subpages/Left_Account.jsp" />
         <put-attribute name="mainContent" value="/subpages/SubXemSanPhamMongDoi.jsp" />  
     </definition>
+
 </tiles-definitions> 
 
 
