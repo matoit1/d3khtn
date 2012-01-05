@@ -71,6 +71,13 @@ CREATE TABLE IF NOT EXISTS `chitietdondathang` (
 -- Dumping data for table `chitietdondathang`
 --
 
+INSERT INTO `chitietdondathang` (`MaChiTietDonDatHang`, `MaDonDatHang`, `MaSanPham`, `SoLuong`, `DonGia`) VALUES
+(1, 1, 2, 2, 19.98),
+(2, 1, 1, 1, 347),
+(3, 2, 1, 4, 1388),
+(4, 2, 2, 1, 9.99),
+(5, 3, 1, 3, 1041);
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +103,11 @@ CREATE TABLE IF NOT EXISTS `dondathang` (
 --
 -- Dumping data for table `dondathang`
 --
+
+INSERT INTO `dondathang` (`MaDonDatHang`, `NgayDatHang`, `MaKhachHang`, `MaTinhTrangDonDatHang`, `MaTinhTrang`, `HinhThucMuaHang`, `DiaDiemGiaoHang`, `TongTien`) VALUES
+(1, '01/02/2012', 3, 1, 1, 'Pick at store', NULL, 366.98),
+(2, '01/02/2012', 3, 1, 1, 'Pick at store', NULL, 1397.99),
+(3, '01/03/2012', 3, 1, 1, 'Pick at store', NULL, 1041);
 
 -- --------------------------------------------------------
 
@@ -289,6 +301,29 @@ INSERT INTO `sanpham` (`MaSanPham`, `TenSanPham`, `GiaGoc`, `GiamGia`, `DanhGia`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sanphammongdoi`
+--
+
+DROP TABLE IF EXISTS `sanphammongdoi`;
+CREATE TABLE IF NOT EXISTS `sanphammongdoi` (
+  `MaSanPhamMongDoi` int(11) NOT NULL AUTO_INCREMENT,
+  `MaKhachHang` int(11) DEFAULT NULL,
+  `MaSanPham` int(11) DEFAULT NULL,
+  `NgayThemVao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MaTinhTrang` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MaSanPhamMongDoi`),
+  KEY `FK_SANPHAMMONGDOI_KHACHHANG` (`MaKhachHang`),
+  KEY `FK_SANPHAMMONGDOI_SANPHAM` (`MaSanPham`),
+  KEY `FK_SANPHAMMONGDOI_TINHTRANG` (`MaTinhTrang`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `sanphammongdoi`
+--
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tinhtrang`
 --
 
@@ -377,3 +412,12 @@ ALTER TABLE `sanpham`
   ADD CONSTRAINT `FK_SANPHAM_HANGSANXUAT` FOREIGN KEY (`MaHangSanXuat`) REFERENCES `hangsanxuat` (`MaHangSanXuat`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_SANPHAM_LOAISANPHAM` FOREIGN KEY (`MaLoaiSanPham`) REFERENCES `loaisanpham` (`MaLoaiSanPham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_SANPHAM_TINHTRANG` FOREIGN KEY (`MaTinhTrang`) REFERENCES `tinhtrang` (`MaTinhTrang`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `sanphammongdoi`
+--
+ALTER TABLE `sanphammongdoi`
+  ADD CONSTRAINT `FK_SANPHAMMONGDOI_KHACHHANG` FOREIGN KEY (`MaKhachHang`) REFERENCES `khachhang` (`MaKhachHang`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_SANPHAMMONGDOI_SANPHAM` FOREIGN KEY (`MaSanPham`) REFERENCES `sanpham` (`MaSanPham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_SANPHAMMONGDOI_TINHTRANG` FOREIGN KEY (`MaTinhTrang`) REFERENCES `tinhtrang` (`MaTinhTrang`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  

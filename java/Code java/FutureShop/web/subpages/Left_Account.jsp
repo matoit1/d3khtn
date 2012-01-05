@@ -14,7 +14,8 @@
         <ul>
             <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
             <li><a href="${XemHoaDon}">Order History</a></li>
-            <li><a href="#">Wish List</a></li>
+            <c:url var="XemSanPhamMongDoi" value="XemSanPhamMongDoi.do"/>
+            <li><a href="${XemSanPhamMongDoi}">Wish List</a></li>
             <li><a href="#">Price Watch</a></li>
         </ul>
         <p><strong>Account Details</strong></p>

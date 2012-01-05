@@ -21,16 +21,17 @@
                     <div class="menumainItem"> <a href="${index}" title="noi dung cua menu"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
-                    <div class="profilemenuItem"> <a href="#" title="noi dung cua menu">>>Wish List</a></div>
+                    <c:url var="XemSanPhamMongDoi" value="XemSanPhamMongDoi.do"/>
+                    <div class="profilemenuItem"> <a href="${XemSanPhamMongDoi}" title="noi dung cua menu"> Wish List </a></div>
                     <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
-                    <div class="profilemenuItem"> <a href="${XemHoaDon}" title="View order history">>>My Orders</a></div>
+                    <div class="profilemenuItem"> <a href="${XemHoaDon}" title="View order history"> My Orders </a></div>
                     <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
                     <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
                     <c:if test="${sessionScope.admin eq null}">
-                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="Account Infomation">>>My Account</a></div>
+                        <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="Account Infomation"> My Account </a></div>
                     </c:if>
                     <c:if test="${sessionScope.admin ne null}">
-                        <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right">>>Administrator</a></div>
+                        <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right"> Administrator </a></div>
                     </c:if>
                 </div>
             </div>

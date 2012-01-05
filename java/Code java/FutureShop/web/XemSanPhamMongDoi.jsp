@@ -1,9 +1,9 @@
 <%-- 
-    Document   : GioHang
-    Created on : Dec 21, 2011, 11:55:50 AM
+    Document   : XemSanPhamMongDoi
+    Created on : Jan 5, 2012, 10:56:36 AM
     Author     : Nguyen Anh Tri
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<tiles:insertDefinition name="giohang"/>
+<tiles:insertDefinition name="xemsanphammongdoi"/>
