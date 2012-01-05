@@ -266,3 +266,15 @@ body {
 	padding-top:50px;
 	vertical-align:middle;
 }
+
+/*css for TimKiem*/
+.clearfloat1 {
+	clear:none;
+	height:0;
+	font-size: 1px;
+	line-height: 10px;
+}
+	
+#WrapperLookup{
+	border: 1px solid;
+}

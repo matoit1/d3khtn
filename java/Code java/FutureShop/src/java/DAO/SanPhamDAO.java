@@ -175,6 +175,28 @@ public class SanPhamDAO {
         }
         return dsSanPham;
     }
+    
+    public static ArrayList<Sanpham> TimKiemSanPhamNangCao(String tenSp, int trang, float gia, int maHSX, int maLSP)
+    {
+        ArrayList<Sanpham> dsSP = new ArrayList<Sanpham>();
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hqr = "FROM Sanpham sp WHERE sp.tinhtrang=1 and (sp.tenSanPham ='%"+tenSp+"%' or "
+                    + "sp.hangsanxuat="+maHSX+" or "
+                    + "sp.loaisanpham="+maLSP+" or "
+                    + "(sp.giaGoc-100)< "+gia+" and "+ gia +" < (sp.giaGoc+100))";
+            Query query =ss.createQuery(hqr);
+            int dongBatDau = (trang - 1) * 15;
+            query.setFirstResult(dongBatDau);
+            query.setMaxResults(15);
+            dsSP = (ArrayList<Sanpham>) query.list();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    
+        return dsSP;
+    }
 
     public static int TinhSoTrangTheoNhomSanPham(int maNhomSanPham) {
         int soTrang = 1;
@@ -255,6 +277,32 @@ public class SanPhamDAO {
             Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
             ss.beginTransaction();
             String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tenSanPham like '%" + tenSP + "%'";
+            Query query = ss.createQuery(hql);
+            soLuong = query.uniqueResult().hashCode();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        if (soLuong < 15) {
+            soTrang = 1;
+        } else {
+            soTrang = soLuong / 15;
+            if (soLuong % 15 != 0) {
+                soTrang++;
+            }
+        }
+        return soTrang;
+    }
+    
+    public static int TinhSoTrangTheoTimKiemNangCao(String tenSp, int trang, float gia, int maHSX, int maLSP) {
+        int soTrang = 1;
+        int soLuong = 0;
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tinhtrang=1 and (sp.tenSanPham ='%"+tenSp+"%' or "
+                    + "sp.hangsanxuat="+maHSX+" or "
+                    + "sp.loaisanpham="+maLSP+" or "
+                    + "(sp.giaGoc-100)< "+gia+" and "+ gia +" < (sp.giaGoc+100))";
             Query query = ss.createQuery(hql);
             soLuong = query.uniqueResult().hashCode();
         } catch (Exception ex) {

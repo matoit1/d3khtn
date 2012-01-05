@@ -13,9 +13,9 @@ Trang
 </c:forEach>
 <c:forEach items="${requestScope.dsSanPham}" var="sp">
     <div class="danhsach"> 
-        <div id="hinhanh"><a href="#" ><img alt="#"  src="images/product/${sp.maSanPham}_1.jpg" height="100" width="100" align="middle"/></a></div>
+        <div id="hinhanh"><a href="ChiTietSanPham?maSp=${sp.maSanPham}" ><img alt="#"  src="images/product/${sp.maSanPham}_1.jpg" height="100" width="100" align="middle"/></a></div>
         <div id="chitiet">
-            <p><a href="#">${sp.tenSanPham}</a></p>
+            <p><a href="ChiTietSanPham?maSp=${sp.maSanPham}">${sp.tenSanPham}</a></p>
             <p>webID:${sp.maSanPham}</p>
             <p>Customer Rating: <img alt="#" src="images/rating_on.png"/><img alt="#" src="images/rating_on.png"/></p>
             <p><img alt="#" src="images/available.png"/></p>
