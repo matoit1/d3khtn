@@ -265,7 +265,54 @@ body {
 #gia p{
 	padding-top:50px;
 	vertical-align:middle;
+
 }
+
+
+/*help */
+
+#tab h2 {
+color:#000099;
+}
+.usual ul a.selected {
+margin-bottom: 0;
+color: black;
+background: #00CC00;
+border-bottom: 1px solid snow;
+cursor: default;
+}
+
+.usual ul a {
+display: block;
+padding: 6px 10px;
+text-decoration: none!important;
+margin: 1px;
+margin-left: 0;
+font: 14px Verdana;
+color: white;
+background: #444;
+}
+.usual ul {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+.usual li {
+list-style: none;
+float: left;
+}
+
+.usual div {
+padding: 10px 30px 8px 10px;
+clear: right;
+font: 10pt Georgia;
+}
+
+
 
 /*css for TimKiem*/
 .clearfloat1 {
