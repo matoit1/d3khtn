@@ -33,8 +33,16 @@
             </div>
         </td>
         <td>
-            <div align="center">Quantity Remaining: ${sp.soLuong} </div>
+
+            <div align="center">Quantity Remaining: 
+                <c:if test="${sp.soLuong gt 0}">${sp.soLuong} 
+                </c:if>
+                <c:if test="${sp.soLuong lt 1}"> end product
+                </c:if>
+            </div>
+
         </td>
+
     </tr>
     <tr>
         <td>
@@ -59,7 +67,9 @@
                             <c:param name="action" value="DatMua"/>
                             <c:param name="maSanPham" value="${sp.maSanPham}"/>
                         </c:url>
-                    <a href="${DatMua}"><img src="images/buy_now_big_on.gif"/></a>
+                        <c:if test="${sp.soLuong gt 0}">
+                        <a href="${DatMua}"><img src="images/buy_now_big_on.gif"/></a>
+                        </c:if>
                     <br/>
                     <c:url var="ThemSanPhamMongDoi" value="ThemSanPhamMongDoi.do">
                         <c:param name="maSanPham" value="${sp.maSanPham}"/>
