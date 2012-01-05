@@ -16,7 +16,7 @@
                     <c:url var="about" value="About.do"/>
                     <div class="menumainItem"> <a href="${about}" title="noi dung cua menu"> ABOUT </a></div>
                     <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HELP </a></div>
-                    <div class="menumainItem"> <a href="#" title="noi dung cua menu"> SEARCH </a></div>
+                    <div class="menumainItem"> <a href="TimKiemNangCao.do" title="noi dung cua menu"> SEARCH </a></div>
                     <c:url var="index" value="index.do"/>
                     <div class="menumainItem"> <a href="${index}" title="noi dung cua menu"> HOME </a></div>
                 </div>
