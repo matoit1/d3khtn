@@ -223,9 +223,9 @@ body {
 
 
 /*help */
-.tab{
-color:#FFFFFF;
-display:block;
+
+#tab h2 {
+color:#000099;
 }
 .usual ul a.selected {
 margin-bottom: 0;
@@ -241,7 +241,7 @@ padding: 6px 10px;
 text-decoration: none!important;
 margin: 1px;
 margin-left: 0;
-font: 10px Verdana;
+font: 14px Verdana;
 color: white;
 background: #444;
 }
