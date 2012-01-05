@@ -27,21 +27,32 @@
                         </c:forEach>
                         <c:forEach begin="${sp.danhGia+1}" end="${5}" var="i">
                         <a href="DanhGiaSanPham.do?maSp=${sp.maSanPham}&rate=${i}"> <img src="images/rating_off.png"/></a>
-                    </c:forEach> ${sp.danhGia}/5
+                    </c:forEach> 
+                            ${sp.danhGia}/5
                 </span>
             </div>
         </td>
-        <td><div align="center">Quantity Remaining: ${sp.soLuong} </div></td>
+        <td>
+            <div align="center">Quantity Remaining: ${sp.soLuong} </div>
+        </td>
     </tr>
     <tr>
-        <td><div align="center"><span style="font-weight: bold; color:#FF9900; font-size: small">Save: ${sp.giamGia}$ </span></div>
+        <td>
+            <div align="center"><span style="font-weight: bold; color:#FF9900; font-size: small">Save: ${sp.giamGia}$ </span></div>
             <br/>
-            <div align="center"><span style="font-weight: bold; color: #FF0000; font-size: medium">Price: ${sp.giaGoc}$ </span></div></td>
+            <div align="center"><span style="font-weight: bold; color: #FF0000; font-size: medium">Price: ${sp.giaGoc}$ </span></div>
+        </td>
         <td>
             <div align="center">
                 <c:if test="${sessionScope.admin ne null}">
-                    <a href="AdminCapNhapSanPham.do?maSp=${sp.maSanPham}"><img src="images/button_edit_grey.gif"/></a>
-                    <a href="XoaSanPham.do?maSp=${sp.maSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
+                    <c:url var="AdminCapNhapSanPham" value="AdminCapNhapSanPham.do">
+                        <c:param name="maSp" value="${sp.maSanPham}"/>
+                    </c:url>
+                    <a href="${AdminCapNhapSanPham}"><img src="images/button_edit_grey.gif"/></a>
+                        <c:url var="XoaSanPham" value="XoaSanPham.do">
+                            <c:param name="maSp" value="${sp.maSanPham}"/>
+                        </c:url>
+                    <a href="${XoaSanPham}"><img src="images/delete.jpg" height="20" width="20"/></a>
                     </c:if>
                     <c:if test="${sessionScope.admin eq null}">
                         <c:url var="DatMua" value="GioHang.do">
@@ -49,6 +60,11 @@
                             <c:param name="maSanPham" value="${sp.maSanPham}"/>
                         </c:url>
                     <a href="${DatMua}"><img src="images/buy_now_big_on.gif"/></a>
+                    <br/>
+                    <c:url var="ThemSanPhamMongDoi" value="ThemSanPhamMongDoi.do">
+                        <c:param name="maSanPham" value="${sp.maSanPham}"/>
+                    </c:url>
+                    <a href="${ThemSanPhamMongDoi}"><u>Add to wish list</u></a>
                     </c:if>
             </div>
         </td>

@@ -8,8 +8,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
-
+<div style="width: 100%;height: 25px;border-style: ridge;">
+    <a style="color: #000" href="index.do"><u>Home</u></a> / 
+    <a style="color: #000" href="TrangThongTinCaNhan.do"><u>My Account</u></a> / 
+    <a style="color: #000"><b>My order</b></a>
+</div>
 <c:if test="${sessionScope.account eq null}">
     <c:if test="${sessionScope.admin eq null}">
         <table width='100%' border='1' cellspacing='0' cellpadding='5'>

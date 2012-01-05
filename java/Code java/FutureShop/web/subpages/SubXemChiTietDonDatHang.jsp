@@ -8,6 +8,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+
+<div style="width: 100%;height: 25px;border-style: ridge;">
+    <a style="color: #000" href="index.do"><u>Home</u></a> / 
+    <a style="color: #000" href="TrangThongTinCaNhan.do"><u>My Account</u></a> / 
+    <a style="color: #000" href="XemDonDatHang.do"><u>My order</u></a> / 
+    <a style="color: #000"><b>Details</b></a>
+</div>
+
 <table width='100%' border='1' cellspacing='0' cellpadding='5'>
     <tr bgcolor='#666666'>
         <td class='bgColorMain'>

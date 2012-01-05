@@ -7,6 +7,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+
+<div style="width: 100%;height: 25px;border-style: ridge;">
+    <a style="color: #000" href="index.do"><u>Home</u></a> / 
+    <a style="color: #000"><b>Sign in to my account</b></a>
+</div>
 <div class="info">
     <c:url var="DangNhap" value="DangNhap.do"/>
     <form action="${DangNhap}" method="post" name="frm_DangNhap" onsubmit="return SigninAccount();">

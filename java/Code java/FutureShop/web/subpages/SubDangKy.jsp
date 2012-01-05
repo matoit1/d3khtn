@@ -8,6 +8,10 @@
 <%@page import="net.tanesha.recaptcha.ReCaptcha"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<div style="width: 100%;height: 25px;border-style: ridge;">
+    <a style="color: #000" href="index.do"><u>Home</u></a> / 
+    <a style="color: #000"><b>Create an account</b></a>
+</div>
 <div class="info">
     <c:url var="DangKy" value="DangKy.do"/>
     <form action="${DangKy}" method="post" name="frm_DangKy" onsubmit="return RegisterAccount();">

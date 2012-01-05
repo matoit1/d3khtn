@@ -13,4 +13,5 @@
   <table-filter match-name="loaikhachhang"/>
   <table-filter match-name="tinhtrang"/>
   <table-filter match-name="loaisanpham"/>
+  <table-filter match-name="sanphammongdoi"/>
 </hibernate-reverse-engineering>
