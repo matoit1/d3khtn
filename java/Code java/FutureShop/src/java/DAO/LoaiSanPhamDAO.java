@@ -41,7 +41,6 @@ public class LoaiSanPhamDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             sp = (Loaisanpham) session.get(Loaisanpham.class, ma);
-            session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -58,7 +57,6 @@ public class LoaiSanPhamDAO {
             session.beginTransaction();
             Query query = (Query) session.createQuery("from Loaisanpham");
             dsLoaiSanPham = (ArrayList<Loaisanpham>) query.list();
-            session.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         } finally {

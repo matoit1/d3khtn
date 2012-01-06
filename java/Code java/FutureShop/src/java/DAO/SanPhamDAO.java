@@ -26,7 +26,6 @@ public class SanPhamDAO {
             session.beginTransaction();
             Query query = (Query) session.createQuery("from Sanpham");
             dsSanPham = (ArrayList<Sanpham>) query.list();
-            session.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -53,7 +52,6 @@ public class SanPhamDAO {
             query.setFirstResult(batdau);
             query.setMaxResults(sl);
             dsSanPham = (ArrayList<Sanpham>) query.list();
-            session.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -69,7 +67,6 @@ public class SanPhamDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             sp = (Sanpham) session.get(Sanpham.class, maSP);
-            session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -90,7 +87,6 @@ public class SanPhamDAO {
             query.setFirstResult(dongBatDau);
             query.setMaxResults(15);
             ds = (ArrayList<Sanpham>) query.list();
-            session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -112,7 +108,6 @@ public class SanPhamDAO {
             query.setFirstResult(dongBatDau);
             query.setMaxResults(15);
             ds = (ArrayList<Sanpham>) query.list();
-            session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -146,7 +141,6 @@ public class SanPhamDAO {
             session.beginTransaction();
             id = (Integer) session.save(sp);
             session.getTransaction().commit();
-
         } catch (Exception e) {
             session.getTransaction().rollback();
             System.out.println(e);

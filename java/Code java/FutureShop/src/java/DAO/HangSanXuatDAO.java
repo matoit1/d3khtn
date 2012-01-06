@@ -56,7 +56,6 @@ public class HangSanXuatDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             sp = (Hangsanxuat) session.get(Hangsanxuat.class, ma);
-            session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

@@ -24,10 +24,8 @@ public class BinhLuanDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String hql = "from Binhluan s where s.sanpham.maSanPham = :masp ";
-
             Query query = session.createQuery(hql).setParameter("masp", maSP);
             ds = (ArrayList<Binhluan>) query.list();
-            session.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         } finally {
