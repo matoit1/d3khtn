@@ -7,6 +7,7 @@ package DAO;
 import POJO.SanPhamGioHang;
 import POJO.Sanpham;
 import java.util.ArrayList;
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -362,6 +363,40 @@ public class SanPhamDAO {
             }
         }
         return soTrang;
+    }
+    
+    private static String CatNganTenSanPham(String nameProduct)
+    {
+        String name = nameProduct;
+        if(name.length() > 35)
+        {
+            name = name.substring(0, 35) + "...";
+        }
+        return name;
+    }
+    private static String CatNganMoTa(String moTa)
+    {
+        String moTaSP = moTa;
+        if(moTaSP.length() > 80)
+        {
+            moTaSP = moTaSP.substring(0, 80) + "...";
+        }
+        return moTaSP;
+    }
+    
+    public static ArrayList<Sanpham> ChuanHoaSanPham(ArrayList<Sanpham> dsSP)
+    {
+        ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
+        dsSanPham = dsSP;
+        try {
+            for (int i = 0; i < dsSanPham.size(); i++) {
+                dsSanPham.get(i).setTenSanPham(CatNganTenSanPham(dsSanPham.get(i).getTenSanPham()));
+                dsSanPham.get(i).setMoTa(CatNganMoTa(dsSanPham.get(i).getMoTa()));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return  dsSanPham;    
     }
 
     //<editor-fold defaultstate="collapsed" desc="Lấy thông tin sản phẩm giỏ hàng">
