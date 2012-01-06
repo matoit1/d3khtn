@@ -42,7 +42,7 @@ public class XemDonDatHang extends HttpServlet {
 
             if (session.getAttribute("account") != null) {
                 Khachhang account = (Khachhang)session.getAttribute("account");
-               List<Dondathang> dsddh = DonDatHangDAO.layDonDatHang(account.getMaKhachHang());
+               List<Dondathang> dsddh = DonDatHangDAO.layDonDatHangTheoKhachHang(account.getMaKhachHang());
                request.setAttribute("DonDatHang", dsddh);
             }
             

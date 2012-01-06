@@ -4,10 +4,11 @@
  */
 package controller;
 
-import DAO.DonDatHangDAO;
-import POJO.Dondathang;
+import DAO.ChiTietDonDatHangDAO;
+import POJO.Chitietdondathang;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Nguyen Anh Tri
  */
-@WebServlet(name = "XoaDonDatHang", urlPatterns = {"/XoaDonDatHang.do"})
-public class XoaDonDatHang extends HttpServlet {
+@WebServlet(name = "AdminChiTietDonDatHang", urlPatterns = {"/AdminChiTietDonDatHang.do"})
+public class AdminChiTietDonDatHang extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -35,14 +36,15 @@ public class XoaDonDatHang extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String url = "XemDonDatHang.jsp";
-            int maDonDatHang = Integer.parseInt(request.getParameter("maDonDatHang"));
-            Dondathang ddh = DonDatHangDAO.layThongTinDonDatHang(maDonDatHang);
-            if(DonDatHangDAO.xoaDonDatHang(ddh))
-            {
-                url = "XemDonDatHang.do";
+            HttpSession session = request.getSession();
+            String url = "AdminChiTietDonDatHang.jsp";
+            
+            if (session.getAttribute("admin") != null) {
+                int maDonDathang = Integer.parseInt(request.getParameter("maDonDatHang"));
+                List<Chitietdondathang> ctddh = ChiTietDonDatHangDAO.layDonDatHang(maDonDathang);
+                request.setAttribute("ChiTietDonDatHang", ctddh);
             }
-  
+            
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
         } finally {            
