@@ -4,6 +4,7 @@
  */
 package controller;
 
+import DAO.DanhGiaSanPhamDAO;
 import DAO.SanPhamDAO;
 import POJO.Sanpham;
 import java.io.IOException;
@@ -45,8 +46,11 @@ public class DanhGiaSanPham extends HttpServlet {
             if (request.getParameter("rate") != null) {
                 rate = Integer.parseInt(request.getParameter("rate"));
             }
+            
+            float diem = DanhGiaSanPhamDAO.TinhDiemDanhGia(maSp, rate);
+            int mucDo = DanhGiaSanPhamDAO.XetMucDoTheoDiem(diem);
             //cap nhap lai danh gia san pham
-            sp.setDanhGia(rate);
+            sp.setDanhGia(mucDo);
             SanPhamDAO.CapNhapSanPham(sp);
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.do?maSp="+sp.getMaSanPham());
             rd.forward(request, response);
