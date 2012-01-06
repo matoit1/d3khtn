@@ -21,7 +21,7 @@
             </ul>
             <h2>Manufacturer</h2>
             <ul>
-                <c:forEach var="hsx" items="${listSpecialStores}">
+                <c:forEach var="hsx" items="${dsHangSanXuat}">
                     <c:url var="DanhSachSanPham" value="DanhSachSanPham.do">
                         <c:param name="maHangSanXuat" value="${hsx.maHangSanXuat}"/>
                         <c:param name="trang" value="1"/>

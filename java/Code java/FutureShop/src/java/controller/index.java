@@ -45,17 +45,20 @@ public class index extends HttpServlet {
         ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
         ArrayList<Loaisanpham> dsLoaiSanPham = new ArrayList<Loaisanpham>();
         ArrayList<Hangsanxuat> listSpecialStores = new ArrayList<Hangsanxuat>();
+        ArrayList<Hangsanxuat> dsHangSanXuat = new ArrayList<Hangsanxuat>();
         ArrayList<Sanpham> dsSanPham = new ArrayList<Sanpham>();
         try {
             dsNhomSanPham = NhomSanPhamDAO.LayDanhSachNhomSanPham();
             dsLoaiSanPham = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
+            dsHangSanXuat = HangSanXuatDAO.LayDanhSachHangSanXuat();
             listSpecialStores = HangSanXuatDAO.LayDanhSachSpecialStores();
-            dsSanPham = SanPhamDAO.LayDanhSachSanPhamPhanTrang(0, 4, true);
+            dsSanPham = SanPhamDAO.LayDanhSachSanPhamPhanTrang(0, 15, true);
             dsSanPham =SanPhamDAO.ChuanHoaSanPham(dsSanPham);
             HttpSession session = request.getSession();
             session.setAttribute("dsNhomsanPham", dsNhomSanPham);
             session.setAttribute("dsLoaiSanPham", dsLoaiSanPham);
             session.setAttribute("listSpecialStores", listSpecialStores);
+            session.setAttribute("dsHangSanXuat", dsHangSanXuat);
             request.setAttribute("dsSanPham", dsSanPham);
             String url = "index.jsp";
             RequestDispatcher rd = request.getRequestDispatcher(url);
