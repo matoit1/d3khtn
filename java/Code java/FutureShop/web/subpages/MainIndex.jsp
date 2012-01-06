@@ -15,19 +15,19 @@
                 <div class="lof-main-outer">
                     <ul class="lof-main-wapper">
                         <li>
-                            <img src="images/banner/homepage-slide-ho_en.jpg" title="Newsflash 2" height="300"/>
+                            <a href="ChiTietSanPham.do?maSp=9"><img src="images/banner/homepage-slide-ho_en.jpg" title="Newsflash 2" height="300"/></a>
                             <div class="lof-main-item-desc"> </div>
                         </li>
                         <li>
-                            <img src="images/banner/p-homepage-slide-tv_en.jpg" title="Newsflash 3" height="300" width="600"/>
+                            <a href="ChiTietSanPham.do?maSp=17"><img src="images/banner/p-homepage-slide-tv_en.jpg" title="Newsflash 3" height="300" width="600"/></a>
                             <div class="lof-main-item-desc"> </div>
                         </li>
                         <li>
-                            <img src="images/banner/p-homepage-slide-di_en.jpg" title="Newsflash 5" height="300" width="600"/>
+                            <a href="ChiTietSanPham.do?maSp=23"><img src="images/banner/p-homepage-slide-di_en.jpg" title="Newsflash 5" height="300" width="600"/></a>
                             <div class="lof-main-item-desc"></div>
                         </li>
                         <li>
-                            <img src="images/banner/p-homepage-slide-major-app_en.jpg"  title="Newsflash 5" height="300" width="600"/>
+                            <a href="ChiTietSanPham.do?maSp=31"><img src="images/banner/p-homepage-slide-major-app_en.jpg"  title="Newsflash 5" height="300" width="600"/></a>
                             <div class="lof-main-item-desc"></div>
                         </li>
                     </ul>
@@ -36,25 +36,25 @@
                     <ul class="lof-navigator">
                         <li>
                             <div>
-                                <img src="images/banner/homepage-slide--thumb-ho.png" />
+                                <a href="ChiTietSanPham.do?maSp=9"><img src="images/banner/homepage-slide--thumb-ho.png" /></a>
                                 <h3>Wrap up the perfect laptop. </h3>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <img src="images/banner/homepage-slide--thumb-tv.png" />
+                                <a href="ChiTietSanPham.do?maSp=17"><img src="images/banner/homepage-slide--thumb-tv.png" /></a>
                                 <h3> Get the best holiday deals on TVs. </h3>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <img src="images/banner/homepage-slide--thumb-camera.png" />
+                                <a href="ChiTietSanPham.do?maSp=23"><img src="images/banner/homepage-slide--thumb-camera.png" /></a>
                                 <h3> Gifts they want, prices you'll love.</h3>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <img src="images/banner/homepage-slide--thumb-major-app.png" />
+                                <a href="ChiTietSanPham.do?maSp=31"><img src="images/banner/homepage-slide--thumb-major-app.png" /></a>
                                 <h3> We pay the tax on all major appliances!</h3>
                             </div>
                         </li>
