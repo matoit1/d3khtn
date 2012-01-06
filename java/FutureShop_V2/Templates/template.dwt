@@ -38,16 +38,15 @@
               <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HOME </a></div>
             </div>
         <div id="profilemenu">
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Acount </a></div>
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> Wish List </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> My Orders </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> My Acount </a></div>
             </div>
       </div>
         </div>
-		<div id="menu">
+			<div id="menu">
     <ul id="MenuBar1" class="MenuBarHorizontal">
-
-  <li><a href="#">Thời Trang Nữ</a>
+  <li><a href="#">Shop by department</a>
   	<ul>
         <li><a href="#">Áo Sơ Mi</a></li>
         <li><a href="#">Áo Thun</a></li>
@@ -55,7 +54,7 @@
         <li><a href="#">Váy</a></li>
     </ul>
   </li>
-  <li><a href="#">Thời Trang Nam</a>
+  <li><a href="#">Specialty Stores</a>
   	<ul>
         <li><a href="#">Áo Sơ Mi</a></li>
         <li><a href="#">Áo Thun</a></li>
