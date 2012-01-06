@@ -1,0 +1,7 @@
+Tai khoan nguoi dung
+
+username			password
+admin				admin
+trantri				123456
+nguyenanhtri			123456
+nguyenvanviet			123456
