@@ -128,13 +128,21 @@ CREATE TABLE IF NOT EXISTS `hangsanxuat` (
 --
 
 INSERT INTO `hangsanxuat` (`MaHangSanXuat`, `TenHangSanXuat`, `UuTien`) VALUES
-(1, 'HP', 1),
-(2, 'SONY', 1),
-(3, 'APPLE', 1),
-(4, 'LEXAR', 2),
-(5,'SONY',1),
+(1,'HP',1),
+(2,'SONY',1),
+(3,'APPLE',1),
+(4,'LEXAR',2),
 (6,'TOSHIBA',0),
-(7,'INTEL',1);
+(7,'INTEL',1),
+(8,'SAMSUNG',0),
+(9,'LOGITECH',0),
+(10,'BlackBerry',0),
+(11,'Seagate',0),
+(12,'ACER',0),
+(13,'General',0),
+(14,'LG',0),
+(15,'Panasonic',0),
+(16,'Canon',0);
 -- --------------------------------------------------------
 
 --
