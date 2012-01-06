@@ -74,7 +74,7 @@
             <c:if test="${sessionScope.subTotal eq null}">
                 <div id="subtotal"><a>SUBTOTAL</a></div> 
             </c:if>
-
+                <div id="subtotal"><a href="XuatExcell.do" target="_bank"/> Price List</a> </div>
             <div id="viewcart"><a href="${GioHang}" ><img src="images/view_cart.gif" /></a></div>
             <script type="text/javascript">
                 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});

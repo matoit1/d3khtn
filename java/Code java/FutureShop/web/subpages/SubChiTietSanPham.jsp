@@ -46,7 +46,7 @@
     </tr>
     <tr>
         <td>
-            <div align="center"><span style="font-weight: bold; color:#FF9900; font-size: small">Save: ${sp.giamGia}$ </span></div>
+            <div align="center"><span style="font-weight: bold; color:#FF9900; font-size: small">Sale: ${sp.giamGia}$ </span></div>
             <br/>
             <div align="center"><span style="font-weight: bold; color: #FF0000; font-size: medium">Price: ${sp.giaGoc}$ </span></div>
         </td>
