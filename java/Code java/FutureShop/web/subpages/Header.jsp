@@ -18,12 +18,11 @@
                     <div class="menumainItem"> <a href="${about}" title="About"> ABOUT </a></div>
                     <c:url var="help" value="Help.do"/>
                     <div class="menumainItem"> <a href="${help}" title="Custom support"> HELP </a></div>
-                    <div class="menumainItem"> <a href="#" title="search"> SEARCH </a></div>
+                    <div class="menumainItem"> <a href="TimKiemNangCao.do" title="search"> SEARCH </a></div>
                     <c:url var="index" value="index.do"/>
                     <div class="menumainItem"> <a href="${index}" title="Home"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
-
                     <c:url var="XemSanPhamMongDoi" value="XemSanPhamMongDoi.do"/>
                     <div class="profilemenuItem"> <a href="${XemSanPhamMongDoi}" title="noi dung cua menu"> Wish List </a></div>
                     <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
