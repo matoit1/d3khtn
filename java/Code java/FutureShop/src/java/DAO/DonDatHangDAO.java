@@ -6,6 +6,7 @@ package DAO;
 
 import POJO.Dondathang;
 import POJO.Tinhtrang;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 import util.HibernateUtil;
@@ -58,6 +59,7 @@ public class DonDatHangDAO {
             ddh = query.list();
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
+            ddh = new ArrayList<Dondathang>();
         }finally {
             session.close();
         }
