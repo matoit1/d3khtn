@@ -55,21 +55,23 @@ public class DanhGiaSanPham extends HttpServlet {
                 if (request.getParameter("rate") != null) {
                     rate = Integer.parseInt(request.getParameter("rate"));
                 }
-                
+
                 Danhgiasanpham dg = DanhGiaSanPhamDAO.KiemTraDanhGia(kh.getMaKhachHang(), maSp);
-                if(!dg.getDiemDanhGia().equals(rate)){
-                    dg.setDiemDanhGia(rate);
-                    DanhGiaSanPhamDAO.CapNhapDanhGiaSanPham(dg);
-                    rate = 0;
-                }
-                if(dg == null){
+
+                if (dg == null) {
                     Danhgiasanpham danhGia = new Danhgiasanpham();
                     danhGia.setKhachhang(kh);
                     danhGia.setSanpham(sp);
                     danhGia.setDiemDanhGia(rate);
-                    DanhGiaSanPhamDAO.DanhGia(dg);
+                    DanhGiaSanPhamDAO.DanhGia(danhGia);
+                } else {
+                    if (!dg.getDiemDanhGia().equals(rate)) {
+                        dg.setDiemDanhGia(rate);
+                        DanhGiaSanPhamDAO.CapNhapDanhGiaSanPham(dg);
+                        rate = 0;
+                    }
                 }
-                    
+
                 float diem = DanhGiaSanPhamDAO.TinhDiemDanhGia(maSp, rate);
                 int mucDo = DanhGiaSanPhamDAO.XetMucDoTheoDiem(diem);
                 //cap nhap lai danh gia san pham
