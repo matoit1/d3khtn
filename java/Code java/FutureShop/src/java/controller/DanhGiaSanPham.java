@@ -6,6 +6,8 @@ package controller;
 
 import DAO.DanhGiaSanPhamDAO;
 import DAO.SanPhamDAO;
+import POJO.Danhgiasanpham;
+import POJO.Khachhang;
 import POJO.Sanpham;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,26 +38,48 @@ public class DanhGiaSanPham extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            int maSp = 1;
-            if (request.getParameter("maSp") != null) {
-                maSp = Integer.parseInt(request.getParameter("maSp"));
+            String url = "";
+            HttpSession ss = request.getSession();
+            Khachhang kh = (Khachhang) ss.getAttribute("account");
+            if (kh == null) {
+                url = "/DangNhap.do";
+            } else {
+                int maSp = 1;
+                if (request.getParameter("maSp") != null) {
+                    maSp = Integer.parseInt(request.getParameter("maSp"));
+                }
+                Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
+
+
+                int rate = 5;
+                if (request.getParameter("rate") != null) {
+                    rate = Integer.parseInt(request.getParameter("rate"));
+                }
+                
+                Danhgiasanpham dg = DanhGiaSanPhamDAO.KiemTraDanhGia(kh.getMaKhachHang(), maSp);
+                if(!dg.getDiemDanhGia().equals(rate)){
+                    dg.setDiemDanhGia(rate);
+                    DanhGiaSanPhamDAO.CapNhapDanhGiaSanPham(dg);
+                    rate = 0;
+                }
+                if(dg == null){
+                    Danhgiasanpham danhGia = new Danhgiasanpham();
+                    danhGia.setKhachhang(kh);
+                    danhGia.setSanpham(sp);
+                    danhGia.setDiemDanhGia(rate);
+                    DanhGiaSanPhamDAO.DanhGia(dg);
+                }
+                    
+                float diem = DanhGiaSanPhamDAO.TinhDiemDanhGia(maSp, rate);
+                int mucDo = DanhGiaSanPhamDAO.XetMucDoTheoDiem(diem);
+                //cap nhap lai danh gia san pham
+                sp.setDanhGia(mucDo);
+                SanPhamDAO.CapNhapSanPham(sp);
+                url = "/ChiTietSanPham.do?maSp=" + sp.getMaSanPham();
             }
-            Sanpham sp = SanPhamDAO.LaySanPhamTheoMa(maSp);
-           
-            
-            int rate = 5;
-            if (request.getParameter("rate") != null) {
-                rate = Integer.parseInt(request.getParameter("rate"));
-            }
-            
-            float diem = DanhGiaSanPhamDAO.TinhDiemDanhGia(maSp, rate);
-            int mucDo = DanhGiaSanPhamDAO.XetMucDoTheoDiem(diem);
-            //cap nhap lai danh gia san pham
-            sp.setDanhGia(mucDo);
-            SanPhamDAO.CapNhapSanPham(sp);
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.do?maSp="+sp.getMaSanPham());
+            RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
             rd.forward(request, response);
-        } finally {            
+        } finally {
             out.close();
         }
     }

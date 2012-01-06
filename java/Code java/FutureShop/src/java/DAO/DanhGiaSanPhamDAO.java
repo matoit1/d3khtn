@@ -29,8 +29,8 @@ public class DanhGiaSanPhamDAO {
     }
 
     public static int XetMucDoTheoDiem(float diem) {
-        int mucDo = 1;
-        if(0<=diem && diem<=1)
+        int mucDo = 0;
+        if(0<diem && diem<=1)
             mucDo = 1;
         if(1<diem && diem<=2)
             mucDo = 2;
@@ -41,6 +41,38 @@ public class DanhGiaSanPhamDAO {
         if(5<diem && diem<=5)
             mucDo = 5;
         return mucDo;
+    }
+    
+    public static boolean CapNhapDanhGiaSanPham(Danhgiasanpham dg){
+        boolean result = false;
+        Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+        try {
+            ss.beginTransaction().begin();
+            ss.update(dg);
+            ss.getTransaction().commit();
+            result = true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            ss.getTransaction().rollback();
+            result = false;        
+        }
+        return result;
+    }
+    
+    public static Danhgiasanpham KiemTraDanhGia(int maKhachHang, int maSanPham){
+        Danhgiasanpham dg= new Danhgiasanpham();
+        Session ss= HibernateUtil.getSessionFactory().getCurrentSession();
+        try {
+            ss.beginTransaction().begin();
+            String hql = "FROM Danhgiasanpham dg WHERE dg.sanpham=:maSanPham AND dg.khachhang=:maKhachHang";
+            Query query = ss.createQuery(hql);
+            query.setInteger("maSanPham", maSanPham);
+            query.setInteger("maKhachHang", maKhachHang);
+            dg = (Danhgiasanpham) query.uniqueResult();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return dg;
     }
 
     public static float TinhDiemDanhGia(int maSanPham, int diem) {
