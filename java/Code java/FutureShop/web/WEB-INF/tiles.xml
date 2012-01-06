@@ -50,8 +50,8 @@
     <definition name="themhangsanxuat" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminThemHangSanXuat.jsp" />  
     </definition> 
-    <definition name="lichsumuahang" extends="template"> 
-        <put-attribute name="mainContent" value="/subpages/LichSuMuaHangContent.jsp" />  
+    <definition name="adminquanlydondathang" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubAdminQuanLyDonDatHang.jsp" />  
     </definition>
     <definition name="giohang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/GioHangContent.jsp" />  
