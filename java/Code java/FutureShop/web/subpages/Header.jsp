@@ -10,16 +10,18 @@
 <c:catch var="ex">
     <div id="header">
         <div id="banner">
-            <div id="logo"><a href="index.do"><img src="images/futureshop_logo.png"/></a></div>
+            <div id="logo">
+                <c:url var="index" value="index.do"/>
+                <a href="${index}"><img src="images/futureshop_logo.png"/></a>
+            </div>
             <div id="menu_right">
                 <div id="mainmenu">   
                     <c:url var="about" value="About.do"/>
-
-                    <div class="menumainItem"> <a href="${about}" title="About"> ABOUT </a></div>
                     <c:url var="help" value="Help.do"/>
-                    <div class="menumainItem"> <a href="${help}" title="Custom support"> HELP </a></div>
-                    <div class="menumainItem"> <a href="TimKiemNangCao.do" title="search"> SEARCH </a></div>
-                    <c:url var="index" value="index.do"/>
+                    <c:url var="search" value="TimKiemNangCao.do"/>
+                    <div class="menumainItem"> <a href="${about}" title="About"> ABOUT </a></div>
+                    <div class="menumainItem"> <a href="${help}" title="Custom support"> HELP </a></div>       
+                    <div class="menumainItem"> <a href="${search}" title="search"> SEARCH </a></div>
                     <div class="menumainItem"> <a href="${index}" title="Home"> HOME </a></div>
                 </div>
                 <div id="profilemenu">
@@ -28,10 +30,10 @@
                     <c:url var="XemHoaDon" value="XemDonDatHang.do"/>
                     <div class="profilemenuItem"> <a href="${XemHoaDon}" title="View order history"> My Orders </a></div>
                     <c:url var="TrangThongTinCaNhan" value="TrangThongTinCaNhan.do"/>
-                    <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
                     <c:if test="${sessionScope.admin eq null}">
                         <div class="profilemenuItem"> <a href="${TrangThongTinCaNhan}" title="Account Infomation"> My Account </a></div>
                     </c:if>
+                    <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
                     <c:if test="${sessionScope.admin ne null}">
                         <div class="profilemenuItem"> <a href="${AdminQuanLySanPham}" title="Admin Right"> Administrator </a></div>
                     </c:if>
@@ -70,7 +72,7 @@
                 <div id="subtotal"><a href="${GioHang}">SUBTOTAL ${sessionScope.subTotal}$</a></div> 
             </c:if>
             <c:if test="${sessionScope.subTotal eq null}">
-                <div id="subtotal"><a href="#">SUBTOTAL</a></div> 
+                <div id="subtotal"><a>SUBTOTAL</a></div> 
             </c:if>
 
             <div id="viewcart"><a href="${GioHang}" ><img src="images/view_cart.gif" /></a></div>
@@ -79,7 +81,8 @@
             </script>
         </div>
         <div id="search">
-            <form action="TimKiemSanPham.do" name="search">
+            <c:url var="TimKiemSanPham" value="TimKiemSanPham.do"/>
+            <form action="${TimKiemSanPham}" name="search">
                 <input type="text" name="txtsearch" style="width: 200px; height: 20px;"/>
                 <input type="image" src="images/search_sm_on.gif" name="btSearch" style="width: 100px; height: 20px;margin-top:10px;"/>
                 <c:if test="${sessionScope.account eq null}">
