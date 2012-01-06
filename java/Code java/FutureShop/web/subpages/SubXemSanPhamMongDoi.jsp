@@ -50,7 +50,7 @@
                     <td width="70"><img src= "images/product/${sessionScope.TuHang[i].sanpham.maSanPham}_1.jpg" width="70px" height="70px"/></td>
                     <td width="250">
                         <div align="left">
-                             <strong>${sessionScope.TuHang[i].sanpham.tenSanPham}</strong>
+                            <strong>${sessionScope.TuHang[i].sanpham.tenSanPham}</strong>
                         </div>
                         <div>
                             Quantity : ${sessionScope.TuHang[i].sanpham.soLuong}
@@ -66,6 +66,14 @@
                                     <a> <img src="images/rating_off.png"/></a>
                                     </c:forEach> 
                             </span>
+                        </div>
+                        <div>
+                            <c:if test="${sessionScope.TuHang[i].sanpham.soLuong gt 0}">
+                                <img src="images/available.png"/>
+                            </c:if>
+                            <c:if test="${sessionScope.TuHang[i].sanpham.soLuong eq 0}">
+                                <img src="images/notavailable.png"/>
+                            </c:if>
                         </div>
                     </td>
                     <td align="center" width="100">${sessionScope.TuHang[i].ngayThemVao}</td>
