@@ -19,8 +19,22 @@
                 <div id="chitiet">
                     <p><a href="ChiTietSanPham.do?maSp=${sp.maSanPham}">${sp.tenSanPham}</a></p>
                     <p>webID:${sp.maSanPham}</p>
-                    <p>Customer Rating: <img alt="#" src="images/rating_on.png"/><img alt="#" src="images/rating_on.png"/></p>
-                    <p><img alt="#" src="images/available.png"/></p>
+                    <p>Customer Rating: 
+                        <c:forEach begin="1" end="${sp.danhGia}" var="i">
+                            <img alt="rating_on" src="images/rating_on.png"/>
+                        </c:forEach>
+                        <c:forEach begin="${sp.danhGia+1}" end="${5}" var="i">
+                            <img alt="rating_off" src="images/rating_off.png"/>
+                        </c:forEach>
+                    </p>
+                    <p>
+                        <c:if test="${sp.soLuong > 0}">
+                            <img alt="#" src="images/available.png"/>
+                        </c:if>
+                        <c:if test="${sp.soLuong <= 0}">
+                            <img alt="#" src="images/notavailable.png"/>
+                        </c:if>
+                    </p>
                 </div>
                 <div id="gia"><p>${sp.giaGoc}</p></div> 
             </div>

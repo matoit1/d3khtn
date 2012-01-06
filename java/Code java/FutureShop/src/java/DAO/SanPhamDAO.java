@@ -185,7 +185,7 @@ public class SanPhamDAO {
             String hqr = "FROM Sanpham sp WHERE sp.tinhtrang=1 and (sp.tenSanPham ='%"+tenSp+"%' or "
                     + "sp.hangsanxuat="+maHSX+" or "
                     + "sp.loaisanpham="+maLSP+" or "
-                    + "(sp.giaGoc-100)< "+gia+" and "+ gia +" < (sp.giaGoc+100))";
+                    + "((sp.giaGoc-100)< "+gia+" and "+ gia +" < (sp.giaGoc+100)))";
             Query query =ss.createQuery(hqr);
             int dongBatDau = (trang - 1) * 15;
             query.setFirstResult(dongBatDau);
