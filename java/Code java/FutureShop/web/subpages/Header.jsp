@@ -100,7 +100,7 @@
                         <c:url var="DangXuat" value="DangXuat.do"/>
                         <a href="${DangXuat}">Sign Out</a> 
                     </div> 
-                </c:if>
+                </c:if>             
             </form>
         </div>
     </div>

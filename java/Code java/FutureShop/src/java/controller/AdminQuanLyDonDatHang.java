@@ -4,9 +4,16 @@
  */
 package controller;
 
+import DAO.DonDatHangDAO;
+import DAO.SanPhamDAO;
+import DAO.TinhTrangDonDatHangDAO;
+import POJO.Dondathang;
 import POJO.Khachhang;
+import POJO.Sanpham;
+import POJO.Tinhtrangdondathang;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,12 +43,28 @@ public class AdminQuanLyDonDatHang extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             String url = "AdminQuanLyDonDatHang.jsp";
-            
-            Khachhang admin = (Khachhang)session.getAttribute("admin");
-            
+
+            Khachhang admin = (Khachhang) session.getAttribute("admin");
+            if (admin != null) {
+                String capNhat = request.getParameter("capNhat.x");
+                if (capNhat != null) {
+                    int TID = Integer.parseInt(request.getParameter("TID"));
+                    Dondathang ddh = DonDatHangDAO.layThongTinDonDatHang(TID);
+                    int maTinhTrangDDH = Integer.parseInt(request.getParameter("state"));
+                    Tinhtrangdondathang ttddh = TinhTrangDonDatHangDAO.layThongTin(maTinhTrangDDH);
+                    ddh.setTinhtrangdondathang(ttddh);
+                    if (DonDatHangDAO.capNhatDonDatHang(ddh)) {
+                        url = "AdminQuanLyDonDatHang.jsp";
+                    }
+                }
+
+                List<Dondathang> dsddh = DonDatHangDAO.layDonDatHang();
+                request.setAttribute("DSDonDatHang", dsddh);
+            }
+
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
-        } finally {            
+        } finally {
             out.close();
         }
     }

@@ -53,6 +53,9 @@
     <definition name="adminquanlydondathang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminQuanLyDonDatHang.jsp" />  
     </definition>
+    <definition name="adminchitietdondathang" extends="template"> 
+        <put-attribute name="mainContent" value="/subpages/SubAdminChiTietDonDatHang.jsp" />  
+    </definition>
     <definition name="giohang" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/GioHangContent.jsp" />  
     </definition>

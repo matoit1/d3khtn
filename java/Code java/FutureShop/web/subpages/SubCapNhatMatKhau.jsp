@@ -7,11 +7,20 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div style="width: 100%;height: 25px;border-style: ridge;">
-    <a style="color: #000" href="index.do"><u>Home</u></a> / 
-    <a style="color: #000" href="TrangThongTinCaNhan.do"><u>My Account</u></a> / 
-    <a style="color: #000"><b>Change password</b></a>
-</div>
+<c:if test="${sessionScope.admin ne null}">
+    <div style="width: 100%;height: 25px;border-style: ridge;">
+        <a style="color: #000" href="index.do"><u>Home</u></a> / 
+        <a style="color: #000" href="AdminQuanLySanPham.do"><u>Administrator</u></a> / 
+        <a style="color: #000"><b>Change Password</b></a>
+    </div>
+</c:if>
+<c:if test="${sessionScope.admin eq null}">
+    <div style="width: 100%;height: 25px ;border-style: ridge;">
+        <a style="color: #000" href="index.do"><u>Home</u></a> / 
+        <a style="color: #000" href="TrangThongTinCaNhan.do"><u>My Account</u></a> / 
+        <a style="color: #000"><b>Change password</b></a>
+    </div>
+</c:if>
 
 <div class="info">
     <c:if test="${requestScope.error eq null}">

@@ -51,9 +51,10 @@ public class DangNhap extends HttpServlet {
                     Khachhang kh = KhachHangDAO.layThongTinKhachHang(tenDangNhap);
                     session.setAttribute("account", kh);
                     if (kh.getLoaikhachhang().getMaLoaiKhachHang() == 1) {
-                        session.setAttribute("admin", 1);
+                        session.setAttribute("admin", kh);
                         url = "AdminQuanLySanPham.do";
                     } else {
+
                         url = "index.do";
                     }
                 } else {

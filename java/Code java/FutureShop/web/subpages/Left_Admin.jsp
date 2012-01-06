@@ -15,8 +15,6 @@
             <li><a href="${AdminThemSanPham}">Add New Product</a></li>
             <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
             <li><a href="${AdminQuanLySanPham}">Edit Product</a></li>
-            <c:url var="AdminQuanLySanPham" value="AdminQuanLySanPham.do"/>
-            <li><a href="${AdminQuanLySanPham}">Delete Product</a></li>
             <c:url var="AdminThemHangSanXuat" value="AdminThemHangSanXuat.do"/>
             <li><a href="${AdminThemHangSanXuat}">Add New Store</a></li>
             <c:url var="AdminTimKiemSanPham" value="AdminTimKiemSanPham.do"/>
@@ -27,7 +25,7 @@
         <p><strong>Account Manager</strong></p>
         <ul>
             <c:url var="CapNhatMatKhau" value="CapNhatMatKhau.do"/>
-            <li><a href="${CapNhatMatKhau}">Chang Password Admin</a></li>
+            <li><a href="${CapNhatMatKhau}">Change Password</a></li>
             <li><a href="">Block Account Member</a></li>
         </ul>
     </div>
