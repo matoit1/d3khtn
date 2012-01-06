@@ -19,8 +19,9 @@ public class NhomSanPhamDAO {
 
     public static ArrayList<Nhomsanpham> LayDanhSachNhomSanPham() {
         ArrayList<Nhomsanpham> dsNhomSanPham = new ArrayList<Nhomsanpham>();
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = null;
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             Query query = (Query) session.createQuery("from Nhomsanpham nsp where nsp.tinhtrang.maTinhTrang = 1");
             dsNhomSanPham = (ArrayList<Nhomsanpham>) query.list();
@@ -34,9 +35,9 @@ public class NhomSanPhamDAO {
 
     public static int TimMaNhomSanPham(int maLoaiSanPham) {
         int maNhom = 0;
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = null;
         try {
-
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             Query query = (Query) session.createQuery("SELECT nsp.maNhomSanPham FROM Loaisanpham lsp, Nhomsanpham nsp "
                     + "WHERE lsp.nhomsanpham.maNhomSanPham = nsp.maNhomSanPham AND lsp.maLoaiSanPham =:maLoaiSanPham");
@@ -44,8 +45,6 @@ public class NhomSanPhamDAO {
             maNhom = query.uniqueResult().hashCode();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
         } finally {
             session.close();
         }

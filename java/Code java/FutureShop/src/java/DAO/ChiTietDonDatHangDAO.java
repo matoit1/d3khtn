@@ -21,8 +21,8 @@ public class ChiTietDonDatHangDAO {
 
     public static boolean themChiTiet(Chitietdondathang ctddh) {
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.save(ctddh);
             session.getTransaction().commit();
@@ -41,9 +41,9 @@ public class ChiTietDonDatHangDAO {
     public static Chitietdondathang layThongTin(int maChiTietDonDatHang) {
         Chitietdondathang ctddh = null;
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
             ctddh = (Chitietdondathang) session.get(Chitietdondathang.class, maChiTietDonDatHang);
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
@@ -58,18 +58,16 @@ public class ChiTietDonDatHangDAO {
     public static List<Chitietdondathang> layDonDatHang(int maDonDatHang) {
         List<Chitietdondathang> ctddh = new ArrayList<Chitietdondathang>();
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-
             String hql = "select ctddh from Chitietdondathang ctddh where ctddh.dondathang.maDonDatHang =:maDonDatHang";
             Query query = session.createQuery(hql);
             query.setInteger("maDonDatHang", maDonDatHang);
-
             ctddh = query.list();
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
-        }finally {
+        } finally {
             session.close();
         }
         return ctddh;

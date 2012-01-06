@@ -11,33 +11,35 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
 
-
 /**
  *
  * @author TRANTRI
  */
 public class BinhLuanDAO {
-    public static ArrayList<Binhluan> LayDanhSachBinhLuanTheoMaSP(int maSP)
-    {
+
+    public static ArrayList<Binhluan> LayDanhSachBinhLuanTheoMaSP(int maSP) {
         ArrayList<Binhluan> ds = new ArrayList<Binhluan>();
+        Session session = null;
         try {
-            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-             String hql = "from Binhluan s where s.sanpham.maSanPham = :masp ";
+            String hql = "from Binhluan s where s.sanpham.maSanPham = :masp ";
 
             Query query = session.createQuery(hql).setParameter("masp", maSP);
             ds = (ArrayList<Binhluan>) query.list();
-             session.close();
+            session.close();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
+        } finally {
+            session.close();
         }
         return ds;
     }
-    
-     public static boolean ThemBinhLuan(Binhluan bl) {
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
+    public static boolean ThemBinhLuan(Binhluan bl) {
+        Session session = null;
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.save(bl);
             session.getTransaction().commit();

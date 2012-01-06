@@ -19,55 +19,66 @@ public class HangSanXuatDAO {
 
     public static ArrayList<Hangsanxuat> LayDanhSachSpecialStores() {
         ArrayList<Hangsanxuat> dsHangSx = new ArrayList<Hangsanxuat>();
+        Session session = null;
         try {
-            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Query query = (Query) session.createQuery("from Hangsanxuat hsx where hsx.uuTien = 1");
             dsHangSx = (ArrayList<Hangsanxuat>) query.list();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
+        } finally {
+            session.close();
         }
         return dsHangSx;
     }
-     public static ArrayList<Hangsanxuat> LayDanhSachHangSanXuat() {
+
+    public static ArrayList<Hangsanxuat> LayDanhSachHangSanXuat() {
         ArrayList<Hangsanxuat> dsHangSx = new ArrayList<Hangsanxuat>();
+        Session session = null;
         try {
-            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             Query query = (Query) session.createQuery("from Hangsanxuat");
             dsHangSx = (ArrayList<Hangsanxuat>) query.list();
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
+        } finally {
+            session.close();
         }
         return dsHangSx;
     }
+
     public static Hangsanxuat LayHangSanXuatTheoMa(int ma) {
         Hangsanxuat sp = new Hangsanxuat();
+        Session session = null;
         try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             sp = (Hangsanxuat) session.get(Hangsanxuat.class, ma);
             session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        } finally {
+            session.close();
         }
         return sp;
     }
-    
-    public static int ThemHangSanXuat(Hangsanxuat h) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        int id =-1;
-        try {
-            session.beginTransaction();
-            id = (Integer)session.save(h);
-            session.getTransaction().commit();
 
+    public static int ThemHangSanXuat(Hangsanxuat h) {
+        Session session = null;
+        int id = -1;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            id = (Integer) session.save(h);
+            session.getTransaction().commit();
         } catch (Exception e) {
             session.getTransaction().rollback();
             System.out.println(e);
         } finally {
             session.close();
-            return id;
         }
+        return id;
     }
 }

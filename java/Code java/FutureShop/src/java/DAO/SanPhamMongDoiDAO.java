@@ -23,8 +23,8 @@ public class SanPhamMongDoiDAO {
     public static List<Sanphammongdoi> layDanhSachTheoKhachHang(int maKhachHang) {
         List<Sanphammongdoi> kq = new ArrayList<Sanphammongdoi>();
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "select sp from Sanphammongdoi sp where sp.khachhang.maKhachHang =:maKhachHang and sp.tinhtrang.maTinhTrang = 1";
             Query query = session.createQuery(sql);
@@ -43,8 +43,8 @@ public class SanPhamMongDoiDAO {
     //<editor-fold defaultstate="collapsed" desc="Thêm mới sản phẩm mong đợi">
     public static boolean themMoiSanPhamMongDoi(Sanphammongdoi sp) {
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.save(sp);
             session.getTransaction().commit();
@@ -62,13 +62,16 @@ public class SanPhamMongDoiDAO {
     //<editor-fold defaultstate="collapsed" desc="Lấy thông tin">
     public static Sanphammongdoi LayThongTinSanPhamMongDoi(int maSanPhamMongDoi) {
         Sanphammongdoi sp = new Sanphammongdoi();
+        Session session = null;
         try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             sp = (Sanphammongdoi) session.get(Sanphammongdoi.class, maSanPhamMongDoi);
             session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        } finally {
+            session.close();
         }
         return sp;
     }
@@ -80,9 +83,9 @@ public class SanPhamMongDoiDAO {
             return false;
         }
         Session session = null;
-        Tinhtrang tt = TinhTrangDAO.layThongTin(2);
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            Tinhtrang tt = TinhTrangDAO.layThongTin(2);
+            session = HibernateUtil.getSessionFactory().openSession();
             sp.setTinhtrang(tt);
             session.getTransaction().begin();
             session.update(sp);
@@ -104,9 +107,9 @@ public class SanPhamMongDoiDAO {
             return false;
         }
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
             Tinhtrang tt = TinhTrangDAO.layThongTin(1);
+            session = HibernateUtil.getSessionFactory().openSession();
             sp.setTinhtrang(tt);
             session.getTransaction().begin();
             session.update(sp);
