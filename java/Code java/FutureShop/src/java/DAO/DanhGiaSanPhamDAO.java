@@ -97,7 +97,7 @@ public class DanhGiaSanPhamDAO {
             ss.beginTransaction().begin();
             String hql = "FROM Danhgiasanpham dg WHERE dg.sanpham=:maSanPham";
             Query query = ss.createQuery(hql);
-            query.setInteger("maTaiKhoan", maSanPham);
+            query.setInteger("maSanPham", maSanPham);
             dsDanhGia = (ArrayList<Danhgiasanpham>) query.list();
         } catch (Exception e) {
             System.out.println(e.getMessage());
