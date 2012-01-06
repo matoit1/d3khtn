@@ -24,26 +24,27 @@
 <c:catch var="ex">
     <div id="WrapperLookup">
         <form name="formTimKiem" method="get" action="TimKiemNangCao.do">
-            <h2>Tìm Kiếm Sản Phẩm</h2>
-            <label>Tên Sản Phẩm</label> 
+            <h2>Find Products</h2>
+            <label>Product'name</label> 
             <input type="text" id="tenSanPham" name="tenSanPham" value="${param.tenSanPham}"/>
-            <label>Giá</label> 
+            <label>Cost</label> 
             <input type="text" id="gia" name="gia" value="${param.gia}"/>
             <br/>
-            <label>Hãng sãn xuất</label> 
+            <label>Manufacturer</label> 
             <select name="maHangSanXuat">
                 <c:forEach items="${dsHangSanXuat}" var="hsx">
                     <option value="${hsx.maHangSanXuat}">${hsx.tenHangSanXuat}</option>
                 </c:forEach>
             </select>
-            <label>Loại sản phẩm</label> 
+            <label>Categories</label> 
             <select name="maLoaiSanPham">
                 <c:forEach items="${dsLoaiSanPham}" var="lsp">
                     <option value="${lsp.maLoaiSanPham}">${lsp.tenLoaiSanPham}</option>
                 </c:forEach>
             </select>
             <br/>
-            <input  type="button" name="btnTim" value="Tìm" onclick="KiemTraTimKiemNangCao()"/>
+            <!--<input  type="button" name="btnTim" value="Find" onclick="KiemTraTimKiemNangCao()"/>--> 
+            <input type="image" src="images/binoculars.jpg" alt="find" height="80" width="80" style="margin: 10px"/>
         </form>
     </div>
     <div id="WrapperList">

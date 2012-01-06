@@ -197,6 +197,26 @@ public class SanPhamDAO {
     
         return dsSP;
     }
+    public static ArrayList<Sanpham> AdminTimKiemSanPham(String tenSp, int trang, int maHSX, int maLSP)
+    {
+        ArrayList<Sanpham> dsSP = new ArrayList<Sanpham>();
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hqr = "FROM Sanpham sp WHERE sp.tinhtrang=1 and (sp.tenSanPham ='%"+tenSp+"%' or "
+                    + "sp.hangsanxuat="+maHSX+" or "
+                    + "sp.loaisanpham="+maLSP+")";
+            Query query =ss.createQuery(hqr);
+            int dongBatDau = (trang - 1) * 5;
+            query.setFirstResult(dongBatDau);
+            query.setMaxResults(5);
+            dsSP = (ArrayList<Sanpham>) query.list();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    
+        return dsSP;
+    }
 
     public static int TinhSoTrangTheoNhomSanPham(int maNhomSanPham) {
         int soTrang = 1;
@@ -313,6 +333,31 @@ public class SanPhamDAO {
         } else {
             soTrang = soLuong / 15;
             if (soLuong % 15 != 0) {
+                soTrang++;
+            }
+        }
+        return soTrang;
+    }
+    
+    public static int AdminTinhSoTrang(String tenSp, int trang,int maHSX, int maLSP) {
+        int soTrang = 1;
+        int soLuong = 0;
+        try {
+            Session ss = HibernateUtil.getSessionFactory().getCurrentSession();
+            ss.beginTransaction();
+            String hql = "SELECT Count(*) as soluong FROM Sanpham sp WHERE sp.tinhtrang=1 and (sp.tenSanPham ='%"+tenSp+"%' or "
+                    + "sp.hangsanxuat="+maHSX+" or "
+                    + "sp.loaisanpham="+maLSP+")";
+            Query query = ss.createQuery(hql);
+            soLuong = query.uniqueResult().hashCode();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        if (soLuong < 5) {
+            soTrang = 1;
+        } else {
+            soTrang = soLuong / 5;
+            if (soLuong % 5 != 0) {
                 soTrang++;
             }
         }
