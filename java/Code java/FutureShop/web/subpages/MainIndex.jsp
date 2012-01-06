@@ -67,15 +67,19 @@
     <div id="black-bl">
         <c:forEach begin="0" var="sp" items="${requestScope.dsSanPham}">
             <div class="black-box">
-                <h2>
-                    <c:url var="ChiTietSanPham" value="ChiTietSanPham.do">
-                        <c:param name="maSp" value="${sp.maSanPham}"/>
-                    </c:url>
-                    <a href="${ChiTietSanPham}" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a>
-                </h2>
+                <div style="height: 50px">
+                    <h2>
+                        <c:url var="ChiTietSanPham" value="ChiTietSanPham.do">
+                            <c:param name="maSp" value="${sp.maSanPham}"/>
+                        </c:url>
+                        <a href="${ChiTietSanPham}" style="font-size: 14px; font-weight: bold">${sp.tenSanPham}</a>
+                    </h2>
+                </div>
                 <p><img src="images/product/${sp.maSanPham}_1.jpg" width="160" height="160" alt="Pic 1" /></p>
                 <p style="color: #FB4844; font-weight: bold">Price: ${sp.giaGoc}$</p>
-                <p>${sp.tenSanPham}</p>
+                <div style="height: 50px">
+                    <p>${sp.moTa}</p>
+                </div>
                 <a href="${ChiTietSanPham}"><p class="more">&gt; &gt;More</p></a>
             </div>
         </c:forEach>

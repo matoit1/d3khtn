@@ -51,6 +51,7 @@ public class index extends HttpServlet {
             dsLoaiSanPham = LoaiSanPhamDAO.LayDanhSachLoaiSanPham();
             listSpecialStores = HangSanXuatDAO.LayDanhSachSpecialStores();
             dsSanPham = SanPhamDAO.LayDanhSachSanPhamPhanTrang(0, 4, true);
+            dsSanPham =SanPhamDAO.ChuanHoaSanPham(dsSanPham);
             HttpSession session = request.getSession();
             session.setAttribute("dsNhomsanPham", dsNhomSanPham);
             session.setAttribute("dsLoaiSanPham", dsLoaiSanPham);
