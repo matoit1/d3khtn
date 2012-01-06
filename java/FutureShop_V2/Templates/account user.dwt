@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/account user.dwt" codeOutsideHTMLIsLocked="false" -->
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Future Shop</title>
-<link href="style/StyteMain.css" type="text/css" rel="stylesheet"/>
-<script language="javascript" type="text/javascript" src="js/jquery2.js"></script>
-<script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
-<script language="javascript" type="text/javascript" src="js/script.js"></script>
-<script language="javascript" type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+<link href="../style/StyteMain.css" type="text/css" rel="stylesheet"/>
+<script language="javascript" type="text/javascript" src="../js/jquery2.js"></script>
+<script language="javascript" type="text/javascript" src="../js/jquery.easing.js"></script>
+<script language="javascript" type="text/javascript" src="../js/script.js"></script>
+<script language="javascript" type="text/javascript" src="../js/jquery.idTabs.min.js"></script>
 <script type="text/javascript">
  $(document).ready( function(){ 
 		$('#lofslidecontent45').lofJSidernews( { interval:2000,
@@ -22,14 +22,14 @@
 	});
 
 </script>
-<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 </head>
     <body class="MainBody">
 <div id="container">
       <div id="header">
     <div id="banner">
-          <div id="logo"><a href="#"><img src="images/futureshop_logo.png"/></a></div>
+          <div id="logo"><a href="#"><img src="../images/futureshop_logo.png"/></a></div>
           <div id="menu_right">
         <div id="mainmenu">
               <div class="menumainItem"> <a href="#" title="noi dung cua menu"> ABOUT </a></div>
@@ -64,7 +64,7 @@
   
 </ul>
   <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
-        <div id="subtotal"><a href="#" ><img src="images/view_cart.gif" /></a></div>
+        <div id="subtotal"><a href="#" ><img src="../images/view_cart.gif" /></a></div>
 <script type="text/javascript">
 
 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
@@ -78,7 +78,7 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
     <div id="search">
       <form action="#" name="search">
         <input type="text" name="txtsearch"  style="width: 200px; height: 25px"/>
-        <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top: 10px" />
+        <input type="image" src="../images/search_sm_on.gif" name="btSearch" style="margin-top: 10px" />
         <div id="account"> Welcome! <a  href="#"> Create an Account </a>|<a  href="#">Sign In</a> </div>
       </form>
         </div>
@@ -102,17 +102,7 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
         </div>
     <!-- end #left -->
   </div>
-      <div id="mainContent"> <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
-      
-	  <div style="width: 100%;height: 25px;border-style: ridge;">
-    <a style="color: #000" href="#"><u>Home</u></a> / 
-    <a style="color: #000"><b>My Account</b></a>
-</div>
-<div>
-        <p>Welcome to your account! Manage your information and enjoy faster checkout by saving your billing, shipping and credit card information to your account. Get offers by Email when you sign up for our newsletter in your account profile. Simply click the links below</p>
-</div>
-	  
-	  <!-- InstanceEndEditable -->
+      <div id="mainContent"> <!-- TemplateBeginEditable name="NoiDungThayDoi" -->NoiDungThayDoi<!-- TemplateEndEditable -->
     <!-- end #mainContent -->
   </div>
       <br class="clearfloat" />
@@ -123,6 +113,6 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
       <!-- end #container -->
     </div>
 </body>
-    <!-- InstanceEnd --></html>
+    </html>
 
 	

@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/account user.dwt" codeOutsideHTMLIsLocked="false" -->
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Future Shop</title>
@@ -85,32 +86,80 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
   </div>
       <div id="left">
     <div id="categories">
-          <h2>Categories</h2>
+          <h2>My Account Home</h2>
+          <a>Shopping</a>
           <ul>
-        <li><a href="#">Apple</a></li>
-        <li><a href="#">Bell Internet</a></li>
-        <li><a href="#">Bell Mobility</a></li>
-        <li><a href="#">Bell TV</a></li>
-        <li><a href="#">BlackBerry</a></li>
-        <li><a href="#">Intel</a></li>
+        <li><a href="#">Order History</a></li>
+        <li><a href="#">Wish List</a></li>
+        <li><a href="#">Price Watch</a></li>
+      </ul>
+      <a>Account Details</a>
+      <ul>
+        <li><a href="#">Account Profile</a></li>
+        <li><a href="#">Change Password</a></li>
+        <li><a href="#">Change Email Address</a></li>
       </ul>
         </div>
     <!-- end #left -->
   </div>
       <div id="mainContent"> <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
-      	Trang
-        <a href="DanhSachSanPham.do?maThuongHieu=${maThuongHieu}&trang=${tz">1|2|3|4</a>
-        <div class="danhsach"> 
-        	<div id="hinhanh"><a href="#" ><img alt="#"  src="images/product/10166963.jpg" height="100" width="100" align="middle"/></a></div>
-            <div id="chitiet">
-            <p><a href="#">name of product</a></p>
-            <p>webID:1</p>
-            <p>Customer Rating: <img alt="#" src="images/rating_on.png"/><img alt="#" src="images/rating_on.png"/></p>
-            <p><img alt="#" src="images/available.png"/></p>
-            </div>
-            <div id="gia"><p>50000</p></div> 
-        </div>
-      <!-- InstanceEndEditable -->
+      
+	  <div style="width: 100%;height: 25px;border-style: ridge;">
+    <a style="color: #000" href="index.do"><u>Home</u></a> / 
+    <a style="color: #000" href="TrangThongTinCaNhan.do"><u>My Account</u></a> / 
+    <a style="color: #000"><b>My Wish List</b></a>
+</div>
+<div>
+        <h1 style="color: #FFB400; background-color:#A67500">Your Wish List</h1>
+        <table width="677" border="1">
+            <tr>
+                <th  align="center" colspan="2" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Product Description</span></th>
+                <th  align="center" colspan="1" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Date</span></th>
+                <th  align="center" colspan="2" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Options</span></th>
+            </tr>
+                <tr>
+                    <td width="70"><img src= "images/product/1_1.jpg" width="70px" height="70px"/></td>
+                    <td width="250">
+                        <div align="left">
+                            <strong>ten san pham</strong>
+                        </div>
+                        <div>
+                            Quantity : so luong
+                        </div>
+                        <div align="left" style="font-weight: bold">
+                            <span style="font-size: small; color: #FF9900">
+                                Customer Rating
+                                <br/>
+                                    <a> <img src="images/rating_on.png"/></a>
+                                    <a> <img src="images/rating_on.png"/></a>
+                                    <a> <img src="images/rating_on.png"/></a>
+                                    <a> <img src="images/rating_on.png"/></a>
+                                    <a> <img src="images/rating_off.png"/></a>
+                            </span>
+                        </div>
+                        <div>
+                                <img src="images/available.png"/>
+                        </div>
+                    </td>
+                    <td align="center" width="100">ngay them vao</td>
+                    <td width="150">
+                        <div align="center"><span style="font-weight: bold; color:#FF9900; font-size: small">Save : giam gia </span></div>
+                        <br/>
+                        <div align="center"><span style="font-weight: bold; color: #FF0000; font-size: medium">Price : gia goc </span></div>
+                        <br/>
+                        <div align="center">
+                            <a href="#"><img src="images/buy_now_big_on.gif"/></a>
+                        </div>
+                    </td>
+                    <td width="30" align='center'>
+                        <a href='#'><img src='images/delete.jpg' height="20" width="20" /></a>
+                    </td>
+                </tr>
+        </table>
+</div>
+
+	  
+	  <!-- InstanceEndEditable -->
     <!-- end #mainContent -->
   </div>
       <br class="clearfloat" />
@@ -122,45 +171,5 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
     </div>
 </body>
     <!-- InstanceEnd --></html>
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-		var timeout         = 500;
-		var closetimer		= 0;
-		var ddmenuitem      = 0;
-		
-		function jsddm_open()
-		{	jsddm_canceltimer();
-			jsddm_close();
-			ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
-		
-		function jsddm_close()
-		{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
-		
-		function jsddm_timer()
-		{	closetimer = window.setTimeout(jsddm_close, timeout);}
-		
-		function jsddm_canceltimer()
-		{	if(closetimer)
-			{	window.clearTimeout(closetimer);
-				closetimer = null;}}
-		
-		$(document).ready(function()
-		{	$('#jsddm > li').bind('mouseover', jsddm_open);
-			$('#jsddm > li').bind('mouseout',  jsddm_timer);});
-		
-		document.onclick = jsddm_close;
-		</script>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/easySlider1.5.js"></script>
-<script type="text/javascript">
-		$(document).ready(function(){	
-			$("#slider").easySlider({
-				controlsBefore:	'<p id="controls">',
-				controlsAfter:	'</p>',
-				auto: true, 
-				continuous: true
-			});
-		
-		});	
-	</script>
+
 	

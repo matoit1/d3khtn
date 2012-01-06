@@ -6,6 +6,7 @@
 <script language="javascript" type="text/javascript" src="js/jquery2.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
 <script language="javascript" type="text/javascript" src="js/script.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.idTabs.min.js"></script>
 <script type="text/javascript">
  $(document).ready( function(){ 
 		$('#lofslidecontent45').lofJSidernews( { interval:2000,
@@ -36,16 +37,15 @@
               <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HOME </a></div>
             </div>
         <div id="profilemenu">
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Acount </a></div>
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> Wish List </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> My Orders </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> My Acount </a></div>
             </div>
       </div>
         </div>
-		<div id="menu">
+			<div id="menu">
     <ul id="MenuBar1" class="MenuBarHorizontal">
-
-  <li><a href="#">Thời Trang Nữ</a>
+  <li><a href="#">Shop by department</a>
   	<ul>
         <li><a href="#">Áo Sơ Mi</a></li>
         <li><a href="#">Áo Thun</a></li>
@@ -53,7 +53,7 @@
         <li><a href="#">Váy</a></li>
     </ul>
   </li>
-  <li><a href="#">Thời Trang Nam</a>
+  <li><a href="#">Specialty Stores</a>
   	<ul>
         <li><a href="#">Áo Sơ Mi</a></li>
         <li><a href="#">Áo Thun</a></li>
@@ -98,45 +98,117 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
     <!-- end #left -->
   </div>
       <div id="mainContent"> <!-- InstanceBeginEditable name="NoiDungThayDoi" -->
-    <h1 align="center" style="color: #FFB400; background-color:#A67500">Your Cart</h1>
-    You have chosen to purchase the items listed below. To complete your purchase click the "Checkout" button.
-    <div align="right"> <a href="#"> <img src="images/continue_shopping1_on.gif"/></a> <img src="images/checkout_on.gif"/></a> </div>
-    <table width="677" border="1">
-      <tr>
-        <th colspan="2" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Product Description</span></th>
-        <th width="63" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Quantity</span></th>
-        <th width="79" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Unit Price</span></th>
-        <th width="81" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Discount</span></th>
-        <th width="61" bgcolor="#CCCCCC" scope="col"><span style="color: #000033">Price</span></th>
-      </tr>
-      <tr>
-        <td width="144"><img src="images/product/10169221.jpg"/></td>
-        <td width="209"><strong>Acer 10.1" Intel Atom N455 Netbook (AOD257-13665) - Blue</strong> </td>
-        <td><form action="#" name="update">
-            <input name="txtCount" type="text" value="" size="6" width="60px"/>
-            <br/>
-            <br/>
-            <input type="image" src="images/update_on.gif" name="btUpdate" />
-          </form>
-          <br/>
-          <br/>
-          <a href="#"> Remove </a> </td>
-        <td>$199.99</td>
-        <td>$2.99 </td>
-        <td>$399.98</td>
-      </tr>
-      <tr>
-        <td colspan="3" rowspan="2">&nbsp;</td>
-        <td colspan="2" bgcolor="#999999"><dl>
-          <dt> Product Total</dt></td>
-        <td bgcolor="#999999">$399.98</td>
-      </tr>
-      <tr>
-        <td colspan="2" bgcolor="#999999"><span style="font-weight: bold">Subtotal</span></td>
-        <td bgcolor="#999999"><span style="font-weight: bold">$399.98</span></td>
-      </tr>
-    </table>
-    <div align="right"> <a href="#"> <img src="images/continue_shopping1_on.gif"/></a> <img src="images/checkout_on.gif"/></a> </div>
+    
+    <div class="info">
+        <form action="#" method="post" name="frm_DatHang" onsubmit="#">
+            <h3>
+                CREATE AN ORDER
+            </h3>   
+            <fieldset>
+                <legend>Personal Information</legend>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td class="label">Customer Name</td>
+                            <td class="value"><input type="text" name="name" id="name" value="ho ten" readonly="readonly"/></td>
+                            <td class="warning" id="invalid_name"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Mobile Phone</td>
+                            <td class="value"><input type="text" name="phone" id="phone" value="so dien thoai" readonly="readonly"/></td>
+                            <td class="warning" id="invalid_phone"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email Address</td>
+                            <td class="value"><input type="text" name="email" id="email" value="email" readonly="readonly"/></td>
+                            <td class="warning" id="invalid_email"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Order Information</legend>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="label">Customer ID</td>
+                            <td class="value"><input type="text" name="id" id="id" value="ten dang nhap" readonly="readonly"/></td>
+                            <td class="warning" id="invalid_id"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Order Day</td>
+                            <td class="value">
+                                <input type="text" name="orderday" id="orderday" value="ngay dat hang" readonly="readonly"/>
+                                (mm/dd/yyyy)
+                            </td>
+                            <td class="warning" id="invalid_orderday"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Availability</td>
+                            <td class="value">
+                                <select style="width: 100%" name="Availability" id="Availability" onchange="#">
+                                    <option value="0">Pick at store</option>
+                                    <option value="1">Ship to home</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="OrderAddress" hidden="true">
+                            <td class="label">Address</td>
+                            <td class="value">
+                                <textarea style="width: 100%" name="address" id="address"></textarea>
+                                (Only for "Ship to home")
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Product Information</legend>
+                <table width="600" border="1">
+                    <tr>
+                        <td bgcolor="#CCCCCC" scope="col" width="40%"><span style="color: #000033">Product Description</span></td>
+                        <td bgcolor="#CCCCCC" scope="col" width="10%"><span style="color: #000033">Quantity</span></td>
+                        <td bgcolor="#CCCCCC" scope="col" width="15%"><span style="color: #000033">Unit Price</span></td>
+                        <td bgcolor="#CCCCCC" scope="col" width="15%"><span style="color: #000033">Discount</span></td>
+                        <td bgcolor="#CCCCCC" scope="col" width="20%"><span style="color: #000033">Price</span></td>
+                    </tr>
+                        <tr>
+                            <td width="209"><strong>ten san pham</strong> </td>
+                            <td>so luong</td>
+                            <td>gia goc</td>
+                            <td>giam gia</td>
+                            <td>thanh tien</td>
+                        </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2"></td>
+                        <td colspan="2" bgcolor="#999999">
+                            <dl>
+                                <dt> Product Total</dt>
+                        </td>        
+                        <td bgcolor="#999999">tong tien hoa don</td>
+                    </tr>
+                </table>                       
+            </fieldset>
+            <fieldset>
+                <legend>Security Information</legend>
+                <table style="width: 600px">
+                    <tr>
+                        <td class="value" colspan="1" style="margin-right: 20px;width: 600px">
+                            for recaptcha
+                            <br/>
+                            <span id="invalid_captcha" style="color:red;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <p style="text-align: center;">
+                <input class="btn" type="button" value="Back to cart" onclick="#" />
+                <input class="btn" type="submit" name="Purchase" value="Purchase"/>
+                <input class="btn" type="button" value="Cancel" onclick="#" />
+            </p>                    
+        </form>
+    </div>
+    
     <!-- InstanceEndEditable -->
     <!-- end #mainContent -->
   </div>

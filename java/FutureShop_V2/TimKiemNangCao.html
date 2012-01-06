@@ -3,6 +3,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Future Shop</title>
 <link href="style/StyteMain.css" type="text/css" rel="stylesheet"/>
+<script language="javascript" type="text/javascript" src="js/jquery2.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
+<script language="javascript" type="text/javascript" src="js/script.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+<script type="text/javascript">
+ $(document).ready( function(){ 
+		$('#lofslidecontent45').lofJSidernews( { interval:2000,
+											 	easing:'easeInOutQuad',
+												duration:1200,
+												auto:true } );
+			$("#cdn").hide();
+		$(".btn").click(function(){
+
+			$("#cdn").slideToggle(1000);
+		});
+	});
+
+</script>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 </head>
     <body class="MainBody">
 <div id="container">
@@ -17,42 +37,47 @@
               <div class="menumainItem"> <a href="#" title="noi dung cua menu"> HOME </a></div>
             </div>
         <div id="profilemenu">
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Acount </a></div>
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> My Orders </a></div>
-              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> >> Wish List </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> Wish List </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> My Orders </a></div>
+              <div class="profilemenuItem"> <a href="#" title="noi dung cua menu"> My Acount </a></div>
             </div>
       </div>
         </div>
-    <div id="menu">
-          <ul id="jsddm">
-        <li class="current_item"><a href="#"> Short by Department </a>
-              <ul>
-            <li><a href="#">Apple</a></li>
-            <li><a href="#">Bell Internet</a></li>
-            <li><a href="#">Bell Mobility</a></li>
-            <li><a href="#">Bell TV</a></li>
-            <li><a href="#">BlackBerry</a></li>
-            <li><a href="#">Intel</a></li>
-          </ul>
-            </li>
-        <li class="current_item"><a href="#">Specially Stores</a>
-              <ul>
-            <li><a href="#">Apple</a></li>
-            <li><a href="#">Bell Internet</a></li>
-            <li><a href="#">Bell Mobility</a></li>
-            <li><a href="#">Bell TV</a></li>
-            <li><a href="#">BlackBerry</a></li>
-            <li><a href="#">Intel</a></li>
-          </ul>
-            </li>
-        <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
+			<div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+  <li><a href="#">Shop by department</a>
+  	<ul>
+        <li><a href="#">Áo Sơ Mi</a></li>
+        <li><a href="#">Áo Thun</a></li>
+        <li><a href="#">Quần</a></li>
+        <li><a href="#">Váy</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Specialty Stores</a>
+  	<ul>
+        <li><a href="#">Áo Sơ Mi</a></li>
+        <li><a href="#">Áo Thun</a></li>
+        <li><a href="#">Quần</a></li>
+    </ul>
+  </li>
+  
+</ul>
+  <div id="subtotal"> <a href="#">SUBTOTAL </a></div>
         <div id="subtotal"><a href="#" ><img src="images/view_cart.gif" /></a></div>
-      </ul>
-        </div>
+<script type="text/javascript">
+
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+
+</script>
+
+    </div>
+
+      
+
     <div id="search">
-          <form action="#" name="search">
-        <input type="text" name="txtsearch" />
-        <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top:10px;"/>
+      <form action="#" name="search">
+        <input type="text" name="txtsearch"  style="width: 200px; height: 25px"/>
+        <input type="image" src="images/search_sm_on.gif" name="btSearch" style="margin-top: 10px" />
         <div id="account"> Welcome! <a  href="#"> Create an Account </a>|<a  href="#">Sign In</a> </div>
       </form>
         </div>
@@ -104,7 +129,7 @@
       </div>
       <!-- InstanceEndEditable -->
     <!-- end #mainContent -->
-</div>
+  </div>
       <br class="clearfloat" />
       <div id="footer">
     <p>© 2011 Future Shop. All rights reserved. For personal, noncommercial use only. Desiged by TranTri.</p>

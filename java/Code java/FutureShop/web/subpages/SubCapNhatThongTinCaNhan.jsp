@@ -40,7 +40,7 @@
                         <tr>
                             <td class="label">* Gender </td>
                             <td class="value">
-                                <select style="width:100%" name="gender" id="gender"/>
+                                <select style="width:100%" name="gender" id="gender">
                                 <c:if test="${sessionScope.account.gioiTinh eq true}">
                         <option value="0">Female</option>
                         <option value="1">Male</option>

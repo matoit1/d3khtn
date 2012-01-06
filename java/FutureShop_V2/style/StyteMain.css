@@ -221,6 +221,53 @@ body {
 	color: red;
 }
 
+/*css for danhsach site*/
+.danhsach{
+	height:150px;
+	margin-top: 10px;
+}
+
+.danhsach #hinhanh{
+	background-color:#FFF;
+	border: 1px solid;
+	height:150px;
+	width:24%;
+	float:left;
+	border-radius: 5px 0px 0px 5px;
+	position:relative;
+}
+.danhsach div#hinhanh a img{
+	position:absolute;
+	margin:20px 20px;
+}
+.danhsach div#chitiet{
+	background-color:#F3F3F3;
+	border-style:solid;
+	border-width:1px;
+	height:150px;
+	width:50%;
+	float:left;
+}
+.danhsach div#chitiet p{
+	padding-left:10px;
+}
+
+.danhsach #gia{
+	border-style:solid;
+	border-width:1px;
+	height:150px;
+	width:25%;
+	float:left;
+	border-radius: 0px 5px 5px 0px;
+	text-align:center;
+}
+
+#gia p{
+	padding-top:50px;
+	vertical-align:middle;
+
+}
+
 
 /*help */
 
@@ -267,51 +314,6 @@ font: 10pt Georgia;
 
 
 
-/*css for danhsach site*/
-.danhsach{
-	height:150px;
-	margin-top: 10px;
-}
-
-.danhsach #hinhanh{
-	background-color:#FFF;
-	border: 1px solid;
-	height:150px;
-	width:24%;
-	float:left;
-	border-radius: 5px 0px 0px 5px;
-	position:relative;
-}
-.danhsach div#hinhanh a img{
-	position:absolute;
-	margin:20px 20px;
-}
-.danhsach div#chitiet{
-	background-color:#F3F3F3;
-	border-style:solid;
-	border-width:1px;
-	height:150px;
-	width:50%;
-	float:left;
-}
-.danhsach div#chitiet p{
-	padding-left:10px;
-}
-
-.danhsach #gia{
-	border-style:solid;
-	border-width:1px;
-	height:150px;
-	width:25%;
-	float:left;
-	border-radius: 0px 5px 5px 0px;
-	text-align:center;
-}
-
-#gia p{
-	padding-top:50px;
-	vertical-align:middle;
-}
 /*css for TimKiem*/
 .clearfloat1 {
 	clear:none;
@@ -323,4 +325,3 @@ font: 10pt Georgia;
 #WrapperLookup{
 	border: 1px solid;
 }
-
