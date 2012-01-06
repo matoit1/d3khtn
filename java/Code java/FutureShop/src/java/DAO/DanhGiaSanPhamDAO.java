@@ -60,7 +60,7 @@ public class DanhGiaSanPhamDAO {
     }
     
     public static Danhgiasanpham KiemTraDanhGia(int maKhachHang, int maSanPham){
-        Danhgiasanpham dg= new Danhgiasanpham();
+        Danhgiasanpham dg = new Danhgiasanpham();
         Session ss= HibernateUtil.getSessionFactory().getCurrentSession();
         try {
             ss.beginTransaction().begin();
