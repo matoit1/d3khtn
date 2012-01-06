@@ -69,7 +69,6 @@ public class KhachHangDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             kh = (Khachhang) session.get(Khachhang.class, ma);
-            session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -110,7 +109,6 @@ public class KhachHangDAO {
             String sql = "select kh from Khachhang kh where tenDangNhap=:tenDangNhap";
             Query query = session.createQuery(sql);
             query.setString("tenDangNhap", tenDangNhap);
-
             Khachhang kh = null;
             if (query.uniqueResult() != null) {
                 kh = (Khachhang) query.uniqueResult();
@@ -141,7 +139,6 @@ public class KhachHangDAO {
             String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
             Query query = session.createQuery(sql);
             query.setString("tenDangNhap", tenDangNhap);
-
             if (query.uniqueResult() != null) {
                 kq = true;
             } else {
