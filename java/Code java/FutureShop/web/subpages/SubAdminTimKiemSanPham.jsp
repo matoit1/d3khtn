@@ -1,7 +1,7 @@
 <%-- 
-    Document   : SubAdminQuanLySanPham
-    Created on : Dec 12, 2011, 11:27:18 PM
-    Author     : TRANTRI
+    Document   : SubAdminTimKiemSanPham
+    Created on : Jan 6, 2012, 11:27:00 AM
+    Author     : VIET
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,33 +9,64 @@
 
 <h1 align="center" style="color: #FFB400; background-color:#A67500">Products Manager</h1>  
 
-<div style="font-weight:bold">
-    <c:url var="AdminThemSanPham" value="AdminThemSanPham.do"/>
-    <a href="${AdminThemSanPham}"><img src="images/new.gif" height="40" width="100"/> Add new product</a>
+<div id="WrapperLookup">
+    <form name="formTimKiem" method="get" action="AdminTimKiemSanPham.do">
+        <h2>Find Products</h2>
+        <label>Product'name</label> 
+        <input type="text" id="tenSanPham" name="tenSanPham" value="${param.tenSanPham}"/>
+        <br/>
+        <label>Manufacturer</label> 
+        <select name="maHangSanXuat">
+            <c:forEach items="${dsHangSanXuat}" var="hsx">
+                <option value="${hsx.maHangSanXuat}">${hsx.tenHangSanXuat}</option>
+            </c:forEach>
+        </select>
+        <label>Categories</label> 
+        <select name="maLoaiSanPham">
+            <c:forEach items="${dsLoaiSanPham}" var="lsp">
+                <option value="${lsp.maLoaiSanPham}">${lsp.tenLoaiSanPham}</option>
+            </c:forEach>
+        </select>
+        <br/>
+        <!--<input  type="button" name="btnTim" value="Find" onclick="KiemTraTimKiemNangCao()"/>--> 
+        <input type="image" src="images/binoculars.jpg" alt="find" height="80" width="80" style="margin: 10px"/>
+    </form>
 </div>
 <div align="right">           
     Page ${page}
     <br/>
     <c:if test="${page-1 gt 0}">
-        <c:url var="AdminQuanLySanPham1" value="AdminQuanLySanPham.do">
+        <c:url var="AdminQuanLySanPham1" value="AdminTimKiemSanPham.do">
             <c:param name="page" value="${page-1}"/>
+            <c:param name="maHangSanXuat" value="${maHangSanXuat}"/>
+            <c:param name="maLoaiSanPham" value="${maLoaiSanPham}"/>
+            <c:param name="tenSanPham" value="${tenSanPham}"/>
         </c:url>
         <a href="${AdminQuanLySanPham1}"> Previous </a>
     </c:if>
     <c:forEach var="i" begin="1"  end="${soTrang-1}">
-        <c:url var="AdminQuanLySanPham2" value="AdminQuanLySanPham.do">
+        <c:url var="AdminQuanLySanPham2" value="AdminTimKiemSanPham.do">
             <c:param name="page" value="${i}"/>
+            <c:param name="maHangSanXuat" value="${maHangSanXuat}"/>
+            <c:param name="maLoaiSanPham" value="${maLoaiSanPham}"/>
+            <c:param name="tenSanPham" value="${tenSanPham}"/>
         </c:url>
         <a href="${AdminQuanLySanPham2}">${i}</a> |
     </c:forEach>
-    <c:url var="AdminQuanLySanPham3" value="AdminQuanLySanPham.do">
+    <c:url var="AdminQuanLySanPham3" value="AdminTimKiemSanPham.do">
         <c:param name="page" value="${soTrang}"/>
+        <c:param name="maHangSanXuat" value="${maHangSanXuat}"/>
+        <c:param name="maLoaiSanPham" value="${maLoaiSanPham}"/>
+        <c:param name="tenSanPham" value="${tenSanPham}"/>
     </c:url>
     <a href="${AdminQuanLySanPham3}">${soTrang}</a> 
 
     <c:if test="${page+1 le soTrang}">
-        <c:url var="AdminQuanLySanPham4" value="AdminQuanLySanPham.do">
+        <c:url var="AdminQuanLySanPham4" value="AdminTimKiemSanPham.do">
             <c:param name="page" value="${page+1}"/>
+            <c:param name="maHangSanXuat" value="${maHangSanXuat}"/>
+            <c:param name="maLoaiSanPham" value="${maLoaiSanPham}"/>
+            <c:param name="tenSanPham" value="${tenSanPham}"/>
         </c:url>
         <a href="${AdminQuanLySanPham4}"> Next</a>
     </c:if>

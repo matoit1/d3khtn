@@ -34,6 +34,10 @@
     <definition name="timkiemnangcao" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubTimKiemNangCao.jsp" />  
     </definition> 
+    <definition name="admintimkiemsanpham" extends="template"> 
+        <put-attribute name="left" value="/subpages/Left_Account.jsp" />
+        <put-attribute name="mainContent" value="/subpages/SubAdminTimKiemSanPham.jsp" />  
+    </definition> 
     <definition name="quanlysanpham" extends="template"> 
         <put-attribute name="mainContent" value="/subpages/SubAdminQuanLySanPham.jsp" />  
     </definition>

@@ -19,6 +19,8 @@
             <li><a href="${AdminQuanLySanPham}">Delete Product</a></li>
             <c:url var="AdminThemHangSanXuat" value="AdminThemHangSanXuat.do"/>
             <li><a href="${AdminThemHangSanXuat}">Add New Store</a></li>
+            <c:url var="AdminTimKiemSanPham" value="AdminTimKiemSanPham.do"/>
+            <li><a href="${AdminTimKiemSanPham}">Find Products</a></li>
         </ul>
         <p><strong>Account Manager</strong></p>
         <ul>
