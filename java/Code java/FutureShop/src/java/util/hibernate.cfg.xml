@@ -7,6 +7,8 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/futureshop?useUnicode=true&amp;characterEncoding=UTF-8</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password"></property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.connection.autocommit">true</property>
     <mapping resource="POJO/Binhluan.hbm.xml"/>
     <mapping resource="POJO/Khachhang.hbm.xml"/>
     <mapping resource="POJO/Danhgiasanpham.hbm.xml"/>

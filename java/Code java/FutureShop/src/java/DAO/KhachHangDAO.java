@@ -64,14 +64,17 @@ public class KhachHangDAO {
     //<editor-fold defaultstate="collapsed" desc="Lấy thông tin khách hàng theo mã">
     public static Khachhang LayKhachHangTheoMa(int ma) {
         Khachhang kh = new Khachhang();
+        Session session = null;
         try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             kh = (Khachhang) session.get(Khachhang.class, ma);
             session.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } 
+        } finally {
+            session.close();
+        }
         return kh;
     }
     //</editor-fold>
@@ -80,9 +83,9 @@ public class KhachHangDAO {
     public static Khachhang layThongTinKhachHang(String tenDangNhap) {
         Khachhang kh = new Khachhang();
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
             String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
             Query query = session.createQuery(sql);
             query.setString("tenDangNhap", tenDangNhap);
@@ -101,9 +104,9 @@ public class KhachHangDAO {
     public static boolean kiemTraDangNhap(String tenDangNhap, String matKhau) {
         boolean kq = false;
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
             String sql = "select kh from Khachhang kh where tenDangNhap=:tenDangNhap";
             Query query = session.createQuery(sql);
             query.setString("tenDangNhap", tenDangNhap);
@@ -132,9 +135,9 @@ public class KhachHangDAO {
     public static boolean kiemTraTonTai(String tenDangNhap) {
         boolean kq = false;
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
             String sql = "select kh from Khachhang kh where kh.tenDangNhap=:tenDangNhap";
             Query query = session.createQuery(sql);
             query.setString("tenDangNhap", tenDangNhap);
@@ -159,8 +162,8 @@ public class KhachHangDAO {
             return false;
         }
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             kh.setMatKhau(maHoa_MD5(kh.getMatKhau()));
             session.beginTransaction();
             session.save(kh);
@@ -182,8 +185,8 @@ public class KhachHangDAO {
             return false;
         }
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             kh.setMatKhau(maHoa_MD5(kh.getMatKhau()));
             session.getTransaction().begin();
             session.update(kh);
@@ -205,8 +208,8 @@ public class KhachHangDAO {
             return false;
         }
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
             session.getTransaction().begin();
             session.update(kh);
             session.getTransaction().commit();

@@ -14,19 +14,18 @@ import util.HibernateUtil;
  * @author Nguyen Anh Tri
  */
 public class TinhTrangDAO {
-    
+
     //<editor-fold defaultstate="collapsed" desc="Lấy thông tin">
     public static Tinhtrang layThongTin(int maTinhTrang) {
         Tinhtrang tt = new Tinhtrang();
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
             tt = (Tinhtrang) session.get(Tinhtrang.class, maTinhTrang);
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
-        }
-        finally {
+        } finally {
             session.close();
         }
         return tt;

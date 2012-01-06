@@ -14,17 +14,19 @@ import util.HibernateUtil;
  * @author Nguyen Anh Tri
  */
 public class TinhTrangDonDatHangDAO {
-    
+
     //<editor-fold defaultstate="collapsed" desc="Lấy thông tin">
     public static Tinhtrangdondathang layThongTin(int maTinhTrangDonDatHang) {
         Tinhtrangdondathang ttddh = new Tinhtrangdondathang();
         Session session = null;
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
         try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
             ttddh = (Tinhtrangdondathang) session.get(Tinhtrangdondathang.class, maTinhTrangDonDatHang);
         } catch (HibernateException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            session.close();
         }
         return ttddh;
     }
