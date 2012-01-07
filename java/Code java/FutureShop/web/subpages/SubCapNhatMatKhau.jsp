@@ -56,7 +56,12 @@
             </c:if>
             <p style="text-align: center;">
                 <input class="btn" type="submit" name="Update" value="Save"/>
-                <input class="btn" type="button" value="Cancel" onclick="GoProfile();"/>
+                <c:if test="${sessionScope.admin ne null}">
+                    <input class="btn" type="button" value="Cancel" onclick="GoAdminProfile();"/>
+                </c:if>
+                <c:if test="${sessionScope.admin eq null}">
+                    <input class="btn" type="button" value="Cancel" onclick="GoProfile();"/>
+                </c:if>
             </p>                    
         </form>
     </c:if>

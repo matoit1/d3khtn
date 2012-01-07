@@ -53,9 +53,9 @@ public class CapNhatEmail extends HttpServlet {
                             kh.setEmail(email);
                             if (KhachHangDAO.capNhatTaiKhoan(kh)) {
                                 request.setAttribute("message", "Your Email Address have been successful changed !");
-//                                String subject = "Registration Infomation";
-//                                String body = String.format("Hi %s, /nHere is your account infomation : /nYour ID : %s ", kh.getHoTen(), kh.getMaKhachHang());
-//                                EmailDAO.send(kh.getEmail(), subject, body);
+                                String subject = "Registration Infomation";
+                                String body = String.format("Hi %s, <br/>Here is your account infomation : <br/>Your ID : %s <br/>Your Password : %s <br/> ", kh.getHoTen(), kh.getTenDangNhap(), pass);
+                                EmailDAO.send(email, subject, body);
                             } else {
                                 request.setAttribute("message", "Your Email Address have not been successful changed !");
                             }
