@@ -58,6 +58,8 @@ public class ChiTietSanPham extends HttpServlet {
             request.setAttribute("sp", sp);
             request.setAttribute("tenHangSX", tenHangSX);
             request.setAttribute("dsBL", dsBL);
+            
+            
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/ChiTietSanPham.jsp");
             rd.forward(request, response);
 

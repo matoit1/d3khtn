@@ -14,6 +14,10 @@ function GoProfile(){
     document.location.href = 'TrangThongTinCaNhan.jsp';
 }
 
+function GoAdminProfile()
+{
+    document.location.href = 'AdminQuanLySanPham.jsp';
+}
 
 function Date_Check(str)
 {
