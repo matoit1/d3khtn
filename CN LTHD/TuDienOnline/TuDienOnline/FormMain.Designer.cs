@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
             this.tbRight = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbStatus = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
+            this.btnChange = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -155,6 +156,19 @@
             this.splitContainer1.SplitterDistance = 394;
             this.splitContainer1.TabIndex = 0;
             // 
+            // richTextBox_Left
+            // 
+            this.richTextBox_Left.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_Left.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox_Left.Name = "richTextBox_Left";
+            this.richTextBox_Left.Size = new System.Drawing.Size(384, 306);
+            this.richTextBox_Left.TabIndex = 0;
+            this.richTextBox_Left.Text = "";
+            this.richTextBox_Left.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseDoubleClick);
+            this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
+            // 
             // tbRight
             // 
             this.tbRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -170,6 +184,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnChange);
             this.panel1.Controls.Add(this.lbStatus);
             this.panel1.Controls.Add(this.cbbTo);
             this.panel1.Controls.Add(this.cbbFrom);
@@ -247,7 +262,7 @@
             "Vietnamese",
             "Welsh",
             "Yiddish"});
-            this.cbbTo.Location = new System.Drawing.Point(414, 23);
+            this.cbbTo.Location = new System.Drawing.Point(429, 23);
             this.cbbTo.Name = "cbbTo";
             this.cbbTo.Size = new System.Drawing.Size(121, 26);
             this.cbbTo.Sorted = true;
@@ -321,7 +336,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(382, 26);
+            this.label3.Location = new System.Drawing.Point(397, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 18);
             this.label3.TabIndex = 2;
@@ -377,15 +392,15 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // richTextBox_Left
+            // btnChange
             // 
-            this.richTextBox_Left.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox_Left.Name = "richTextBox_Left";
-            this.richTextBox_Left.Size = new System.Drawing.Size(384, 306);
-            this.richTextBox_Left.TabIndex = 0;
-            this.richTextBox_Left.Text = "";
-            this.richTextBox_Left.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseDoubleClick);
-            this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
+            this.btnChange.Location = new System.Drawing.Point(357, 23);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(34, 26);
+            this.btnChange.TabIndex = 6;
+            this.btnChange.Text = "<=>";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // FormMain
             // 
@@ -440,6 +455,7 @@
         private System.Windows.Forms.TextBox tbRight;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.RichTextBox richTextBox_Left;
+        private System.Windows.Forms.Button btnChange;
     }
 }
 
