@@ -147,5 +147,12 @@ namespace TuDienOnline
             }
         }
 
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            String textTam = cbbFrom.SelectedItem.ToString();
+            cbbFrom.SelectedItem = cbbTo.SelectedItem.ToString();
+            cbbTo.SelectedItem = textTam;
+        }
+
     }
 }
