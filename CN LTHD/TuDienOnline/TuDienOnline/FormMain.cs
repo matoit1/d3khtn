@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Net;
+using System.Media;
 
 namespace TuDienOnline
 {
@@ -30,7 +32,7 @@ namespace TuDienOnline
             VdictDictionary vdict = new VdictDictionary();
             vdict.KeyWord = txtWord.Text;
             vdict.ID = cbbLanguage.SelectedIndex + 1;
-            
+
 
             this.tbResult.Text = string.Empty;
             this.tbResult.Update();
@@ -48,7 +50,7 @@ namespace TuDienOnline
                 Thread.Sleep(500); // doi no chay
                 this.tbResult.Text = vdict.Result;
                 this.tbResult.Update();
-   
+
 
             }
             catch (Exception ex)
@@ -68,101 +70,154 @@ namespace TuDienOnline
         }
         #endregion
 
-        //private void richTextBox_Left_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    if (richTextBox_Left.SelectedText != "")
-        //    {
-        //        // Initialize the translator
-        //        Translator t = new Translator();
-        //        t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-        //        t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-        //        t.SourceText = richTextBox_Left.SelectedText;
-
-        //        this.tbRight.Text = string.Empty;
-        //        this.tbRight.Update();
-        //        this.tbRight.Text = string.Empty;
-        //        this.tbRight.Update();
-
-        //        // Translate the text
-        //        try
-        //        {
-        //            // Forward translation
-        //            this.Cursor = Cursors.WaitCursor;
-        //            this.lbStatus.Text = "Translating...";
-        //            this.lbStatus.Update();
-        //            t.Translate();
-        //            this.tbRight.Text = t.Translation;
-        //            this.tbRight.Update();
-
-
-        //            // Thread.Sleep(500); // let Google breathe
-
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        //        }
-        //        finally
-        //        {
-        //            this.lbStatus.Text = string.Empty;
-        //            this.Cursor = Cursors.Default;
-        //        }
-        //    }
-        //}
-
-        //private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    if (richTextBox_Left.SelectedText != "")
-        //    {
-        //        string temp = richTextBox_Left.SelectedText;
-        //        // Initialize the translator
-        //        Translator t = new Translator();
-        //        t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-        //        t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-        //        t.SourceText = temp;
-
-        //        this.tbRight.Text = string.Empty;
-        //        this.tbRight.Update();
-        //        this.tbRight.Text = string.Empty;
-        //        this.tbRight.Update();
-
-        //        // Translate the text
-        //        try
-        //        {
-        //            // Forward translation
-        //            this.Cursor = Cursors.WaitCursor;
-        //            this.lbStatus.Text = "Translating...";
-        //            this.lbStatus.Update();
-        //            t.Translate();
-        //            this.tbRight.Text = t.Translation;
-        //            this.tbRight.Update();
-
-
-        //            // Thread.Sleep(500); // let Google breathe
-
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        //        }
-        //        finally
-        //        {
-        //            this.lbStatus.Text = string.Empty;
-        //            this.Cursor = Cursors.Default;
-        //        }
-        //    }
-        //}
+        #region Dictionary Nguyen Anh Tri
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            String textTam = cbbFrom.SelectedItem.ToString();
-            cbbFrom.SelectedItem = cbbTo.SelectedItem.ToString();
-            cbbTo.SelectedItem = textTam;
+            // Initialize the translator
+            Translator t = new Translator();
+            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+            t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+            t.SourceText = this.richTextBox_Left.Text;
+
+            this.richTextBox_Right.Text = string.Empty;
+            this.richTextBox_Right.Update();
+
+            // Translate the text
+            try
+            {
+                // Forward translation
+                this.Cursor = Cursors.WaitCursor;
+                lb_Status.Text = "Translating ...";
+                lb_Status.Update();
+                t.Translate();
+                this.richTextBox_Right.Text = t.Translation;
+                this.richTextBox_Right.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                lb_Status.Text = "Completed";
+                this.Cursor = Cursors.Default;
+            }
         }
 
-       
+        private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (richTextBox_Left.SelectedText != "")
+            {
+                // Initialize the translator
+                Translator t = new Translator();
+                t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+                t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+                t.SourceText = this.richTextBox_Left.SelectedText;
 
- 
+                this.richTextBox_Right.Text = string.Empty;
+                this.richTextBox_Right.Update();
+
+                // Translate the text
+                try
+                {
+                    // Forward translation
+                    this.Cursor = Cursors.WaitCursor;
+                    lb_Status.Text = "Translating ...";
+                    lb_Status.Update();
+                    t.Translate();
+                    this.richTextBox_Right.Text = t.Translation;
+                    this.richTextBox_Right.Update();
+
+
+                    // Thread.Sleep(500); // let Google breathe
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                finally
+                {
+                    lb_Status.Text = "Completed";
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void richTextBox_Left_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (richTextBox_Left.SelectedText != "")
+            {
+                // Initialize the translator
+                Translator t = new Translator();
+                t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+                t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+                t.SourceText = this.richTextBox_Left.SelectedText;
+
+                this.richTextBox_Right.Text = string.Empty;
+                this.richTextBox_Right.Update();
+
+                // Translate the text
+                try
+                {
+                    // Forward translation
+                    this.Cursor = Cursors.WaitCursor;
+                    lb_Status.Text = "Translating ...";
+                    lb_Status.Update();
+                    t.Translate();
+                    this.richTextBox_Right.Text = t.Translation;
+                    this.richTextBox_Right.Update();
+                    // Thread.Sleep(500); // let Google breathe
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                finally
+                {
+                    lb_Status.Text = string.Empty;
+                    this.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void bt_FromSpeech_Click(object sender, EventArgs e)
+        {
+            string lang = (string)cbbFrom.SelectedItem;
+            string lg = Translator.LanguageEnumToIdentifier(lang);
+            string name = "translate";
+            this.Cursor = Cursors.WaitCursor;
+            lb_Status.Text = "Processing ...";
+            lb_Status.Update();
+            string temp = richTextBox_Left.Text;
+            List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg,name);
+            string ketQua = MyClass.noifile(dsFileName);
+            lb_Status.Text = string.Empty;
+            MyClass.doc(ketQua);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void bt_ToSpeech_Click(object sender, EventArgs e)
+        {
+            string lang = (string)cbbTo.SelectedItem;
+            string lg = Translator.LanguageEnumToIdentifier(lang);
+            string name = "translated";
+            this.Cursor = Cursors.WaitCursor;
+            lb_Status.Text = "Processing ...";
+            lb_Status.Update();
+            string temp = richTextBox_Right.Text;
+            List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg,name);
+            string ketQua = MyClass.noifile(dsFileName);
+            lb_Status.Text = string.Empty;
+            MyClass.doc(ketQua);
+            this.Cursor = Cursors.Default;
+        }
+
+        #endregion
 
     }
 }

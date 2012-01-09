@@ -186,7 +186,7 @@ namespace TuDienOnline
         /// </summary>
         /// <param name="language">The language."</param>
         /// <returns>The identifier or <see cref="string.Empty"/> if none.</returns>
-        private static string LanguageEnumToIdentifier
+        public static string LanguageEnumToIdentifier
             (string language)
         {
             if (Translator._languageModeMap == null)

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDictionary = new System.Windows.Forms.TabPage();
+            this.tbStatusDIC = new System.Windows.Forms.Label();
             this.cbbLanguage = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnListen = new System.Windows.Forms.Button();
@@ -38,24 +39,31 @@
             this.txtWord = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_FromSpeech = new System.Windows.Forms.Button();
+            this.bt_ToSpeech = new System.Windows.Forms.Button();
+            this.lb_Status = new System.Windows.Forms.Label();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Right = new System.Windows.Forms.RichTextBox();
+            this.panel_Control = new System.Windows.Forms.Panel();
             this.btnChange = new System.Windows.Forms.Button();
             this.lbStatus = new System.Windows.Forms.Label();
             this.cbbTo = new System.Windows.Forms.ComboBox();
             this.cbbFrom = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabWikipedia = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbStatusDIC = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
+            this.panel_Control.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +79,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(832, 427);
+            this.tabControl1.Size = new System.Drawing.Size(832, 469);
             this.tabControl1.TabIndex = 1;
             // 
             // tabDictionary
@@ -87,10 +95,18 @@
             this.tabDictionary.Location = new System.Drawing.Point(4, 27);
             this.tabDictionary.Name = "tabDictionary";
             this.tabDictionary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDictionary.Size = new System.Drawing.Size(824, 396);
+            this.tabDictionary.Size = new System.Drawing.Size(824, 438);
             this.tabDictionary.TabIndex = 0;
             this.tabDictionary.Text = "Dictionary";
             this.tabDictionary.UseVisualStyleBackColor = true;
+            // 
+            // tbStatusDIC
+            // 
+            this.tbStatusDIC.AutoSize = true;
+            this.tbStatusDIC.Location = new System.Drawing.Point(534, 30);
+            this.tbStatusDIC.Name = "tbStatusDIC";
+            this.tbStatusDIC.Size = new System.Drawing.Size(0, 18);
+            this.tbStatusDIC.TabIndex = 7;
             // 
             // cbbLanguage
             // 
@@ -175,39 +191,106 @@
             // 
             // tabTranslate
             // 
-            this.tabTranslate.Controls.Add(this.panel1);
+            this.tabTranslate.Controls.Add(this.bt_FromSpeech);
+            this.tabTranslate.Controls.Add(this.bt_ToSpeech);
+            this.tabTranslate.Controls.Add(this.lb_Status);
+            this.tabTranslate.Controls.Add(this.splitContainer);
+            this.tabTranslate.Controls.Add(this.panel_Control);
             this.tabTranslate.Location = new System.Drawing.Point(4, 27);
             this.tabTranslate.Name = "tabTranslate";
             this.tabTranslate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTranslate.Size = new System.Drawing.Size(824, 396);
+            this.tabTranslate.Size = new System.Drawing.Size(824, 438);
             this.tabTranslate.TabIndex = 1;
             this.tabTranslate.Text = "Translate";
             this.tabTranslate.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // bt_FromSpeech
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.bt_FromSpeech.Location = new System.Drawing.Point(333, 389);
+            this.bt_FromSpeech.Name = "bt_FromSpeech";
+            this.bt_FromSpeech.Size = new System.Drawing.Size(75, 26);
+            this.bt_FromSpeech.TabIndex = 7;
+            this.bt_FromSpeech.Text = "Speech";
+            this.bt_FromSpeech.UseVisualStyleBackColor = true;
+            this.bt_FromSpeech.Click += new System.EventHandler(this.bt_FromSpeech_Click);
+            // 
+            // bt_ToSpeech
+            // 
+            this.bt_ToSpeech.Location = new System.Drawing.Point(741, 389);
+            this.bt_ToSpeech.Name = "bt_ToSpeech";
+            this.bt_ToSpeech.Size = new System.Drawing.Size(75, 27);
+            this.bt_ToSpeech.TabIndex = 7;
+            this.bt_ToSpeech.Text = "Speech";
+            this.bt_ToSpeech.UseVisualStyleBackColor = true;
+            this.bt_ToSpeech.Click += new System.EventHandler(this.bt_ToSpeech_Click);
+            // 
+            // lb_Status
+            // 
+            this.lb_Status.AutoSize = true;
+            this.lb_Status.Location = new System.Drawing.Point(8, 414);
+            this.lb_Status.Name = "lb_Status";
+            this.lb_Status.Size = new System.Drawing.Size(0, 18);
+            this.lb_Status.TabIndex = 6;
+            // 
+            // splitContainer
+            // 
+            this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer.Location = new System.Drawing.Point(3, 77);
+            this.splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(this.richTextBox_Left);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.richTextBox_Right);
+            this.splitContainer.Size = new System.Drawing.Size(818, 310);
+            this.splitContainer.SplitterDistance = 409;
+            this.splitContainer.TabIndex = 5;
+            // 
+            // richTextBox_Left
+            // 
+            this.richTextBox_Left.Location = new System.Drawing.Point(4, 3);
+            this.richTextBox_Left.Name = "richTextBox_Left";
+            this.richTextBox_Left.Size = new System.Drawing.Size(400, 302);
+            this.richTextBox_Left.TabIndex = 0;
+            this.richTextBox_Left.Text = "";
+            this.richTextBox_Left.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseDoubleClick);
+            this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
+            // 
+            // richTextBox_Right
+            // 
+            this.richTextBox_Right.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox_Right.Name = "richTextBox_Right";
+            this.richTextBox_Right.Size = new System.Drawing.Size(396, 302);
+            this.richTextBox_Right.TabIndex = 0;
+            this.richTextBox_Right.Text = "";
+            // 
+            // panel_Control
+            // 
+            this.panel_Control.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnChange);
-            this.panel1.Controls.Add(this.lbStatus);
-            this.panel1.Controls.Add(this.cbbTo);
-            this.panel1.Controls.Add(this.cbbFrom);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(828, 68);
-            this.panel1.TabIndex = 4;
+            this.panel_Control.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Control.Controls.Add(this.btnChange);
+            this.panel_Control.Controls.Add(this.lbStatus);
+            this.panel_Control.Controls.Add(this.cbbTo);
+            this.panel_Control.Controls.Add(this.cbbFrom);
+            this.panel_Control.Controls.Add(this.label1);
+            this.panel_Control.Location = new System.Drawing.Point(3, 3);
+            this.panel_Control.Name = "panel_Control";
+            this.panel_Control.Size = new System.Drawing.Size(818, 68);
+            this.panel_Control.TabIndex = 4;
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(348, 23);
+            this.btnChange.Location = new System.Drawing.Point(297, 23);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(43, 26);
             this.btnChange.TabIndex = 6;
             this.btnChange.Text = "<=>";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // lbStatus
             // 
@@ -275,7 +358,7 @@
             "Vietnamese",
             "Welsh",
             "Yiddish"});
-            this.cbbTo.Location = new System.Drawing.Point(429, 23);
+            this.cbbTo.Location = new System.Drawing.Point(368, 23);
             this.cbbTo.Name = "cbbTo";
             this.cbbTo.Size = new System.Drawing.Size(121, 26);
             this.cbbTo.Sorted = true;
@@ -339,31 +422,11 @@
             "Vietnamese",
             "Welsh",
             "Yiddish"});
-            this.cbbFrom.Location = new System.Drawing.Point(213, 23);
+            this.cbbFrom.Location = new System.Drawing.Point(142, 23);
             this.cbbFrom.Name = "cbbFrom";
             this.cbbFrom.Size = new System.Drawing.Size(121, 26);
             this.cbbFrom.Sorted = true;
             this.cbbFrom.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(397, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "To";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(171, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "From";
             // 
             // label1
             // 
@@ -380,7 +443,7 @@
             this.tabWikipedia.Location = new System.Drawing.Point(4, 27);
             this.tabWikipedia.Name = "tabWikipedia";
             this.tabWikipedia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWikipedia.Size = new System.Drawing.Size(824, 396);
+            this.tabWikipedia.Size = new System.Drawing.Size(824, 438);
             this.tabWikipedia.TabIndex = 2;
             this.tabWikipedia.Text = "Wikipedia";
             this.tabWikipedia.UseVisualStyleBackColor = true;
@@ -415,19 +478,11 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // tbStatusDIC
-            // 
-            this.tbStatusDIC.AutoSize = true;
-            this.tbStatusDIC.Location = new System.Drawing.Point(534, 30);
-            this.tbStatusDIC.Name = "tbStatusDIC";
-            this.tbStatusDIC.Size = new System.Drawing.Size(0, 18);
-            this.tbStatusDIC.TabIndex = 7;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 453);
+            this.ClientSize = new System.Drawing.Size(832, 495);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -438,8 +493,13 @@
             this.tabDictionary.ResumeLayout(false);
             this.tabDictionary.PerformLayout();
             this.tabTranslate.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tabTranslate.PerformLayout();
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
+            this.panel_Control.ResumeLayout(false);
+            this.panel_Control.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -461,18 +521,22 @@
         private System.Windows.Forms.TextBox txtWord;
         private System.Windows.Forms.Button btnListen;
         private System.Windows.Forms.TabPage tabTranslate;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_Control;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.ComboBox cbbTo;
         private System.Windows.Forms.ComboBox cbbFrom;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabWikipedia;
         private System.Windows.Forms.ComboBox cbbLanguage;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label tbStatusDIC;
+        private System.Windows.Forms.Label lb_Status;
+        private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.RichTextBox richTextBox_Left;
+        private System.Windows.Forms.RichTextBox richTextBox_Right;
+        private System.Windows.Forms.Button bt_FromSpeech;
+        private System.Windows.Forms.Button bt_ToSpeech;
     }
 }
 
