@@ -36,9 +36,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tbLeft = new System.Windows.Forms.TextBox();
             this.tbRight = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.cbbTo = new System.Windows.Forms.ComboBox();
             this.cbbFrom = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbStatus = new System.Windows.Forms.Label();
+            this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -146,7 +146,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tbLeft);
+            this.splitContainer1.Panel1.Controls.Add(this.richTextBox_Left);
             // 
             // splitContainer1.Panel2
             // 
@@ -154,17 +154,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(818, 316);
             this.splitContainer1.SplitterDistance = 394;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // tbLeft
-            // 
-            this.tbLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLeft.Location = new System.Drawing.Point(0, 3);
-            this.tbLeft.Multiline = true;
-            this.tbLeft.Name = "tbLeft";
-            this.tbLeft.Size = new System.Drawing.Size(387, 310);
-            this.tbLeft.TabIndex = 0;
             // 
             // tbRight
             // 
@@ -191,6 +180,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(828, 68);
             this.panel1.TabIndex = 2;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(612, 26);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 13);
+            this.lbStatus.TabIndex = 5;
             // 
             // cbbTo
             // 
@@ -380,13 +377,15 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // lbStatus
+            // richTextBox_Left
             // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(612, 26);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(0, 13);
-            this.lbStatus.TabIndex = 5;
+            this.richTextBox_Left.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox_Left.Name = "richTextBox_Left";
+            this.richTextBox_Left.Size = new System.Drawing.Size(384, 306);
+            this.richTextBox_Left.TabIndex = 0;
+            this.richTextBox_Left.Text = "";
+            this.richTextBox_Left.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseDoubleClick);
+            this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
             // 
             // FormMain
             // 
@@ -405,7 +404,6 @@
             this.tabDictionary.PerformLayout();
             this.tabTranslate.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -439,9 +437,9 @@
         private System.Windows.Forms.TextBox tbResult;
         private System.Windows.Forms.Button btnLookup;
         private System.Windows.Forms.TextBox txtWord;
-        private System.Windows.Forms.TextBox tbLeft;
         private System.Windows.Forms.TextBox tbRight;
         private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.RichTextBox richTextBox_Left;
     }
 }
 
