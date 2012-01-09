@@ -30,33 +30,30 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDictionary = new System.Windows.Forms.TabPage();
+            this.btnListen = new System.Windows.Forms.Button();
             this.tbResult = new System.Windows.Forms.TextBox();
             this.btnLookup = new System.Windows.Forms.Button();
             this.txtWord = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
-            this.tbRight = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnChange = new System.Windows.Forms.Button();
             this.lbStatus = new System.Windows.Forms.Label();
             this.cbbTo = new System.Windows.Forms.ComboBox();
             this.cbbFrom = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabWikipedia = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnChange = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbbLanguage = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,15 +65,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabDictionary);
             this.tabControl1.Controls.Add(this.tabTranslate);
+            this.tabControl1.Controls.Add(this.tabWikipedia);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 101);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(832, 353);
+            this.tabControl1.Size = new System.Drawing.Size(832, 427);
             this.tabControl1.TabIndex = 1;
             // 
             // tabDictionary
             // 
+            this.tabDictionary.Controls.Add(this.cbbLanguage);
+            this.tabDictionary.Controls.Add(this.label5);
+            this.tabDictionary.Controls.Add(this.btnListen);
             this.tabDictionary.Controls.Add(this.tbResult);
             this.tabDictionary.Controls.Add(this.btnLookup);
             this.tabDictionary.Controls.Add(this.txtWord);
@@ -84,26 +85,39 @@
             this.tabDictionary.Location = new System.Drawing.Point(4, 27);
             this.tabDictionary.Name = "tabDictionary";
             this.tabDictionary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDictionary.Size = new System.Drawing.Size(824, 322);
+            this.tabDictionary.Size = new System.Drawing.Size(824, 396);
             this.tabDictionary.TabIndex = 0;
             this.tabDictionary.Text = "Dictionary";
             this.tabDictionary.UseVisualStyleBackColor = true;
+            // 
+            // btnListen
+            // 
+            this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListen.AutoSize = true;
+            this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
+            this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnListen.Location = new System.Drawing.Point(534, 107);
+            this.btnListen.Name = "btnListen";
+            this.btnListen.Size = new System.Drawing.Size(146, 146);
+            this.btnListen.TabIndex = 4;
+            this.btnListen.UseVisualStyleBackColor = true;
             // 
             // tbResult
             // 
             this.tbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbResult.Location = new System.Drawing.Point(37, 71);
+            this.tbResult.Location = new System.Drawing.Point(45, 93);
             this.tbResult.Multiline = true;
             this.tbResult.Name = "tbResult";
             this.tbResult.ReadOnly = true;
-            this.tbResult.Size = new System.Drawing.Size(551, 227);
+            this.tbResult.Size = new System.Drawing.Size(424, 236);
             this.tbResult.TabIndex = 3;
             // 
             // btnLookup
             // 
-            this.btnLookup.Location = new System.Drawing.Point(289, 13);
+            this.btnLookup.Location = new System.Drawing.Point(415, 52);
             this.btnLookup.Name = "btnLookup";
             this.btnLookup.Size = new System.Drawing.Size(75, 35);
             this.btnLookup.TabIndex = 2;
@@ -113,15 +127,15 @@
             // 
             // txtWord
             // 
-            this.txtWord.Location = new System.Drawing.Point(96, 18);
+            this.txtWord.Location = new System.Drawing.Point(118, 57);
             this.txtWord.Name = "txtWord";
-            this.txtWord.Size = new System.Drawing.Size(167, 24);
+            this.txtWord.Size = new System.Drawing.Size(268, 24);
             this.txtWord.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 21);
+            this.label4.Location = new System.Drawing.Point(42, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 18);
             this.label4.TabIndex = 0;
@@ -129,56 +143,14 @@
             // 
             // tabTranslate
             // 
-            this.tabTranslate.Controls.Add(this.splitContainer1);
+            this.tabTranslate.Controls.Add(this.panel1);
             this.tabTranslate.Location = new System.Drawing.Point(4, 27);
             this.tabTranslate.Name = "tabTranslate";
             this.tabTranslate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTranslate.Size = new System.Drawing.Size(824, 322);
+            this.tabTranslate.Size = new System.Drawing.Size(824, 396);
             this.tabTranslate.TabIndex = 1;
             this.tabTranslate.Text = "Translate";
             this.tabTranslate.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.richTextBox_Left);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.tbRight);
-            this.splitContainer1.Size = new System.Drawing.Size(818, 316);
-            this.splitContainer1.SplitterDistance = 394;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // richTextBox_Left
-            // 
-            this.richTextBox_Left.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_Left.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox_Left.Name = "richTextBox_Left";
-            this.richTextBox_Left.Size = new System.Drawing.Size(384, 306);
-            this.richTextBox_Left.TabIndex = 0;
-            this.richTextBox_Left.Text = "";
-            this.richTextBox_Left.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseDoubleClick);
-            this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
-            // 
-            // tbRight
-            // 
-            this.tbRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbRight.Location = new System.Drawing.Point(7, 3);
-            this.tbRight.Multiline = true;
-            this.tbRight.Name = "tbRight";
-            this.tbRight.Size = new System.Drawing.Size(408, 306);
-            this.tbRight.TabIndex = 1;
             // 
             // panel1
             // 
@@ -191,17 +163,26 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(828, 68);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 4;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(348, 23);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(43, 26);
+            this.btnChange.TabIndex = 6;
+            this.btnChange.Text = "<=>";
+            this.btnChange.UseVisualStyleBackColor = true;
             // 
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
             this.lbStatus.Location = new System.Drawing.Point(612, 26);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(0, 13);
+            this.lbStatus.Size = new System.Drawing.Size(0, 18);
             this.lbStatus.TabIndex = 5;
             // 
             // cbbTo
@@ -362,6 +343,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Language";
             // 
+            // tabWikipedia
+            // 
+            this.tabWikipedia.Location = new System.Drawing.Point(4, 27);
+            this.tabWikipedia.Name = "tabWikipedia";
+            this.tabWikipedia.Padding = new System.Windows.Forms.Padding(3);
+            this.tabWikipedia.Size = new System.Drawing.Size(824, 396);
+            this.tabWikipedia.TabIndex = 2;
+            this.tabWikipedia.Text = "Wikipedia";
+            this.tabWikipedia.UseVisualStyleBackColor = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -392,22 +383,29 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // btnChange
+            // label5
             // 
-            this.btnChange.Location = new System.Drawing.Point(357, 23);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(34, 26);
-            this.btnChange.TabIndex = 6;
-            this.btnChange.Text = "<=>";
-            this.btnChange.UseVisualStyleBackColor = true;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(42, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 18);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Selection";
+            // 
+            // cbbLanguage
+            // 
+            this.cbbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLanguage.FormattingEnabled = true;
+            this.cbbLanguage.Location = new System.Drawing.Point(118, 22);
+            this.cbbLanguage.Name = "cbbLanguage";
+            this.cbbLanguage.Size = new System.Drawing.Size(268, 26);
+            this.cbbLanguage.TabIndex = 6;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 453);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -418,11 +416,6 @@
             this.tabDictionary.ResumeLayout(false);
             this.tabDictionary.PerformLayout();
             this.tabTranslate.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -436,15 +429,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabDictionary;
-        private System.Windows.Forms.TabPage tabTranslate;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbTo;
-        private System.Windows.Forms.ComboBox cbbFrom;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -452,10 +437,19 @@
         private System.Windows.Forms.TextBox tbResult;
         private System.Windows.Forms.Button btnLookup;
         private System.Windows.Forms.TextBox txtWord;
-        private System.Windows.Forms.TextBox tbRight;
-        private System.Windows.Forms.Label lbStatus;
-        private System.Windows.Forms.RichTextBox richTextBox_Left;
+        private System.Windows.Forms.Button btnListen;
+        private System.Windows.Forms.TabPage tabTranslate;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.ComboBox cbbTo;
+        private System.Windows.Forms.ComboBox cbbFrom;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabWikipedia;
+        private System.Windows.Forms.ComboBox cbbLanguage;
+        private System.Windows.Forms.Label label5;
     }
 }
 
