@@ -18,3 +18,14 @@ D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\GenerateResou
 D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.FormMain.resources
 D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\StringParser.dll
 D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\WebResourceProvider.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\TuDienOnline.exe
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\TuDienOnline.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\StringParser.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\WebResourceProvider.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.FormMain.resources
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.Properties.Resources.resources
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.exe
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.pdb
