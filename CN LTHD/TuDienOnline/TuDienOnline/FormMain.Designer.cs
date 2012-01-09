@@ -1,6 +1,6 @@
 ﻿namespace TuDienOnline
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tbLeft = new System.Windows.Forms.TextBox();
+            this.tbRight = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbTo = new System.Windows.Forms.ComboBox();
             this.cbbFrom = new System.Windows.Forms.ComboBox();
@@ -46,8 +48,7 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbLeft = new System.Windows.Forms.TextBox();
-            this.tbRight = new System.Windows.Forms.TextBox();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -107,6 +108,7 @@
             this.btnLookup.TabIndex = 2;
             this.btnLookup.Text = "Look up";
             this.btnLookup.UseVisualStyleBackColor = true;
+            this.btnLookup.Click += new System.EventHandler(this.btnLookup_Click);
             // 
             // txtWord
             // 
@@ -153,10 +155,33 @@
             this.splitContainer1.SplitterDistance = 394;
             this.splitContainer1.TabIndex = 0;
             // 
+            // tbLeft
+            // 
+            this.tbLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLeft.Location = new System.Drawing.Point(0, 3);
+            this.tbLeft.Multiline = true;
+            this.tbLeft.Name = "tbLeft";
+            this.tbLeft.Size = new System.Drawing.Size(387, 310);
+            this.tbLeft.TabIndex = 0;
+            // 
+            // tbRight
+            // 
+            this.tbRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbRight.Location = new System.Drawing.Point(7, 3);
+            this.tbRight.Multiline = true;
+            this.tbRight.Name = "tbRight";
+            this.tbRight.Size = new System.Drawing.Size(408, 306);
+            this.tbRight.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lbStatus);
             this.panel1.Controls.Add(this.cbbTo);
             this.panel1.Controls.Add(this.cbbFrom);
             this.panel1.Controls.Add(this.label3);
@@ -169,20 +194,130 @@
             // 
             // cbbTo
             // 
+            this.cbbTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTo.FormattingEnabled = true;
+            this.cbbTo.Items.AddRange(new object[] {
+            "Afrikaans",
+            "Albanian",
+            "Arabic",
+            "Belarusian",
+            "Bulgarian",
+            "Catalan",
+            "Chinese",
+            "Croatian",
+            "Czech",
+            "Danish",
+            "Dutch",
+            "English",
+            "Estonian",
+            "Filipino",
+            "Finnish",
+            "French",
+            "Galician",
+            "German",
+            "Greek",
+            "Haitian Creole",
+            "Hebrew",
+            "Hindi",
+            "Hungarian",
+            "Icelandic",
+            "Indonesian",
+            "Irish",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Latvian",
+            "Lithuanian",
+            "Macedonian",
+            "Malay",
+            "Maltese",
+            "Norwegian",
+            "Persian",
+            "Polish",
+            "Portuguese",
+            "Romanian",
+            "Russian",
+            "Serbian",
+            "Slovak",
+            "Slovenian",
+            "Spanish",
+            "Swahili",
+            "Swedish",
+            "Thai",
+            "Turkish",
+            "Ukrainian",
+            "Vietnamese",
+            "Welsh",
+            "Yiddish"});
             this.cbbTo.Location = new System.Drawing.Point(414, 23);
             this.cbbTo.Name = "cbbTo";
             this.cbbTo.Size = new System.Drawing.Size(121, 26);
+            this.cbbTo.Sorted = true;
             this.cbbTo.TabIndex = 4;
             // 
             // cbbFrom
             // 
+            this.cbbFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbFrom.FormattingEnabled = true;
+            this.cbbFrom.Items.AddRange(new object[] {
+            "Afrikaans",
+            "Albanian",
+            "Arabic",
+            "Belarusian",
+            "Bulgarian",
+            "Catalan",
+            "Chinese",
+            "Croatian",
+            "Czech",
+            "Danish",
+            "Dutch",
+            "English",
+            "Estonian",
+            "Filipino",
+            "Finnish",
+            "French",
+            "Galician",
+            "German",
+            "Greek",
+            "Haitian Creole",
+            "Hebrew",
+            "Hindi",
+            "Hungarian",
+            "Icelandic",
+            "Indonesian",
+            "Irish",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Latvian",
+            "Lithuanian",
+            "Macedonian",
+            "Malay",
+            "Maltese",
+            "Norwegian",
+            "Persian",
+            "Polish",
+            "Portuguese",
+            "Romanian",
+            "Russian",
+            "Serbian",
+            "Slovak",
+            "Slovenian",
+            "Spanish",
+            "Swahili",
+            "Swedish",
+            "Thai",
+            "Turkish",
+            "Ukrainian",
+            "Vietnamese",
+            "Welsh",
+            "Yiddish"});
             this.cbbFrom.Location = new System.Drawing.Point(213, 23);
             this.cbbFrom.Name = "cbbFrom";
             this.cbbFrom.Size = new System.Drawing.Size(121, 26);
+            this.cbbFrom.Sorted = true;
             this.cbbFrom.TabIndex = 3;
             // 
             // label3
@@ -245,29 +380,15 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // tbLeft
+            // lbStatus
             // 
-            this.tbLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLeft.Location = new System.Drawing.Point(0, 3);
-            this.tbLeft.Multiline = true;
-            this.tbLeft.Name = "tbLeft";
-            this.tbLeft.Size = new System.Drawing.Size(387, 310);
-            this.tbLeft.TabIndex = 0;
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(612, 26);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 13);
+            this.lbStatus.TabIndex = 5;
             // 
-            // tbRight
-            // 
-            this.tbRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbRight.Location = new System.Drawing.Point(7, 3);
-            this.tbRight.Multiline = true;
-            this.tbRight.Name = "tbRight";
-            this.tbRight.Size = new System.Drawing.Size(408, 306);
-            this.tbRight.TabIndex = 1;
-            // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,8 +397,9 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormMain";
+            this.Text = "Google Translator";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabDictionary.ResumeLayout(false);
             this.tabDictionary.PerformLayout();
@@ -319,6 +441,7 @@
         private System.Windows.Forms.TextBox txtWord;
         private System.Windows.Forms.TextBox tbLeft;
         private System.Windows.Forms.TextBox tbRight;
+        private System.Windows.Forms.Label lbStatus;
     }
 }
 
