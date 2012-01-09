@@ -62,90 +62,90 @@ namespace TuDienOnline
             }
         }
 
-        private void richTextBox_Left_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (richTextBox_Left.SelectedText != "")
-            {
-                // Initialize the translator
-                Translator t = new Translator();
-                t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-                t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-                t.SourceText = richTextBox_Left.SelectedText;
+        //private void richTextBox_Left_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+        //    if (richTextBox_Left.SelectedText != "")
+        //    {
+        //        // Initialize the translator
+        //        Translator t = new Translator();
+        //        t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+        //        t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+        //        t.SourceText = richTextBox_Left.SelectedText;
 
-                this.tbRight.Text = string.Empty;
-                this.tbRight.Update();
-                this.tbRight.Text = string.Empty;
-                this.tbRight.Update();
+        //        this.tbRight.Text = string.Empty;
+        //        this.tbRight.Update();
+        //        this.tbRight.Text = string.Empty;
+        //        this.tbRight.Update();
 
-                // Translate the text
-                try
-                {
-                    // Forward translation
-                    this.Cursor = Cursors.WaitCursor;
-                    this.lbStatus.Text = "Translating...";
-                    this.lbStatus.Update();
-                    t.Translate();
-                    this.tbRight.Text = t.Translation;
-                    this.tbRight.Update();
-
-
-                    // Thread.Sleep(500); // let Google breathe
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    this.lbStatus.Text = string.Empty;
-                    this.Cursor = Cursors.Default;
-                }
-            }
-        }
-
-        private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (richTextBox_Left.SelectedText != "")
-            {
-                string temp = richTextBox_Left.SelectedText;
-                // Initialize the translator
-                Translator t = new Translator();
-                t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-                t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-                t.SourceText = temp;
-
-                this.tbRight.Text = string.Empty;
-                this.tbRight.Update();
-                this.tbRight.Text = string.Empty;
-                this.tbRight.Update();
-
-                // Translate the text
-                try
-                {
-                    // Forward translation
-                    this.Cursor = Cursors.WaitCursor;
-                    this.lbStatus.Text = "Translating...";
-                    this.lbStatus.Update();
-                    t.Translate();
-                    this.tbRight.Text = t.Translation;
-                    this.tbRight.Update();
+        //        // Translate the text
+        //        try
+        //        {
+        //            // Forward translation
+        //            this.Cursor = Cursors.WaitCursor;
+        //            this.lbStatus.Text = "Translating...";
+        //            this.lbStatus.Update();
+        //            t.Translate();
+        //            this.tbRight.Text = t.Translation;
+        //            this.tbRight.Update();
 
 
-                    // Thread.Sleep(500); // let Google breathe
+        //            // Thread.Sleep(500); // let Google breathe
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    this.lbStatus.Text = string.Empty;
-                    this.Cursor = Cursors.Default;
-                }
-            }
-        }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //        }
+        //        finally
+        //        {
+        //            this.lbStatus.Text = string.Empty;
+        //            this.Cursor = Cursors.Default;
+        //        }
+        //    }
+        //}
+
+        //private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    if (richTextBox_Left.SelectedText != "")
+        //    {
+        //        string temp = richTextBox_Left.SelectedText;
+        //        // Initialize the translator
+        //        Translator t = new Translator();
+        //        t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+        //        t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+        //        t.SourceText = temp;
+
+        //        this.tbRight.Text = string.Empty;
+        //        this.tbRight.Update();
+        //        this.tbRight.Text = string.Empty;
+        //        this.tbRight.Update();
+
+        //        // Translate the text
+        //        try
+        //        {
+        //            // Forward translation
+        //            this.Cursor = Cursors.WaitCursor;
+        //            this.lbStatus.Text = "Translating...";
+        //            this.lbStatus.Update();
+        //            t.Translate();
+        //            this.tbRight.Text = t.Translation;
+        //            this.tbRight.Update();
+
+
+        //            // Thread.Sleep(500); // let Google breathe
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //        }
+        //        finally
+        //        {
+        //            this.lbStatus.Text = string.Empty;
+        //            this.Cursor = Cursors.Default;
+        //        }
+        //    }
+        //}
 
         private void btnChange_Click(object sender, EventArgs e)
         {
@@ -153,6 +153,8 @@ namespace TuDienOnline
             cbbFrom.SelectedItem = cbbTo.SelectedItem.ToString();
             cbbTo.SelectedItem = textTam;
         }
+
+ 
 
     }
 }
