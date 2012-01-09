@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDictionary = new System.Windows.Forms.TabPage();
+            this.cbbLanguage = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnListen = new System.Windows.Forms.Button();
             this.tbResult = new System.Windows.Forms.TextBox();
             this.btnLookup = new System.Windows.Forms.Button();
@@ -49,8 +51,7 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbLanguage = new System.Windows.Forms.ComboBox();
+            this.tbStatusDIC = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // tabDictionary
             // 
+            this.tabDictionary.Controls.Add(this.tbStatusDIC);
             this.tabDictionary.Controls.Add(this.cbbLanguage);
             this.tabDictionary.Controls.Add(this.label5);
             this.tabDictionary.Controls.Add(this.btnListen);
@@ -90,6 +92,34 @@
             this.tabDictionary.Text = "Dictionary";
             this.tabDictionary.UseVisualStyleBackColor = true;
             // 
+            // cbbLanguage
+            // 
+            this.cbbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLanguage.FormattingEnabled = true;
+            this.cbbLanguage.Items.AddRange(new object[] {
+            "English - Vietnamese",
+            "Vietnamese - English",
+            "Vietnamese - Vietnamese",
+            "French - Vietnamese",
+            "Vietnamese - French",
+            "Computing",
+            "English - English",
+            "Chinese - Vietnamese",
+            "Russian - Vietnamese"});
+            this.cbbLanguage.Location = new System.Drawing.Point(118, 22);
+            this.cbbLanguage.Name = "cbbLanguage";
+            this.cbbLanguage.Size = new System.Drawing.Size(268, 26);
+            this.cbbLanguage.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(42, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 18);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Dictionary";
+            // 
             // btnListen
             // 
             this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,11 +127,12 @@
             this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
             this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnListen.Location = new System.Drawing.Point(534, 107);
+            this.btnListen.Location = new System.Drawing.Point(637, 112);
             this.btnListen.Name = "btnListen";
             this.btnListen.Size = new System.Drawing.Size(146, 146);
             this.btnListen.TabIndex = 4;
             this.btnListen.UseVisualStyleBackColor = true;
+            this.btnListen.Click += new System.EventHandler(this.btnListen_Click);
             // 
             // tbResult
             // 
@@ -112,7 +143,8 @@
             this.tbResult.Multiline = true;
             this.tbResult.Name = "tbResult";
             this.tbResult.ReadOnly = true;
-            this.tbResult.Size = new System.Drawing.Size(424, 236);
+            this.tbResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbResult.Size = new System.Drawing.Size(569, 294);
             this.tbResult.TabIndex = 3;
             // 
             // btnLookup
@@ -383,23 +415,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // label5
+            // tbStatusDIC
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 18);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Selection";
-            // 
-            // cbbLanguage
-            // 
-            this.cbbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbLanguage.FormattingEnabled = true;
-            this.cbbLanguage.Location = new System.Drawing.Point(118, 22);
-            this.cbbLanguage.Name = "cbbLanguage";
-            this.cbbLanguage.Size = new System.Drawing.Size(268, 26);
-            this.cbbLanguage.TabIndex = 6;
+            this.tbStatusDIC.AutoSize = true;
+            this.tbStatusDIC.Location = new System.Drawing.Point(534, 30);
+            this.tbStatusDIC.Name = "tbStatusDIC";
+            this.tbStatusDIC.Size = new System.Drawing.Size(0, 18);
+            this.tbStatusDIC.TabIndex = 7;
             // 
             // FormMain
             // 
@@ -450,6 +472,7 @@
         private System.Windows.Forms.TabPage tabWikipedia;
         private System.Windows.Forms.ComboBox cbbLanguage;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label tbStatusDIC;
     }
 }
 

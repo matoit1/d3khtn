@@ -29,3 +29,6 @@ C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\o
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.exe
 C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.pdb
+D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.dll
+D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.pdb
+D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.xml

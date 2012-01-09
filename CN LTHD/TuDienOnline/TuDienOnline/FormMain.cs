@@ -19,17 +19,18 @@ namespace TuDienOnline
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            this.cbbLanguage.SelectedItem = "English - Vietnamese";
             this.cbbFrom.SelectedItem = "English";
             this.cbbTo.SelectedItem = "Vietnamese";
         }
-
+        #region Dictionary TranTri
         private void btnLookup_Click(object sender, EventArgs e)
         {
             // Initialize the translator
-            Translator t = new Translator();
-            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-            t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-            t.SourceText = this.txtWord.Text;
+            VdictDictionary vdict = new VdictDictionary();
+            vdict.KeyWord = txtWord.Text;
+            vdict.ID = cbbLanguage.SelectedIndex + 1;
+            
 
             this.tbResult.Text = string.Empty;
             this.tbResult.Update();
@@ -41,14 +42,13 @@ namespace TuDienOnline
             {
                 // Forward translation
                 this.Cursor = Cursors.WaitCursor;
-                this.lbStatus.Text = "Translating...";
-                this.lbStatus.Update();
-                t.Translate();
-                this.tbResult.Text = t.Translation;
+                this.tbStatusDIC.Text = "Translating...";
+                this.tbStatusDIC.Update();
+                vdict.LookUp();
+                Thread.Sleep(500); // doi no chay
+                this.tbResult.Text = vdict.Result;
                 this.tbResult.Update();
-
-
-                // Thread.Sleep(500); // let Google breathe
+   
 
             }
             catch (Exception ex)
@@ -57,10 +57,16 @@ namespace TuDienOnline
             }
             finally
             {
-                this.lbStatus.Text = string.Empty;
+                this.tbStatusDIC.Text = string.Empty;
                 this.Cursor = Cursors.Default;
             }
         }
+
+        private void btnListen_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
 
         //private void richTextBox_Left_MouseDoubleClick(object sender, MouseEventArgs e)
         //{
@@ -153,6 +159,8 @@ namespace TuDienOnline
             cbbFrom.SelectedItem = cbbTo.SelectedItem.ToString();
             cbbTo.SelectedItem = textTam;
         }
+
+       
 
  
 
