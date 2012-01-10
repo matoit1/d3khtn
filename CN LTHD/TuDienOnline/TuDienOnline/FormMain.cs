@@ -140,8 +140,6 @@ namespace TuDienOnline
             MyClass.doc(ketQua);
             this.Cursor = Cursors.Default;
         }
-<<<<<<< .mine
-=======
 
         public void Translate()
         {
@@ -175,8 +173,7 @@ namespace TuDienOnline
                 this.Cursor = Cursors.Default;
             }
         }
-        #endregion
-        
+
         #region kiwi TranTri
         private void btnSearchWiki_Click(object sender, EventArgs e)
         {
@@ -186,7 +183,6 @@ namespace TuDienOnline
                 w.keyWord = txtKeyWordWiki.Text;
                 w.ID = cbbLanguageWiki.SelectedIndex;
 
->>>>>>> .r324
                 tbResultWiki.Text = String.Empty;
                 tbResultWiki.Update();
                 try
