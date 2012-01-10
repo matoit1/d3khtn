@@ -73,7 +73,7 @@ namespace TuDienOnline
         {
             string lang = (string)cbbFrom.SelectedItem;
             string lg = Translator.LanguageEnumToIdentifier(lang);
-            string name = "translate";
+            string name = "vdictranslate";
             this.Cursor = Cursors.WaitCursor;
             lb_Status.Text = "Processing ...";
             lb_Status.Update();

@@ -29,18 +29,24 @@ namespace TuDienOnline
         public static List<string> download(List<string> dsDoanVan, string lg, string name)
         {
             List<string> kq = new List<string>();
-            WebClient web = new WebClient();
-            web.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/4.0 (compatible; MSIE 9.0; Windows;)");
-            string encstr = string.Empty;
-            for (int i = 0; i < dsDoanVan.Count; i++)
+            try
             {
-                string filename = name + i + ".mp3";
-                kq.Add(filename);
-                string s = dsDoanVan[i];
-                encstr = Uri.EscapeDataString(s);
-                web.DownloadFile("http://translate.google.com/translate_tts?tl=" + lg + "&q=" + encstr, ".\\" + filename);
+                WebClient web = new WebClient();
+                web.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/4.0 (compatible; MSIE 9.0; Windows;)");
+                string encstr = string.Empty;
+                for (int i = 0; i < dsDoanVan.Count; i++)
+                {
+                    string filename = name + i + ".mp3";
+                    kq.Add(filename);
+                    string s = dsDoanVan[i];
+                    encstr = Uri.EscapeDataString(s);
+                    web.DownloadFile("http://translate.google.com/translate_tts?tl=" + lg + "&q=" + encstr, ".\\" + filename);
+                }
             }
+            catch (Exception ex)
+            {
 
+            }
             return kq;
         }
 
@@ -80,10 +86,18 @@ namespace TuDienOnline
 
         public static void doc(string filename)
         {
-            WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+            try
+            {
+                WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
 
-            wplayer.URL = filename;
-            wplayer.controls.play();
+                wplayer.URL = filename;
+                wplayer.controls.play();
+                //File.Delete(filename);
+            }
+            catch (Exception ex)
+            {
+            }
+            
         }
     }
 }
