@@ -96,16 +96,18 @@ namespace TuDienOnline
             cbbTo.SelectedItem = text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bt_Translate_Click(object sender, EventArgs e)
         {
-            Translate();
+            string translate = richTextBox_Left.Text;
+            Translate(translate);
         }
 
         private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
         {
             if (richTextBox_Left.SelectedText != "")
             {
-                Translate();
+                string translate = richTextBox_Left.SelectedText;
+                Translate(translate);
             }
         }
 
@@ -113,11 +115,10 @@ namespace TuDienOnline
         {
             if (richTextBox_Left.SelectedText != "")
             {
-                Translate();
+                string translate = richTextBox_Left.SelectedText;
+                Translate(translate);
             }
         }
-
-        #endregion
 
         private void bt_FromSpeech_Click(object sender, EventArgs e)
         {
@@ -129,7 +130,7 @@ namespace TuDienOnline
             lb_Status.Update();
             string temp = richTextBox_Left.Text;
             List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
-            List<string> dsFileName = MyClass.download(dsDoanVan, lg,name);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
             string ketQua = MyClass.noifile(dsFileName);
             lb_Status.Text = string.Empty;
             MyClass.doc(ketQua);
@@ -146,20 +147,20 @@ namespace TuDienOnline
             lb_Status.Update();
             string temp = richTextBox_Right.Text;
             List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
-            List<string> dsFileName = MyClass.download(dsDoanVan, lg,name);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
             string ketQua = MyClass.noifile(dsFileName);
             lb_Status.Text = string.Empty;
             MyClass.doc(ketQua);
             this.Cursor = Cursors.Default;
         }
 
-        public void Translate()
+        public void Translate(string translate)
         {
             // Initialize the translator
             Translator t = new Translator();
             t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
             t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-            t.SourceText = this.richTextBox_Left.Text;
+            t.SourceText = translate;
 
             this.richTextBox_Right.Text = string.Empty;
             this.richTextBox_Right.Update();
@@ -186,6 +187,8 @@ namespace TuDienOnline
             }
         }
 
+        #endregion
+
         #region kiwi TranTri
         private void btnSearchWiki_Click(object sender, EventArgs e)
         {
@@ -211,6 +214,8 @@ namespace TuDienOnline
                 {
                     // MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     w.result = "No result.";
+                    throw new ApplicationException("operation failed!", ex);
+
                 }
                 finally
                 {

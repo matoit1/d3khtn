@@ -32,7 +32,7 @@ namespace TuDienOnline
             try
             {
                 WebClient web = new WebClient();
-                web.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/4.0 (compatible; MSIE 9.0; Windows;)");
+                web.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (compatible; MSIE 9.0; Windows;)");
                 string encstr = string.Empty;
                 for (int i = 0; i < dsDoanVan.Count; i++)
                 {
@@ -40,12 +40,12 @@ namespace TuDienOnline
                     kq.Add(filename);
                     string s = dsDoanVan[i];
                     encstr = Uri.EscapeDataString(s);
-                    web.DownloadFile("http://translate.google.com/translate_tts?tl=" + lg + "&q=" + encstr, ".\\" + filename);
+                    web.DownloadFile("http://translate.google.com/translate_tts?ie=UTF-8&tl=" + lg + "&q=" + encstr, ".\\" + filename);
                 }
             }
             catch (Exception ex)
             {
-
+                throw new ApplicationException("operation failed!", ex);
             }
             return kq;
         }
@@ -72,7 +72,7 @@ namespace TuDienOnline
             }
             catch (Exception ex)
             {
-
+                throw new ApplicationException("operation failed!", ex);
             }
             finally
             {
@@ -92,10 +92,10 @@ namespace TuDienOnline
 
                 wplayer.URL = filename;
                 wplayer.controls.play();
-                //File.Delete(filename);
             }
             catch (Exception ex)
             {
+                throw new ApplicationException("operation failed!", ex);
             }
             
         }

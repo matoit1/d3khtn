@@ -57,8 +57,9 @@ namespace TuDienOnline
                     
               
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
+                throw new ApplicationException("operation failed!", ex);
             }
             //txtNews.Text = s;
         }
