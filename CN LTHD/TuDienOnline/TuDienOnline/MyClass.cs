@@ -10,19 +10,47 @@ namespace TuDienOnline
 {
     public class MyClass
     {
-        public static List<string> chiaDoanVan(String translate)
+        public static List<string> chiaDoanVan(string translate)
         {
             List<string> kq = new List<string>();
 
-            string[] temp = translate.Split('.', ',', ';', '!', '?');
-            for (int i = 0; i < temp.Count(); i++)
-            {
-                if (temp[i].Length > 0 && temp[i].Length < 100)
-                {
-                    kq.Add(temp[i]);
-                }
-            }
+            //string[] temp = translate.Split('.', ',', ';', '!', '?');
+            //for (int i = 0; i < temp.Count(); i++)
+            //{
+            //    if (temp[i].Length > 0 && temp[i].Length < 100)
+            //    {
+            //        kq.Add(temp[i]);
+            //    }
+            //}
 
+            int index = 99;
+            string temp = "";
+            do
+            {
+                if (translate.Length > 99)
+                {
+
+                    temp = translate[index].ToString();
+                    if (temp.Equals(" "))
+                    {
+                        //string b = translate[translate.Length - 1].ToString();
+                        temp = translate.Substring(0, index);
+                        translate = translate.Substring(index, translate.Length - index);
+                        kq.Add(temp);
+                        index = 99;
+                    }
+                    else
+                        index--;
+                }
+                else
+                {
+                    kq.Add(translate);
+                    break;
+                }
+
+            }
+            while (translate.Length > 0);
+            
             return kq;
         }
 
@@ -67,12 +95,14 @@ namespace TuDienOnline
                     fs2.Read(fs2Content, 0, (int)fs2.Length);
                     fs1.Write(fs2Content, 0, (int)fs2.Length);
                     fs2.Close();
+
+                    File.Delete(dsFileName[i]);
                 }
                 fs1.Close();
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("operation failed!", ex);
+                
             }
             finally
             {
