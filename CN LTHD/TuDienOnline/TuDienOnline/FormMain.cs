@@ -71,7 +71,19 @@ namespace TuDienOnline
 
         private void btnListen_Click(object sender, EventArgs e)
         {
-
+            string lang = (string)cbbFrom.SelectedItem;
+            string lg = Translator.LanguageEnumToIdentifier(lang);
+            string name = "translate";
+            this.Cursor = Cursors.WaitCursor;
+            lb_Status.Text = "Processing ...";
+            lb_Status.Update();
+            string temp = txtWord.Text;
+            List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
+            string ketQua = MyClass.noifile(dsFileName);
+            lb_Status.Text = string.Empty;
+            MyClass.doc(ketQua);
+            this.Cursor = Cursors.Default;
         }
         #endregion
 
