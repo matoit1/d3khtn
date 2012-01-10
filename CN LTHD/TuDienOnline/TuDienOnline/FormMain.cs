@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net;
 using System.Media;
+using System.Text.RegularExpressions;
 
 namespace TuDienOnline
 {
@@ -24,6 +25,7 @@ namespace TuDienOnline
             this.cbbLanguage.SelectedItem = "English - Vietnamese";
             this.cbbFrom.SelectedItem = "English";
             this.cbbTo.SelectedItem = "Vietnamese";
+            this.cbbLanguageWiki.SelectedItem = "English";
         }
         #region Dictionary TranTri
         private void btnLookup_Click(object sender, EventArgs e)
@@ -74,74 +76,21 @@ namespace TuDienOnline
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            // Initialize the translator
-            Translator t = new Translator();
-            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-            t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-            t.SourceText = this.richTextBox_Left.Text;
+            String text = cbbFrom.SelectedItem.ToString();
+            cbbFrom.SelectedItem = cbbTo.SelectedItem.ToString();
+            cbbTo.SelectedItem = text;
+        }
 
-            this.richTextBox_Right.Text = string.Empty;
-            this.richTextBox_Right.Update();
-
-            // Translate the text
-            try
-            {
-                // Forward translation
-                this.Cursor = Cursors.WaitCursor;
-                lb_Status.Text = "Translating ...";
-                lb_Status.Update();
-                t.Translate();
-                this.richTextBox_Right.Text = t.Translation;
-                this.richTextBox_Right.Update();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            finally
-            {
-                lb_Status.Text = "Completed";
-                this.Cursor = Cursors.Default;
-            }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Translate();
         }
 
         private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
         {
             if (richTextBox_Left.SelectedText != "")
             {
-                // Initialize the translator
-                Translator t = new Translator();
-                t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-                t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-                t.SourceText = this.richTextBox_Left.SelectedText;
-
-                this.richTextBox_Right.Text = string.Empty;
-                this.richTextBox_Right.Update();
-
-                // Translate the text
-                try
-                {
-                    // Forward translation
-                    this.Cursor = Cursors.WaitCursor;
-                    lb_Status.Text = "Translating ...";
-                    lb_Status.Update();
-                    t.Translate();
-                    this.richTextBox_Right.Text = t.Translation;
-                    this.richTextBox_Right.Update();
-
-
-                    // Thread.Sleep(500); // let Google breathe
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    lb_Status.Text = "Completed";
-                    this.Cursor = Cursors.Default;
-                }
+                Translate();
             }
         }
 
@@ -149,37 +98,7 @@ namespace TuDienOnline
         {
             if (richTextBox_Left.SelectedText != "")
             {
-                // Initialize the translator
-                Translator t = new Translator();
-                t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-                t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-                t.SourceText = this.richTextBox_Left.SelectedText;
-
-                this.richTextBox_Right.Text = string.Empty;
-                this.richTextBox_Right.Update();
-
-                // Translate the text
-                try
-                {
-                    // Forward translation
-                    this.Cursor = Cursors.WaitCursor;
-                    lb_Status.Text = "Translating ...";
-                    lb_Status.Update();
-                    t.Translate();
-                    this.richTextBox_Right.Text = t.Translation;
-                    this.richTextBox_Right.Update();
-                    // Thread.Sleep(500); // let Google breathe
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    lb_Status.Text = string.Empty;
-                    this.Cursor = Cursors.Default;
-                }
+                Translate();
             }
         }
 
@@ -217,7 +136,74 @@ namespace TuDienOnline
             this.Cursor = Cursors.Default;
         }
 
-        #endregion
+        public void Translate()
+        {
+            // Initialize the translator
+            Translator t = new Translator();
+            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+            t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+            t.SourceText = this.richTextBox_Left.Text;
 
+            this.richTextBox_Right.Text = string.Empty;
+            this.richTextBox_Right.Update();
+
+            // Translate the text
+            try
+            {
+                // Forward translation
+                this.Cursor = Cursors.WaitCursor;
+                lb_Status.Text = "Translating ...";
+                lb_Status.Update();
+                t.Translate();
+                this.richTextBox_Right.Text = t.Translation;
+                this.richTextBox_Right.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                lb_Status.Text = "Completed";
+                this.Cursor = Cursors.Default;
+            }
+        }
+        #endregion
+        
+        #region kiwi TranTri
+        private void btnSearchWiki_Click(object sender, EventArgs e)
+        {
+            Wiki w = new Wiki();
+            w.keyWord = txtKeyWordWiki.Text;
+            w.ID = cbbLanguageWiki.SelectedIndex;
+
+            tbResultWiki.Text = String.Empty;
+            tbResultWiki.Update();
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                lbSttKiwi2.Text = "Translating ...";
+                lbSttKiwi2.Update();
+                w.Search();
+
+               // Thread.Sleep(500); // doi no chay
+               
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                w.result = "No result.";
+            }
+            finally
+            {
+                lbSttKiwi2.Text = "Completed";
+                this.Cursor = Cursors.Default;
+                tbResultWiki.Text = w.result;
+                tbResultWiki.Update(); 
+            }
+        }
+
+
+        #endregion
     }
 }

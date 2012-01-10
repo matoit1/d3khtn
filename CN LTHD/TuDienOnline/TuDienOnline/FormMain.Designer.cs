@@ -46,16 +46,25 @@
             this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
             this.richTextBox_Right = new System.Windows.Forms.RichTextBox();
             this.panel_Control = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.lbStatus = new System.Windows.Forms.Label();
             this.cbbTo = new System.Windows.Forms.ComboBox();
             this.cbbFrom = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabWikipedia = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbbLanguageWiki = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbResultWiki = new System.Windows.Forms.TextBox();
+            this.btnSearchWiki = new System.Windows.Forms.Button();
+            this.txtKeyWordWiki = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbSttKiwi2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -64,6 +73,7 @@
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.panel_Control.SuspendLayout();
+            this.tabWikipedia.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -272,6 +282,7 @@
             this.panel_Control.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Control.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Control.Controls.Add(this.button1);
             this.panel_Control.Controls.Add(this.btnChange);
             this.panel_Control.Controls.Add(this.lbStatus);
             this.panel_Control.Controls.Add(this.cbbTo);
@@ -281,6 +292,17 @@
             this.panel_Control.Name = "panel_Control";
             this.panel_Control.Size = new System.Drawing.Size(818, 68);
             this.panel_Control.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Location = new System.Drawing.Point(537, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 48);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Translate";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnChange
             // 
@@ -440,6 +462,14 @@
             // 
             // tabWikipedia
             // 
+            this.tabWikipedia.Controls.Add(this.lbSttKiwi2);
+            this.tabWikipedia.Controls.Add(this.label2);
+            this.tabWikipedia.Controls.Add(this.cbbLanguageWiki);
+            this.tabWikipedia.Controls.Add(this.label3);
+            this.tabWikipedia.Controls.Add(this.tbResultWiki);
+            this.tabWikipedia.Controls.Add(this.btnSearchWiki);
+            this.tabWikipedia.Controls.Add(this.txtKeyWordWiki);
+            this.tabWikipedia.Controls.Add(this.label6);
             this.tabWikipedia.Location = new System.Drawing.Point(4, 27);
             this.tabWikipedia.Name = "tabWikipedia";
             this.tabWikipedia.Padding = new System.Windows.Forms.Padding(3);
@@ -447,6 +477,112 @@
             this.tabWikipedia.TabIndex = 2;
             this.tabWikipedia.Text = "Wikipedia";
             this.tabWikipedia.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(527, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 18);
+            this.label2.TabIndex = 14;
+            // 
+            // cbbLanguageWiki
+            // 
+            this.cbbLanguageWiki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLanguageWiki.FormattingEnabled = true;
+            this.cbbLanguageWiki.Items.AddRange(new object[] {
+            "العربية",
+            "Български",
+            "Català",
+            "Česky",
+            "Dansk",
+            "Deutsch",
+            "English",
+            "Español",
+            "Esperanto",
+            "Euskara",
+            "فارسی",
+            "Français",
+            "한국어",
+            "हिन्दी",
+            "Hrvatski",
+            "Bahasa Indonesia",
+            "Italiano",
+            "עברית",
+            "Lietuvių",
+            "Magyar",
+            "Bahasa Melayu",
+            "Nederlands",
+            "日本語",
+            "Norsk (bokmål)",
+            "Polski",
+            "Português",
+            "Қазақша / Qazaqşa / قازاقشا",
+            "Română",
+            "Русский",
+            "Slovenčina",
+            "Slovenščina",
+            "Српски / Srpski",
+            "Suomi",
+            "Svenska",
+            "Türkçe",
+            "Українська",
+            "Tiếng Việt",
+            "Volapük",
+            "Winaray",
+            "中文"});
+            this.cbbLanguageWiki.Location = new System.Drawing.Point(111, 29);
+            this.cbbLanguageWiki.Name = "cbbLanguageWiki";
+            this.cbbLanguageWiki.Size = new System.Drawing.Size(268, 26);
+            this.cbbLanguageWiki.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 18);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Language";
+            // 
+            // tbResultWiki
+            // 
+            this.tbResultWiki.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbResultWiki.Location = new System.Drawing.Point(8, 100);
+            this.tbResultWiki.Multiline = true;
+            this.tbResultWiki.Name = "tbResultWiki";
+            this.tbResultWiki.ReadOnly = true;
+            this.tbResultWiki.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbResultWiki.Size = new System.Drawing.Size(808, 329);
+            this.tbResultWiki.TabIndex = 11;
+            // 
+            // btnSearchWiki
+            // 
+            this.btnSearchWiki.Location = new System.Drawing.Point(408, 59);
+            this.btnSearchWiki.Name = "btnSearchWiki";
+            this.btnSearchWiki.Size = new System.Drawing.Size(128, 35);
+            this.btnSearchWiki.TabIndex = 10;
+            this.btnSearchWiki.Text = "Search Wiki";
+            this.btnSearchWiki.UseVisualStyleBackColor = true;
+            this.btnSearchWiki.Click += new System.EventHandler(this.btnSearchWiki_Click);
+            // 
+            // txtKeyWordWiki
+            // 
+            this.txtKeyWordWiki.Location = new System.Drawing.Point(111, 64);
+            this.txtKeyWordWiki.Name = "txtKeyWordWiki";
+            this.txtKeyWordWiki.Size = new System.Drawing.Size(268, 24);
+            this.txtKeyWordWiki.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 18);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "KeyWord";
             // 
             // menuStrip1
             // 
@@ -478,6 +614,14 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // lbSttKiwi2
+            // 
+            this.lbSttKiwi2.AutoSize = true;
+            this.lbSttKiwi2.Location = new System.Drawing.Point(559, 32);
+            this.lbSttKiwi2.Name = "lbSttKiwi2";
+            this.lbSttKiwi2.Size = new System.Drawing.Size(0, 18);
+            this.lbSttKiwi2.TabIndex = 15;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +644,8 @@
             this.splitContainer.ResumeLayout(false);
             this.panel_Control.ResumeLayout(false);
             this.panel_Control.PerformLayout();
+            this.tabWikipedia.ResumeLayout(false);
+            this.tabWikipedia.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -537,6 +683,15 @@
         private System.Windows.Forms.RichTextBox richTextBox_Right;
         private System.Windows.Forms.Button bt_FromSpeech;
         private System.Windows.Forms.Button bt_ToSpeech;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbbLanguageWiki;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbResultWiki;
+        private System.Windows.Forms.Button btnSearchWiki;
+        private System.Windows.Forms.TextBox txtKeyWordWiki;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbSttKiwi2;
     }
 }
 
