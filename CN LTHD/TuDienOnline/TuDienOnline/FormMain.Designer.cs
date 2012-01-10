@@ -33,20 +33,18 @@
             this.tbStatusDIC = new System.Windows.Forms.Label();
             this.cbbLanguage = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnListen = new System.Windows.Forms.Button();
             this.tbResult = new System.Windows.Forms.TextBox();
             this.btnLookup = new System.Windows.Forms.Button();
             this.txtWord = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
-            this.bt_FromSpeech = new System.Windows.Forms.Button();
             this.bt_ToSpeech = new System.Windows.Forms.Button();
             this.lb_Status = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
             this.richTextBox_Right = new System.Windows.Forms.RichTextBox();
             this.panel_Control = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_Translate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.lbStatus = new System.Windows.Forms.Label();
             this.cbbTo = new System.Windows.Forms.ComboBox();
@@ -65,6 +63,8 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnListen = new System.Windows.Forms.Button();
+            this.bt_FromSpeech = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -146,20 +146,6 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Dictionary";
             // 
-            // btnListen
-            // 
-            this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnListen.AutoSize = true;
-            this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
-            this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnListen.Location = new System.Drawing.Point(637, 112);
-            this.btnListen.Name = "btnListen";
-            this.btnListen.Size = new System.Drawing.Size(146, 146);
-            this.btnListen.TabIndex = 4;
-            this.btnListen.UseVisualStyleBackColor = true;
-            this.btnListen.Click += new System.EventHandler(this.btnListen_Click);
-            // 
             // tbResult
             // 
             this.tbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -214,22 +200,12 @@
             this.tabTranslate.Text = "Translate";
             this.tabTranslate.UseVisualStyleBackColor = true;
             // 
-            // bt_FromSpeech
-            // 
-            this.bt_FromSpeech.Image = global::TuDienOnline.Properties.Resources.images2;
-            this.bt_FromSpeech.Location = new System.Drawing.Point(364, 389);
-            this.bt_FromSpeech.Name = "bt_FromSpeech";
-            this.bt_FromSpeech.Size = new System.Drawing.Size(44, 40);
-            this.bt_FromSpeech.TabIndex = 7;
-            this.bt_FromSpeech.UseVisualStyleBackColor = true;
-            this.bt_FromSpeech.Click += new System.EventHandler(this.bt_FromSpeech_Click);
-            // 
             // bt_ToSpeech
             // 
-            this.bt_ToSpeech.Image = global::TuDienOnline.Properties.Resources.images2;
-            this.bt_ToSpeech.Location = new System.Drawing.Point(777, 389);
+            this.bt_ToSpeech.Image = global::TuDienOnline.Properties.Resources.Speaker;
+            this.bt_ToSpeech.Location = new System.Drawing.Point(766, 389);
             this.bt_ToSpeech.Name = "bt_ToSpeech";
-            this.bt_ToSpeech.Size = new System.Drawing.Size(41, 40);
+            this.bt_ToSpeech.Size = new System.Drawing.Size(50, 40);
             this.bt_ToSpeech.TabIndex = 7;
             this.bt_ToSpeech.UseVisualStyleBackColor = true;
             this.bt_ToSpeech.Click += new System.EventHandler(this.bt_ToSpeech_Click);
@@ -282,7 +258,7 @@
             this.panel_Control.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Control.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Control.Controls.Add(this.button1);
+            this.panel_Control.Controls.Add(this.bt_Translate);
             this.panel_Control.Controls.Add(this.btnChange);
             this.panel_Control.Controls.Add(this.lbStatus);
             this.panel_Control.Controls.Add(this.cbbTo);
@@ -293,17 +269,17 @@
             this.panel_Control.Size = new System.Drawing.Size(818, 68);
             this.panel_Control.TabIndex = 4;
             // 
-            // button1
+            // bt_Translate
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(537, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 48);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Translate";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_Translate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bt_Translate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bt_Translate.Location = new System.Drawing.Point(537, 12);
+            this.bt_Translate.Name = "bt_Translate";
+            this.bt_Translate.Size = new System.Drawing.Size(83, 48);
+            this.bt_Translate.TabIndex = 7;
+            this.bt_Translate.Text = "Translate";
+            this.bt_Translate.UseVisualStyleBackColor = false;
+            this.bt_Translate.Click += new System.EventHandler(this.bt_Translate_Click);
             // 
             // btnChange
             // 
@@ -599,10 +575,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(832, 24);
@@ -626,6 +598,30 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // btnListen
+            // 
+            this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListen.AutoSize = true;
+            this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
+            this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnListen.Location = new System.Drawing.Point(637, 112);
+            this.btnListen.Name = "btnListen";
+            this.btnListen.Size = new System.Drawing.Size(146, 146);
+            this.btnListen.TabIndex = 4;
+            this.btnListen.UseVisualStyleBackColor = true;
+            this.btnListen.Click += new System.EventHandler(this.btnListen_Click);
+            // 
+            // bt_FromSpeech
+            // 
+            this.bt_FromSpeech.Image = global::TuDienOnline.Properties.Resources.Speaker;
+            this.bt_FromSpeech.Location = new System.Drawing.Point(358, 389);
+            this.bt_FromSpeech.Name = "bt_FromSpeech";
+            this.bt_FromSpeech.Size = new System.Drawing.Size(50, 40);
+            this.bt_FromSpeech.TabIndex = 7;
+            this.bt_FromSpeech.UseVisualStyleBackColor = true;
+            this.bt_FromSpeech.Click += new System.EventHandler(this.bt_FromSpeech_Click);
             // 
             // FormMain
             // 
@@ -688,7 +684,7 @@
         private System.Windows.Forms.RichTextBox richTextBox_Right;
         private System.Windows.Forms.Button bt_FromSpeech;
         private System.Windows.Forms.Button bt_ToSpeech;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_Translate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbLanguageWiki;
         private System.Windows.Forms.Label label3;
