@@ -32,3 +32,8 @@ C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\o
 D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.dll
 D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.pdb
 D:\Java_FutureShop\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.xml
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\obj\x86\Debug\TuDienOnline.csproj.ResolveComReference.cache
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.dll
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\VIET\KHTN\IV_HKI\CNLTHD\code\d3khtn\CN LTHD\TuDienOnline\TuDienOnline\bin\Debug\HtmlAgilityPack.xml
