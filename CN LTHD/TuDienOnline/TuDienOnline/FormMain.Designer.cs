@@ -216,21 +216,21 @@
             // 
             // bt_FromSpeech
             // 
-            this.bt_FromSpeech.Location = new System.Drawing.Point(333, 389);
+            this.bt_FromSpeech.Image = global::TuDienOnline.Properties.Resources.images2;
+            this.bt_FromSpeech.Location = new System.Drawing.Point(364, 389);
             this.bt_FromSpeech.Name = "bt_FromSpeech";
-            this.bt_FromSpeech.Size = new System.Drawing.Size(75, 26);
+            this.bt_FromSpeech.Size = new System.Drawing.Size(44, 40);
             this.bt_FromSpeech.TabIndex = 7;
-            this.bt_FromSpeech.Text = "Speech";
             this.bt_FromSpeech.UseVisualStyleBackColor = true;
             this.bt_FromSpeech.Click += new System.EventHandler(this.bt_FromSpeech_Click);
             // 
             // bt_ToSpeech
             // 
-            this.bt_ToSpeech.Location = new System.Drawing.Point(741, 389);
+            this.bt_ToSpeech.Image = global::TuDienOnline.Properties.Resources.images2;
+            this.bt_ToSpeech.Location = new System.Drawing.Point(777, 389);
             this.bt_ToSpeech.Name = "bt_ToSpeech";
-            this.bt_ToSpeech.Size = new System.Drawing.Size(75, 27);
+            this.bt_ToSpeech.Size = new System.Drawing.Size(41, 40);
             this.bt_ToSpeech.TabIndex = 7;
-            this.bt_ToSpeech.Text = "Speech";
             this.bt_ToSpeech.UseVisualStyleBackColor = true;
             this.bt_ToSpeech.Click += new System.EventHandler(this.bt_ToSpeech_Click);
             // 

@@ -26,7 +26,7 @@ namespace TuDienOnline
             return kq;
         }
 
-        public static List<string> download(List<string> dsDoanVan,string lg,string name)
+        public static List<string> download(List<string> dsDoanVan, string lg, string name)
         {
             List<string> kq = new List<string>();
             WebClient web = new WebClient();
@@ -38,7 +38,7 @@ namespace TuDienOnline
                 kq.Add(filename);
                 string s = dsDoanVan[i];
                 encstr = Uri.EscapeDataString(s);
-                web.DownloadFile("http://translate.google.com/translate_tts?tl="+lg+"&q=" + encstr, ".\\" + filename);
+                web.DownloadFile("http://translate.google.com/translate_tts?tl=" + lg + "&q=" + encstr, ".\\" + filename);
             }
 
             return kq;
@@ -46,11 +46,12 @@ namespace TuDienOnline
 
         public static string noifile(List<string> dsFileName)
         {
-            string ketQua = dsFileName[0];
+            string ketQua = "";
             FileStream fs1 = null;
             FileStream fs2 = null;
             try
             {
+                ketQua = dsFileName[0];
                 fs1 = File.Open(ketQua, FileMode.Append);
                 for (int i = 1; i < dsFileName.Count; i++)
                 {
@@ -69,8 +70,10 @@ namespace TuDienOnline
             }
             finally
             {
-                fs1.Dispose();
-                fs2.Dispose();
+                if (fs1 != null)
+                    fs1.Dispose();
+                if (fs2 != null)
+                    fs2.Dispose();
             }
             return ketQua;
         }

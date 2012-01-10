@@ -105,6 +105,8 @@ namespace TuDienOnline
             }
         }
 
+        #endregion
+
         private void bt_FromSpeech_Click(object sender, EventArgs e)
         {
             string lang = (string)cbbFrom.SelectedItem;
@@ -138,6 +140,8 @@ namespace TuDienOnline
             MyClass.doc(ketQua);
             this.Cursor = Cursors.Default;
         }
+<<<<<<< .mine
+=======
 
         public void Translate()
         {
@@ -182,6 +186,7 @@ namespace TuDienOnline
                 w.keyWord = txtKeyWordWiki.Text;
                 w.ID = cbbLanguageWiki.SelectedIndex;
 
+>>>>>>> .r324
                 tbResultWiki.Text = String.Empty;
                 tbResultWiki.Update();
                 try
