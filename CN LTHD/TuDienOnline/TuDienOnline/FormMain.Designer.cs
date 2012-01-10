@@ -53,6 +53,7 @@
             this.cbbFrom = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabWikipedia = new System.Windows.Forms.TabPage();
+            this.lbSttKiwi2 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbLanguageWiki = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbSttKiwi2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -295,7 +295,8 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.Location = new System.Drawing.Point(537, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 48);
@@ -470,6 +471,7 @@
             this.tabWikipedia.Controls.Add(this.btnSearchWiki);
             this.tabWikipedia.Controls.Add(this.txtKeyWordWiki);
             this.tabWikipedia.Controls.Add(this.label6);
+            this.tabWikipedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabWikipedia.Location = new System.Drawing.Point(4, 27);
             this.tabWikipedia.Name = "tabWikipedia";
             this.tabWikipedia.Padding = new System.Windows.Forms.Padding(3);
@@ -477,6 +479,14 @@
             this.tabWikipedia.TabIndex = 2;
             this.tabWikipedia.Text = "Wikipedia";
             this.tabWikipedia.UseVisualStyleBackColor = true;
+            // 
+            // lbSttKiwi2
+            // 
+            this.lbSttKiwi2.AutoSize = true;
+            this.lbSttKiwi2.Location = new System.Drawing.Point(559, 32);
+            this.lbSttKiwi2.Name = "lbSttKiwi2";
+            this.lbSttKiwi2.Size = new System.Drawing.Size(0, 18);
+            this.lbSttKiwi2.TabIndex = 15;
             // 
             // label2
             // 
@@ -560,12 +570,15 @@
             // 
             // btnSearchWiki
             // 
+            this.btnSearchWiki.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSearchWiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchWiki.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSearchWiki.Location = new System.Drawing.Point(408, 59);
             this.btnSearchWiki.Name = "btnSearchWiki";
             this.btnSearchWiki.Size = new System.Drawing.Size(128, 35);
             this.btnSearchWiki.TabIndex = 10;
             this.btnSearchWiki.Text = "Search Wiki";
-            this.btnSearchWiki.UseVisualStyleBackColor = true;
+            this.btnSearchWiki.UseVisualStyleBackColor = false;
             this.btnSearchWiki.Click += new System.EventHandler(this.btnSearchWiki_Click);
             // 
             // txtKeyWordWiki
@@ -613,14 +626,6 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // lbSttKiwi2
-            // 
-            this.lbSttKiwi2.AutoSize = true;
-            this.lbSttKiwi2.Location = new System.Drawing.Point(559, 32);
-            this.lbSttKiwi2.Name = "lbSttKiwi2";
-            this.lbSttKiwi2.Size = new System.Drawing.Size(0, 18);
-            this.lbSttKiwi2.TabIndex = 15;
             // 
             // FormMain
             // 

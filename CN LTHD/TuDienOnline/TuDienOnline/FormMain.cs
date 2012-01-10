@@ -30,39 +30,42 @@ namespace TuDienOnline
         #region Dictionary TranTri
         private void btnLookup_Click(object sender, EventArgs e)
         {
-            // Initialize the translator
-            VdictDictionary vdict = new VdictDictionary();
-            vdict.KeyWord = txtWord.Text;
-            vdict.ID = cbbLanguage.SelectedIndex + 1;
-
-
-            this.tbResult.Text = string.Empty;
-            this.tbResult.Update();
-            this.tbResult.Text = string.Empty;
-            this.tbResult.Update();
-
-            // Translate the text
-            try
+            if (txtWord.Text.Trim() != "")
             {
-                // Forward translation
-                this.Cursor = Cursors.WaitCursor;
-                this.tbStatusDIC.Text = "Translating...";
-                this.tbStatusDIC.Update();
-                vdict.LookUp();
-                Thread.Sleep(500); // doi no chay
-                this.tbResult.Text = vdict.Result;
+                // Initialize the translator
+                VdictDictionary vdict = new VdictDictionary();
+                vdict.KeyWord = txtWord.Text;
+                vdict.ID = cbbLanguage.SelectedIndex + 1;
+
+
+                this.tbResult.Text = string.Empty;
+                this.tbResult.Update();
+                this.tbResult.Text = string.Empty;
                 this.tbResult.Update();
 
+                // Translate the text
+                try
+                {
+                    // Forward translation
+                    this.Cursor = Cursors.WaitCursor;
+                    this.tbStatusDIC.Text = "Translating...";
+                    this.tbStatusDIC.Update();
+                    vdict.LookUp();
+                    Thread.Sleep(500); // doi no chay
+                    this.tbResult.Text = vdict.Result;
+                    this.tbResult.Update();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            finally
-            {
-                this.tbStatusDIC.Text = string.Empty;
-                this.Cursor = Cursors.Default;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                finally
+                {
+                    this.tbStatusDIC.Text = string.Empty;
+                    this.Cursor = Cursors.Default;
+                }
             }
         }
 
@@ -173,33 +176,36 @@ namespace TuDienOnline
         #region kiwi TranTri
         private void btnSearchWiki_Click(object sender, EventArgs e)
         {
-            Wiki w = new Wiki();
-            w.keyWord = txtKeyWordWiki.Text;
-            w.ID = cbbLanguageWiki.SelectedIndex;
+            if (txtKeyWordWiki.Text.Trim() != "")
+            {
+                Wiki w = new Wiki();
+                w.keyWord = txtKeyWordWiki.Text;
+                w.ID = cbbLanguageWiki.SelectedIndex;
 
-            tbResultWiki.Text = String.Empty;
-            tbResultWiki.Update();
-            try
-            {
-                this.Cursor = Cursors.WaitCursor;
-                lbSttKiwi2.Text = "Translating ...";
-                lbSttKiwi2.Update();
-                w.Search();
+                tbResultWiki.Text = String.Empty;
+                tbResultWiki.Update();
+                try
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    lbSttKiwi2.Text = "Translating ...";
+                    lbSttKiwi2.Update();
+                    w.Search();
 
-               // Thread.Sleep(500); // doi no chay
-               
-            }
-            catch (Exception ex)
-            {
-               // MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                w.result = "No result.";
-            }
-            finally
-            {
-                lbSttKiwi2.Text = "Completed";
-                this.Cursor = Cursors.Default;
-                tbResultWiki.Text = w.result;
-                tbResultWiki.Update(); 
+                    // Thread.Sleep(500); // doi no chay
+
+                }
+                catch (Exception ex)
+                {
+                    // MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    w.result = "No result.";
+                }
+                finally
+                {
+                    lbSttKiwi2.Text = "Completed";
+                    this.Cursor = Cursors.Default;
+                    tbResultWiki.Text = w.result;
+                    tbResultWiki.Update();
+                }
             }
         }
 
