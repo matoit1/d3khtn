@@ -145,17 +145,13 @@ namespace TuDienOnline
             this.Cursor = Cursors.Default;
         }
 
-        public void Translate(string translate)
+        private string CallTranslator(string str)
         {
             // Initialize the translator
             Translator t = new Translator();
             t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
             t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-            t.SourceText = translate;
-
-            this.richTextBox_Right.Text = string.Empty;
-            this.richTextBox_Right.Update();
-
+            t.SourceText = str;
             // Translate the text
             try
             {
@@ -164,7 +160,66 @@ namespace TuDienOnline
                 lb_Status.Text = "Translating ...";
                 lb_Status.Update();
                 t.Translate();
-                this.richTextBox_Right.Text = t.Translation;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            return t.Translation;
+        }
+
+        public static List<string> SplitTranslate(string translate, int length)
+        {
+            List<string> kq = new List<string>();
+
+            int index = length;
+            string temp = "";
+            do
+            {
+                if (translate.Length > length)
+                {
+
+                    temp = translate[index].ToString();
+                    if (temp.Equals(".") || temp.Equals(",") || temp.Equals(";"))
+                    {
+                        //string b = translate[translate.Length - 1].ToString();
+                        temp = translate.Substring(0, index);
+                        translate = translate.Substring(index, translate.Length - index);
+                        kq.Add(temp);
+                        index = length;
+                    }
+                    else
+                        index--;
+                }
+                else
+                {
+                    kq.Add(translate);
+                    break;
+                }
+            }
+            while (translate.Length > 0);
+
+            return kq;
+        }
+
+        public void Translate(string translate)
+        {
+            List<string> listStr = SplitTranslate(translate, 282);
+            StringBuilder strBuilder = new StringBuilder();
+
+            foreach (string str in listStr)
+            {
+                strBuilder.Append(CallTranslator(str));
+            }
+
+            this.richTextBox_Right.Text = string.Empty;
+            this.richTextBox_Right.Update();
+
+            // Translate the text
+            try
+            {
+                // Forward translation
+                this.richTextBox_Right.Text = strBuilder.ToString();
                 this.richTextBox_Right.Update();
             }
             catch (Exception ex)
@@ -217,19 +272,18 @@ namespace TuDienOnline
                 }
             }
         }
-
-
         #endregion
 
-        private void richTextBox_Left_TabIndexChanged(object sender, EventArgs e)
+
+        private void richTextBox_Left_KeyDown(object sender, KeyEventArgs e)
         {
-            if (richTextBox_Left.SelectedText != "")
+            if (e.KeyCode == Keys.Space)
             {
-                string translate = richTextBox_Left.SelectedText;
+                string translate = richTextBox_Left.Text;
                 Translate(translate);
             }
         }
 
-       
+
     }
 }
