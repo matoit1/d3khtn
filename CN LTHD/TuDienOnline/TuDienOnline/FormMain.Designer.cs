@@ -33,11 +33,13 @@
             this.tbStatusDIC = new System.Windows.Forms.Label();
             this.cbbLanguage = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnListen = new System.Windows.Forms.Button();
             this.tbResult = new System.Windows.Forms.TextBox();
             this.btnLookup = new System.Windows.Forms.Button();
             this.txtWord = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabTranslate = new System.Windows.Forms.TabPage();
+            this.bt_FromSpeech = new System.Windows.Forms.Button();
             this.bt_ToSpeech = new System.Windows.Forms.Button();
             this.lb_Status = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
@@ -63,8 +65,6 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnListen = new System.Windows.Forms.Button();
-            this.bt_FromSpeech = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -74,7 +74,6 @@
             this.splitContainer.SuspendLayout();
             this.panel_Control.SuspendLayout();
             this.tabWikipedia.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -146,6 +145,20 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Dictionary";
             // 
+            // btnListen
+            // 
+            this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListen.AutoSize = true;
+            this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
+            this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnListen.Location = new System.Drawing.Point(637, 112);
+            this.btnListen.Name = "btnListen";
+            this.btnListen.Size = new System.Drawing.Size(146, 146);
+            this.btnListen.TabIndex = 4;
+            this.btnListen.UseVisualStyleBackColor = true;
+            this.btnListen.Click += new System.EventHandler(this.btnListen_Click);
+            // 
             // tbResult
             // 
             this.tbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -200,6 +213,16 @@
             this.tabTranslate.Text = "Translate";
             this.tabTranslate.UseVisualStyleBackColor = true;
             // 
+            // bt_FromSpeech
+            // 
+            this.bt_FromSpeech.Image = global::TuDienOnline.Properties.Resources.Speaker;
+            this.bt_FromSpeech.Location = new System.Drawing.Point(358, 389);
+            this.bt_FromSpeech.Name = "bt_FromSpeech";
+            this.bt_FromSpeech.Size = new System.Drawing.Size(50, 40);
+            this.bt_FromSpeech.TabIndex = 7;
+            this.bt_FromSpeech.UseVisualStyleBackColor = true;
+            this.bt_FromSpeech.Click += new System.EventHandler(this.bt_FromSpeech_Click);
+            // 
             // bt_ToSpeech
             // 
             this.bt_ToSpeech.Image = global::TuDienOnline.Properties.Resources.Speaker;
@@ -242,7 +265,7 @@
             this.richTextBox_Left.Size = new System.Drawing.Size(400, 302);
             this.richTextBox_Left.TabIndex = 0;
             this.richTextBox_Left.Text = "";
-            this.richTextBox_Left.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseDoubleClick);
+            this.richTextBox_Left.TabIndexChanged += new System.EventHandler(this.richTextBox_Left_TabIndexChanged);
             this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
             // 
             // richTextBox_Right
@@ -599,30 +622,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // btnListen
-            // 
-            this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnListen.AutoSize = true;
-            this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
-            this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnListen.Location = new System.Drawing.Point(637, 112);
-            this.btnListen.Name = "btnListen";
-            this.btnListen.Size = new System.Drawing.Size(146, 146);
-            this.btnListen.TabIndex = 4;
-            this.btnListen.UseVisualStyleBackColor = true;
-            this.btnListen.Click += new System.EventHandler(this.btnListen_Click);
-            // 
-            // bt_FromSpeech
-            // 
-            this.bt_FromSpeech.Image = global::TuDienOnline.Properties.Resources.Speaker;
-            this.bt_FromSpeech.Location = new System.Drawing.Point(358, 389);
-            this.bt_FromSpeech.Name = "bt_FromSpeech";
-            this.bt_FromSpeech.Size = new System.Drawing.Size(50, 40);
-            this.bt_FromSpeech.TabIndex = 7;
-            this.bt_FromSpeech.UseVisualStyleBackColor = true;
-            this.bt_FromSpeech.Click += new System.EventHandler(this.bt_FromSpeech_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,8 +646,6 @@
             this.panel_Control.PerformLayout();
             this.tabWikipedia.ResumeLayout(false);
             this.tabWikipedia.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

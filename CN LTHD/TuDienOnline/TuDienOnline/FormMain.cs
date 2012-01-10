@@ -104,20 +104,11 @@ namespace TuDienOnline
 
         private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
         {
-            if (richTextBox_Left.SelectedText != "")
-            {
-                string translate = richTextBox_Left.SelectedText;
-                Translate(translate);
-            }
-        }
-
-        private void richTextBox_Left_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (richTextBox_Left.SelectedText != "")
-            {
-                string translate = richTextBox_Left.SelectedText;
-                Translate(translate);
-            }
+            //if (richTextBox_Left.SelectedText != "")
+            //{
+            //    string translate = richTextBox_Left.SelectedText;
+            //    Translate(translate);
+            //}
         }
 
         private void bt_FromSpeech_Click(object sender, EventArgs e)
@@ -229,5 +220,16 @@ namespace TuDienOnline
 
 
         #endregion
+
+        private void richTextBox_Left_TabIndexChanged(object sender, EventArgs e)
+        {
+            if (richTextBox_Left.SelectedText != "")
+            {
+                string translate = richTextBox_Left.SelectedText;
+                Translate(translate);
+            }
+        }
+
+       
     }
 }
