@@ -46,6 +46,7 @@
             this.richTextBox_Left = new System.Windows.Forms.RichTextBox();
             this.richTextBox_Right = new System.Windows.Forms.RichTextBox();
             this.panel_Control = new System.Windows.Forms.Panel();
+            this.bt_Speak = new System.Windows.Forms.Button();
             this.bt_Translate = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.lbStatus = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bt_Speak = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -293,6 +293,16 @@
             this.panel_Control.Name = "panel_Control";
             this.panel_Control.Size = new System.Drawing.Size(818, 68);
             this.panel_Control.TabIndex = 4;
+            // 
+            // bt_Speak
+            // 
+            this.bt_Speak.Location = new System.Drawing.Point(666, 21);
+            this.bt_Speak.Name = "bt_Speak";
+            this.bt_Speak.Size = new System.Drawing.Size(104, 28);
+            this.bt_Speak.TabIndex = 8;
+            this.bt_Speak.Text = "Speak";
+            this.bt_Speak.UseVisualStyleBackColor = true;
+            this.bt_Speak.Click += new System.EventHandler(this.bt_Speak_Click);
             // 
             // bt_Translate
             // 
@@ -623,16 +633,6 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // bt_Speak
-            // 
-            this.bt_Speak.Location = new System.Drawing.Point(666, 21);
-            this.bt_Speak.Name = "bt_Speak";
-            this.bt_Speak.Size = new System.Drawing.Size(104, 28);
-            this.bt_Speak.TabIndex = 8;
-            this.bt_Speak.Text = "Speak";
-            this.bt_Speak.UseVisualStyleBackColor = true;
-            this.bt_Speak.Click += new System.EventHandler(this.bt_Speak_Click);
             // 
             // FormMain
             // 

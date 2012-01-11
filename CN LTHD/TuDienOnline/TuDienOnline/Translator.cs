@@ -88,7 +88,7 @@ namespace TuDienOnline
                 string.IsNullOrEmpty(this.TargetLanguage) ||
                 this.SourceLanguage.Trim().Equals(this.TargetLanguage.Trim()))
             {
-                throw new Exception("An invalid source or target language was specified.");
+                throw new Exception("Khôn nhận dạng được chữ đã nhập");
             }
 
             // Delegate to base class
@@ -115,6 +115,7 @@ namespace TuDienOnline
         /// <returns>A string containing the POST data or null if none.</returns>
         protected override string getPostData()
         {
+            string soure = Translator.LanguageEnumToIdentifier(this.SourceLanguage);
             // Set translation mode
             string strPostData = string.Format("hl=en&ie=UTF8&oe=UTF8submit=Translate&langpair={0}|{1}",
                                                  Translator.LanguageEnumToIdentifier(this.SourceLanguage),
@@ -238,12 +239,14 @@ namespace TuDienOnline
                 Translator._languageModeMap.Add("Spanish", "es");
                 Translator._languageModeMap.Add("Swahili", "sw");
                 Translator._languageModeMap.Add("Swedish", "sv");
+                Translator._languageModeMap.Add("Tamil", "ta");
                 Translator._languageModeMap.Add("Thai", "th");
                 Translator._languageModeMap.Add("Turkish", "tr");
                 Translator._languageModeMap.Add("Ukrainian", "uk");
                 Translator._languageModeMap.Add("Vietnamese", "vi");
                 Translator._languageModeMap.Add("Welsh", "cy");
                 Translator._languageModeMap.Add("Yiddish", "yi");
+                
             }
             string mode = string.Empty;
             Translator._languageModeMap.TryGetValue(language, out mode);
