@@ -284,8 +284,8 @@ namespace TuDienOnline
         {
             // Initialize the translator
             Translator t = new Translator();
-            //t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-            t.SourceLanguage = SourceLang;
+            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+            //t.SourceLanguage = SourceLang;
             t.TargetLanguage = (string)this.cbbTo.SelectedItem;
 
             t.SourceText = str;
