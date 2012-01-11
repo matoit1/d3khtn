@@ -461,6 +461,7 @@
             this.cbbFrom.Size = new System.Drawing.Size(121, 26);
             this.cbbFrom.Sorted = true;
             this.cbbFrom.TabIndex = 3;
+            this.cbbFrom.SelectedIndexChanged += new System.EventHandler(this.cbbFrom_SelectedIndexChanged);
             // 
             // label1
             // 

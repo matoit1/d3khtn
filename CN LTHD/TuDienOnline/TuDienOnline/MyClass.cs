@@ -73,7 +73,7 @@ namespace TuDienOnline
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("operation failed!", ex);
+                //throw new ApplicationException("operation failed!", ex);
             }
             return kq;
         }
@@ -96,7 +96,7 @@ namespace TuDienOnline
                     fs1.Write(fs2Content, 0, (int)fs2.Length);
                     fs2.Close();
 
-                    File.Delete(dsFileName[i]);
+                    //File.Delete(dsFileName[i]);
                 }
                 fs1.Close();
             }
@@ -122,10 +122,12 @@ namespace TuDienOnline
 
                 wplayer.URL = filename;
                 wplayer.controls.play();
+
+                //File.Delete(filename);
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("operation failed!", ex);
+                //throw new ApplicationException("operation failed!", ex);
             }
             
         }

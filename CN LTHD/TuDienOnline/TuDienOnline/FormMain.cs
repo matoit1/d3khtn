@@ -284,10 +284,10 @@ namespace TuDienOnline
         {
             // Initialize the translator
             Translator t = new Translator();
-            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
-            //t.SourceLanguage = SourceLang;
+            //t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+            t.SourceLanguage = SourceLang;
             t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-
+             
             t.SourceText = str;
             // Translate the text
             try
@@ -431,12 +431,12 @@ namespace TuDienOnline
 
         private void richTextBox_Left_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
-            {
-                string translate = richTextBox_Left.Text;
-                if(!translate.Trim().Equals(""))
-                   Translate(translate);
-            }
+            //if (e.KeyCode == Keys.Space)
+            //{
+            //    string translate = richTextBox_Left.Text;
+            //    if(!translate.Trim().Equals(""))
+            //       Translate(translate);
+            //}
         }
 
         private void bt_Speak_Click(object sender, EventArgs e)
@@ -462,5 +462,11 @@ namespace TuDienOnline
                 recognizer.UnloadAllGrammars();
             }
         }
+
+        private void cbbFrom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SourceLang = (string)cbbFrom.SelectedItem;
+        }
+
     }
 }

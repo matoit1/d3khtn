@@ -88,7 +88,7 @@ namespace TuDienOnline
                 string.IsNullOrEmpty(this.TargetLanguage) ||
                 this.SourceLanguage.Trim().Equals(this.TargetLanguage.Trim()))
             {
-                throw new Exception("Không nhận dạng được chữ đã nhập");
+                throw new Exception("An invalid source or target language was specified.");
             }
 
             // Delegate to base class
