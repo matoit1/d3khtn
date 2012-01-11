@@ -11,11 +11,16 @@ using System.Net;
 using System.Media;
 using System.Text.RegularExpressions;
 using System.Speech.Recognition;
+using HtmlAgilityPack;
+using System.IO;
 
 namespace TuDienOnline
 {
     public partial class FormMain : Form
     {
+        private static Dictionary<string, string> _languageModeMap;
+        private string SourceLang = "en";
+
         public FormMain()
         {
             InitializeComponent();
@@ -28,6 +33,82 @@ namespace TuDienOnline
             this.cbbTo.SelectedItem = "Vietnamese";
             this.cbbLanguageWiki.SelectedItem = "English";
         }
+
+        #region LanguageEnum
+
+        /// <summary>
+        /// Converts a language to its identifier.
+        /// </summary>
+        /// <param name="language">The language."</param>
+        /// <returns>The identifier or <see cref="string.Empty"/> if none.</returns>
+        public static string LanguageEnumToIdentifier
+            (string language)
+        {
+            if (_languageModeMap == null)
+            {
+                _languageModeMap = new Dictionary<string, string>();
+                _languageModeMap.Add("af", "Afrikaans");
+                _languageModeMap.Add("sq", "Albanian");
+                _languageModeMap.Add("ar", "Arabic");
+                _languageModeMap.Add("be", "Belarusian");
+                _languageModeMap.Add("bg", "Bulgarian");
+                _languageModeMap.Add("ca", "Catalan");
+                _languageModeMap.Add("zh-CN", "Chinese");
+                _languageModeMap.Add("hr", "Croatian");
+                _languageModeMap.Add("cs", "Czech");
+                _languageModeMap.Add("da", "Danish");
+                _languageModeMap.Add("nl", "Dutch");
+                _languageModeMap.Add("en", "English");
+                _languageModeMap.Add("et", "Estonian");
+                _languageModeMap.Add("tl", "Filipino");
+                _languageModeMap.Add("fi", "Finnish");
+                _languageModeMap.Add("fr", "French");
+                _languageModeMap.Add("gl", "Galician");
+                _languageModeMap.Add("de", "German");
+                _languageModeMap.Add("el", "Greek");
+                _languageModeMap.Add("ht", "Haitian Creole ALPHA");
+                _languageModeMap.Add("iw", "Hebrew");
+                _languageModeMap.Add("hi", "Hindi");
+                _languageModeMap.Add("hu", "Hungarian");
+                _languageModeMap.Add("is", "Icelandic");
+                _languageModeMap.Add("id", "Indonesian");
+                _languageModeMap.Add("ga", "Irish");
+                _languageModeMap.Add("it", "Italian");
+                _languageModeMap.Add("ja", "Japanese");
+                _languageModeMap.Add("ko", "Korean");
+                _languageModeMap.Add("lv", "Latvian");
+                _languageModeMap.Add("lt", "Lithuanian");
+                _languageModeMap.Add("mk", "Macedonian");
+                _languageModeMap.Add("ms", "Malay");
+                _languageModeMap.Add("mt", "Maltese");
+                _languageModeMap.Add("no", "Norwegian");
+                _languageModeMap.Add("fa", "Persian");
+                _languageModeMap.Add("pl", "Polish");
+                _languageModeMap.Add("pt", "Portuguese");
+                _languageModeMap.Add("ro", "Romanian");
+                _languageModeMap.Add("ru", "Russian");
+                _languageModeMap.Add("sr", "Serbian");
+                _languageModeMap.Add("sk", "Slovak");
+                _languageModeMap.Add("sl", "Slovenian");
+                _languageModeMap.Add("es", "Spanish");
+                _languageModeMap.Add("sw", "Swahili");
+                _languageModeMap.Add("sv", "Swedish");
+                _languageModeMap.Add("ta", "Tamil");
+                _languageModeMap.Add("th", "Thai");
+                _languageModeMap.Add("tr", "Turkish");
+                _languageModeMap.Add("uk", "Ukrainian");
+                _languageModeMap.Add("vi", "Vietnamese");
+                _languageModeMap.Add("cy", "Welsh");
+                _languageModeMap.Add("yi", "Yiddish");
+                
+            }
+            string mode = string.Empty;
+            _languageModeMap.TryGetValue(language, out mode);
+            return mode;
+        }
+
+        #endregion
+
         #region Dictionary TranTri
         private void btnLookup_Click(object sender, EventArgs e)
         {
@@ -125,7 +206,35 @@ namespace TuDienOnline
         private void bt_Translate_Click(object sender, EventArgs e)
         {
             string translate = richTextBox_Left.Text;
-            Translate(translate);
+            if (!translate.Trim().Equals(""))
+                Translate(translate);
+        }
+
+        private string AutoDetectLanguage(string text)
+        {
+            string result = "";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://ws.detectlanguage.com/0.1/detect?q=" + text);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader streamReader = new StreamReader(response.GetResponseStream());
+            string str = streamReader.ReadToEnd();
+            int firstIndex = str.IndexOf("language\":\"") + 11;
+            int lastIndex = 0;
+            string temp = "";
+            int a = firstIndex;
+            do
+            {
+                temp = str[a].ToString();
+                if (temp.Equals("\""))
+                {
+                    lastIndex = a;
+                    break;
+                }
+                else
+                    a++;
+            }
+            while (str.Length > firstIndex);
+            result = str.Substring(firstIndex, lastIndex - firstIndex);
+            return result;
         }
 
         private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
@@ -175,8 +284,10 @@ namespace TuDienOnline
         {
             // Initialize the translator
             Translator t = new Translator();
-            t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+            //t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
+            t.SourceLanguage = SourceLang;
             t.TargetLanguage = (string)this.cbbTo.SelectedItem;
+
             t.SourceText = str;
             // Translate the text
             try
@@ -232,7 +343,7 @@ namespace TuDienOnline
         {
             List<string> listStr = SplitTranslate(translate, 282);
             StringBuilder strBuilder = new StringBuilder();
-
+            ChuyenDoiKiTu(translate);
             foreach (string str in listStr)
             {
                 strBuilder.Append(CallTranslator(str));
@@ -256,6 +367,23 @@ namespace TuDienOnline
             {
                 lb_Status.Text = "Completed";
                 this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void ChuyenDoiKiTu(string translate)
+        {
+            //kiem tra ngon ngu dau vao
+            int index = translate.IndexOf(" ");
+            if (index > 0)
+            {
+                string temp = translate.Substring(0, index);
+                SourceLang = AutoDetectLanguage(temp);
+                SourceLang = LanguageEnumToIdentifier(SourceLang);
+            }
+            else
+            {
+                SourceLang = AutoDetectLanguage(translate);
+                SourceLang = LanguageEnumToIdentifier(SourceLang);
             }
         }
 
@@ -306,7 +434,8 @@ namespace TuDienOnline
             if (e.KeyCode == Keys.Space)
             {
                 string translate = richTextBox_Left.Text;
-                Translate(translate);
+                if(!translate.Trim().Equals(""))
+                   Translate(translate);
             }
         }
 
@@ -333,7 +462,5 @@ namespace TuDienOnline
                 recognizer.UnloadAllGrammars();
             }
         }
-
-
     }
 }
