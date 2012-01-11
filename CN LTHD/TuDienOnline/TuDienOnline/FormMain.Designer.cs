@@ -65,6 +65,7 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bt_Speak = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabDictionary.SuspendLayout();
             this.tabTranslate.SuspendLayout();
@@ -281,6 +282,7 @@
             this.panel_Control.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Control.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Control.Controls.Add(this.bt_Speak);
             this.panel_Control.Controls.Add(this.bt_Translate);
             this.panel_Control.Controls.Add(this.btnChange);
             this.panel_Control.Controls.Add(this.lbStatus);
@@ -622,6 +624,16 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // bt_Speak
+            // 
+            this.bt_Speak.Location = new System.Drawing.Point(666, 21);
+            this.bt_Speak.Name = "bt_Speak";
+            this.bt_Speak.Size = new System.Drawing.Size(104, 28);
+            this.bt_Speak.TabIndex = 8;
+            this.bt_Speak.Text = "Speak";
+            this.bt_Speak.UseVisualStyleBackColor = true;
+            this.bt_Speak.Click += new System.EventHandler(this.bt_Speak_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,6 +702,7 @@
         private System.Windows.Forms.TextBox txtKeyWordWiki;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbSttKiwi2;
+        private System.Windows.Forms.Button bt_Speak;
     }
 }
 
