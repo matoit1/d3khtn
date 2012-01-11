@@ -88,7 +88,7 @@ namespace TuDienOnline
                 string.IsNullOrEmpty(this.TargetLanguage) ||
                 this.SourceLanguage.Trim().Equals(this.TargetLanguage.Trim()))
             {
-                throw new Exception("Khôn nhận dạng được chữ đã nhập");
+                throw new Exception("Không nhận dạng được chữ đã nhập");
             }
 
             // Delegate to base class
