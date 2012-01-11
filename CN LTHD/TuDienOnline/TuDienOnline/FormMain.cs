@@ -10,6 +10,7 @@ using System.Threading;
 using System.Net;
 using System.Media;
 using System.Text.RegularExpressions;
+using System.Speech.Recognition;
 
 namespace TuDienOnline
 {
@@ -281,6 +282,30 @@ namespace TuDienOnline
             {
                 string translate = richTextBox_Left.Text;
                 Translate(translate);
+            }
+        }
+
+        private void bt_Speak_Click(object sender, EventArgs e)
+        {
+            SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
+            Grammar dictationGrammar = new DictationGrammar();
+            recognizer.LoadGrammar(dictationGrammar);
+            try
+            {
+                bt_Speak.Text = "Speak Now";
+                recognizer.SetInputToDefaultAudioDevice();
+                RecognitionResult result = recognizer.Recognize();
+                MessageBox.Show(result.Text);
+            }
+            catch (InvalidOperationException exception)
+            {
+                string text = String.Format("Could not recognize input from default aduio device. Is a microphone or sound card available?\r\n{0} - {1}.", exception.Source, exception.Message);
+                MessageBox.Show(text);
+            }
+            finally
+            {
+                bt_Speak.Text = "Speak";
+                recognizer.UnloadAllGrammars();
             }
         }
 
