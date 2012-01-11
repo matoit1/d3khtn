@@ -70,21 +70,46 @@ namespace TuDienOnline
             }
         }
 
+        public static string textKeyword = "";
+        public static string ketquaDOC = "";
         private void btnListen_Click(object sender, EventArgs e)
         {
-            string lang = (string)cbbFrom.SelectedItem;
-            string lg = Translator.LanguageEnumToIdentifier(lang);
-            string name = "vdictranslate";
-            this.Cursor = Cursors.WaitCursor;
-            lb_Status.Text = "Processing ...";
-            lb_Status.Update();
-            string temp = txtWord.Text;
-            List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
-            List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
-            string ketQua = MyClass.noifile(dsFileName);
-            lb_Status.Text = string.Empty;
-            MyClass.doc(ketQua);
-            this.Cursor = Cursors.Default;
+            try
+            {
+                if (textKeyword != txtWord.Text.Trim())
+                {
+                    
+                    string lang = (string)cbbFrom.SelectedItem;
+                    string lg = Translator.LanguageEnumToIdentifier(lang);
+                    string name = "vdictranslate";
+                    this.Cursor = Cursors.WaitCursor;
+                    lb_Status.Text = "Processing ...";
+                    lb_Status.Update();
+                    string temp = txtWord.Text;
+                    List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
+                    List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
+                    string ketQua = MyClass.noifile(dsFileName);
+                    lb_Status.Text = string.Empty;
+                    MyClass.doc(ketQua);
+                    this.Cursor = Cursors.Default;
+                    textKeyword = temp;
+                    ketquaDOC = ketQua;
+                }
+                else
+                {
+                    MyClass.doc(ketquaDOC);
+                    this.Cursor = Cursors.Default;
+                }
+            }
+            catch
+            {
+                lb_Status.Text = "Complete";
+                lb_Status.Update();
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
         }
         #endregion
 
