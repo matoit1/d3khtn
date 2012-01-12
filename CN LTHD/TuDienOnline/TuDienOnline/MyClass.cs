@@ -50,11 +50,11 @@ namespace TuDienOnline
 
             }
             while (translate.Length > 0);
-            
+
             return kq;
         }
 
-        public static List<string> download(List<string> dsDoanVan, string lg, string name)
+        public static List<string> download(List<string> dsDoanVan, string lg)
         {
             List<string> kq = new List<string>();
             try
@@ -64,7 +64,15 @@ namespace TuDienOnline
                 string encstr = string.Empty;
                 for (int i = 0; i < dsDoanVan.Count; i++)
                 {
-                    string filename = name + i + ".mp3";
+                    string filename;
+                    if (i == 0)
+                    {
+                        filename = "spoken.mp3";
+                    }
+                    else
+                    {
+                        filename = "spoken" + i + ".mp3";
+                    }
                     kq.Add(filename);
                     string s = dsDoanVan[i];
                     encstr = Uri.EscapeDataString(s);
@@ -80,56 +88,40 @@ namespace TuDienOnline
 
         public static string noifile(List<string> dsFileName)
         {
-            string ketQua = "";
-            FileStream fs1 = null;
-            FileStream fs2 = null;
-            try
+            string ketQua = dsFileName[0];
+            if (dsFileName.Count > 1)
             {
-                ketQua = dsFileName[0];
-                fs1 = File.Open(ketQua, FileMode.Append);
-                for (int i = 1; i < dsFileName.Count; i++)
+                FileStream fs1 = null;
+                FileStream fs2 = null;
+                try
                 {
-                    string temp = dsFileName[i];
-                    fs2 = File.Open(temp, FileMode.Open);
-                    byte[] fs2Content = new byte[fs2.Length];
-                    fs2.Read(fs2Content, 0, (int)fs2.Length);
-                    fs1.Write(fs2Content, 0, (int)fs2.Length);
-                    fs2.Close();
+                    fs1 = File.Open(ketQua, FileMode.Append);
+                    for (int i = 1; i < dsFileName.Count; i++)
+                    {
+                        string temp = dsFileName[i];
+                        fs2 = File.Open(temp, FileMode.Open);
+                        byte[] fs2Content = new byte[fs2.Length];
+                        fs2.Read(fs2Content, 0, (int)fs2.Length);
+                        fs1.Write(fs2Content, 0, (int)fs2.Length);
+                        fs2.Close();
 
-                    //File.Delete(dsFileName[i]);
+                        File.Delete(dsFileName[i]);
+                    }
+                    fs1.Close();
                 }
-                fs1.Close();
-            }
-            catch (Exception ex)
-            {
-                
-            }
-            finally
-            {
-                if (fs1 != null)
-                    fs1.Dispose();
-                if (fs2 != null)
-                    fs2.Dispose();
+                catch (Exception ex)
+                {
+                    //throw new ApplicationException("operation failed!", ex);
+                }
+                finally
+                {
+                    if (fs1 != null)
+                        fs1.Dispose();
+                    if (fs2 != null)
+                        fs2.Dispose();
+                }
             }
             return ketQua;
-        }
-
-        public static void doc(string filename)
-        {
-            try
-            {
-                WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
-
-                wplayer.URL = filename;
-                wplayer.controls.play();
-
-                //File.Delete(filename);
-            }
-            catch (Exception ex)
-            {
-                //throw new ApplicationException("operation failed!", ex);
-            }
-            
-        }
+        } 
     }
 }
