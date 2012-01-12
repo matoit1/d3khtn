@@ -151,11 +151,11 @@
             this.btnListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnListen.AutoSize = true;
             this.btnListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnListen.Image = global::TuDienOnline.Properties.Resources.images;
+            this.btnListen.Image = global::TuDienOnline.Properties.Resources.Speaker;
             this.btnListen.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnListen.Location = new System.Drawing.Point(637, 112);
+            this.btnListen.Location = new System.Drawing.Point(509, 41);
             this.btnListen.Name = "btnListen";
-            this.btnListen.Size = new System.Drawing.Size(146, 146);
+            this.btnListen.Size = new System.Drawing.Size(46, 46);
             this.btnListen.TabIndex = 4;
             this.btnListen.UseVisualStyleBackColor = true;
             this.btnListen.Click += new System.EventHandler(this.btnListen_Click);
@@ -170,7 +170,7 @@
             this.tbResult.Name = "tbResult";
             this.tbResult.ReadOnly = true;
             this.tbResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbResult.Size = new System.Drawing.Size(569, 294);
+            this.tbResult.Size = new System.Drawing.Size(735, 324);
             this.tbResult.TabIndex = 3;
             // 
             // btnLookup
