@@ -162,13 +162,16 @@ namespace TuDienOnline
             {
                 if (textKeyword != txtWord.Text.Trim())
                 {
-
-                    string lang = (string)cbbFrom.SelectedItem;
-                    string lg = Translator.LanguageEnumToIdentifier(lang);
+                    string temp = txtWord.Text;
+                    string language = AutoDetectLanguage(temp);
+                    language = LanguageEnumToIdentifier(language);
+                    wplayer.close();
+                    File.Delete("spoken.mp3");
+                    string lg = Translator.LanguageEnumToIdentifier(language);
                     this.Cursor = Cursors.WaitCursor;
                     lb_Status.Text = "Processing ...";
                     lb_Status.Update();
-                    string temp = txtWord.Text;
+                    
                     List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
                     List<string> dsFileName = MyClass.download(dsDoanVan, lg);
                     string ketQua = MyClass.noifile(dsFileName);
