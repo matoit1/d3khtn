@@ -26,8 +26,11 @@ namespace TuDienOnline
             InitializeComponent();
         }
 
+        public static WMPLib.WindowsMediaPlayer wplayer;
+
         private void FormMain_Load(object sender, EventArgs e)
         {
+            wplayer = new WMPLib.WindowsMediaPlayer();
             this.cbbLanguage.SelectedItem = "English - Vietnamese";
             this.cbbFrom.SelectedItem = "English";
             this.cbbTo.SelectedItem = "Vietnamese";
@@ -100,7 +103,7 @@ namespace TuDienOnline
                 _languageModeMap.Add("vi", "Vietnamese");
                 _languageModeMap.Add("cy", "Welsh");
                 _languageModeMap.Add("yi", "Yiddish");
-                
+
             }
             string mode = string.Empty;
             _languageModeMap.TryGetValue(language, out mode);
@@ -159,26 +162,27 @@ namespace TuDienOnline
             {
                 if (textKeyword != txtWord.Text.Trim())
                 {
-                    
+
                     string lang = (string)cbbFrom.SelectedItem;
                     string lg = Translator.LanguageEnumToIdentifier(lang);
-                    string name = "vdictranslate";
                     this.Cursor = Cursors.WaitCursor;
                     lb_Status.Text = "Processing ...";
                     lb_Status.Update();
                     string temp = txtWord.Text;
                     List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
-                    List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
+                    List<string> dsFileName = MyClass.download(dsDoanVan, lg);
                     string ketQua = MyClass.noifile(dsFileName);
                     lb_Status.Text = string.Empty;
-                    MyClass.doc(ketQua);
+                    wplayer.URL = ketQua;
+                    wplayer.controls.play();
                     this.Cursor = Cursors.Default;
                     textKeyword = temp;
                     ketquaDOC = ketQua;
                 }
                 else
                 {
-                    MyClass.doc(ketquaDOC);
+                    wplayer.URL = ketquaDOC;
+                    wplayer.controls.play();
                     this.Cursor = Cursors.Default;
                 }
             }
@@ -237,29 +241,24 @@ namespace TuDienOnline
             return result;
         }
 
-        private void richTextBox_Left_MouseUp(object sender, MouseEventArgs e)
-        {
-            //if (richTextBox_Left.SelectedText != "")
-            //{
-            //    string translate = richTextBox_Left.SelectedText;
-            //    Translate(translate);
-            //}
-        }
-
         private void bt_FromSpeech_Click(object sender, EventArgs e)
         {
+            wplayer.close();
+            File.Delete("spoken.mp3");
             string lang = (string)cbbFrom.SelectedItem;
             string lg = Translator.LanguageEnumToIdentifier(lang);
-            string name = "translate";
             this.Cursor = Cursors.WaitCursor;
             lb_Status.Text = "Processing ...";
             lb_Status.Update();
             string temp = richTextBox_Left.Text;
             List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
-            List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg);
             string ketQua = MyClass.noifile(dsFileName);
+            wplayer.URL = ketQua;
+            wplayer.controls.play();
+
+
             lb_Status.Text = string.Empty;
-            MyClass.doc(ketQua);
             this.Cursor = Cursors.Default;
         }
 
@@ -267,16 +266,16 @@ namespace TuDienOnline
         {
             string lang = (string)cbbTo.SelectedItem;
             string lg = Translator.LanguageEnumToIdentifier(lang);
-            string name = "translated";
             this.Cursor = Cursors.WaitCursor;
             lb_Status.Text = "Processing ...";
             lb_Status.Update();
             string temp = richTextBox_Right.Text;
             List<string> dsDoanVan = MyClass.chiaDoanVan(temp);
-            List<string> dsFileName = MyClass.download(dsDoanVan, lg, name);
+            List<string> dsFileName = MyClass.download(dsDoanVan, lg);
             string ketQua = MyClass.noifile(dsFileName);
             lb_Status.Text = string.Empty;
-            MyClass.doc(ketQua);
+            wplayer.URL = ketQua;
+            wplayer.controls.play();
             this.Cursor = Cursors.Default;
         }
 
@@ -287,7 +286,7 @@ namespace TuDienOnline
             //t.SourceLanguage = (string)this.cbbFrom.SelectedItem;
             t.SourceLanguage = SourceLang;
             t.TargetLanguage = (string)this.cbbTo.SelectedItem;
-             
+
             t.SourceText = str;
             // Translate the text
             try
@@ -427,17 +426,6 @@ namespace TuDienOnline
             }
         }
         #endregion
-
-
-        private void richTextBox_Left_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Space)
-            //{
-            //    string translate = richTextBox_Left.Text;
-            //    if(!translate.Trim().Equals(""))
-            //       Translate(translate);
-            //}
-        }
 
         private void bt_Speak_Click(object sender, EventArgs e)
         {

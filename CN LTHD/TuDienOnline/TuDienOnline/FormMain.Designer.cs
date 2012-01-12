@@ -266,8 +266,6 @@
             this.richTextBox_Left.Size = new System.Drawing.Size(400, 302);
             this.richTextBox_Left.TabIndex = 0;
             this.richTextBox_Left.Text = "";
-            this.richTextBox_Left.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox_Left_KeyDown);
-            this.richTextBox_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox_Left_MouseUp);
             // 
             // richTextBox_Right
             // 
