@@ -264,6 +264,8 @@ namespace TuDienOnline
 
         private void bt_ToSpeech_Click(object sender, EventArgs e)
         {
+            wplayer.close();
+            File.Delete("spoken.mp3");
             string lang = (string)cbbTo.SelectedItem;
             string lg = Translator.LanguageEnumToIdentifier(lang);
             this.Cursor = Cursors.WaitCursor;
@@ -437,7 +439,7 @@ namespace TuDienOnline
                 bt_Speak.Text = "Speak Now";
                 recognizer.SetInputToDefaultAudioDevice();
                 RecognitionResult result = recognizer.Recognize();
-                MessageBox.Show(result.Text);
+                richTextBox_Left.Text = result.Text;
             }
             catch (InvalidOperationException exception)
             {
